@@ -1,0 +1,19 @@
+{
+  "id": "halloween-sale",
+  "category": ["promotion"],
+  "number": "PROMOTION 02",
+  "browserTitle": "PROMOTION 02 | HALLOWEEN SALE",
+  "title": "HALLOWEEN<br>SALE FESTA",
+  "type": "PROMOTION · MOBILE EVENT DESIGN",
+  "link": "",
+  "tools": "PHOTOSHOP · ILLUSTRATOR",
+  "thumbnail": "thumbnail.png",
+  "mainImage": "main.png",
+  "imageAlt": "할로윈 세일 페스타 프로모션",
+
+  "overviewTitle": "OVERVIEW",
+  "overviewText": "DoubleHeart 할로윈 시즌을 맞아 진행된 모바일 프로모션 이벤트 페이지입니다. 시즌 분위기를 강조한 비주얼과 쿠폰, 사은품, 특별 구성 상품을 하나의 랜딩 페이지에 자연스럽게 연결하여 이벤트 참여와 구매 전환을 높일 수 있도록 제작했습니다.",
+
+  "workPointTitle": "WORK POINT",
+  "workPointText": "강렬한 퍼플 컬러와 할로윈 오브제를 활용해 시즌 콘셉트를 직관적으로 전달했습니다. 쿠폰 혜택, 증정 이벤트, 스페셜 기프트, 할인 상품을 단계별로 구성하여 사용자가 이벤트 내용을 쉽게 이해하고 참여할 수 있도록 정보 구조를 설계했습니다."
+}

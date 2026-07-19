@@ -1,0 +1,31 @@
+{
+  "id": "bulkinny",
+  "number": "PROJECT 09",
+  "browserTitle": "PROJECT 09 | BULKINNY",
+
+  "projectName": "BULKINNY",
+  "title": "BULKINNY<br>OFFICIAL WEBSITE",
+
+  "type": "CAFE24 · E-COMMERCE · PUBLISHING",
+
+  "category": [
+    "image",
+    "cafe24",
+    "shoppingmall"
+  ],
+
+  "template": "image",
+
+  "featured": false,
+
+  "link": "https://bulkinny.com/",
+
+  "tools": "FIGMA · PHOTOSHOP · HTML · CSS · JAVASCRIPT",
+
+  "thumbnail": "thumbnail.png",
+  "mainImage": "main.png",
+  "imageAlt": "벌키니 공식 쇼핑몰",
+
+  "overviewTitle": "OVERVIEW",
+  "overviewText": "벌키니 브랜드의 공식 쇼핑몰 디자인 및 퍼블리싱 프로젝트입니다. 구조 및 인터렉션 작업과 이미지 작업을 맡았습니다."
+}

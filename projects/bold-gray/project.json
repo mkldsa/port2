@@ -1,0 +1,54 @@
+{
+  "id": "bold-gray",
+  "number": "PROJECT 05",
+  "browserTitle": "PROJECT 05 | BOLD GRAY",
+
+  "projectName": "BOLD GRAY",
+  "title": "BOLD GRAY<br>WEBSITE",
+
+  "type": "CAFE24 · WEB DESIGN · PUBLISHING",
+
+  "category": [
+    "web",
+    "cafe24",
+    "design",
+    "publishing"
+  ],
+
+  "template": "web-image",
+  "featured": false,
+
+  "link": "http://mkldsa70.cafe24.com",
+
+  "tools": "FIGMA · PHOTOSHOP · HTML · CSS · JAVASCRIPT",
+
+  "thumbnail": "thumbnail.png",
+  "mainImage": "main.png",
+  "imageAlt": "Bold Gray 메인페이지",
+
+  "overviewTitle": "OVERVIEW",
+
+  "overviewText": "Bold Gray 브랜드의 분위기와 공간 경험을 효과적으로 전달하기 위해 제작한 카페24 기반 웹사이트입니다. 감성적인 비주얼과 직관적인 정보 구성을 중심으로 디자인 및 퍼블리싱을 진행했습니다.",
+
+  "workPointTitle": "WORK POINT",
+
+  "workPointText": "브랜드 스토리, 공간 소개, 리뷰, 위치 안내 등 방문자가 필요한 정보를 자연스럽게 탐색할 수 있도록 구성했으며, 다양한 디바이스 환경에서도 안정적인 사용자 경험을 제공하도록 반응형으로 구현했습니다.",
+
+  "subPages": [
+    {
+      "title": "ABOUT",
+      "image": "sub-01.png",
+      "imageAlt": "Bold Gray About 페이지"
+    },
+    {
+      "title": "REVIEW",
+      "image": "sub-02.png",
+      "imageAlt": "Bold Gray Review 페이지"
+    },
+    {
+      "title": "LOCATION",
+      "image": "sub-03.png",
+      "imageAlt": "Bold Gray Location 페이지"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "doubleheart-set-promotion",
+  "number": "PROJECT 09",
+  "browserTitle": "PROJECT 09 | DOUBLEHEART SET PROMOTION",
+
+  "projectName": "DOUBLEHEART SET PROMOTION",
+  "title": "DOUBLEHEART<br>SET PROMOTION",
+
+  "type": "PROMOTION · GRAPHIC DESIGN",
+
+  "category": [
+    "promotion"
+  ],
+
+  "template": "image",
+  "featured": false,
+
+  "tools": "PHOTOSHOP · FIGMA",
+
+  "thumbnail": "thumbnail.png",
+  "mainImage": "main.png",
+
+  "imageAlt": "더블하트 세트 특가전 프로모션 디자인",
+
+  "overviewTitle": "OVERVIEW",
+  "overviewText": "더블하트 주요 육아용품 세트를 한눈에 비교할 수 있도록 구성한 모바일 프로모션 페이지입니다. 제품 구성과 할인 정보를 명확하게 구분해 구매 혜택이 빠르게 전달되도록 디자인했습니다."
+}

@@ -1,0 +1,16 @@
+{
+  "id": "xpg",
+  "number": "PROJECT 01",
+  "browserTitle": "PROJECT 01 | XPG",
+  "title": "WEB DESIGN<br>PROJECT",
+  "type": "WEB DESIGN · PUBLISHING",
+  "link": "https://mkldsa.github.io/xpg-www/",
+  "tools": "FIGMA · PHOTOSHOP · VS CODE",
+  "thumbnail": "thumbnail.png",
+  "mainImage": "main.png",
+  "imageAlt": "XPG 웹사이트 프로젝트",
+  "overviewTitle": "OVERVIEW",
+  "overviewText": "게이밍 브랜드 XPG의 제품과 브랜드 가치를 직관적으로 전달할 수 있도록 설계한 웹사이트입니다. 사용자 중심의 정보 구조와 시각적 완성도를 바탕으로 디자인 및 퍼블리싱을 진행했습니다.",
+  "workPointTitle": "WORK POINT",
+  "workPointText": "브랜드 아이덴티티를 강조하는 비주얼 중심 레이아웃과 직관적인 제품 탐색 구조를 구축했습니다. 다양한 디바이스 환경에서도 일관된 경험을 제공할 수 있도록 반응형으로 구현했습니다."
+}

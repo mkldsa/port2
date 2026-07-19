@@ -1,0 +1,16 @@
+{
+  "id": "studio-sh",
+  "number": "PROJECT 03",
+  "browserTitle": "PROJECT 03 | STUDIO SH",
+  "title": "STUDIO SH<br>PORTFOLIO",
+  "type": "WORDPRESS · WEB DESIGN · PUBLISHING",
+  "link": "https://mkldsa.mycafe24.com",
+  "tools": "FIGMA · WORDPRESS · PHP · HTML · CSS · JAVASCRIPT",
+  "thumbnail": "thumbnail.png",
+  "mainImage": "main.png",
+  "imageAlt": "Studio SH 포트폴리오 웹사이트",
+  "overviewTitle": "OVERVIEW",
+  "overviewText": "Studio SH는 웹 퍼블리셔 및 웹디자이너 포트폴리오를 위해 제작한 WordPress 기반의 반응형 웹사이트입니다. 프로젝트 소개부터 제작 가이드, 문의 기능까지 하나의 브랜드 사이트처럼 구성했으며, 게시글 기반 CMS를 적용하여 새로운 프로젝트를 손쉽게 등록하고 관리할 수 있도록 제작했습니다.",
+  "workPointTitle": "WORK POINT",
+  "workPointText": "WordPress 커스텀 템플릿을 활용하여 프로젝트를 게시글 형태로 관리할 수 있는 구조를 구축했습니다. 반응형 레이아웃과 커스텀 UI를 적용해 PC와 모바일 환경 모두에서 일관된 사용자 경험을 제공하며, 유지보수와 확장성을 고려한 구조로 설계했습니다."
+}

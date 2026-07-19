@@ -1,0 +1,19 @@
+{
+  "id": "weekend-sale2",
+  "category": ["promotion"],
+  "number": "PROMOTION 04",
+  "browserTitle": "PROMOTION 04 | WEEKEND SALE2",
+  "title": "WEEKEND<br>SALE",
+  "type": "PROMOTION · MOBILE EVENT DESIGN",
+  "link": "",
+  "tools": "PHOTOSHOP · ILLUSTRATOR",
+  "thumbnail": "thumbnail.png",
+  "mainImage": "main.png",
+  "imageAlt": "주말 특가 프로모션",
+
+  "overviewTitle": "OVERVIEW",
+  "overviewText": "DoubleHeart 주말 한정 프로모션을 위해 제작한 모바일 이벤트 페이지입니다. 매일 선착순 쿠폰과 주말 특가 상품을 한눈에 확인할 수 있도록 구성하여 짧은 행사 기간 동안 구매 전환을 높일 수 있도록 디자인했습니다.",
+
+  "workPointTitle": "WORK POINT",
+  "workPointText": "코믹한 그래픽과 강렬한 옐로우 컬러를 활용해 주말 특가 콘셉트를 직관적으로 표현했습니다. 쿠폰 발급 영역과 할인 상품을 자연스럽게 연결하여 사용자가 혜택을 빠르게 확인하고 구매까지 이어질 수 있도록 모바일 환경에 최적화하여 제작했습니다."
+}
