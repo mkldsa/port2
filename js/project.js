@@ -65,18 +65,30 @@ document.addEventListener('DOMContentLoaded', function () {
         projectTools.textContent =
             project.tools || '-';
 
-        /* ===============================
-           프로모션 프로젝트 클래스 추가
-        =============================== */
+/* ===============================
+   세로형 프로젝트 클래스 추가
+   PROMOTION / DETAIL 공통 720px 적용
+=============================== */
 
-        document.body.classList.remove('promotion-project');
+document.body.classList.remove('promotion-project');
 
-        if (
-            Array.isArray(project.category) &&
-            project.category.includes('promotion')
-        ) {
-            document.body.classList.add('promotion-project');
-        }
+const projectCategories =
+    Array.isArray(project.category)
+        ? project.category.map(function (category) {
+            return String(category)
+                .trim()
+                .toUpperCase();
+        })
+        : [];
+
+if (
+    projectCategories.includes('PROMOTION')
+    || projectCategories.includes('DETAIL')
+) {
+    document.body.classList.add('promotion-project');
+}
+
+/* =============================== */
 
         /* =============================== */
 
