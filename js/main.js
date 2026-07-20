@@ -575,8 +575,16 @@ if (workList) {
         if (!item) return;
 
         /*
-         * 양 끝의 작은 카드를 클릭하면 바로 상세페이지로
-         * 이동하지 않고 해당 방향으로 한 칸 넘깁니다.
+         * 모바일에서는 모든 프로젝트 카드를
+         * 정상적인 링크로 작동시킨다.
+         */
+        if (isMobile()) {
+            return;
+        }
+
+        /*
+         * PC에서만 양 끝의 작은 카드를 클릭하면
+         * 상세페이지로 이동하지 않고 한 칸 넘긴다.
          */
         if (item.classList.contains('work-position-1')) {
 
