@@ -749,3 +749,48 @@ body:not(.promotion-project) .project-thumb{
 
 }
 
+
+/* =========================================================
+   DETAIL PAGE ONLY IMAGE SIZE
+   project.js에서 body에 detail-project 클래스가 붙을 때만 적용
+========================================================= */
+
+body.detail-project .project-thumb{
+    width:min(720px, 100%) !important;
+    max-width:720px !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+}
+
+body.detail-project .project-thumb img{
+    display:block !important;
+    width:100% !important;
+    height:auto !important;
+}
+
+/* 일반 프로젝트는 기존 1400px / 1200px 설정 유지 */
+body:not(.promotion-project):not(.detail-project) .project-thumb{
+    width:100% !important;
+    max-width:1400px !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+}
+
+@media screen and (max-width:1440px){
+
+    body:not(.promotion-project):not(.detail-project) .project-thumb{
+        max-width:1200px !important;
+    }
+
+}
+
+@media screen and (max-width:768px){
+
+    body.promotion-project .project-thumb,
+    body.detail-project .project-thumb,
+    body:not(.promotion-project):not(.detail-project) .project-thumb{
+        width:100% !important;
+        max-width:100% !important;
+    }
+
+}
