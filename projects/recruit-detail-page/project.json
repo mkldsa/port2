@@ -1,0 +1,19 @@
+{
+  "id": "recruit-detail-page",
+  "number": "PROJECT 03",
+  "browserTitle": "PROJECT 03 | RECRUIT DETAIL PAGE",
+  "title": "DETAIL PAGE<br>DESIGN",
+  "type": "DETAIL PAGE · GRAPHIC DESIGN",
+  "category": [
+    "DETAIL"
+  ],
+  "link": "",
+  "tools": "FIGMA · PHOTOSHOP · ILLUSTRATOR",
+  "thumbnail": "thumbnail.png",
+  "mainImage": "main.png",
+  "imageAlt": "채용 홍보 상세페이지 디자인",
+  "overviewTitle": "OVERVIEW",
+  "overviewText": "채용 프로모션의 핵심 정보와 지원 절차를 효과적으로 전달하기 위해 제작한 상세페이지입니다. 지원 대상, 혜택, 진행 과정 등 다양한 정보를 단계별로 구성하여 사용자가 쉽고 빠르게 내용을 이해할 수 있도록 디자인했습니다.",
+  "workPointTitle": "WORK POINT",
+  "workPointText": "일러스트를 적극 활용하여 친근하고 밝은 분위기를 연출했으며, STEP 형식의 레이아웃과 카드형 콘텐츠를 적용해 긴 상세페이지도 자연스럽게 읽을 수 있도록 구성했습니다. 주요 혜택과 지원 정보를 컬러 포인트로 강조하여 정보 전달력을 높였습니다."
+}
