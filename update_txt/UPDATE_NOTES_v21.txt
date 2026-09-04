@@ -1,0 +1,49 @@
+PORTFOLIO v21 — CREDIT / SELECTED WORKS UPDATE
+================================================
+
+1. 우측 SELECTED WORKS 가독성
+- SELECTED WORKS 라벨 확대
+- 카테고리명 확대
+- 프로젝트 번호 확대
+- 프로젝트명 확대
+- 역할/기여도 서브카피 확대
+- VIEW ALL PROJECTS 확대
+- 우측 영역 폭 소폭 확대
+
+2. 실제 기여도 정보 반영
+
+DAHYANG
+- PUBLISHING / CODING: 100%
+- IMAGE DESIGN: COLLABORATION
+- 회사 프로젝트, 이미지 제작은 동료와 공동
+
+DAHYANG EVENT
+- PUBLISHING / CODING: 100%
+- IMAGE DESIGN: COLLABORATION
+
+BULKINNY
+- PUBLISHING / CODING: 100%
+- IMAGE DESIGN: COLLABORATION
+
+BOLD GRAY
+- PLANNING: TEAM MEMBER
+- PUBLISHING / CODING: 100%
+
+DETAIL PAGE 전체
+- OH MY BODY BAR
+- RECRUIT DETAIL PAGE
+- COX CH48
+- MOODMORY EZ FLEX FILM
+
+각 프로젝트:
+- DETAIL PAGE DESIGN: 100%
+- GRAPHIC DESIGN: 100%
+- 상세 구성/디자인 전반 직접 진행
+
+3. 홈 우측 카드
+프로젝트별 creditSummary가 있으면 기존 TYPE 대신 실제 기여 정보를 노출.
+
+4. KORiNKLE
+- 현재 원본 이미지가 없어서 가짜 프로젝트는 생성하지 않음
+- KORINKLE_ADD_GUIDE.txt 추가
+- 이미지 추가 후 projects-data.js에 한 항목만 넣으면 자동 연결 가능

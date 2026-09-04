@@ -1,0 +1,25 @@
+PORTFOLIO v5 UPDATE
+====================
+
+메인 수정 내용
+
+1. 진입 인터랙션 부드러움 개선
+- 레코드 원판 reveal에 사용하던 clip-path 애니메이션 제거
+- blur/filter 동시 애니메이션 제거
+- GPU compositor에서 처리하기 쉬운 scale + opacity 중심으로 변경
+- 레코드 등장 / 라벨 lock-in / 중심 pulse / 표면 scan이 서로 겹치도록 타이밍 재구성
+- 카피와 카테고리 stagger 간격을 좁혀 툭툭 끊기는 느낌 완화
+- 첫 진입 회전 impulse를 줄이고 감속도 더 완만하게 수정
+
+2. 레코드 hover 반사광
+- 고정된 위치의 conic-gradient hover 효과 제거
+- 실제 마우스 좌표를 레코드 내부 % 좌표로 계산
+- 해당 위치에서 radial highlight가 퍼짐
+- 커서 위치를 즉시 따라가지 않고 JS 보간으로 살짝 늦게 추적
+- 레코드 사각 hit-area 모서리에서는 조명 비활성화
+- 패널 open 상태에서는 hover 조명 자동 제거
+
+변경 파일
+- index.html
+- assets/css/main.css
+- assets/js/main.js

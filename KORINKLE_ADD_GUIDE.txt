@@ -1,0 +1,28 @@
+KORiNKLE ADDITION GUIDE
+=======================
+
+KORiNKLE은 현재 업로드된 port2 원본 폴더에 이미지가 없어서
+빈 프로젝트/가짜 썸네일을 만들지 않았습니다.
+
+나중에 아래 파일만 추가하면 현재 구조에 바로 연결할 수 있습니다.
+
+권장 폴더
+projects/korinkle/
+- thumbnail.png
+- main.png
+- detail-01.png (선택)
+- detail-02.png (선택)
+...
+
+data/projects-data.js에 추가할 권장 기본값
+
+id: korinkle
+title: KORiNKLE
+category: ecommerce
+categoryLabel: E-COMMERCE
+creditSummary: 추후 실제 역할에 맞춰 입력
+contribution: 실제 기여도에 맞춰 입력
+images: projects/korinkle/ 안 실제 작업 이미지
+
+현재 사이트의 홈 selected works / 전체 projects / 상세페이지는
+projects-data.js만 추가하면 자동으로 연결되는 구조입니다.

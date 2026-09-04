@@ -1,0 +1,44 @@
+PORTFOLIO v18
+=============
+
+v17 구조를 유지하면서 요청한 부분만 수정.
+
+1. 레코드 중앙 이동
+- 기존 56.5% → 52.5%
+- 화면 중앙 쪽으로 당겨 좌/우 여백 균형 조정
+- 오른쪽 selected works와도 충분한 간격 유지
+
+2. 레코드 카테고리 첫 번째에 내 소개 추가
+- 00 ABOUT ME
+- 01 WEB DESIGN
+- 02 E-COMMERCE
+- 03 DETAIL PAGE
+- 04 GRAPHIC DESIGN
+
+중요:
+- 첫 진입은 여전히 01 WEB DESIGN
+- 작업물이 첫 화면부터 바로 보이는 장점 유지
+- WEB DESIGN 상태에서 위로 한 번 스크롤하면 00 ABOUT ME
+- ABOUT ME 상태에서는 오른쪽 SELECTED WORKS 영역이 PROFILE 정보로 변경
+- ABOUT ME에서 레코드를 클릭하면 about.html로 이동
+
+PROFILE 우측 표시 정보
+- YOON SEOK HEE
+- WEB DESIGNER / PUBLISHER
+- 짧은 소개
+- UI/UX / CAFE24 / WORDPRESS / HTML CSS JS
+- VIEW FULL PROFILE
+
+3. 우측 하단 메뉴 제거
+- WORK / ABOUT / CONTACT 삭제
+- 상단 PROJECTS / ABOUT / CONTACT와 중복이라 제거
+- 오른쪽 시선 분산 감소
+
+4. 기존 유지
+- 레코드 LP 디자인
+- 공간감 배경
+- hover light
+- 정/역방향 회전
+- 카테고리 전환 애니메이션
+- 오른쪽 작업물 즉시 노출
+- 레코드 클릭 시 전체 프로젝트 패널

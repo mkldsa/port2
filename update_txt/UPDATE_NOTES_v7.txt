@@ -1,0 +1,34 @@
+PORTFOLIO v7
+============
+
+핵심 변경
+
+1. 중앙 라벨
+- v6의 고정 UI 배지형 중앙 라벨 제거
+- 실제 LP 라벨 문법으로 재디자인
+- YSH RECORDS / SIDE A / STEREO / 33⅓ RPM / CATALOG NO. / TRACK 정보 사용
+- 과한 곡선 텍스트는 사용하지 않음
+- 중앙 라벨을 .record 안으로 이동
+- 따라서 레코드와 중앙 종이 라벨이 실제 LP처럼 같이 회전
+- 카테고리명과 TRACK 번호는 현재 선택값에 맞춰 변경
+
+2. hover 광원
+- v6의 길게 뻗는 한 방향 specular beam 제거
+- 마우스 위치에 낮은 강도의 주광
+- 반대편 좌표에 훨씬 약한 반사광을 동시에 표시
+- 광량을 v6 대비 크게 낮춤
+- 중앙 종이 라벨 영역에는 강한 screen 조명이 먹지 않도록 mask 적용
+- 영구적으로 보이던 record::after 반사도 더 낮춤
+
+3. 기존 기능 유지
+- 아래 스크롤: 정방향 회전
+- 위 스크롤: 역방향 회전
+- pointer 위치 추적
+- 메인 진입 인터랙션
+- 프로젝트 패널
+- 모바일 swipe
+
+변경 파일
+- index.html
+- assets/css/main.css
+- assets/js/main.js

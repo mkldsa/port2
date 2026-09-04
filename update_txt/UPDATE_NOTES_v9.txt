@@ -1,0 +1,33 @@
+PORTFOLIO v9
+============
+
+이번 수정 방향
+- 중앙 라벨은 더 이상 실험하지 않고 초기 LP 라벨 구조로 복원
+- 다만 초기 버전보다 글씨 크기 / 자간 / 원호 위치 / 라벨 경계를 정돈
+- YOON SEOK HEE / PORTFOLIO / 20 / 26만 사용
+- 라벨은 실제 LP처럼 원판과 함께 회전
+
+레코드 비호버 가시성
+- hover 전에도 원판이 배경에서 보이도록 고정 ambient light 추가
+- 좌상단 + 우하단의 낮은 광량을 동시에 사용
+- 한 방향으로 쨍한 beam은 사용하지 않음
+- 홈과 외곽 edge 밝기를 소폭 상승
+- run-out groove 보강
+
+hover
+- 기존 커서 위치 추적 광원 유지
+- ambient 위에 포인터 광원이 추가되는 방식
+- 중앙 종이 라벨에는 강한 hover 광원이 먹지 않게 mask 유지
+
+기존 기능 유지
+- 스크롤 아래: 정방향 회전
+- 스크롤 위: 역방향 회전
+- 진입 인터랙션
+- HOW TO EXPLORE
+- 프로젝트 패널
+- 모바일 swipe
+
+변경 파일
+- index.html
+- assets/css/main.css
+- assets/js/main.js

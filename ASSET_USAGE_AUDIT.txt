@@ -1,0 +1,11 @@
+ORIGINAL PORT2 ASSET USAGE AUDIT
+================================
+Original PNG assets found: 68
+Referenced by new portfolio: 68
+
+All original PNG assets are referenced by the new portfolio.
+
+XPG root images are used as XPG project detail gallery.
+Garden root images are used as Garden project detail gallery.
+Skill icons + TITLE.png are used on about.html.
+All project thumbnail.png and main.png files are used by archive/detail pages.

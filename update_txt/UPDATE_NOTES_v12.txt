@@ -1,0 +1,25 @@
+PORTFOLIO v12
+=============
+
+수정 원인
+- v11에서는 hero-copy와 HOW TO EXPLORE를 각각 absolute top 값으로 이동시켜
+  E-COMMERCE처럼 타이틀이 2줄이 되는 카테고리에서 텍스트가 겹쳤음.
+
+수정 방식
+- HOW TO EXPLORE 블록을 HTML상 hero-copy 내부로 이동.
+- 왼쪽 정보를 아래 순서의 하나의 세로 flow로 변경:
+  01
+  SELECT CATEGORY
+  E-COMMERCE
+  브랜드 이커머스 · 카페24 · 쇼핑 경험
+  HOW TO EXPLORE
+  설명
+  액션 카드 2개
+- 이제 제목이 1줄/2줄/3줄이어도 아래 내용이 자동으로 내려가므로 겹치지 않음.
+- 전체 묶음 자체를 화면 위쪽으로 이동.
+- v11에서 키운 서브 텍스트 크기는 유지.
+- 레코드 / 배경 / hover / 회전 / 진입 인터랙션은 변경하지 않음.
+
+변경 파일
+- index.html
+- assets/css/main.css

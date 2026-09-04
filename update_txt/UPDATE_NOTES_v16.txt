@@ -1,0 +1,35 @@
+PORTFOLIO v16
+=============
+
+요청 반영
+- v15처럼 줄인 형태가 아니라 기존 HOW TO 카드 + PROFILE 구조로 회귀
+- 다만 왼쪽에 모든 정보가 다닥다닥 붙어 보이던 문제를 계층/레이아웃으로 재정리
+- 레코드 클릭 후 보이는 소개글/서브카피의 글자 크기 확대
+- 카테고리 텍스트가 바뀔 때 툭 바뀌지 않도록 부드러운 전환 추가
+
+핵심 수정
+1. 왼쪽 레이아웃
+- hero-copy를 화면 안쪽으로 조금 이동
+- 제목/설명은 메인 블록으로 유지
+- HOW TO EXPLORE는 title 아래의 별도 secondary block처럼 분리
+  (absolute 분리 + 상단 구분선 + 충분한 간격)
+- 카드 2개는 기존 형태 유지하되 크기/간격/텍스트 가독성 보강
+- PROFILE은 유지하되 더 가볍고 tertiary하게 정리
+
+2. 카테고리 변경 인터랙션
+- 번호/타이틀/설명 카피가 즉시 교체되지 않음
+- 기존 텍스트가 위로 살짝 빠지며 사라지고
+  새 텍스트가 아래에서 들어오며 blur가 풀리도록 처리
+
+3. preview panel 텍스트 확대
+- section label 확대
+- preview title 확대
+- project card 제목 확대
+- project card 설명문 확대
+- project meta, view all 링크, count 확대
+
+기존 유지
+- 레코드 디자인 / hover light / 공간감 배경
+- 레코드 정·역방향 회전
+- 중앙 라벨
+- preview panel 구조

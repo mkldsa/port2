@@ -1,0 +1,30 @@
+PORTFOLIO v22 — MICROCOPY LEGIBILITY
+======================================
+
+이번 수정은 큰 레이아웃/레코드/타이틀은 건드리지 않고
+'작아서 안 읽히는 텍스트'만 사이트 전체에서 한 단계 확대했습니다.
+
+MAIN
+- 00 ABOUT ME / 01 WEB DESIGN / 02 E-COMMERCE / 03 DETAIL PAGE / 04 GRAPHIC DESIGN
+  카테고리 번호/이름/SELECTED 전부 확대
+- 카테고리 점 크기 확대
+- inactive 텍스트 명도 상승
+- active 텍스트 굵기/명도 보강
+- SCROLL TO BROWSE / CLICK RECORD TO VIEW ALL 확대
+- 우측 SELECTED WORKS의 라벨/카테고리/프로젝트명/기여도/VIEW ALL 확대
+- ABOUT ME profile 모드 텍스트/스킬 태그 확대
+- 클릭 후 preview panel의 프로젝트 제목/설명/meta도 확대
+
+COMMON
+- 헤더 이름/직무/메뉴 확대
+- section label 확대
+
+PROJECTS
+- 카운트/요약/필터/archive meta 확대
+
+PROJECT DETAIL
+- TYPE/PROJECT/CATEGORY/TOOLS 라벨 및 값 확대
+- 외부 링크/갤러리 캡션/prev-next 보조문구 확대
+
+ABOUT
+- 섹션 번호/본문/스킬명/연락처 microcopy 확대

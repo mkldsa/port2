@@ -1,0 +1,6261 @@
+html,
+body{
+  height:100%;
+  overflow:hidden;
+}
+
+.home-page{background:#050505}
+.home-shell,.home-main{height:100%}
+
+.home-header{
+  position:fixed;
+  left:0;
+  right:0;
+  top:0;
+  z-index:100;
+}
+
+/* =========================================================
+   HERO / CINEMATIC BACKGROUND
+========================================================= */
+.hero{
+  position:relative;
+  width:100%;
+  height:100vh;
+  min-height:720px;
+  overflow:hidden;
+  padding:0 42px;
+  isolation:isolate;
+  background:
+    radial-gradient(ellipse at 58% 52%,rgba(75,50,24,.028),transparent 42%),
+    linear-gradient(118deg,#010101 0%,#040403 52%,#010101 100%);
+}
+
+.depth-bg{
+  position:absolute;
+  inset:-4%;
+  z-index:-2;
+  overflow:hidden;
+  pointer-events:none;
+}
+
+.depth-canvas{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  display:block;
+  width:100%;
+  height:100%;
+}
+
+.depth-glow{
+  position:absolute;
+  pointer-events:none;
+  z-index:0;
+  opacity:.22;
+}
+
+.depth-glow-a{
+  inset:8% 15% 4% 29%;
+  background:radial-gradient(
+    ellipse at 53% 50%,
+    rgba(190,132,53,.12),
+    rgba(120,74,24,.045) 34%,
+    transparent 68%
+  );
+  filter:blur(65px);
+  animation:atmoA 27s ease-in-out infinite;
+}
+
+.depth-glow-b{
+  inset:24% -7% -12% 48%;
+  background:radial-gradient(
+    ellipse,
+    rgba(230,191,121,.05),
+    rgba(140,87,28,.02) 39%,
+    transparent 70%
+  );
+  filter:blur(88px);
+  animation:atmoB 35s ease-in-out infinite;
+}
+
+@keyframes atmoA{
+  0%,100%{transform:scale(.96);opacity:.12}
+  50%{transform:scale(1.07);opacity:.28}
+}
+
+@keyframes atmoB{
+  0%,100%{transform:translate(2%,-1%);opacity:.08}
+  50%{transform:translate(-2%,2%);opacity:.22}
+}
+
+/* =========================================================
+   HERO COPY
+========================================================= */
+.hero-copy{
+  position:absolute;
+  z-index:20;
+  left:7.2vw;
+  top:50%;
+  width:min(31vw,520px);
+  transform:translateY(-50%);
+  transition:
+    left .95s cubic-bezier(.16,.84,.24,1),
+    transform .95s cubic-bezier(.16,.84,.24,1),
+    opacity .5s ease,
+    filter .5s ease;
+}
+
+.hero-index-wrap{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  margin-bottom:34px;
+  color:#ddd;
+  font-size:12px;
+}
+
+.hero-index-wrap i{
+  display:block;
+  width:56px;
+  height:1px;
+  background:#555;
+}
+
+.hero-kicker{
+  margin:0 0 14px;
+  color:#7f858d;
+  font-size:10px;
+  letter-spacing:.22em;
+}
+
+.hero h1{
+  max-width:610px;
+  margin:0;
+  font-size:clamp(56px,5.1vw,98px);
+  line-height:.88;
+  letter-spacing:-.06em;
+}
+
+.hero-desc{
+  margin:24px 0 0;
+  color:#c6c6c0;
+  font-size:15px;
+}
+
+/* =========================================================
+   RECORD
+========================================================= */
+.record-stage{
+  position:absolute;
+  inset:0;
+  z-index:5;
+}
+
+.record-stage::before{
+  content:"";
+  position:absolute;
+  left:59%;
+  top:54%;
+  width:min(82vh,860px);
+  height:min(82vh,860px);
+  border-radius:50%;
+  transform:translate(-50%,-50%) scale(1.08);
+  background:radial-gradient(
+    circle,
+    rgba(210,171,102,.055) 0%,
+    rgba(143,100,46,.022) 37%,
+    transparent 69%
+  );
+  filter:blur(36px);
+  opacity:.62;
+  pointer-events:none;
+  transition:
+    left 1.05s cubic-bezier(.16,.84,.2,1),
+    top 1.05s cubic-bezier(.16,.84,.2,1),
+    transform 1.05s cubic-bezier(.16,.84,.2,1),
+    opacity .55s ease;
+}
+
+.record-stage::after{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  left:59%;
+  top:52%;
+  width:min(78vh,820px);
+  height:min(78vh,820px);
+  border-radius:50%;
+  transform:translate(-50%,-50%);
+  pointer-events:none;
+  background:radial-gradient(circle at 64% 28%,rgba(227,190,126,.035),transparent 27%);
+  filter:blur(18px);
+  opacity:.7;
+  transition:
+    left 1.05s cubic-bezier(.16,.84,.2,1),
+    top 1.05s cubic-bezier(.16,.84,.2,1),
+    transform 1.05s cubic-bezier(.16,.84,.2,1);
+}
+
+.record-wrap{
+  position:absolute;
+  left:59%;
+  top:52%;
+  width:min(72vh,760px);
+  aspect-ratio:1;
+  padding:0;
+  border:0;
+  border-radius:50%;
+  background:none;
+  cursor:pointer;
+  transform:translate(-50%,-50%);
+  transition:
+    left 1.05s cubic-bezier(.16,.84,.2,1),
+    top 1.05s cubic-bezier(.16,.84,.2,1),
+    transform 1.05s cubic-bezier(.16,.84,.2,1),
+    filter .55s ease;
+}
+
+.record-wrap:hover{filter:brightness(1.09)}
+
+.record-wrap::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:8;
+  display:block;
+  border-radius:50%;
+  pointer-events:none;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.10),
+    inset 4px 4px 14px rgba(255,255,255,.025),
+    inset -5px -7px 17px rgba(255,255,255,.018),
+    0 0 12px rgba(255,255,255,.012);
+}
+
+.record{
+  position:absolute;
+  inset:0;
+  display:block;
+  overflow:hidden;
+  isolation:isolate;
+  border-radius:50%;
+  opacity:1;
+  background:radial-gradient(
+    circle at 50% 50%,
+    #141414 0%,
+    #0e0e0e 26%,
+    #090909 52%,
+    #050505 74%,
+    #020202 92%,
+    #000 100%
+  );
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.075),
+    inset 0 0 26px rgba(255,255,255,.022),
+    inset 0 0 90px rgba(0,0,0,.74),
+    0 0 0 1px rgba(255,255,255,.03),
+    0 24px 60px rgba(0,0,0,.58);
+  will-change:transform;
+}
+
+.record::before{
+  content:"";
+  position:absolute;
+  inset:1.1%;
+  z-index:1;
+  display:block;
+  border-radius:50%;
+  pointer-events:none;
+  background:
+    repeating-radial-gradient(
+      circle at 50% 50%,
+      rgba(255,255,255,.045) 0 1px,
+      rgba(255,255,255,0) 1px 3px,
+      rgba(255,255,255,.018) 3px 4px,
+      rgba(255,255,255,0) 4px 7px
+    ),
+    repeating-radial-gradient(
+      circle at 50% 50%,
+      transparent 0 21px,
+      rgba(255,255,255,.03) 21px 22px,
+      transparent 22px 39px
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      transparent 0 27%,
+      rgba(255,255,255,.012) 48%,
+      transparent 72%
+    );
+  opacity:.78;
+  mix-blend-mode:screen;
+}
+
+.record::after{
+  content:"";
+  position:absolute;
+  inset:-2%;
+  z-index:2;
+  display:block;
+  border-radius:50%;
+  pointer-events:none;
+  background:
+    conic-gradient(
+      from 200deg at 50% 50%,
+      transparent 0deg 18deg,
+      rgba(255,255,255,.018) 25deg,
+      rgba(255,255,255,.125) 39deg,
+      rgba(255,255,255,.04) 51deg,
+      transparent 65deg 160deg,
+      rgba(255,255,255,.018) 176deg,
+      rgba(255,255,255,.06) 188deg,
+      transparent 204deg 360deg
+    ),
+    radial-gradient(
+      ellipse at 29% 25%,
+      rgba(255,255,255,.12) 0%,
+      rgba(255,255,255,.045) 17%,
+      transparent 42%
+    ),
+    radial-gradient(
+      ellipse at 73% 76%,
+      rgba(255,255,255,.05) 0%,
+      transparent 34%
+    );
+  mix-blend-mode:screen;
+  opacity:.68;
+}
+
+.record-ring{
+  position:absolute;
+  z-index:3;
+  display:block;
+  border-radius:50%;
+  pointer-events:none;
+  background:none;
+}
+
+.ring-1{
+  inset:13%;
+  border:1px solid rgba(255,255,255,.028);
+}
+
+.ring-2{
+  inset:23%;
+  border:1px solid rgba(255,255,255,.035);
+}
+
+.ring-3{
+  inset:34%;
+  border:1px solid rgba(255,255,255,.026);
+}
+
+.record-label{
+  position:absolute;
+  z-index:6;
+  left:50%;
+  top:50%;
+  width:29%;
+  aspect-ratio:1;
+  overflow:hidden;
+  border-radius:50%;
+  transform:translate(-50%,-50%);
+  background:radial-gradient(
+    circle at 42% 34%,
+    rgba(255,249,222,.98) 0%,
+    rgba(244,221,169,.98) 58%,
+    rgba(220,190,130,.98) 100%
+  );
+  box-shadow:
+    0 0 0 6px rgba(0,0,0,.86),
+    0 0 0 8px rgba(255,255,255,.018),
+    0 0 22px rgba(0,0,0,.85),
+    inset 0 0 0 1px rgba(80,56,24,.24),
+    inset 0 0 24px rgba(123,88,34,.07);
+}
+
+.record-label-svg{
+  display:block;
+  width:100%;
+  height:100%;
+  overflow:visible;
+}
+
+.record-label-svg .label-arc{
+  fill:#18140e;
+  font-family:Inter,sans-serif;
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:3px;
+}
+
+.record-label-svg .label-arc-bottom{
+  font-size:9.5px;
+  letter-spacing:3.8px;
+}
+
+.record-label-svg .label-year{
+  fill:#18140e;
+  font-family:Inter,sans-serif;
+  font-size:11px;
+  font-weight:500;
+  letter-spacing:.3px;
+}
+
+.record-label-svg .label-hole-ring{
+  fill:rgba(130,96,45,.12);
+  stroke:rgba(89,61,22,.15);
+  stroke-width:1;
+}
+
+.record-label-svg .label-hole{
+  fill:#050505;
+}
+
+/* =========================================================
+   CATEGORY ORBIT
+========================================================= */
+.category-orbit{
+  position:absolute;
+  z-index:18;
+  left:59%;
+  top:52%;
+  width:min(72vh,760px);
+  aspect-ratio:1;
+  pointer-events:none;
+  transform:translate(-50%,-50%);
+  transition:
+    left 1.05s cubic-bezier(.16,.84,.2,1),
+    top 1.05s cubic-bezier(.16,.84,.2,1),
+    opacity .55s ease,
+    transform 1.05s cubic-bezier(.16,.84,.2,1);
+}
+
+.category-btn{
+  position:absolute;
+  left:50%;
+  top:50%;
+  display:flex;
+  align-items:center;
+  gap:13px;
+  min-width:170px;
+  padding:7px 0;
+  border:0;
+  background:none;
+  color:#747474;
+  font-size:11px;
+  letter-spacing:.02em;
+  text-align:left;
+  cursor:pointer;
+  pointer-events:auto;
+  transform-origin:0 0;
+  transition:color .3s ease,opacity .3s ease,transform .35s ease;
+}
+
+.category-btn::before{
+  content:"";
+  flex:0 0 auto;
+  width:11px;
+  height:11px;
+  border-radius:50%;
+  background:#4b4b4b;
+  transition:.3s;
+}
+
+.category-btn span{
+  display:block;
+  white-space:nowrap;
+}
+
+.category-btn:hover,
+.category-btn.is-active{
+  color:#f4f1ea;
+}
+
+.category-btn.is-active{
+  font-weight:600;
+}
+
+.category-btn.is-active::before{
+  background:#f1dfb6;
+  box-shadow:0 0 18px 5px rgba(241,223,182,.34);
+}
+
+.category-btn.is-active span{color:#f1dfb6}
+
+/* =========================================================
+   INTERACTION HINT
+========================================================= */
+.interaction-hint{
+  position:absolute;
+  z-index:30;
+  left:7.2vw;
+  top:68.3%;
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  gap:12px;
+  pointer-events:none;
+  white-space:nowrap;
+  animation:hintBreath 3.8s ease-in-out infinite;
+}
+
+.mouse-icon{
+  position:relative;
+  display:block;
+  flex:0 0 24px;
+  width:24px;
+  height:38px;
+  border:1px solid rgba(229,190,111,.88);
+  border-radius:14px;
+  box-shadow:
+    0 0 14px rgba(216,165,78,.12),
+    inset 0 0 10px rgba(255,231,179,.025);
+}
+
+.mouse-icon i{
+  position:absolute;
+  left:50%;
+  top:8px;
+  width:2px;
+  height:7px;
+  border-radius:999px;
+  background:#e5c47f;
+  box-shadow:0 0 7px rgba(231,193,115,.28);
+  transform:translateX(-50%);
+  animation:hintWheel 1.55s ease-in-out infinite;
+}
+
+.interaction-hint p{
+  margin:0;
+  padding:0;
+  color:rgba(225,220,209,.78);
+  font-size:10px;
+  line-height:1.48;
+  letter-spacing:.1em;
+  text-align:left;
+}
+
+.interaction-hint p::first-line{color:#e7c786}
+
+@keyframes hintWheel{
+  0%{opacity:.15;transform:translate(-50%,0)}
+  35%{opacity:1}
+  100%{opacity:0;transform:translate(-50%,11px)}
+}
+
+@keyframes hintBreath{
+  0%,100%{opacity:.66}
+  50%{opacity:1}
+}
+
+/* =========================================================
+   SOCIAL RAIL
+========================================================= */
+.social-rail{
+  position:absolute;
+  z-index:40;
+  right:34px;
+  bottom:42px;
+  display:flex;
+  flex-direction:column;
+  gap:22px;
+  color:#888;
+  font-size:10px;
+}
+
+.social-rail a:hover{color:#fff}
+
+/* =========================================================
+   PREVIEW PANEL
+========================================================= */
+.preview-panel{
+  position:absolute;
+  z-index:40;
+  top:50%;
+  left:43.5%;
+  width:min(53vw,900px);
+  height:min(76vh,740px);
+  min-height:540px;
+  padding:34px 36px 26px;
+  overflow:hidden;
+
+  border:1px solid rgba(228,191,119,.26);
+  border-radius:26px;
+
+  background:linear-gradient(
+    145deg,
+    rgba(23,21,17,.94) 0%,
+    rgba(10,10,9,.96) 38%,
+    rgba(7,7,7,.985) 100%
+  );
+
+  box-shadow:
+    0 32px 90px rgba(0,0,0,.52),
+    inset 0 1px 0 rgba(255,255,255,.035),
+    inset 0 0 45px rgba(191,136,52,.018);
+
+  backdrop-filter:blur(18px) saturate(110%);
+  -webkit-backdrop-filter:blur(18px) saturate(110%);
+
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+
+  transform-origin:left center;
+  transform:translateY(-50%) scaleX(.035);
+  clip-path:inset(0 97% 0 0 round 26px);
+
+  transition:
+    opacity .16s ease,
+    visibility 0s linear .92s,
+    transform .92s cubic-bezier(.16,.86,.22,1),
+    clip-path .92s cubic-bezier(.16,.86,.22,1);
+}
+
+.preview-panel.is-open{
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+  transform:translateY(-50%) scaleX(1);
+  clip-path:inset(0 0 0 0 round 26px);
+  transition:
+    opacity .18s ease,
+    visibility 0s,
+    transform .96s cubic-bezier(.16,.86,.22,1),
+    clip-path .96s cubic-bezier(.16,.86,.22,1);
+}
+
+.preview-panel .preview-head,
+.preview-panel .preview-grid,
+.preview-panel .preview-more-wrap{
+  opacity:0;
+  transform:translateX(28px);
+  transition:
+    opacity .36s ease,
+    transform .55s cubic-bezier(.16,.84,.24,1);
+}
+
+.preview-panel.is-open .preview-head,
+.preview-panel.is-open .preview-grid,
+.preview-panel.is-open .preview-more-wrap{
+  opacity:1;
+  transform:translateX(0);
+  transition-delay:.34s;
+}
+
+.preview-head{
+  position:relative;
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:24px;
+  padding-bottom:24px;
+  margin-bottom:24px;
+  border-bottom:1px solid rgba(255,255,255,.075);
+}
+
+.preview-heading{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.preview-heading .section-label{
+  margin:0;
+  color:#b1aaa0;
+  font-size:11px;
+  letter-spacing:.18em;
+}
+
+.preview-heading h2{
+  margin:0;
+  color:#f7f5f0;
+  font-size:clamp(30px,2.25vw,42px);
+  line-height:1;
+  letter-spacing:-.045em;
+}
+
+.preview-close{
+  flex:none;
+  padding:2px 0 8px 12px;
+  border:0;
+  background:transparent;
+  color:#a9a49b;
+  font-size:10px;
+  letter-spacing:.08em;
+  cursor:pointer;
+  transition:color .25s ease;
+}
+
+.preview-close span{
+  display:inline-block;
+  margin-left:8px;
+  font-size:24px;
+  line-height:.55;
+  vertical-align:-3px;
+  font-weight:300;
+}
+
+.preview-close:hover{color:#f2d79e}
+
+.preview-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:24px 20px;
+  align-content:start;
+  height:calc(100% - 145px);
+  padding-right:5px;
+  padding-bottom:74px;
+  overflow-y:auto;
+  overflow-x:hidden;
+  scrollbar-width:thin;
+  scrollbar-color:rgba(229,190,113,.25) transparent;
+}
+
+.preview-grid::-webkit-scrollbar{width:4px}
+.preview-grid::-webkit-scrollbar-thumb{
+  background:rgba(229,190,113,.22);
+  border-radius:10px;
+}
+
+.project-card{
+  display:block;
+  min-width:0;
+  color:#f5f2ec;
+  opacity:0;
+  transform:translateY(18px);
+  transition:
+    transform .6s cubic-bezier(.16,.84,.24,1),
+    opacity .5s ease;
+}
+
+.preview-panel.is-open .project-card{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.preview-panel.is-open .project-card:nth-child(1){transition-delay:.19s}
+.preview-panel.is-open .project-card:nth-child(2){transition-delay:.25s}
+.preview-panel.is-open .project-card:nth-child(3){transition-delay:.31s}
+.preview-panel.is-open .project-card:nth-child(4){transition-delay:.37s}
+
+.project-thumb{
+  position:relative;
+  width:100%;
+  aspect-ratio:16/10;
+  overflow:hidden;
+  margin-bottom:13px;
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:15px;
+  background:#121211;
+}
+
+.project-thumb::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(
+    to bottom,
+    rgba(255,255,255,.025),
+    transparent 24%,
+    rgba(0,0,0,.06)
+  );
+}
+
+.project-thumb img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:
+    transform .65s cubic-bezier(.16,.84,.24,1),
+    filter .45s ease;
+}
+
+.project-card:hover .project-thumb img{
+  transform:scale(1.035);
+  filter:brightness(1.05);
+}
+
+.project-card-index{
+  display:block;
+  margin:0 0 7px;
+  color:#6d6962;
+  font-size:9px;
+  letter-spacing:.16em;
+}
+
+.project-card h3{
+  margin:0 0 6px;
+  color:#f4f1eb;
+  font-size:15px;
+  line-height:1.2;
+  font-weight:600;
+}
+
+.project-card p{
+  margin:0;
+  color:#8e8981;
+  font-size:11px;
+  line-height:1.65;
+}
+
+.project-card-meta{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-top:9px;
+  padding-top:9px;
+  border-top:1px solid rgba(255,255,255,.055);
+  color:#77736c;
+  font-size:9px;
+  letter-spacing:.07em;
+}
+
+.project-card-meta b{
+  color:#bc9a5c;
+  font-weight:500;
+  white-space:nowrap;
+  transition:transform .25s ease,color .25s ease;
+}
+
+.project-card:hover .project-card-meta b{
+  color:#e6c783;
+  transform:translateX(3px);
+}
+
+.preview-more-wrap{
+  position:absolute;
+  left:36px;
+  right:36px;
+  bottom:22px;
+  height:52px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-top:1px solid rgba(255,255,255,.075);
+  background:linear-gradient(
+    to top,
+    rgba(7,7,7,.99) 62%,
+    rgba(7,7,7,.76) 82%,
+    transparent 100%
+  );
+}
+
+.preview-more-wrap .text-link{
+  color:#d9d4cb;
+  font-size:11px;
+  letter-spacing:.06em;
+  transition:color .25s ease;
+}
+
+.preview-more-wrap .text-link > span:last-child{
+  margin-left:10px;
+  color:#d5aa59;
+}
+
+.preview-count{
+  margin-left:6px!important;
+  color:#b99b62!important;
+}
+
+.preview-more-wrap .text-link:hover{color:#f0cd8d}
+
+/* =========================================================
+   OPEN STATE
+========================================================= */
+.hero.is-preview-open .record-stage{
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  transform:none;
+}
+
+.hero.is-preview-open .record-wrap,
+.hero.is-preview-open .category-orbit{
+  left:30.5%;
+  top:52%;
+}
+
+.hero.is-preview-open .record-wrap{
+  transform:translate(-50%,-50%) scale(.88);
+}
+
+.hero.is-preview-open .category-orbit{
+  transform:translate(-50%,-50%) scale(.88);
+  opacity:.62;
+}
+
+.hero.is-preview-open .record-stage::before{
+  left:30.5%;
+  top:58%;
+  opacity:.7;
+  transform:translate(-50%,-50%) scale(.94);
+}
+
+.hero.is-preview-open .record-stage::after{
+  left:30.5%;
+  top:52%;
+  transform:translate(-50%,-50%) scale(.88);
+}
+
+.hero.is-preview-open .hero-copy{
+  opacity:.10;
+  transform:translateY(-50%);
+  filter:blur(.35px);
+}
+
+.hero.is-preview-open .interaction-hint{
+  opacity:0;
+  visibility:hidden;
+  animation:none;
+}
+
+@media (min-width:1400px){
+  .hero.is-preview-open .record-wrap,
+  .hero.is-preview-open .category-orbit{
+    left:30%;
+  }
+
+  .preview-panel{
+    left:42.8%;
+    width:min(54vw,940px);
+  }
+}
+
+@media (max-width:1200px){
+  .hero-copy,
+  .interaction-hint{
+    left:5.5vw;
+  }
+
+  .interaction-hint{top:69%}
+
+  .record-wrap,
+  .category-orbit{
+    left:62%;
+    width:min(68vh,680px);
+  }
+
+  .hero.is-preview-open .record-wrap,
+  .hero.is-preview-open .category-orbit{
+    left:27%;
+    top:52%;
+  }
+
+  .preview-panel{
+    left:39%;
+    width:57vw;
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .record-wrap,
+  .category-orbit,
+  .preview-panel,
+  .hero-copy,
+  .record-stage::before,
+  .record-stage::after,
+  .depth-glow{
+    transition-duration:.01ms!important;
+    animation:none!important;
+  }
+
+  .depth-canvas{opacity:.72}
+}
+
+/* =========================================================
+   V3.0 — ENTRY / ONBOARDING / DEPTH DETAIL
+   기존 레코드·패널 구조는 유지하고 첫 진입과 사용법만 보강
+========================================================= */
+
+/* ---------- ENTRY SEQUENCE ---------- */
+.home-header,
+.social-rail,
+.depth-bg,
+.record-wrap,
+.category-orbit,
+.interaction-guide{
+  will-change:opacity,transform,filter;
+}
+
+.is-intro-loading .home-header{
+  opacity:0;
+  transform:translateY(-10px);
+}
+
+.is-intro-loading .depth-bg{
+  opacity:0;
+  transform:scale(1.035);
+}
+
+.is-intro-loading .record-wrap{
+  opacity:0;
+  transform:translate(-50%,-50%) scale(.82);
+  filter:blur(5px) brightness(.72);
+}
+
+.is-intro-loading .category-orbit{
+  opacity:0;
+}
+
+.is-intro-loading .hero-reveal{
+  opacity:0;
+  transform:translateY(25px);
+  filter:blur(3px);
+}
+
+.is-intro-loading .interaction-guide,
+.is-intro-loading .social-rail{
+  opacity:0;
+  transform:translateY(12px);
+}
+
+.home-page.is-intro-ready .home-header{
+  opacity:1;
+  transform:translateY(0);
+  transition:opacity .65s .15s ease,transform .8s .15s cubic-bezier(.16,.84,.24,1);
+}
+
+.home-page.is-intro-ready .depth-bg{
+  opacity:1;
+  transform:scale(1);
+  transition:opacity 1.25s ease,transform 2s cubic-bezier(.16,.84,.24,1);
+}
+
+.home-page.is-intro-ready .record-wrap{
+  opacity:1;
+  filter:blur(0) brightness(1);
+  transform:translate(-50%,-50%) scale(1);
+  transition:
+    opacity .82s .18s ease,
+    filter 1s .18s ease,
+    left 1.05s cubic-bezier(.16,.84,.2,1),
+    top 1.05s cubic-bezier(.16,.84,.2,1),
+    transform 1.5s .18s cubic-bezier(.13,.92,.18,1);
+}
+
+.home-page.is-intro-ready .hero-reveal{
+  opacity:1;
+  transform:translateY(0);
+  filter:blur(0);
+  transition:
+    opacity .65s ease,
+    transform .95s cubic-bezier(.16,.84,.24,1),
+    filter .8s ease;
+}
+
+.home-page.is-intro-ready .hero-reveal-1{transition-delay:.48s}
+.home-page.is-intro-ready .hero-reveal-2{transition-delay:.58s}
+.home-page.is-intro-ready .hero-reveal-3{transition-delay:.68s}
+.home-page.is-intro-ready .hero-reveal-4{transition-delay:.79s}
+
+.home-page.is-intro-ready .category-orbit{
+  opacity:1;
+  transition:
+    opacity .68s .86s ease,
+    left 1.05s cubic-bezier(.16,.84,.2,1),
+    top 1.05s cubic-bezier(.16,.84,.2,1),
+    transform 1.05s cubic-bezier(.16,.84,.2,1);
+}
+
+.home-page.is-intro-ready .interaction-guide{
+  opacity:1;
+  transform:translateY(0);
+  transition:opacity .62s 1.08s ease,transform .86s 1.08s cubic-bezier(.16,.84,.24,1);
+}
+
+.home-page.is-intro-ready .social-rail{
+  opacity:1;
+  transform:translateY(0);
+  transition:opacity .55s 1.2s ease,transform .8s 1.2s cubic-bezier(.16,.84,.24,1);
+}
+
+.intro-vignette{
+  position:absolute;
+  inset:0;
+  z-index:90;
+  pointer-events:none;
+  background:#020202;
+  opacity:1;
+  transition:opacity 1.35s cubic-bezier(.45,.05,.3,1);
+}
+
+.is-intro-ready .intro-vignette{
+  opacity:0;
+}
+
+.is-intro-complete .intro-vignette{
+  display:none;
+}
+
+/* ---------- RECORD LABEL READABILITY ---------- */
+.record-label{
+  width:31.5%;
+}
+
+.record-label-svg .label-arc{
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:2.35px;
+}
+
+.record-label-svg .label-arc-bottom{
+  font-size:12.25px;
+  letter-spacing:2.7px;
+}
+
+.record-label-svg .label-year{
+  font-size:13.5px;
+  font-weight:600;
+}
+
+.record-label-svg .label-hole-ring{
+  stroke:rgba(83,56,19,.28);
+  stroke-width:1.25;
+}
+
+/* ---------- LP SURFACE PASS ---------- */
+.record-wrap::before{
+  content:"";
+  position:absolute;
+  inset:-1.5%;
+  z-index:9;
+  border-radius:50%;
+  pointer-events:none;
+  opacity:0;
+  background:conic-gradient(
+    from 212deg,
+    transparent 0 22deg,
+    rgba(240,201,130,.0) 28deg,
+    rgba(240,201,130,.14) 38deg,
+    rgba(255,241,208,.035) 46deg,
+    transparent 61deg 360deg
+  );
+  filter:blur(4px);
+  transition:opacity .45s ease,transform .9s cubic-bezier(.16,.84,.24,1);
+}
+
+.record-wrap:hover::before{
+  opacity:.85;
+  transform:rotate(8deg);
+}
+
+.record-hover-cta{
+  position:absolute;
+  z-index:12;
+  left:50%;
+  top:72%;
+  display:flex;
+  align-items:center;
+  gap:9px;
+  padding:9px 12px;
+  border:1px solid rgba(232,199,134,.22);
+  border-radius:999px;
+  background:rgba(5,5,5,.62);
+  color:#e2c88f;
+  font-size:8px;
+  line-height:1;
+  letter-spacing:.12em;
+  white-space:nowrap;
+  opacity:0;
+  transform:translate(-50%,8px) scale(.96);
+  backdrop-filter:blur(9px);
+  -webkit-backdrop-filter:blur(9px);
+  pointer-events:none;
+  transition:opacity .28s ease,transform .45s cubic-bezier(.16,.84,.24,1);
+}
+
+.record-hover-cta b{
+  font-size:11px;
+  font-weight:400;
+}
+
+.record-wrap:hover .record-hover-cta{
+  opacity:1;
+  transform:translate(-50%,0) scale(1);
+}
+
+/* ---------- CATEGORY DETAILS ---------- */
+.category-btn{
+  display:grid;
+  grid-template-columns:23px auto;
+  grid-template-rows:auto auto;
+  column-gap:10px;
+  row-gap:2px;
+  min-width:205px;
+  padding:8px 0;
+}
+
+.category-btn::before{
+  grid-column:1;
+  grid-row:1 / 3;
+  align-self:center;
+  justify-self:center;
+  width:10px;
+  height:10px;
+}
+
+.category-btn .category-main{
+  grid-column:2;
+  grid-row:1;
+  display:flex;
+  align-items:baseline;
+  gap:9px;
+}
+
+.category-btn .category-no{
+  color:#55534e;
+  font-size:8px;
+  letter-spacing:.09em;
+  transition:color .3s ease;
+}
+
+.category-btn .category-name{
+  color:inherit;
+  font-size:11px;
+  white-space:nowrap;
+}
+
+.category-btn .category-state{
+  grid-column:2;
+  grid-row:2;
+  display:block;
+  height:10px;
+  color:#806f50;
+  font-size:7px;
+  letter-spacing:.18em;
+  opacity:0;
+  transform:translateY(-2px);
+  transition:opacity .3s ease,transform .3s ease;
+}
+
+.category-btn.is-active .category-no{
+  color:#bca16c;
+}
+
+.category-btn.is-active .category-state{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ---------- FIRST-VISIT SCROLL GUIDES ---------- */
+.record-scroll-guide{
+  position:absolute;
+  z-index:21;
+  top:52%;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  color:rgba(221,190,128,.47);
+  font-size:8px;
+  letter-spacing:.17em;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .7s ease,transform .8s cubic-bezier(.16,.84,.24,1);
+}
+
+.record-scroll-guide span{
+  color:rgba(233,203,143,.72);
+  font-size:14px;
+  line-height:1;
+}
+
+.record-scroll-guide-left{
+  left:43.5%;
+  transform:translate(-12px,-50%);
+}
+
+.record-scroll-guide-right{
+  left:75.1%;
+  transform:translate(12px,-50%);
+}
+
+.hero.show-scroll-guides .record-scroll-guide{
+  opacity:1;
+  transform:translate(0,-50%);
+}
+
+.hero.has-user-interacted .record-scroll-guide{
+  opacity:0;
+}
+
+/* ---------- HOW TO EXPLORE ---------- */
+.interaction-guide{
+  position:absolute;
+  z-index:30;
+  left:7.2vw;
+  top:68.1%;
+  width:min(390px,31vw);
+  pointer-events:none;
+}
+
+.guide-kicker{
+  display:block;
+  margin-bottom:13px;
+  color:#756f65;
+  font-size:8px;
+  letter-spacing:.20em;
+}
+
+.guide-actions{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+
+.guide-action{
+  display:grid;
+  grid-template-columns:20px 27px 1fr;
+  align-items:center;
+  gap:9px;
+  min-height:50px;
+  padding:10px 11px 10px 9px;
+  border-top:1px solid rgba(255,255,255,.10);
+  background:linear-gradient(90deg,rgba(255,255,255,.015),transparent 76%);
+}
+
+.guide-no{
+  align-self:start;
+  padding-top:2px;
+  color:#6c685f;
+  font-size:8px;
+  letter-spacing:.08em;
+}
+
+.guide-icon{
+  position:relative;
+  display:block;
+  width:27px;
+  height:27px;
+  border:1px solid rgba(209,176,113,.34);
+  border-radius:50%;
+}
+
+.guide-icon-scroll::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:5px;
+  width:9px;
+  height:15px;
+  border:1px solid rgba(225,199,148,.72);
+  border-radius:7px;
+  transform:translateX(-50%);
+}
+
+.guide-icon-scroll i{
+  position:absolute;
+  left:50%;
+  top:8px;
+  width:1px;
+  height:4px;
+  background:#e0bb77;
+  transform:translateX(-50%);
+  animation:guideWheel 1.45s ease-in-out infinite;
+}
+
+.guide-icon-click::before{
+  content:"";
+  position:absolute;
+  left:7px;
+  top:6px;
+  width:10px;
+  height:14px;
+  border:1px solid rgba(225,199,148,.70);
+  border-radius:8px 8px 6px 6px;
+  transform:rotate(-18deg);
+}
+
+.guide-icon-click i{
+  position:absolute;
+  right:3px;
+  top:3px;
+  width:7px;
+  height:7px;
+  border-top:1px solid #d5ae68;
+  border-right:1px solid #d5ae68;
+  opacity:.8;
+  animation:guideClick 1.8s ease-in-out infinite;
+}
+
+.guide-copy{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  min-width:0;
+}
+
+.guide-copy strong{
+  color:#d5d0c6;
+  font-size:8px;
+  font-weight:500;
+  letter-spacing:.08em;
+  white-space:nowrap;
+}
+
+.guide-copy small{
+  color:#716d66;
+  font-size:7px;
+  letter-spacing:.08em;
+  white-space:nowrap;
+}
+
+@keyframes guideWheel{
+  0%{opacity:.1;transform:translate(-50%,0)}
+  35%{opacity:1}
+  100%{opacity:0;transform:translate(-50%,5px)}
+}
+
+@keyframes guideClick{
+  0%,100%{opacity:.18;transform:translate(0,0)}
+  45%{opacity:.9;transform:translate(2px,-2px)}
+}
+
+.hero.is-preview-open .interaction-guide{
+  opacity:0!important;
+  visibility:hidden;
+  transition:opacity .25s ease,visibility .25s ease!important;
+}
+
+/* ---------- DEPTH CANVAS ---------- */
+.depth-canvas{
+  filter:saturate(.95) contrast(1.03);
+}
+
+/* 작은 화면 전까지 가이드와 카피 시작선 유지 */
+@media(max-width:1200px){
+  .interaction-guide{
+    left:5.5vw;
+    width:min(360px,35vw);
+    top:68.5%;
+  }
+
+  .record-scroll-guide-left{left:42%}
+  .record-scroll-guide-right{left:79%}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .is-intro-loading .home-header,
+  .is-intro-loading .depth-bg,
+  .is-intro-loading .record-wrap,
+  .is-intro-loading .category-orbit,
+  .is-intro-loading .hero-reveal,
+  .is-intro-loading .interaction-guide,
+  .is-intro-loading .social-rail{
+    opacity:1!important;
+    transform:none!important;
+    filter:none!important;
+  }
+
+  .intro-vignette{display:none!important}
+  .record-scroll-guide{display:none!important}
+  .guide-icon i{animation:none!important}
+}
+
+/* intro-ready specificity가 패널 open state를 덮지 않도록 최종 보정 */
+.home-page.is-intro-ready .hero.is-preview-open .record-wrap{
+  transform:translate(-50%,-50%) scale(.88);
+}
+
+.home-page.is-intro-ready .hero.is-preview-open .category-orbit{
+  opacity:.62;
+  transform:translate(-50%,-50%) scale(.88);
+}
+
+
+/* =========================================================
+   V4.0 — VINYL CUE INTRO + STRONGER ONBOARDING
+========================================================= */
+
+/* ---------- VINYL PRESS ENTRY ---------- */
+.is-intro-loading .record{
+  clip-path:circle(3.5% at 50% 50%);
+  filter:brightness(.68) contrast(1.05);
+}
+
+.home-page.is-intro-ready .record{
+  animation:vinylPressReveal 1.28s .08s cubic-bezier(.14,.86,.2,1) both;
+}
+
+@keyframes vinylPressReveal{
+  0%{clip-path:circle(3.5% at 50% 50%);filter:brightness(.68) contrast(1.05)}
+  34%{clip-path:circle(18% at 50% 50%);filter:brightness(.88) contrast(1.08)}
+  72%{clip-path:circle(49% at 50% 50%);filter:brightness(1.07) contrast(1.03)}
+  100%{clip-path:circle(51% at 50% 50%);filter:brightness(1) contrast(1)}
+}
+
+.record-intro-pulse,
+.record-intro-scan{
+  position:absolute;
+  z-index:10;
+  left:50%;
+  top:50%;
+  border-radius:50%;
+  pointer-events:none;
+}
+
+.record-intro-pulse{
+  width:22%;
+  aspect-ratio:1;
+  border:1px solid rgba(242,207,140,.72);
+  box-shadow:0 0 18px rgba(223,177,91,.16),inset 0 0 12px rgba(255,235,191,.05);
+  opacity:0;
+  transform:translate(-50%,-50%) scale(.28);
+}
+
+.home-page.is-intro-ready .record-intro-pulse{
+  animation:vinylPulseOut 1.12s .12s cubic-bezier(.16,.84,.24,1) both;
+}
+
+@keyframes vinylPulseOut{
+  0%{opacity:0;transform:translate(-50%,-50%) scale(.28)}
+  20%{opacity:.9}
+  72%{opacity:.34}
+  100%{opacity:0;transform:translate(-50%,-50%) scale(4.55)}
+}
+
+.record-intro-scan{
+  width:103%;
+  aspect-ratio:1;
+  opacity:0;
+  transform:translate(-50%,-50%) rotate(-112deg);
+  background:conic-gradient(from 0deg,transparent 0 318deg,rgba(218,169,81,0) 324deg,rgba(246,215,155,.22) 336deg,rgba(255,245,217,.72) 343deg,rgba(226,179,91,.12) 350deg,transparent 360deg);
+  -webkit-mask:radial-gradient(circle,transparent 0 15%,#000 24% 49.4%,transparent 50.4%);
+  mask:radial-gradient(circle,transparent 0 15%,#000 24% 49.4%,transparent 50.4%);
+  filter:blur(2px);
+  mix-blend-mode:screen;
+}
+
+.home-page.is-intro-ready .record-intro-scan{
+  animation:vinylSurfaceScan 1.48s .20s cubic-bezier(.35,.03,.24,1) both;
+}
+
+@keyframes vinylSurfaceScan{
+  0%{opacity:0;transform:translate(-50%,-50%) rotate(-112deg) scale(.96)}
+  13%{opacity:.82}
+  78%{opacity:.52}
+  100%{opacity:0;transform:translate(-50%,-50%) rotate(315deg) scale(1.015)}
+}
+
+/* 카피는 좌→우 track print 방식 */
+.is-intro-loading .hero-reveal{
+  opacity:0;
+  clip-path:inset(0 100% 0 0);
+  transform:translateX(-12px);
+  filter:none;
+}
+
+.home-page.is-intro-ready .hero-reveal{
+  opacity:1;
+  clip-path:inset(0 0 0 0);
+  transform:translateX(0);
+  filter:none;
+  transition:opacity .22s ease,clip-path .78s cubic-bezier(.2,.8,.2,1),transform .72s cubic-bezier(.16,.84,.24,1);
+}
+
+.home-page.is-intro-ready .hero-reveal-1{transition-delay:.56s}
+.home-page.is-intro-ready .hero-reveal-2{transition-delay:.66s}
+.home-page.is-intro-ready .hero-reveal-3{transition-delay:.77s}
+.home-page.is-intro-ready .hero-reveal-4{transition-delay:.91s}
+
+/* 카테고리 순차 점등 */
+.is-intro-loading .category-btn{
+  opacity:0;
+  translate:-18px 0;
+}
+
+.home-page.is-intro-ready .category-btn{
+  opacity:1;
+  translate:0 0;
+  transition:opacity .38s calc(.94s + (var(--intro-order) * .105s)) ease,translate .58s calc(.94s + (var(--intro-order) * .105s)) cubic-bezier(.16,.84,.24,1),color .3s ease;
+}
+
+/* ---------- RECORD LABEL READABILITY ---------- */
+.record-label{width:34%}
+
+.record-label::after{
+  content:"";
+  position:absolute;
+  inset:7.5%;
+  border:1px solid rgba(77,52,18,.10);
+  border-radius:50%;
+  pointer-events:none;
+}
+
+.record-label-svg .label-arc{
+  font-size:15.2px;
+  font-weight:700;
+  letter-spacing:1.35px;
+  paint-order:stroke fill;
+  stroke:rgba(24,20,14,.10);
+  stroke-width:.32px;
+  text-rendering:geometricPrecision;
+}
+
+.record-label-svg .label-arc-bottom{
+  font-size:14.35px;
+  letter-spacing:1.75px;
+}
+
+.record-label-svg .label-year{
+  font-size:15.4px;
+  font-weight:700;
+  paint-order:stroke fill;
+  stroke:rgba(24,20,14,.08);
+  stroke-width:.3px;
+}
+
+.record-label-svg .label-hole-ring{
+  stroke:rgba(83,56,19,.34);
+  stroke-width:1.45;
+}
+
+/* ---------- HOW TO EXPLORE ---------- */
+.interaction-guide{
+  left:7.2vw;
+  top:66.2%;
+  width:min(530px,38vw);
+  padding:0;
+}
+
+.guide-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  margin-bottom:8px;
+}
+
+.guide-kicker{
+  margin:0;
+  color:#b0a48f;
+  font-size:10px;
+  font-weight:500;
+  letter-spacing:.22em;
+}
+
+.guide-status{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  color:#766e60;
+  font-size:7.5px;
+  letter-spacing:.14em;
+}
+
+.guide-status i{
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:#d7b46e;
+  box-shadow:0 0 10px rgba(215,180,110,.42);
+  animation:guideStatusPulse 2s ease-in-out infinite;
+}
+
+@keyframes guideStatusPulse{
+  0%,100%{opacity:.35;transform:scale(.75)}
+  50%{opacity:1;transform:scale(1.12)}
+}
+
+.guide-description{
+  margin:0 0 13px;
+  color:#888279;
+  font-family:"Noto Sans KR",sans-serif;
+  font-size:10px;
+  line-height:1.6;
+  letter-spacing:-.01em;
+}
+
+.guide-actions{
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+
+.guide-action{
+  position:relative;
+  grid-template-columns:24px 42px 1fr;
+  gap:11px;
+  min-height:76px;
+  padding:14px 15px 14px 12px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.105);
+  border-radius:12px;
+  background:radial-gradient(circle at 18% 50%,rgba(214,171,94,.055),transparent 40%),linear-gradient(105deg,rgba(255,255,255,.027),rgba(255,255,255,.007));
+  box-shadow:inset 0 1px rgba(255,255,255,.025),0 10px 28px rgba(0,0,0,.12);
+}
+
+.guide-action::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  width:2px;
+  height:100%;
+  background:linear-gradient(to bottom,transparent,#d0a85f,transparent);
+  opacity:.52;
+}
+
+.guide-action::after{
+  content:"";
+  position:absolute;
+  left:-35%;
+  bottom:0;
+  width:34%;
+  height:1px;
+  background:linear-gradient(90deg,transparent,#e0be78,transparent);
+  opacity:0;
+}
+
+.home-page.is-intro-ready .guide-action:first-child::after{animation:guidePowerSweep 1.15s 1.48s ease both}
+.home-page.is-intro-ready .guide-action:nth-child(2)::after{animation:guidePowerSweep 1.15s 1.70s ease both}
+
+@keyframes guidePowerSweep{
+  0%{left:-35%;opacity:0}
+  18%{opacity:.9}
+  100%{left:105%;opacity:0}
+}
+
+.guide-no{
+  padding-top:3px;
+  color:#7d766a;
+  font-size:9px;
+  font-weight:500;
+}
+
+.guide-icon{
+  width:42px;
+  height:42px;
+  border-color:rgba(213,177,109,.52);
+  background:rgba(209,169,96,.025);
+  box-shadow:0 0 0 4px rgba(215,176,101,.018),inset 0 0 16px rgba(220,178,99,.025);
+}
+
+.guide-icon-scroll::before{
+  top:7px;
+  width:13px;
+  height:23px;
+  border-color:rgba(232,204,151,.86);
+  border-radius:9px;
+}
+
+.guide-icon-scroll i{
+  top:11px;
+  width:2px;
+  height:6px;
+  box-shadow:0 0 6px rgba(224,187,119,.3);
+}
+
+.guide-icon-click::before{
+  left:11px;
+  top:9px;
+  width:13px;
+  height:21px;
+  border-color:rgba(232,204,151,.84);
+  border-radius:9px 9px 7px 7px;
+}
+
+.guide-icon-click i{
+  right:5px;
+  top:6px;
+  width:10px;
+  height:10px;
+}
+
+.guide-copy{gap:5px}
+
+.guide-copy strong{
+  color:#eee8dc;
+  font-size:10.5px;
+  font-weight:600;
+  line-height:1.15;
+  letter-spacing:.06em;
+}
+
+.guide-copy small{
+  color:#aaa298;
+  font-family:"Noto Sans KR",sans-serif;
+  font-size:9px;
+  line-height:1.35;
+  letter-spacing:-.01em;
+}
+
+.home-page.is-intro-ready .interaction-guide{
+  transition:opacity .45s 1.23s ease,transform .7s 1.23s cubic-bezier(.16,.84,.24,1);
+}
+
+.home-page.is-intro-ready .guide-action{
+  animation:guidePanelWake .78s both cubic-bezier(.16,.84,.24,1);
+}
+.home-page.is-intro-ready .guide-action:first-child{animation-delay:1.30s}
+.home-page.is-intro-ready .guide-action:nth-child(2){animation-delay:1.43s}
+
+@keyframes guidePanelWake{
+  0%{opacity:0;transform:translateY(10px);filter:brightness(.7)}
+  65%{opacity:1;transform:translateY(-1px);filter:brightness(1.13)}
+  100%{opacity:1;transform:translateY(0);filter:brightness(1)}
+}
+
+.depth-canvas{filter:saturate(1.02) contrast(1.055) brightness(1.03)}
+
+@media(max-width:1200px){
+  .interaction-guide{
+    left:5.5vw;
+    top:66.8%;
+    width:min(480px,42vw);
+  }
+  .guide-action{
+    grid-template-columns:20px 38px 1fr;
+    gap:9px;
+    min-height:70px;
+    padding:12px 11px;
+  }
+  .guide-icon{width:38px;height:38px}
+}
+
+@media(max-width:900px){
+  .interaction-guide{
+    left:6vw;
+    top:auto;
+    bottom:25px;
+    width:min(520px,88vw);
+  }
+  .guide-description{display:none}
+  .guide-kicker{font-size:9px}
+  .guide-actions{gap:8px}
+}
+
+@media(max-width:640px){
+  .interaction-guide{
+    left:18px;
+    right:18px;
+    bottom:18px;
+    width:auto;
+  }
+  .guide-head{margin-bottom:7px}
+  .guide-status{display:none}
+  .guide-action{
+    grid-template-columns:18px 34px 1fr;
+    gap:7px;
+    min-height:62px;
+    padding:10px 9px;
+    border-radius:10px;
+  }
+  .guide-icon{width:34px;height:34px}
+  .guide-icon-scroll::before{top:6px;width:11px;height:19px}
+  .guide-icon-click::before{left:9px;top:7px;width:11px;height:18px}
+  .guide-copy strong{font-size:9px}
+  .guide-copy small{font-size:8px}
+  .guide-no{font-size:8px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .record-intro-pulse,.record-intro-scan{display:none!important}
+  .record{clip-path:none!important;animation:none!important;filter:none!important}
+  .hero-reveal{clip-path:none!important}
+  .guide-action,.guide-action::after,.guide-status i{animation:none!important}
+}
+
+
+/* =========================================================
+   V5.0 — SMOOTHER VINYL ENTRY + CURSOR-BASED REFLECTION
+   - intro의 clip-path / blur 병목 제거
+   - 개별 transform 대신 compositor-friendly scale / opacity 사용
+   - 레코드 hover 반사광이 실제 커서 위치를 부드럽게 추적
+========================================================= */
+
+/* ---------------------------------------------------------
+   01. INTRO PERFORMANCE / FLOW
+--------------------------------------------------------- */
+
+/* 무거운 초기 clip-path + filter 조합을 제거 */
+.is-intro-loading .record{
+  clip-path:none!important;
+  filter:none!important;
+  opacity:0!important;
+  scale:.64;
+  transform-origin:50% 50%;
+  will-change:scale,opacity,transform;
+  backface-visibility:hidden;
+}
+
+.home-page.is-intro-ready .record{
+  clip-path:none!important;
+  filter:none!important;
+  animation:vinylPressRevealSmooth 1.52s .045s cubic-bezier(.16,.96,.22,1) both!important;
+}
+
+@keyframes vinylPressRevealSmooth{
+  0%{
+    opacity:0;
+    scale:.64;
+  }
+  18%{
+    opacity:.48;
+    scale:.72;
+  }
+  48%{
+    opacity:1;
+    scale:.93;
+  }
+  76%{
+    opacity:1;
+    scale:1.014;
+  }
+  100%{
+    opacity:1;
+    scale:1;
+  }
+}
+
+/* wrap 자체는 blur 없이 아주 약한 scale만 사용 */
+.is-intro-loading .record-wrap{
+  opacity:0!important;
+  filter:none!important;
+  transform:translate(-50%,-50%) scale(.94)!important;
+}
+
+.home-page.is-intro-ready .record-wrap{
+  opacity:1!important;
+  filter:none!important;
+  transform:translate(-50%,-50%) scale(1)!important;
+  transition:
+    opacity .72s .03s cubic-bezier(.22,.7,.24,1),
+    left 1.05s cubic-bezier(.16,.84,.2,1),
+    top 1.05s cubic-bezier(.16,.84,.2,1),
+    transform 1.32s .03s cubic-bezier(.16,.96,.22,1)!important;
+}
+
+/* 라벨이 원판 안쪽에서 뒤늦게 '잠기는' 느낌 */
+.is-intro-loading .record-label{
+  opacity:0;
+  scale:.70;
+}
+
+.home-page.is-intro-ready .record-label{
+  animation:recordLabelLock 1.10s .33s cubic-bezier(.16,.94,.24,1) both;
+  will-change:scale,opacity;
+}
+
+@keyframes recordLabelLock{
+  0%{
+    opacity:0;
+    scale:.70;
+  }
+  48%{
+    opacity:.78;
+    scale:.94;
+  }
+  76%{
+    opacity:1;
+    scale:1.025;
+  }
+  100%{
+    opacity:1;
+    scale:1;
+  }
+}
+
+/* 중심 펄스도 조금 더 길게 겹쳐져 움직임이 끊겨 보이지 않게 */
+.home-page.is-intro-ready .record-intro-pulse{
+  animation:vinylPulseOutSmooth 1.48s .08s cubic-bezier(.18,.78,.22,1) both!important;
+}
+
+@keyframes vinylPulseOutSmooth{
+  0%{
+    opacity:0;
+    transform:translate(-50%,-50%) scale(.24);
+  }
+  13%{
+    opacity:.78;
+  }
+  48%{
+    opacity:.55;
+  }
+  82%{
+    opacity:.18;
+  }
+  100%{
+    opacity:0;
+    transform:translate(-50%,-50%) scale(4.7);
+  }
+}
+
+/* 표면 scan도 처음/끝 감속을 완만하게 */
+.home-page.is-intro-ready .record-intro-scan{
+  animation:vinylSurfaceScanSmooth 1.78s .16s cubic-bezier(.22,.58,.18,1) both!important;
+  will-change:transform,opacity;
+  backface-visibility:hidden;
+}
+
+@keyframes vinylSurfaceScanSmooth{
+  0%{
+    opacity:0;
+    transform:translate(-50%,-50%) rotate(-108deg) scale(.985);
+  }
+  14%{
+    opacity:.54;
+  }
+  38%{
+    opacity:.82;
+  }
+  75%{
+    opacity:.38;
+  }
+  100%{
+    opacity:0;
+    transform:translate(-50%,-50%) rotate(292deg) scale(1.012);
+  }
+}
+
+/* 카피 reveal이 서로 더 많이 겹치게 해서 '한 칸씩 툭툭' 느낌 제거 */
+.home-page.is-intro-ready .hero-reveal{
+  transition:
+    opacity .56s cubic-bezier(.22,.7,.24,1),
+    clip-path .98s cubic-bezier(.16,.9,.22,1),
+    transform .94s cubic-bezier(.16,.9,.22,1)!important;
+}
+
+.home-page.is-intro-ready .hero-reveal-1{transition-delay:.43s!important}
+.home-page.is-intro-ready .hero-reveal-2{transition-delay:.50s!important}
+.home-page.is-intro-ready .hero-reveal-3{transition-delay:.57s!important}
+.home-page.is-intro-ready .hero-reveal-4{transition-delay:.66s!important}
+
+/* 카테고리도 촘촘하게 연결 */
+.home-page.is-intro-ready .category-btn{
+  transition:
+    opacity .62s calc(.72s + (var(--intro-order) * .075s)) cubic-bezier(.22,.7,.24,1),
+    translate .82s calc(.72s + (var(--intro-order) * .075s)) cubic-bezier(.16,.9,.22,1),
+    color .3s ease!important;
+}
+
+/* header / guide도 앞 단계와 자연스럽게 overlap */
+.home-page.is-intro-ready .home-header{
+  transition:
+    opacity .82s .10s cubic-bezier(.22,.7,.24,1),
+    transform 1s .10s cubic-bezier(.16,.9,.22,1)!important;
+}
+
+.home-page.is-intro-ready .depth-bg{
+  transition:
+    opacity 1.55s cubic-bezier(.22,.7,.24,1),
+    transform 2.3s cubic-bezier(.16,.9,.22,1)!important;
+}
+
+.home-page.is-intro-ready .interaction-guide{
+  transition:
+    opacity .85s 1.03s cubic-bezier(.22,.7,.24,1),
+    transform 1.05s 1.03s cubic-bezier(.16,.9,.22,1)!important;
+}
+
+.home-page.is-intro-ready .social-rail{
+  transition:
+    opacity .72s 1.12s cubic-bezier(.22,.7,.24,1),
+    transform .95s 1.12s cubic-bezier(.16,.9,.22,1)!important;
+}
+
+/* 암전도 너무 빨리 벗겨지지 않고 레코드 reveal과 섞이게 */
+.intro-vignette{
+  transition:opacity 1.70s cubic-bezier(.24,.58,.22,1)!important;
+}
+
+/* ---------------------------------------------------------
+   02. POINTER-POSITION VINYL LIGHT
+--------------------------------------------------------- */
+
+.record-wrap{
+  --hover-x:50%;
+  --hover-y:50%;
+  --hover-strength:0;
+}
+
+/*
+  기존 고정 conic light를 폐기.
+  radial hotspot + 넓은 secondary reflection을 커서 좌표에 고정.
+*/
+.record-wrap::before{
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
+  z-index:9!important;
+  border-radius:50%!important;
+  pointer-events:none!important;
+
+  opacity:var(--hover-strength)!important;
+  transform:none!important;
+
+  background:
+    radial-gradient(
+      circle at var(--hover-x) var(--hover-y),
+      rgba(255,250,230,.34) 0%,
+      rgba(244,210,148,.22) 5%,
+      rgba(223,170,82,.115) 12%,
+      rgba(208,145,55,.050) 21%,
+      rgba(169,104,29,.018) 31%,
+      transparent 43%
+    ),
+    radial-gradient(
+      ellipse 44% 22% at var(--hover-x) var(--hover-y),
+      rgba(255,239,204,.11) 0%,
+      rgba(218,167,83,.045) 42%,
+      transparent 76%
+    )!important;
+
+  filter:blur(1.3px)!important;
+  mix-blend-mode:screen;
+  transition:opacity .20s ease!important;
+  will-change:opacity;
+}
+
+/* :hover가 고정 위치 효과를 다시 덮지 않도록 완전 무효화 */
+.record-wrap:hover::before{
+  transform:none!important;
+  opacity:var(--hover-strength)!important;
+}
+
+/* LP 안쪽에도 조금 더 좁은 반사광을 하나 겹쳐 표면 질감 강조 */
+.record-wrap .record{
+  --surface-x:50%;
+  --surface-y:50%;
+}
+
+/* 기존 ::after의 고정 광택은 유지하되 강도를 낮춤 */
+.record::after{
+  opacity:.42!important;
+}
+
+/* 실제 포인터 광원은 별도 overlay로 사용 */
+.record-pointer-light{
+  position:absolute;
+  inset:1.5%;
+  z-index:7;
+  border-radius:50%;
+  pointer-events:none;
+  opacity:var(--hover-strength,0);
+  background:
+    radial-gradient(
+      circle at var(--hover-x,50%) var(--hover-y,50%),
+      rgba(255,255,245,.25) 0%,
+      rgba(241,207,145,.145) 6%,
+      rgba(214,157,67,.058) 17%,
+      transparent 34%
+    );
+  mix-blend-mode:screen;
+  filter:blur(.8px);
+  transition:opacity .18s ease;
+  will-change:opacity;
+}
+
+/* hover CTA도 커서 조명과 같이 조금 더 자연스럽게 */
+.record-hover-cta{
+  transition:
+    opacity .34s ease,
+    transform .58s cubic-bezier(.16,.9,.22,1)!important;
+}
+
+/* 패널이 열린 동안 hover 조명 제거 */
+.hero.is-preview-open .record-wrap{
+  --hover-strength:0!important;
+}
+
+/* ---------------------------------------------------------
+   03. COMPOSITOR HINTS
+--------------------------------------------------------- */
+.record,
+.record-label,
+.record-intro-pulse,
+.record-intro-scan,
+.hero-reveal,
+.category-btn{
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
+}
+
+@media(prefers-reduced-motion:reduce){
+  .record-pointer-light{display:none!important}
+}
+
+
+/* =========================================================
+   V6.0 — FIXED EDITORIAL LABEL / TRUE POINTER LIGHT /
+          DIRECTIONAL VINYL ROTATION
+========================================================= */
+
+/* ---------------------------------------------------------
+   A. OLD CURVED LABEL DISABLED
+--------------------------------------------------------- */
+.record-label{
+  display:none!important;
+}
+
+/* ---------------------------------------------------------
+   B. NEW FIXED CENTER LABEL
+   레코드 본체(.record)만 회전하고 이 라벨은 고정.
+--------------------------------------------------------- */
+.record-ui-label{
+  position:absolute;
+  z-index:11;
+  left:50%;
+  top:50%;
+  width:30.5%;
+  aspect-ratio:1;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  overflow:hidden;
+  pointer-events:none;
+
+  color:#171511;
+  background:
+    linear-gradient(145deg,
+      rgba(239,222,179,.985) 0%,
+      rgba(229,204,150,.985) 100%);
+
+  border:1px solid rgba(64,48,23,.52);
+
+  box-shadow:
+    0 0 0 6px rgba(0,0,0,.88),
+    0 0 0 7px rgba(255,255,255,.025),
+    0 10px 30px rgba(0,0,0,.48),
+    inset 0 1px 0 rgba(255,255,255,.32),
+    inset 0 -16px 26px rgba(110,74,24,.045);
+
+  padding:13.2% 12.2% 11.8%;
+
+  display:grid;
+  grid-template-rows:auto 1fr auto;
+
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
+}
+
+/* 얇은 에디토리얼 그리드 */
+.record-ui-label::before,
+.record-ui-label::after{
+  content:"";
+  position:absolute;
+  pointer-events:none;
+  opacity:.30;
+}
+
+.record-ui-label::before{
+  left:12%;
+  right:12%;
+  top:31%;
+  height:1px;
+  background:rgba(40,34,24,.42);
+}
+
+.record-ui-label::after{
+  left:50%;
+  top:12%;
+  bottom:12%;
+  width:1px;
+  background:linear-gradient(
+    to bottom,
+    transparent 0 23%,
+    rgba(40,34,24,.31) 23% 77%,
+    transparent 77% 100%
+  );
+}
+
+/* 상단 */
+.record-ui-top{
+  position:relative;
+  z-index:2;
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.record-ui-name{
+  max-width:56%;
+  font-size:clamp(7px,.62vw,10px);
+  font-weight:700;
+  line-height:1.15;
+  letter-spacing:.11em;
+  white-space:nowrap;
+}
+
+.record-ui-edition{
+  max-width:39%;
+  color:rgba(23,21,17,.60);
+  font-size:clamp(5px,.43vw,7px);
+  line-height:1.35;
+  letter-spacing:.08em;
+  text-align:right;
+}
+
+/* 중앙 index + spindle */
+.record-ui-center{
+  position:relative;
+  z-index:3;
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+}
+
+.record-ui-index{
+  position:relative;
+  z-index:3;
+  margin-left:1%;
+  font-size:clamp(24px,2.35vw,39px);
+  font-weight:500;
+  line-height:.85;
+  letter-spacing:-.075em;
+  font-variant-numeric:tabular-nums;
+}
+
+.record-ui-hole{
+  position:absolute;
+  z-index:5;
+  left:50%;
+  top:50%;
+  width:15.5%;
+  aspect-ratio:1;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+
+  background:
+    radial-gradient(circle,
+      #070707 0 35%,
+      rgba(126,91,39,.26) 37% 53%,
+      rgba(246,229,188,.74) 55% 69%,
+      rgba(75,54,25,.25) 71% 73%,
+      transparent 75%);
+
+  box-shadow:
+    0 0 0 1px rgba(67,48,21,.30),
+    0 2px 4px rgba(0,0,0,.16);
+}
+
+.record-ui-hole i{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:34%;
+  aspect-ratio:1;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  background:#050505;
+}
+
+/* 하단 */
+.record-ui-bottom{
+  position:relative;
+  z-index:4;
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.record-ui-bottom > div{
+  min-width:0;
+}
+
+.record-ui-bottom small{
+  display:block;
+  margin-bottom:4px;
+  color:rgba(23,21,17,.54);
+  font-size:clamp(4.5px,.42vw,6.5px);
+  line-height:1;
+  letter-spacing:.13em;
+}
+
+.record-ui-bottom strong{
+  display:block;
+  max-width:115px;
+  overflow:hidden;
+  color:#15130f;
+  font-size:clamp(7px,.70vw,11px);
+  font-weight:700;
+  line-height:1.06;
+  letter-spacing:-.015em;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+.record-ui-mark{
+  color:rgba(23,21,17,.52);
+  font-size:clamp(4.5px,.42vw,6.5px);
+  line-height:1.34;
+  letter-spacing:.10em;
+  text-align:right;
+}
+
+/* 카테고리 교체 시 라벨이 살짝 '재인쇄'되는 효과 */
+.record-ui-label.is-changing .record-ui-index,
+.record-ui-label.is-changing .record-ui-bottom strong{
+  animation:recordUiSwap .40s cubic-bezier(.22,.75,.25,1);
+}
+
+@keyframes recordUiSwap{
+  0%{
+    opacity:.18;
+    translate:0 6px;
+  }
+  55%{
+    opacity:1;
+  }
+  100%{
+    opacity:1;
+    translate:0 0;
+  }
+}
+
+/* intro에서도 중앙 라벨이 레코드보다 조금 늦게 안정적으로 들어옴 */
+.is-intro-loading .record-ui-label{
+  opacity:0;
+  scale:.78;
+}
+
+.home-page.is-intro-ready .record-ui-label{
+  animation:recordUiIntro 1.05s .30s cubic-bezier(.16,.94,.24,1) both;
+}
+
+@keyframes recordUiIntro{
+  0%{
+    opacity:0;
+    scale:.78;
+  }
+  52%{
+    opacity:.92;
+    scale:.975;
+  }
+  78%{
+    opacity:1;
+    scale:1.015;
+  }
+  100%{
+    opacity:1;
+    scale:1;
+  }
+}
+
+/* ---------------------------------------------------------
+   C. POINTER LIGHT — 실제 커서 위치
+--------------------------------------------------------- */
+
+/*
+  기존 record-wrap::before는 입구 스캔/기존 효과와 충돌 가능성이 있어
+  pointer light 전용 DOM 레이어 하나만 사용.
+*/
+.record-wrap::before{
+  opacity:0!important;
+  background:none!important;
+  filter:none!important;
+}
+
+.record-pointer-light{
+  position:absolute!important;
+  inset:0!important;
+  z-index:10!important;
+  border-radius:50%!important;
+  overflow:hidden!important;
+  pointer-events:none!important;
+
+  opacity:var(--hover-strength,0)!important;
+
+  background:
+    radial-gradient(
+      circle at var(--hover-x,50%) var(--hover-y,50%),
+      rgba(255,255,250,.66) 0%,
+      rgba(255,238,198,.40) 4.5%,
+      rgba(238,193,118,.22) 10%,
+      rgba(220,158,72,.105) 18%,
+      rgba(185,115,34,.038) 28%,
+      transparent 42%
+    ),
+    radial-gradient(
+      ellipse 34% 13% at var(--hover-x,50%) var(--hover-y,50%),
+      rgba(255,247,221,.22) 0%,
+      rgba(225,177,96,.09) 42%,
+      transparent 76%
+    )!important;
+
+  mix-blend-mode:screen!important;
+  filter:blur(.35px)!important;
+
+  transition:opacity .14s linear!important;
+  will-change:opacity;
+}
+
+/* 표면의 홈이 조명 아래에서 같이 드러나도록 얇은 specular streak */
+.record-pointer-light::after{
+  content:"";
+  position:absolute;
+  inset:-18%;
+  border-radius:50%;
+  opacity:var(--hover-strength,0);
+
+  background:linear-gradient(
+    118deg,
+    transparent 0 43%,
+    rgba(255,247,223,.035) 47%,
+    rgba(255,233,190,.20) 50%,
+    rgba(255,247,223,.04) 53%,
+    transparent 57% 100%
+  );
+
+  transform:rotate(-8deg);
+
+  filter:blur(2.2px);
+}
+
+/* 중앙 라벨은 반사광에 묻지 않게 */
+.record-ui-label{
+  z-index:12;
+}
+
+/* ---------------------------------------------------------
+   D. HOVER CTA
+--------------------------------------------------------- */
+.record-hover-cta{
+  z-index:14!important;
+}
+
+/* ---------------------------------------------------------
+   E. RESPONSIVE CENTER LABEL
+--------------------------------------------------------- */
+@media(max-width:1200px){
+  .record-ui-label{
+    width:31%;
+  }
+}
+
+@media(max-width:640px){
+  .record-ui-label{
+    width:34%;
+    padding:13% 11% 11%;
+  }
+
+  .record-ui-edition,
+  .record-ui-mark{
+    display:none;
+  }
+
+  .record-ui-name{
+    max-width:100%;
+    font-size:7px;
+  }
+
+  .record-ui-index{
+    font-size:23px;
+  }
+
+  .record-ui-bottom strong{
+    max-width:72px;
+    font-size:7px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .record-ui-label,
+  .record-ui-index,
+  .record-ui-bottom strong{
+    animation:none!important;
+  }
+}
+
+
+/* =========================================================
+   V7.0 — REAL VINYL LABEL + BALANCED SOFT REFLECTION
+========================================================= */
+
+/* =========================================================
+   01. v6 fixed editorial label completely disabled
+========================================================= */
+.record-ui-label{
+  display:none!important;
+}
+
+/* =========================================================
+   02. PHYSICAL VINYL PAPER LABEL
+   .vinyl-paper-label is INSIDE .record,
+   therefore it naturally rotates with the vinyl.
+========================================================= */
+.vinyl-paper-label{
+  position:absolute;
+  z-index:6;
+  left:50%;
+  top:50%;
+  width:29.5%;
+  aspect-ratio:1;
+  transform:translate(-50%,-50%);
+  overflow:hidden;
+  border-radius:50%;
+  padding:10.6% 10.8% 9.7%;
+
+  color:#1a1814;
+
+  background:
+    /* subtle paper fiber / print texture */
+    repeating-linear-gradient(
+      9deg,
+      rgba(82,62,32,.010) 0 1px,
+      transparent 1px 4px
+    ),
+    radial-gradient(
+      circle at 38% 28%,
+      rgba(255,248,220,.98) 0%,
+      rgba(239,218,170,.99) 56%,
+      rgba(224,195,137,.99) 100%
+    );
+
+  border:1px solid rgba(72,52,23,.42);
+
+  box-shadow:
+    0 0 0 5px rgba(0,0,0,.88),
+    0 0 0 7px rgba(255,255,255,.016),
+    0 4px 18px rgba(0,0,0,.50),
+    inset 0 0 0 1px rgba(255,255,255,.18),
+    inset 0 -14px 28px rgba(91,61,22,.045);
+
+  font-family:Inter,"Noto Sans KR",sans-serif;
+}
+
+/* label press rings — actual vinyl label feel */
+.vinyl-paper-label::before{
+  content:"";
+  position:absolute;
+  inset:7.3%;
+  border-radius:50%;
+  border:1px solid rgba(70,51,24,.12);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.08),
+    inset 0 0 18px rgba(111,78,31,.025);
+  pointer-events:none;
+}
+
+.vinyl-paper-label::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:56%;
+  aspect-ratio:1;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  border:1px solid rgba(66,48,22,.075);
+  pointer-events:none;
+}
+
+/* ---------------------------------------------------------
+   LABEL TYPOGRAPHY
+--------------------------------------------------------- */
+.vinyl-label-head{
+  position:relative;
+  z-index:3;
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:8px;
+}
+
+.vinyl-label-brand{
+  font-size:clamp(5px,.50vw,8px);
+  font-weight:700;
+  line-height:1;
+  letter-spacing:.14em;
+}
+
+.vinyl-label-catalog{
+  color:rgba(26,24,20,.54);
+  font-size:clamp(4px,.37vw,6px);
+  line-height:1;
+  letter-spacing:.08em;
+  white-space:nowrap;
+}
+
+.vinyl-label-rule{
+  position:relative;
+  z-index:3;
+  width:100%;
+  height:1px;
+  margin:8.5% 0 5.4%;
+  background:rgba(49,41,28,.24);
+}
+
+.vinyl-label-rule-bottom{
+  margin:5.5% 0 5.5%;
+  background:rgba(49,41,28,.18);
+}
+
+.vinyl-label-meta{
+  position:relative;
+  z-index:3;
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:4px;
+  color:rgba(26,24,20,.61);
+  font-size:clamp(3.7px,.35vw,5.7px);
+  line-height:1;
+  letter-spacing:.09em;
+}
+
+.vinyl-label-meta span:nth-child(2){text-align:center}
+.vinyl-label-meta span:nth-child(3){text-align:right}
+
+.vinyl-label-core{
+  position:relative;
+  z-index:4;
+  min-height:39%;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:10px;
+}
+
+.vinyl-track{
+  align-self:center;
+  justify-self:start;
+}
+
+.vinyl-track small,
+.vinyl-series small{
+  display:block;
+  margin-bottom:2px;
+  color:rgba(26,24,20,.46);
+  font-size:clamp(3.8px,.36vw,5.8px);
+  line-height:1;
+  letter-spacing:.13em;
+}
+
+.vinyl-track strong{
+  display:block;
+  font-size:clamp(17px,1.75vw,29px);
+  font-weight:500;
+  line-height:.82;
+  letter-spacing:-.07em;
+  font-variant-numeric:tabular-nums;
+}
+
+.vinyl-series{
+  align-self:center;
+  justify-self:end;
+  text-align:right;
+}
+
+.vinyl-series b{
+  display:block;
+  font-size:clamp(5px,.48vw,7.7px);
+  font-weight:600;
+  line-height:1;
+  letter-spacing:.06em;
+}
+
+/* spindle hole */
+.vinyl-spindle{
+  position:absolute;
+  z-index:8;
+  left:50%;
+  top:50%;
+  width:15.5%;
+  aspect-ratio:1;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      #050505 0 31%,
+      rgba(94,67,31,.28) 33% 48%,
+      rgba(244,224,178,.92) 50% 66%,
+      rgba(63,46,23,.24) 68% 71%,
+      transparent 73%
+    );
+
+  box-shadow:
+    0 0 0 1px rgba(72,52,24,.26),
+    0 2px 5px rgba(0,0,0,.18);
+}
+
+.vinyl-spindle i{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:31%;
+  aspect-ratio:1;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  background:#030303;
+}
+
+.vinyl-label-foot{
+  position:relative;
+  z-index:3;
+  text-align:center;
+}
+
+.vinyl-label-name{
+  display:block;
+  margin-bottom:3px;
+  color:rgba(26,24,20,.54);
+  font-size:clamp(3.8px,.36vw,5.8px);
+  line-height:1;
+  letter-spacing:.15em;
+}
+
+.vinyl-label-foot strong{
+  display:block;
+  overflow:hidden;
+  max-width:100%;
+  color:#171510;
+  font-size:clamp(6.4px,.66vw,10.5px);
+  font-weight:700;
+  line-height:1.04;
+  letter-spacing:-.018em;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
+
+.vinyl-label-foot small{
+  display:block;
+  margin-top:3px;
+  color:rgba(26,24,20,.44);
+  font-size:clamp(3.2px,.30vw,4.8px);
+  line-height:1;
+  letter-spacing:.07em;
+  white-space:nowrap;
+}
+
+/* Dynamic change: brief ink pulse, not UI slide */
+.vinyl-paper-label.is-changing .vinyl-track strong,
+.vinyl-paper-label.is-changing .vinyl-label-foot strong{
+  animation:vinylInkChange .42s ease both;
+}
+
+@keyframes vinylInkChange{
+  0%{opacity:.25}
+  48%{opacity:1}
+  100%{opacity:1}
+}
+
+/* intro — because label is inside the spinning vinyl,
+   do not give it a separate UI-like scale animation */
+.is-intro-loading .vinyl-paper-label{
+  opacity:0;
+}
+
+.home-page.is-intro-ready .vinyl-paper-label{
+  animation:vinylPaperReveal .92s .28s ease both;
+}
+
+@keyframes vinylPaperReveal{
+  from{opacity:0}
+  to{opacity:1}
+}
+
+/* =========================================================
+   03. BALANCED POINTER REFLECTION
+   no fixed beam / no one-direction streak
+========================================================= */
+
+/* v6 spotlight/streak completely removed */
+.record-pointer-light::after{
+  display:none!important;
+  content:none!important;
+}
+
+/*
+  Main light + faint opposite bounce.
+  Much lower contrast than v6.
+*/
+.record-pointer-light{
+  position:absolute!important;
+  inset:0!important;
+  z-index:10!important;
+  overflow:hidden!important;
+  border-radius:50%!important;
+  pointer-events:none!important;
+
+  opacity:var(--hover-strength,0)!important;
+
+  background:
+    /* primary, soft local reflection */
+    radial-gradient(
+      circle at var(--hover-x,50%) var(--hover-y,50%),
+      rgba(255,252,239,.22) 0%,
+      rgba(246,222,177,.135) 5.5%,
+      rgba(224,181,111,.070) 12%,
+      rgba(190,133,57,.025) 22%,
+      transparent 36%
+    ),
+
+    /* opposite-side reflected light */
+    radial-gradient(
+      circle at var(--hover-mirror-x,50%) var(--hover-mirror-y,50%),
+      rgba(247,225,182,.075) 0%,
+      rgba(208,158,82,.035) 10%,
+      transparent 30%
+    ),
+
+    /* very broad ambient bloom around cursor */
+    radial-gradient(
+      ellipse 48% 34% at var(--hover-x,50%) var(--hover-y,50%),
+      rgba(238,202,139,.028) 0%,
+      transparent 74%
+    )!important;
+
+  mix-blend-mode:screen!important;
+  filter:blur(1.1px)!important;
+  transition:opacity .20s ease!important;
+  will-change:opacity;
+}
+
+/* Keep paper label from receiving the strong screen light.
+   The mask cuts the center label region out of the reflection. */
+@supports ((-webkit-mask-image: radial-gradient(circle,#000,#000)) or (mask-image: radial-gradient(circle,#000,#000))){
+  .record-pointer-light{
+    -webkit-mask-image:radial-gradient(
+      circle at 50% 50%,
+      transparent 0 16.4%,
+      rgba(0,0,0,.15) 17.2%,
+      #000 19% 100%
+    );
+    mask-image:radial-gradient(
+      circle at 50% 50%,
+      transparent 0 16.4%,
+      rgba(0,0,0,.15) 17.2%,
+      #000 19% 100%
+    );
+  }
+}
+
+/* lower the old permanent record reflection too */
+.record::after{
+  opacity:.27!important;
+}
+
+/* no fixed one-way entrance-like sheen on hover */
+.record-wrap:hover .record::after{
+  opacity:.31!important;
+}
+
+/* =========================================================
+   04. SMALL DETAILS THAT HELP THE LP FEEL
+========================================================= */
+
+/* clearer run-out groove near the paper label */
+.record .ring-3{
+  inset:34%!important;
+  border-color:rgba(255,255,255,.040)!important;
+  box-shadow:
+    0 0 0 4px rgba(0,0,0,.15),
+    inset 0 0 5px rgba(255,255,255,.012);
+}
+
+/* subtle label edge compression shadow */
+.vinyl-paper-label{
+  box-shadow:
+    0 0 0 5px rgba(0,0,0,.91),
+    0 0 0 7px rgba(255,255,255,.014),
+    0 3px 16px rgba(0,0,0,.54),
+    inset 0 1px 0 rgba(255,255,255,.18),
+    inset 0 -14px 28px rgba(91,61,22,.045)!important;
+}
+
+@media(max-width:1200px){
+  .vinyl-paper-label{
+    width:30%;
+  }
+}
+
+@media(max-width:640px){
+  .vinyl-paper-label{
+    width:32.5%;
+    padding:10.2% 10.4% 9.4%;
+  }
+
+  .vinyl-label-catalog,
+  .vinyl-label-foot small{
+    display:none;
+  }
+
+  .vinyl-label-brand{
+    font-size:5px;
+  }
+
+  .vinyl-track strong{
+    font-size:17px;
+  }
+
+  .vinyl-label-foot strong{
+    font-size:6.2px;
+  }
+}
+
+
+/* =========================================================
+   V8.0 — CLEAN VINYL CENTER / SOFTER BALANCED LIGHT /
+          ORBIT + EDGE DETAIL
+========================================================= */
+
+/* ---------------------------------------------------------
+   01. Disable v7 paper label implementation
+--------------------------------------------------------- */
+.vinyl-paper-label{
+  display:none!important;
+}
+
+/* ---------------------------------------------------------
+   02. PHYSICAL PAPER BASE
+   레코드 본체 안에 있어서 원판과 함께 회전.
+--------------------------------------------------------- */
+.vinyl-paper-base{
+  position:absolute;
+  z-index:6;
+  left:50%;
+  top:50%;
+  width:29.8%;
+  aspect-ratio:1;
+  transform:translate(-50%,-50%);
+  overflow:hidden;
+  border-radius:50%;
+
+  background:
+    repeating-linear-gradient(
+      11deg,
+      rgba(82,62,32,.008) 0 1px,
+      transparent 1px 5px
+    ),
+    radial-gradient(
+      circle at 38% 28%,
+      #f4e6ba 0%,
+      #ecd59a 59%,
+      #dfc17e 100%
+    );
+
+  border:1px solid rgba(67,48,21,.33);
+
+  box-shadow:
+    0 0 0 3px rgba(0,0,0,.90),
+    0 0 0 5px rgba(255,255,255,.012),
+    0 3px 14px rgba(0,0,0,.45),
+    inset 0 1px 0 rgba(255,255,255,.20),
+    inset 0 -14px 26px rgba(85,56,18,.040);
+}
+
+.vinyl-paper-base::before{
+  content:"";
+  position:absolute;
+  inset:7%;
+  border-radius:50%;
+  border:1px solid rgba(61,44,20,.095);
+}
+
+.vinyl-paper-base::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:55%;
+  aspect-ratio:1;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  border:1px solid rgba(61,44,20,.050);
+}
+
+/* 실제 라벨에 인쇄된 아주 미세한 등록선 — 회전감만 살림 */
+.vinyl-paper-ring{
+  position:absolute;
+  left:50%;
+  top:50%;
+  border-radius:50%;
+  transform:translate(-50%,-50%);
+  border:1px solid rgba(66,48,24,.035);
+}
+
+.vinyl-paper-ring-a{
+  width:76%;
+  aspect-ratio:1;
+}
+
+.vinyl-paper-ring-b{
+  width:42%;
+  aspect-ratio:1;
+}
+
+.vinyl-paper-tick{
+  position:absolute;
+  width:11%;
+  height:1px;
+  background:rgba(52,42,26,.10);
+}
+
+.vinyl-paper-tick-a{
+  left:13%;
+  top:47%;
+  rotate:-12deg;
+}
+
+.vinyl-paper-tick-b{
+  right:12%;
+  bottom:31%;
+  rotate:31deg;
+}
+
+/* ---------------------------------------------------------
+   03. FIXED READABLE LABEL COPY
+   종이 원판 위에 있지만 자체 회전하지 않음.
+--------------------------------------------------------- */
+.vinyl-label-info{
+  position:absolute;
+  z-index:13;
+  left:50%;
+  top:50%;
+  width:29.8%;
+  aspect-ratio:1;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  padding:10.8% 11.2% 10.4%;
+  pointer-events:none;
+
+  display:grid;
+  grid-template-rows:auto 1fr auto;
+
+  color:#17140f;
+  font-family:Inter,"Noto Sans KR",sans-serif;
+}
+
+.vinyl-info-top{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:8px;
+  padding-bottom:7.5%;
+  border-bottom:1px solid rgba(47,38,24,.18);
+}
+
+.vinyl-info-top strong{
+  font-size:clamp(5.8px,.58vw,9.2px);
+  font-weight:700;
+  line-height:1;
+  letter-spacing:.10em;
+  white-space:nowrap;
+}
+
+.vinyl-info-top span{
+  color:rgba(23,20,15,.46);
+  font-size:clamp(3.8px,.36vw,5.7px);
+  line-height:1;
+  letter-spacing:.07em;
+  white-space:nowrap;
+}
+
+.vinyl-info-mid{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.vinyl-info-track small,
+.vinyl-info-side small,
+.vinyl-info-bottom small{
+  display:block;
+  color:rgba(23,20,15,.43);
+  font-size:clamp(3.7px,.35vw,5.5px);
+  line-height:1;
+  letter-spacing:.13em;
+}
+
+.vinyl-info-track b{
+  display:block;
+  margin-top:3px;
+  font-size:clamp(18px,1.82vw,30px);
+  font-weight:500;
+  line-height:.82;
+  letter-spacing:-.07em;
+  font-variant-numeric:tabular-nums;
+}
+
+.vinyl-info-side{
+  text-align:right;
+}
+
+.vinyl-info-side strong{
+  display:block;
+  margin-top:4px;
+  font-size:clamp(4.8px,.46vw,7.2px);
+  font-weight:600;
+  line-height:1;
+  letter-spacing:.06em;
+}
+
+.vinyl-info-spindle{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:15.5%;
+  aspect-ratio:1;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      #050505 0 31%,
+      rgba(102,74,34,.24) 33% 47%,
+      rgba(244,226,185,.90) 49% 65%,
+      rgba(68,48,22,.22) 67% 70%,
+      transparent 72%
+    );
+
+  box-shadow:
+    0 0 0 1px rgba(67,47,21,.24),
+    0 2px 4px rgba(0,0,0,.16);
+}
+
+.vinyl-info-spindle i{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:31%;
+  aspect-ratio:1;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  background:#030303;
+}
+
+.vinyl-info-bottom{
+  padding-top:7.5%;
+  border-top:1px solid rgba(47,38,24,.14);
+  text-align:center;
+}
+
+.vinyl-info-bottom strong{
+  display:block;
+  margin-top:4px;
+  overflow:hidden;
+  max-width:100%;
+  color:#17140f;
+  font-size:clamp(6.5px,.67vw,10.7px);
+  font-weight:700;
+  line-height:1.03;
+  letter-spacing:-.02em;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+/* 선택 변경은 페이드만 — 레코드 라벨답게 조용하게 */
+.vinyl-label-info.is-changing .vinyl-info-track b,
+.vinyl-label-info.is-changing .vinyl-info-bottom strong{
+  animation:vinylInfoChange .34s ease both;
+}
+
+@keyframes vinylInfoChange{
+  0%{opacity:.26}
+  55%{opacity:1}
+  100%{opacity:1}
+}
+
+/* intro */
+.is-intro-loading .vinyl-label-info{
+  opacity:0;
+}
+
+.home-page.is-intro-ready .vinyl-label-info{
+  animation:vinylInfoReveal .85s .32s ease both;
+}
+
+@keyframes vinylInfoReveal{
+  from{opacity:0}
+  to{opacity:1}
+}
+
+/* ---------------------------------------------------------
+   04. POINTER LIGHT — 약간만 강화 / 방향성 beam 제거
+--------------------------------------------------------- */
+.record-pointer-light{
+  opacity:var(--hover-strength,0)!important;
+
+  background:
+    radial-gradient(
+      circle at var(--hover-x,50%) var(--hover-y,50%),
+      rgba(255,253,242,.29) 0%,
+      rgba(247,225,183,.175) 5.5%,
+      rgba(226,184,113,.095) 12%,
+      rgba(195,139,62,.038) 22%,
+      transparent 37%
+    ),
+
+    radial-gradient(
+      circle at var(--hover-mirror-x,50%) var(--hover-mirror-y,50%),
+      rgba(247,227,188,.095) 0%,
+      rgba(210,161,86,.045) 11%,
+      transparent 31%
+    ),
+
+    radial-gradient(
+      ellipse 48% 34% at var(--hover-x,50%) var(--hover-y,50%),
+      rgba(239,205,145,.036) 0%,
+      transparent 76%
+    )!important;
+
+  filter:blur(.9px)!important;
+}
+
+/* v7보다 살짝 더 느껴지게 하되 과한 번쩍임은 방지 */
+.record::after{
+  background:
+    conic-gradient(
+      from 18deg at 50% 50%,
+      transparent 0 13%,
+      rgba(255,255,255,.025) 17%,
+      rgba(245,226,188,.045) 22%,
+      rgba(255,255,255,.018) 27%,
+      transparent 32% 60%,
+      rgba(245,226,188,.020) 65%,
+      rgba(255,255,255,.032) 70%,
+      rgba(255,255,255,.014) 75%,
+      transparent 80% 100%
+    ),
+    radial-gradient(
+      ellipse at 31% 29%,
+      rgba(255,255,255,.035) 0%,
+      transparent 36%
+    )!important;
+
+  opacity:.20!important;
+}
+
+/* ---------------------------------------------------------
+   05. VINYL EDGE / RUNOUT DETAIL
+--------------------------------------------------------- */
+.record-wrap::after{
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.085),
+    inset 3px 3px 12px rgba(255,255,255,.020),
+    inset -5px -7px 16px rgba(255,255,255,.014),
+    0 0 0 1px rgba(0,0,0,.65),
+    0 0 14px rgba(255,255,255,.010)!important;
+}
+
+/* label 주변 검은 링을 v7보다 얇게 */
+.vinyl-paper-base{
+  box-shadow:
+    0 0 0 3px rgba(0,0,0,.90),
+    0 0 0 5px rgba(255,255,255,.012),
+    0 3px 14px rgba(0,0,0,.45),
+    inset 0 1px 0 rgba(255,255,255,.20),
+    inset 0 -14px 26px rgba(85,56,18,.040)!important;
+}
+
+/* label 직전 run-out groove를 좀 더 분명하게 */
+.ring-3{
+  inset:33.2%!important;
+  border-color:rgba(255,255,255,.040)!important;
+  box-shadow:
+    0 0 0 2px rgba(0,0,0,.18),
+    inset 0 0 8px rgba(255,255,255,.010)!important;
+}
+
+/* ---------------------------------------------------------
+   06. CATEGORY ORBIT CLIPPING FIX
+   오른쪽 텍스트가 뷰포트 밖으로 밀리는 문제 완화
+--------------------------------------------------------- */
+.category-btn{
+  min-width:150px!important;
+}
+
+.category-btn .category-name{
+  max-width:132px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+/* 중간 뷰포트에서 우측 라벨을 조금 더 안쪽으로 */
+@media(max-width:1180px) and (min-width:901px){
+  .record-wrap,
+  .category-orbit{
+    left:59%!important;
+  }
+
+  .category-btn{
+    min-width:138px!important;
+  }
+}
+
+/* ---------------------------------------------------------
+   07. MOBILE
+--------------------------------------------------------- */
+@media(max-width:640px){
+  .vinyl-paper-base,
+  .vinyl-label-info{
+    width:32.2%;
+  }
+
+  .vinyl-label-info{
+    padding:10.4% 10.6% 10%;
+  }
+
+  .vinyl-info-top span{
+    display:none;
+  }
+
+  .vinyl-info-top strong{
+    font-size:5.4px;
+  }
+
+  .vinyl-info-track b{
+    font-size:17px;
+  }
+
+  .vinyl-info-side strong{
+    font-size:4.6px;
+  }
+
+  .vinyl-info-bottom strong{
+    font-size:6px;
+  }
+}
+
+
+/* =========================================================
+   V9.0 — ORIGINAL LP LABEL RESTORE + ALWAYS-VISIBLE VINYL
+========================================================= */
+
+/* ---------------------------------------------------------
+   01. Disable v7/v8 experimental center systems
+--------------------------------------------------------- */
+.vinyl-paper-label,
+.vinyl-paper-base,
+.vinyl-label-info,
+.record-ui-label{
+  display:none!important;
+}
+
+/* ---------------------------------------------------------
+   02. ORIGINAL CURVED LABEL — refined proportions
+--------------------------------------------------------- */
+.record-label{
+  display:block!important;
+  position:absolute!important;
+  z-index:7!important;
+  left:50%!important;
+  top:50%!important;
+  width:28.8%!important;
+  aspect-ratio:1!important;
+  transform:translate(-50%,-50%)!important;
+  scale:1!important;
+  opacity:1!important;
+  overflow:hidden!important;
+  border-radius:50%!important;
+
+  background:
+    radial-gradient(
+      circle at 41% 32%,
+      rgba(255,249,224,.99) 0%,
+      rgba(244,224,178,.99) 55%,
+      rgba(225,196,137,.99) 100%
+    )!important;
+
+  border:1px solid rgba(67,48,22,.34)!important;
+
+  box-shadow:
+    0 0 0 3px rgba(0,0,0,.92),
+    0 0 0 5px rgba(255,255,255,.015),
+    0 4px 17px rgba(0,0,0,.54),
+    inset 0 1px 0 rgba(255,255,255,.24),
+    inset 0 -16px 28px rgba(88,58,20,.040)!important;
+
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
+}
+
+.record-label::before{
+  content:"";
+  position:absolute;
+  inset:7.2%;
+  z-index:0;
+  border-radius:50%;
+  border:1px solid rgba(63,46,22,.070);
+  pointer-events:none;
+}
+
+.record-label::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:53%;
+  aspect-ratio:1;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  border:1px solid rgba(63,46,22,.035);
+  pointer-events:none;
+}
+
+.record-label-svg{
+  position:relative!important;
+  z-index:2!important;
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  overflow:visible!important;
+}
+
+.record-label-svg .label-arc{
+  fill:#18150f!important;
+  font-family:Inter,Arial,sans-serif!important;
+  font-size:11.7px!important;
+  font-weight:600!important;
+  letter-spacing:2.45px!important;
+}
+
+.record-label-svg .label-arc-bottom{
+  font-size:10.8px!important;
+  letter-spacing:2.75px!important;
+}
+
+.record-label-svg .label-year{
+  fill:#18150f!important;
+  font-family:Inter,Arial,sans-serif!important;
+  font-size:11.5px!important;
+  font-weight:600!important;
+  letter-spacing:.1px!important;
+}
+
+.record-label-svg .label-hole-ring{
+  fill:rgba(114,82,35,.12)!important;
+  stroke:rgba(74,51,21,.24)!important;
+  stroke-width:1!important;
+}
+
+.record-label-svg .label-hole{
+  fill:#040404!important;
+}
+
+/* 이전 intro 실험이 라벨에 별도 scale을 주지 않도록 */
+.is-intro-loading .record-label{
+  opacity:1!important;
+  scale:1!important;
+}
+
+.home-page.is-intro-ready .record-label{
+  animation:none!important;
+}
+
+/* ---------------------------------------------------------
+   03. AMBIENT VINYL LIGHT
+   hover가 없어도 원판이 배경에 묻히지 않도록 고정 광원을 제공.
+   record는 회전하지만 이 광원은 record-wrap 기준이라 화면에 고정된다.
+--------------------------------------------------------- */
+.record-wrap::before{
+  content:""!important;
+  position:absolute!important;
+  inset:-.4%!important;
+  z-index:9!important;
+  display:block!important;
+  border-radius:50%!important;
+  pointer-events:none!important;
+
+  opacity:1!important;
+
+  background:
+    /* 좌상단 넓은 약광 */
+    radial-gradient(
+      ellipse 52% 36% at 25% 20%,
+      rgba(255,248,224,.105) 0%,
+      rgba(239,210,158,.058) 25%,
+      rgba(199,151,79,.024) 48%,
+      transparent 72%
+    ),
+
+    /* 우하단 반대편 약광 */
+    radial-gradient(
+      ellipse 48% 34% at 76% 78%,
+      rgba(245,222,179,.068) 0%,
+      rgba(203,158,88,.030) 31%,
+      transparent 70%
+    ),
+
+    /* 홈을 드러내는 아주 넓은 양방향 반사 */
+    conic-gradient(
+      from 208deg at 50% 50%,
+      transparent 0 12%,
+      rgba(255,240,206,.020) 17%,
+      rgba(255,242,214,.080) 22%,
+      rgba(235,199,139,.030) 28%,
+      transparent 34% 59%,
+      rgba(235,199,139,.020) 64%,
+      rgba(255,242,214,.060) 69%,
+      rgba(255,240,206,.018) 75%,
+      transparent 81% 100%
+    )!important;
+
+  filter:blur(1.7px)!important;
+  mix-blend-mode:screen!important;
+
+  transition:opacity .30s ease!important;
+}
+
+/* hover에서도 ambient 자체가 갑자기 밝아지지 않음 */
+.record-wrap:hover::before{
+  opacity:1!important;
+  transform:none!important;
+}
+
+/* ---------------------------------------------------------
+   04. BASE VINYL SURFACE VISIBILITY
+--------------------------------------------------------- */
+.record{
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      #171717 0%,
+      #111111 25%,
+      #0b0b0b 52%,
+      #060606 74%,
+      #030303 91%,
+      #010101 100%
+    )!important;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.095),
+    inset 0 0 30px rgba(255,255,255,.020),
+    inset 0 0 95px rgba(0,0,0,.67),
+    0 0 0 1px rgba(255,255,255,.040),
+    0 25px 65px rgba(0,0,0,.60)!important;
+}
+
+/* 홈도 비호버 상태에서 한 단계 더 읽히게 */
+.record::before{
+  opacity:.88!important;
+  background:
+    repeating-radial-gradient(
+      circle at 50% 50%,
+      rgba(255,255,255,.052) 0 1px,
+      rgba(255,255,255,0) 1px 3px,
+      rgba(255,255,255,.022) 3px 4px,
+      rgba(255,255,255,0) 4px 7px
+    ),
+    repeating-radial-gradient(
+      circle at 50% 50%,
+      transparent 0 21px,
+      rgba(255,255,255,.034) 21px 22px,
+      transparent 22px 39px
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      transparent 0 27%,
+      rgba(255,255,255,.016) 48%,
+      transparent 72%
+    )!important;
+}
+
+/*
+  record 자체에 들어가는 영구 reflection은 최소화.
+  실제 '빛'은 위 record-wrap::before가 담당한다.
+*/
+.record::after{
+  background:
+    radial-gradient(
+      ellipse at 32% 26%,
+      rgba(255,255,255,.028) 0%,
+      transparent 36%
+    ),
+    radial-gradient(
+      ellipse at 70% 74%,
+      rgba(255,255,255,.020) 0%,
+      transparent 34%
+    )!important;
+  opacity:.28!important;
+}
+
+/* ---------------------------------------------------------
+   05. POINTER HOVER LIGHT
+   ambient 위에만 얹히도록 유지
+--------------------------------------------------------- */
+.record-pointer-light{
+  z-index:11!important;
+  opacity:var(--hover-strength,0)!important;
+
+  background:
+    radial-gradient(
+      circle at var(--hover-x,50%) var(--hover-y,50%),
+      rgba(255,253,242,.32) 0%,
+      rgba(248,227,187,.19) 5.5%,
+      rgba(228,186,116,.105) 12%,
+      rgba(196,140,63,.042) 22%,
+      transparent 37%
+    ),
+    radial-gradient(
+      circle at var(--hover-mirror-x,50%) var(--hover-mirror-y,50%),
+      rgba(248,228,190,.10) 0%,
+      rgba(211,163,88,.048) 11%,
+      transparent 31%
+    )!important;
+
+  filter:blur(.85px)!important;
+}
+
+/* 중앙 종이라벨에는 hover light가 과하게 올라오지 않게 유지 */
+@supports ((-webkit-mask-image:radial-gradient(circle,#000,#000)) or (mask-image:radial-gradient(circle,#000,#000))){
+  .record-pointer-light{
+    -webkit-mask-image:radial-gradient(
+      circle at 50% 50%,
+      transparent 0 15.3%,
+      rgba(0,0,0,.12) 16.2%,
+      #000 18% 100%
+    )!important;
+    mask-image:radial-gradient(
+      circle at 50% 50%,
+      transparent 0 15.3%,
+      rgba(0,0,0,.12) 16.2%,
+      #000 18% 100%
+    )!important;
+  }
+}
+
+/* ---------------------------------------------------------
+   06. OUTER EDGE / RUN-OUT
+--------------------------------------------------------- */
+.record-wrap::after{
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.115),
+    inset 4px 4px 15px rgba(255,255,255,.024),
+    inset -6px -8px 18px rgba(255,255,255,.018),
+    0 0 0 1px rgba(0,0,0,.60),
+    0 0 16px rgba(224,190,130,.018)!important;
+}
+
+.ring-1{
+  border-color:rgba(255,255,255,.035)!important;
+}
+
+.ring-2{
+  border-color:rgba(255,255,255,.044)!important;
+}
+
+.ring-3{
+  inset:33.6%!important;
+  border-color:rgba(255,255,255,.048)!important;
+  box-shadow:
+    0 0 0 2px rgba(0,0,0,.20),
+    inset 0 0 8px rgba(255,255,255,.012)!important;
+}
+
+/* ---------------------------------------------------------
+   07. MOBILE
+--------------------------------------------------------- */
+@media(max-width:640px){
+  .record-label{
+    width:31.5%!important;
+  }
+
+  .record-label-svg .label-arc{
+    font-size:10px!important;
+    letter-spacing:2px!important;
+  }
+
+  .record-label-svg .label-arc-bottom{
+    font-size:9px!important;
+    letter-spacing:2.25px!important;
+  }
+
+  .record-label-svg .label-year{
+    font-size:10px!important;
+  }
+}
+\n\n/* =========================================================\n   V10.0 — SINGLE INTRO SCROLL CUE + DEEPER SPACE\n========================================================= */\n.record-scroll-guide-left,\n.record-scroll-guide-right{display:none!important}\n.record-scroll-guide-center{position:absolute!important;z-index:24!important;left:59%!important;top:auto!important;bottom:5.2%!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:9px!important;padding:7px 11px 7px 8px!important;border:1px solid rgba(218,183,116,.16)!important;border-radius:999px!important;background:rgba(8,8,7,.38)!important;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:rgba(220,195,145,.56)!important;font-size:7px!important;line-height:1!important;letter-spacing:.16em!important;opacity:0!important;transform:translate(-50%,8px)!important;pointer-events:none!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.018),0 6px 22px rgba(0,0,0,.18)!important;transition:opacity .62s ease,transform .82s cubic-bezier(.16,.84,.24,1)!important}\n.scroll-cue-icon{position:relative;width:17px;height:17px;flex:0 0 17px;border:1px solid rgba(225,192,126,.34);border-radius:50%}\n.scroll-cue-icon::before{content:"";position:absolute;left:50%;top:3px;width:1px;height:5px;background:rgba(235,204,143,.65);transform:translateX(-50%);animation:singleScrollCue 1.5s ease-in-out infinite}\n.scroll-cue-icon::after{content:"";position:absolute;left:50%;bottom:3px;width:3px;height:3px;border-right:1px solid rgba(235,204,143,.58);border-bottom:1px solid rgba(235,204,143,.58);transform:translateX(-50%) rotate(45deg)}\n@keyframes singleScrollCue{0%{opacity:.12;translate:0 -1px}40%{opacity:.9}100%{opacity:0;translate:0 6px}}\n.hero.show-scroll-guides .record-scroll-guide-center{opacity:1!important;transform:translate(-50%,0)!important}\n.hero.has-user-interacted .record-scroll-guide-center,.hero.is-preview-open .record-scroll-guide-center{opacity:0!important;visibility:hidden!important}\n.scroll-cue-copy{white-space:nowrap}\n.depth-canvas{filter:saturate(.96) contrast(1.015) brightness(1.02)!important}\n.depth-glow-a{opacity:.30!important;filter:blur(92px)!important;transform:scale(1.08)}\n.depth-glow-b{opacity:.20!important;filter:blur(118px)!important;transform:scale(1.12)}\n.depth-bg::before,.depth-bg::after{content:"";position:absolute;z-index:2;pointer-events:none;border-radius:50%;opacity:.28;will-change:transform,opacity}\n.depth-bg::before{width:34vw;height:34vw;left:-18vw;top:54%;background:radial-gradient(circle,rgba(231,188,115,.070) 0%,rgba(173,111,37,.026) 34%,transparent 72%);filter:blur(58px);animation:foregroundHazeA 20s ease-in-out infinite}\n.depth-bg::after{width:28vw;height:28vw;right:-15vw;top:2%;background:radial-gradient(circle,rgba(246,226,185,.045) 0%,rgba(173,118,48,.018) 38%,transparent 74%);filter:blur(68px);animation:foregroundHazeB 26s ease-in-out infinite}\n@keyframes foregroundHazeA{0%,100%{transform:translate3d(-2%,3%,0) scale(.94);opacity:.18}50%{transform:translate3d(13%,-8%,0) scale(1.12);opacity:.34}}\n@keyframes foregroundHazeB{0%,100%{transform:translate3d(6%,-3%,0) scale(1.04);opacity:.12}50%{transform:translate3d(-12%,10%,0) scale(.92);opacity:.28}}\n@media(max-width:1200px){.record-scroll-guide-center{left:62%!important;bottom:4.5%!important}}\n@media(max-width:900px){.record-scroll-guide-center{display:none!important}.depth-bg::before{width:48vw;height:48vw;left:-26vw}.depth-bg::after{width:42vw;height:42vw;right:-24vw}}\n@media(prefers-reduced-motion:reduce){.depth-bg::before,.depth-bg::after,.scroll-cue-icon::before{animation:none!important}}\n
+
+/* =========================================================
+   V11.0 — LEFT CONTENT LIFT + SUBTEXT LEGIBILITY
+   메인 구조/레코드/인터랙션은 유지하고
+   왼쪽 정보 블록 위치와 작은 텍스트 가독성만 보강.
+========================================================= */
+
+/* ---------------------------------------------------------
+   01. Hero copy: 전체를 살짝 위로
+--------------------------------------------------------- */
+.hero-copy{
+  top:47.8%!important;
+}
+
+/* 상단 인덱스/카테고리 라벨도 한 단계 선명하게 */
+.hero-index-wrap{
+  font-size:13px!important;
+  margin-bottom:31px!important;
+}
+
+.hero-kicker{
+  margin-bottom:13px!important;
+  color:#959aa1!important;
+  font-size:11px!important;
+  letter-spacing:.20em!important;
+}
+
+/* 메인 타이틀 크기는 그대로 유지 */
+.hero-desc{
+  margin-top:26px!important;
+  color:#d1d0ca!important;
+  font-family:"Noto Sans KR",sans-serif!important;
+  font-size:16.5px!important;
+  line-height:1.65!important;
+  letter-spacing:-.015em!important;
+}
+
+/* ---------------------------------------------------------
+   02. HOW TO EXPLORE: 위로 이동 + 작은 텍스트 확대
+--------------------------------------------------------- */
+.interaction-guide{
+  top:62.8%!important;
+  width:min(550px,40vw)!important;
+}
+
+.guide-head{
+  margin-bottom:9px!important;
+}
+
+.guide-kicker{
+  color:#beb19a!important;
+  font-size:11px!important;
+  font-weight:600!important;
+  letter-spacing:.20em!important;
+}
+
+.guide-status{
+  color:#8d8373!important;
+  font-size:8.5px!important;
+  letter-spacing:.13em!important;
+}
+
+.guide-status i{
+  width:6px!important;
+  height:6px!important;
+}
+
+.guide-description{
+  margin-bottom:14px!important;
+  color:#a19a90!important;
+  font-size:11.5px!important;
+  line-height:1.65!important;
+  letter-spacing:-.015em!important;
+}
+
+/* 카드도 텍스트가 숨 막히지 않게 아주 조금만 키움 */
+.guide-actions{
+  gap:12px!important;
+}
+
+.guide-action{
+  grid-template-columns:24px 44px 1fr!important;
+  gap:12px!important;
+  min-height:80px!important;
+  padding:14px 16px 14px 13px!important;
+  border-color:rgba(255,255,255,.13)!important;
+  background:
+    radial-gradient(circle at 18% 50%,rgba(214,171,94,.070),transparent 41%),
+    linear-gradient(105deg,rgba(255,255,255,.034),rgba(255,255,255,.009))!important;
+}
+
+/* 번호는 작지만 읽히게 */
+.guide-no{
+  padding-top:3px!important;
+  color:#958d80!important;
+  font-size:9.5px!important;
+}
+
+/* 아이콘은 기존 느낌 유지, 2px만 확대 */
+.guide-icon{
+  width:44px!important;
+  height:44px!important;
+}
+
+.guide-icon-scroll::before{
+  top:7px!important;
+  width:14px!important;
+  height:24px!important;
+}
+
+.guide-icon-click::before{
+  left:11px!important;
+  top:9px!important;
+  width:14px!important;
+  height:22px!important;
+}
+
+/* 핵심 액션 문구 */
+.guide-copy{
+  gap:6px!important;
+}
+
+.guide-copy strong{
+  color:#f4eee3!important;
+  font-size:12px!important;
+  font-weight:650!important;
+  line-height:1.15!important;
+  letter-spacing:.045em!important;
+}
+
+/* 기존에 가장 안 보이던 결과 설명 */
+.guide-copy small{
+  color:#bbb3a8!important;
+  font-size:10.5px!important;
+  line-height:1.4!important;
+  letter-spacing:-.012em!important;
+}
+
+/* ---------------------------------------------------------
+   03. Medium desktop
+--------------------------------------------------------- */
+@media(max-width:1200px) and (min-width:901px){
+  .hero-copy{
+    top:47.2%!important;
+  }
+
+  .interaction-guide{
+    top:63.2%!important;
+    width:min(510px,44vw)!important;
+  }
+
+  .hero-desc{
+    font-size:15.5px!important;
+  }
+
+  .guide-kicker{
+    font-size:10.5px!important;
+  }
+
+  .guide-description{
+    font-size:10.8px!important;
+  }
+
+  .guide-copy strong{
+    font-size:11.3px!important;
+  }
+
+  .guide-copy small{
+    font-size:10px!important;
+  }
+}
+
+/* ---------------------------------------------------------
+   04. Tablet/mobile — 기존 하단 배치는 유지,
+   글자만 너무 작아지지 않게 제한
+--------------------------------------------------------- */
+@media(max-width:900px){
+  .hero-copy{
+    top:27%!important;
+  }
+
+  .interaction-guide{
+    top:auto!important;
+    bottom:25px!important;
+  }
+
+  .hero-desc{
+    font-size:14px!important;
+  }
+
+  .guide-kicker{
+    font-size:10px!important;
+  }
+
+  .guide-copy strong{
+    font-size:10.5px!important;
+  }
+
+  .guide-copy small{
+    font-size:9.5px!important;
+  }
+}
+
+@media(max-width:640px){
+  .hero-copy{
+    top:auto!important;
+  }
+
+  .hero-desc{
+    font-size:13px!important;
+  }
+
+  .guide-copy strong{
+    font-size:9.5px!important;
+  }
+
+  .guide-copy small{
+    font-size:8.5px!important;
+  }
+}
+
+
+/* =========================================================
+   V12.0 — SINGLE LEFT CONTENT FLOW
+   01 → CATEGORY → TITLE → DESC → HOW TO → ACTIONS
+   전부 하나의 세로 흐름으로 묶어서 카테고리명 길이와 무관하게
+   절대 겹치지 않도록 수정.
+========================================================= */
+
+/* ---------------------------------------------------------
+   01. Entire left content block
+--------------------------------------------------------- */
+.hero-copy{
+  left:7.2vw!important;
+  top:44.2%!important;
+  width:min(42vw,610px)!important;
+  transform:translateY(-50%)!important;
+}
+
+/* 위쪽 텍스트 간격을 다시 일관되게 정리 */
+.hero-index-wrap{
+  margin-bottom:29px!important;
+}
+
+.hero-kicker{
+  margin:0 0 13px!important;
+}
+
+.hero h1{
+  margin:0!important;
+}
+
+.hero-desc{
+  margin:25px 0 0!important;
+}
+
+/* ---------------------------------------------------------
+   02. HOW TO is now part of hero-copy flow
+--------------------------------------------------------- */
+.hero-copy .interaction-guide{
+  position:relative!important;
+  left:auto!important;
+  right:auto!important;
+  top:auto!important;
+  bottom:auto!important;
+
+  width:min(550px,100%)!important;
+  margin:7px 0 0!important;
+
+  transform:none!important;
+  pointer-events:none!important;
+}
+
+/* 설명과 HOW TO 타이틀 사이에 실제 여백 확보 */
+.hero-copy .guide-head{
+  margin-top:0!important;
+  margin-bottom:8px!important;
+}
+
+.hero-copy .guide-description{
+  margin:0 0 13px!important;
+}
+
+/* 카드 영역은 부모 폭 안에서만 */
+.hero-copy .guide-actions{
+  width:100%!important;
+}
+
+/* ---------------------------------------------------------
+   03. Long category title safety
+--------------------------------------------------------- */
+.hero-copy h1{
+  max-width:100%!important;
+}
+
+/*
+  E-COMMERCE처럼 2줄이 되더라도 이후 요소는 normal flow이므로
+  아래 설명/guide가 자동으로 내려가며 겹치지 않는다.
+*/
+.hero-copy .hero-desc,
+.hero-copy .interaction-guide{
+  position:relative!important;
+}
+
+/* ---------------------------------------------------------
+   04. Preview state
+--------------------------------------------------------- */
+.hero.is-preview-open .hero-copy{
+  transform:translateY(-50%)!important;
+}
+
+/* interaction guide는 hero-copy 내부이므로 독립 위치 이동 금지 */
+.hero.is-preview-open .interaction-guide{
+  transform:none!important;
+}
+
+/* ---------------------------------------------------------
+   05. Medium desktop
+--------------------------------------------------------- */
+@media(max-width:1200px) and (min-width:901px){
+  .hero-copy{
+    left:5.5vw!important;
+    top:43.8%!important;
+    width:min(45vw,570px)!important;
+  }
+
+  .hero-copy .interaction-guide{
+    width:min(510px,100%)!important;
+    margin-top:8px!important;
+  }
+}
+
+/* ---------------------------------------------------------
+   06. Tablet
+   기존 모바일 배치와 충돌하지 않도록 세로 flow는 유지
+--------------------------------------------------------- */
+@media(max-width:900px){
+  .hero-copy{
+    left:6vw!important;
+    top:23.5%!important;
+    bottom:auto!important;
+    width:82vw!important;
+    transform:none!important;
+  }
+
+  .hero-copy .interaction-guide{
+    position:relative!important;
+    left:auto!important;
+    top:auto!important;
+    bottom:auto!important;
+    width:min(540px,100%)!important;
+    margin-top:13px!important;
+  }
+
+  .hero.is-preview-open .hero-copy{
+    transform:none!important;
+  }
+}
+
+/* ---------------------------------------------------------
+   07. Mobile
+--------------------------------------------------------- */
+@media(max-width:640px){
+  .hero-copy{
+    top:auto!important;
+    bottom:26px!important;
+    width:88vw!important;
+  }
+
+  .hero-copy .interaction-guide{
+    margin-top:10px!important;
+  }
+}
+
+
+/* =========================================================
+   V13.0 — LEFT COPY SPACING / BIGGER SUBTEXT /
+           BOTTOM-CENTER SCROLL CUE
+========================================================= */
+
+/* ---------------------------------------------------------
+   01. LEFT CONTENT BLOCK
+   전체 묶음은 위로 유지하되 세로 간격을 넉넉하게.
+--------------------------------------------------------- */
+.hero-copy{
+  left:7.2vw!important;
+  top:43.4%!important;
+  width:min(43vw,640px)!important;
+  transform:translateY(-50%)!important;
+}
+
+/* INDEX */
+.hero-index-wrap{
+  margin-bottom:30px!important;
+  font-size:13.5px!important;
+}
+
+.hero-index-wrap i{
+  width:58px!important;
+}
+
+/* SELECT CATEGORY */
+.hero-kicker{
+  margin:0 0 15px!important;
+  color:#9ea2a8!important;
+  font-size:12px!important;
+  font-weight:500!important;
+  letter-spacing:.20em!important;
+}
+
+/* TITLE */
+.hero h1{
+  margin:0!important;
+  max-width:100%!important;
+  font-size:clamp(64px,5.7vw,108px)!important;
+  line-height:.89!important;
+  letter-spacing:-.055em!important;
+}
+
+/* CATEGORY DESCRIPTION */
+.hero-desc{
+  margin:28px 0 0!important;
+  color:#d5d2cb!important;
+  font-size:17px!important;
+  line-height:1.65!important;
+  letter-spacing:-.018em!important;
+}
+
+/* ---------------------------------------------------------
+   02. HOW TO EXPLORE
+   hero-copy 내부 normal flow 유지.
+--------------------------------------------------------- */
+.hero-copy .interaction-guide{
+  position:relative!important;
+  left:auto!important;
+  right:auto!important;
+  top:auto!important;
+  bottom:auto!important;
+  width:min(575px,100%)!important;
+
+  /* 설명문과 HOW TO 사이 명확한 간격 */
+  margin:18px 0 0!important;
+
+  transform:none!important;
+}
+
+/* HOW TO 상단 */
+.hero-copy .guide-head{
+  margin:0 0 10px!important;
+  min-height:17px!important;
+}
+
+.guide-kicker{
+  color:#c9bda6!important;
+  font-size:12px!important;
+  font-weight:650!important;
+  letter-spacing:.18em!important;
+}
+
+.guide-status{
+  color:#a09178!important;
+  font-size:9.5px!important;
+  letter-spacing:.12em!important;
+}
+
+.guide-status i{
+  width:6px!important;
+  height:6px!important;
+}
+
+/* HOW TO 설명 */
+.guide-description{
+  margin:0 0 15px!important;
+  color:#aaa39a!important;
+  font-size:12px!important;
+  line-height:1.65!important;
+  letter-spacing:-.014em!important;
+}
+
+/* ---------------------------------------------------------
+   03. ACTION CARDS
+--------------------------------------------------------- */
+.guide-actions{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:14px!important;
+  width:100%!important;
+}
+
+.guide-action{
+  grid-template-columns:25px 48px 1fr!important;
+  gap:13px!important;
+  min-height:84px!important;
+  padding:15px 17px 15px 14px!important;
+
+  border-color:rgba(255,255,255,.15)!important;
+  border-radius:12px!important;
+
+  background:
+    radial-gradient(circle at 16% 48%,rgba(214,171,94,.080),transparent 40%),
+    linear-gradient(105deg,rgba(255,255,255,.040),rgba(255,255,255,.010))!important;
+}
+
+.guide-no{
+  padding-top:3px!important;
+  color:#a3998b!important;
+  font-size:10px!important;
+}
+
+/* icon */
+.guide-icon{
+  width:48px!important;
+  height:48px!important;
+}
+
+/* primary text */
+.guide-copy{
+  gap:7px!important;
+  min-width:0!important;
+}
+
+.guide-copy strong{
+  color:#f5efe4!important;
+  font-size:12.8px!important;
+  font-weight:650!important;
+  line-height:1.15!important;
+  letter-spacing:.035em!important;
+  white-space:nowrap!important;
+}
+
+/* secondary text */
+.guide-copy small{
+  color:#c0b8ad!important;
+  font-size:11px!important;
+  line-height:1.42!important;
+  letter-spacing:-.012em!important;
+}
+
+/* ---------------------------------------------------------
+   04. FIRST-ENTRY SCROLL CUE
+   레코드에 붙이지 않고 viewport 하단 중앙에 고정.
+   그래서 레코드/카테고리/텍스트와 겹치지 않는다.
+--------------------------------------------------------- */
+.record-scroll-guide-center{
+  left:50%!important;
+  right:auto!important;
+  top:auto!important;
+  bottom:24px!important;
+
+  transform:translate(-50%,8px)!important;
+
+  padding:7px 12px 7px 9px!important;
+  gap:9px!important;
+
+  font-size:7.5px!important;
+  letter-spacing:.15em!important;
+
+  background:rgba(8,8,7,.46)!important;
+  border-color:rgba(218,183,116,.20)!important;
+
+  z-index:70!important;
+}
+
+.hero.show-scroll-guides .record-scroll-guide-center{
+  left:50%!important;
+  transform:translate(-50%,0)!important;
+}
+
+.hero.is-preview-open .record-scroll-guide-center{
+  left:50%!important;
+}
+
+/* 기존 breakpoint에서 record 중심을 따라가던 값 무효화 */
+@media(min-width:1400px){
+  .record-scroll-guide-center{
+    left:50%!important;
+  }
+}
+
+@media(max-width:1200px){
+  .record-scroll-guide-center{
+    left:50%!important;
+    bottom:22px!important;
+  }
+}
+
+/* ---------------------------------------------------------
+   05. 901–1200 DESKTOP
+--------------------------------------------------------- */
+@media(max-width:1200px) and (min-width:901px){
+  .hero-copy{
+    left:5.5vw!important;
+    top:42.8%!important;
+    width:min(47vw,600px)!important;
+  }
+
+  .hero h1{
+    font-size:clamp(60px,6vw,96px)!important;
+  }
+
+  .hero-desc{
+    font-size:16px!important;
+  }
+
+  .hero-copy .interaction-guide{
+    width:min(550px,100%)!important;
+    margin-top:17px!important;
+  }
+
+  .guide-kicker{
+    font-size:11.5px!important;
+  }
+
+  .guide-description{
+    font-size:11.5px!important;
+  }
+
+  .guide-copy strong{
+    font-size:12px!important;
+  }
+
+  .guide-copy small{
+    font-size:10.5px!important;
+  }
+}
+
+/* ---------------------------------------------------------
+   06. TABLET
+--------------------------------------------------------- */
+@media(max-width:900px){
+  .hero-copy{
+    left:6vw!important;
+    top:22.5%!important;
+    bottom:auto!important;
+    width:84vw!important;
+    transform:none!important;
+  }
+
+  .hero h1{
+    font-size:clamp(52px,10.5vw,76px)!important;
+  }
+
+  .hero-desc{
+    margin-top:20px!important;
+    font-size:14.5px!important;
+  }
+
+  .hero-copy .interaction-guide{
+    width:min(570px,100%)!important;
+    margin-top:14px!important;
+  }
+
+  .guide-actions{
+    gap:10px!important;
+  }
+
+  .guide-action{
+    min-height:76px!important;
+    padding:12px!important;
+  }
+
+  .guide-copy strong{
+    font-size:11px!important;
+  }
+
+  .guide-copy small{
+    font-size:9.8px!important;
+  }
+
+  .record-scroll-guide-center{
+    display:none!important;
+  }
+}
+
+/* ---------------------------------------------------------
+   07. MOBILE
+--------------------------------------------------------- */
+@media(max-width:640px){
+  .hero-copy{
+    top:auto!important;
+    bottom:24px!important;
+    width:88vw!important;
+  }
+
+  .hero-kicker{
+    font-size:10px!important;
+  }
+
+  .hero h1{
+    font-size:13vw!important;
+  }
+
+  .hero-desc{
+    margin-top:15px!important;
+    font-size:13px!important;
+  }
+
+  .hero-copy .interaction-guide{
+    margin-top:10px!important;
+  }
+
+  .guide-actions{
+    grid-template-columns:1fr!important;
+  }
+
+  .guide-action{
+    min-height:64px!important;
+  }
+
+  .guide-copy strong{
+    font-size:10.5px!important;
+  }
+
+  .guide-copy small{
+    font-size:9.3px!important;
+  }
+}
+
+
+/* =========================================================
+   V14.0 — LEFT BLOCK REBALANCE + COMPACT PROFILE
+========================================================= */
+
+/* ---------------------------------------------------------
+   01. 전체 묶음: 조금 줄이고 중앙 쪽으로 내림
+--------------------------------------------------------- */
+.hero-copy{
+  left:7.2vw!important;
+  top:47.6%!important;
+  width:min(41vw,610px)!important;
+  transform:translateY(-50%)!important;
+}
+
+/* 상단 정보 */
+.hero-index-wrap{
+  margin-bottom:27px!important;
+  font-size:12.5px!important;
+}
+
+.hero-index-wrap i{
+  width:56px!important;
+}
+
+.hero-kicker{
+  margin-bottom:13px!important;
+  font-size:11px!important;
+  letter-spacing:.19em!important;
+}
+
+/* 메인 타이틀: v13보다 약 6% 축소 */
+.hero h1{
+  font-size:clamp(58px,5.25vw,99px)!important;
+  line-height:.90!important;
+  letter-spacing:-.055em!important;
+}
+
+/* 설명도 너무 커지지 않게 한 단계 정리 */
+.hero-desc{
+  margin-top:24px!important;
+  font-size:16px!important;
+  line-height:1.6!important;
+}
+
+/* HOW TO */
+.hero-copy .interaction-guide{
+  width:min(550px,100%)!important;
+  margin-top:15px!important;
+}
+
+.guide-kicker{
+  font-size:11.3px!important;
+}
+
+.guide-description{
+  margin-bottom:13px!important;
+  font-size:11.3px!important;
+}
+
+.guide-status{
+  font-size:8.8px!important;
+}
+
+/* 카드도 비율 맞춰 소폭 축소 */
+.guide-actions{
+  gap:12px!important;
+}
+
+.guide-action{
+  grid-template-columns:23px 44px 1fr!important;
+  gap:12px!important;
+  min-height:76px!important;
+  padding:13px 15px 13px 13px!important;
+}
+
+.guide-no{
+  font-size:9px!important;
+}
+
+.guide-icon{
+  width:44px!important;
+  height:44px!important;
+}
+
+.guide-copy strong{
+  font-size:11.7px!important;
+}
+
+.guide-copy small{
+  font-size:10px!important;
+}
+
+/* ---------------------------------------------------------
+   02. COMPACT PROFILE
+   메인에 자기소개가 전혀 없는 문제만 최소한으로 보완.
+--------------------------------------------------------- */
+.mini-profile{
+  position:relative;
+  display:grid;
+  grid-template-columns:58px 1fr auto;
+  align-items:center;
+  gap:12px;
+
+  width:100%;
+  margin-top:14px;
+  padding:12px 4px 0;
+
+  border-top:1px solid rgba(255,255,255,.085);
+
+  color:#d8d3ca;
+  pointer-events:auto;
+
+  transition:
+    color .25s ease,
+    border-color .25s ease;
+}
+
+.mini-profile-label{
+  color:#7f786c;
+  font-size:8px;
+  letter-spacing:.16em;
+}
+
+.mini-profile-copy{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  min-width:0;
+}
+
+.mini-profile-copy strong{
+  color:#e8e3da;
+  font-size:9.7px;
+  font-weight:600;
+  line-height:1.2;
+  letter-spacing:.06em;
+}
+
+.mini-profile-copy small{
+  color:#918b82;
+  font-size:9.5px;
+  line-height:1.45;
+  letter-spacing:-.01em;
+}
+
+.mini-profile-arrow{
+  color:#a8874c;
+  font-size:8.5px;
+  letter-spacing:.08em;
+  white-space:nowrap;
+
+  transition:transform .25s ease,color .25s ease;
+}
+
+.mini-profile:hover{
+  color:#f2e8d7;
+  border-color:rgba(221,184,110,.20);
+}
+
+.mini-profile:hover .mini-profile-arrow{
+  color:#dfbb73;
+  transform:translateX(3px);
+}
+
+/* ---------------------------------------------------------
+   03. 901–1200
+--------------------------------------------------------- */
+@media(max-width:1200px) and (min-width:901px){
+  .hero-copy{
+    left:5.5vw!important;
+    top:46.8%!important;
+    width:min(44vw,575px)!important;
+  }
+
+  .hero h1{
+    font-size:clamp(56px,5.65vw,92px)!important;
+  }
+
+  .hero-desc{
+    font-size:15px!important;
+  }
+
+  .hero-copy .interaction-guide{
+    width:min(525px,100%)!important;
+  }
+
+  .mini-profile-copy small{
+    font-size:9px;
+  }
+}
+
+/* ---------------------------------------------------------
+   04. Tablet / mobile
+--------------------------------------------------------- */
+@media(max-width:900px){
+  .hero-copy{
+    left:6vw!important;
+    top:28%!important;
+    width:82vw!important;
+    transform:none!important;
+  }
+
+  .hero h1{
+    font-size:clamp(50px,10vw,72px)!important;
+  }
+
+  .mini-profile{
+    display:none!important;
+  }
+}
+
+@media(max-width:640px){
+  .hero-copy{
+    top:auto!important;
+    bottom:24px!important;
+  }
+
+  .hero h1{
+    font-size:12.5vw!important;
+  }
+}
+
+
+/* =========================================================
+   V16.0 — ORIGINAL GUIDE STYLE RESTORED,
+           BETTER HIERARCHY / SPACING / PREVIEW LEGIBILITY
+========================================================= */
+
+/* ---------------------------------------------------------
+   01. Left hero copy: keep original structure,
+   but give it more breathing room and pull it slightly inward.
+--------------------------------------------------------- */
+.hero-copy{
+  left:8.2vw!important;
+  top:46.8%!important;
+  width:min(36vw,560px)!important;
+  transform:translateY(-50%)!important;
+}
+
+.hero-index-wrap{
+  margin-bottom:34px!important;
+  font-size:13px!important;
+}
+
+.hero-index-wrap i{
+  width:58px!important;
+}
+
+.hero-kicker{
+  margin:0 0 16px!important;
+  color:#9ba0a6!important;
+  font-size:11px!important;
+  font-weight:500!important;
+  letter-spacing:.20em!important;
+}
+
+.hero h1{
+  margin:0!important;
+  max-width:100%!important;
+  font-size:clamp(64px,5.6vw,104px)!important;
+  line-height:.90!important;
+  letter-spacing:-.055em!important;
+  will-change:transform,opacity,filter;
+}
+
+.hero-desc{
+  margin:26px 0 0!important;
+  color:#d3d0ca!important;
+  font-size:16px!important;
+  line-height:1.65!important;
+  letter-spacing:-.015em!important;
+  will-change:transform,opacity;
+}
+
+/* ---------------------------------------------------------
+   02. Restore guide style, but separate it as a secondary block.
+   It stays visually like before, but no longer feels stuck to the title.
+--------------------------------------------------------- */
+.hero-copy .interaction-guide{
+  position:absolute!important;
+  left:0!important;
+  top:calc(100% + 54px)!important;
+  width:min(600px,41vw)!important;
+  margin:0!important;
+  padding-top:18px!important;
+  border-top:1px solid rgba(255,255,255,.075)!important;
+  transform:none!important;
+}
+
+.guide-head{
+  margin-bottom:10px!important;
+}
+
+.guide-kicker{
+  color:#c8bda8!important;
+  font-size:11px!important;
+  font-weight:650!important;
+  letter-spacing:.18em!important;
+}
+
+.guide-status{
+  color:#9d8f77!important;
+  font-size:9px!important;
+  letter-spacing:.12em!important;
+}
+
+.guide-status i{
+  width:6px!important;
+  height:6px!important;
+}
+
+.guide-description{
+  margin:0 0 16px!important;
+  color:#aca49a!important;
+  font-size:12px!important;
+  line-height:1.65!important;
+  letter-spacing:-.012em!important;
+}
+
+.guide-actions{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:14px!important;
+}
+
+.guide-action{
+  grid-template-columns:24px 46px 1fr!important;
+  gap:13px!important;
+  min-height:82px!important;
+  padding:14px 16px 14px 13px!important;
+  border-radius:13px!important;
+  border-color:rgba(255,255,255,.14)!important;
+  background:
+    radial-gradient(circle at 16% 48%,rgba(214,171,94,.075),transparent 42%),
+    linear-gradient(105deg,rgba(255,255,255,.038),rgba(255,255,255,.010))!important;
+}
+
+.guide-no{
+  padding-top:3px!important;
+  color:#a09688!important;
+  font-size:9.5px!important;
+}
+
+.guide-icon{
+  width:46px!important;
+  height:46px!important;
+}
+
+.guide-copy{
+  gap:6px!important;
+}
+
+.guide-copy strong{
+  color:#f3eee3!important;
+  font-size:12.5px!important;
+  font-weight:650!important;
+  line-height:1.15!important;
+  letter-spacing:.035em!important;
+}
+
+.guide-copy small{
+  color:#c1b8ac!important;
+  font-size:11px!important;
+  line-height:1.42!important;
+  letter-spacing:-.01em!important;
+}
+
+/* ---------------------------------------------------------
+   03. Mini profile remains, but make it feel lighter
+   and more tertiary than the guide.
+--------------------------------------------------------- */
+.mini-profile{
+  display:grid!important;
+  grid-template-columns:54px 1fr auto!important;
+  align-items:center!important;
+  gap:13px!important;
+  width:100%!important;
+  margin-top:18px!important;
+  padding:13px 2px 0!important;
+  border-top:1px solid rgba(255,255,255,.065)!important;
+}
+
+.mini-profile-label{
+  color:#80796d!important;
+  font-size:8px!important;
+  letter-spacing:.16em!important;
+}
+
+.mini-profile-copy strong{
+  color:#e8e3da!important;
+  font-size:10px!important;
+  font-weight:600!important;
+  line-height:1.2!important;
+  letter-spacing:.05em!important;
+}
+
+.mini-profile-copy small{
+  color:#969086!important;
+  font-size:10px!important;
+  line-height:1.45!important;
+  letter-spacing:-.01em!important;
+}
+
+.mini-profile-arrow{
+  color:#b18a48!important;
+  font-size:8.8px!important;
+  letter-spacing:.08em!important;
+}
+
+/* ---------------------------------------------------------
+   04. Smooth category copy swapping
+--------------------------------------------------------- */
+#heroIndex,
+#heroTitle,
+#heroDescription{
+  transform-origin:left center;
+}
+
+/* ---------------------------------------------------------
+   05. Click-open preview panel
+   Sub-copy sizes were too small; raise overall readability.
+--------------------------------------------------------- */
+.preview-heading .section-label{
+  color:#ad9f87!important;
+  font-size:10px!important;
+  letter-spacing:.16em!important;
+}
+
+.preview-heading h2{
+  font-size:30px!important;
+  letter-spacing:-.04em!important;
+}
+
+.preview-close{
+  font-size:10px!important;
+  letter-spacing:.12em!important;
+}
+
+.project-card-index{
+  font-size:10px!important;
+  color:#7c756a!important;
+}
+
+.project-card h3{
+  font-size:16.5px!important;
+  margin-bottom:7px!important;
+}
+
+.project-card p{
+  color:#a19a90!important;
+  font-size:12.8px!important;
+  line-height:1.72!important;
+}
+
+.project-card-meta{
+  margin-top:10px!important;
+  padding-top:10px!important;
+  font-size:10px!important;
+  color:#888177!important;
+  letter-spacing:.06em!important;
+}
+
+.project-card-meta b{
+  font-size:10.5px!important;
+}
+
+.preview-more-wrap .text-link{
+  font-size:11px!important;
+  letter-spacing:.10em!important;
+}
+
+.preview-count{
+  font-size:12px!important;
+}
+
+/* ---------------------------------------------------------
+   06. Open-state behavior
+--------------------------------------------------------- */
+.hero.is-preview-open .hero-copy{
+  transform:translateY(-50%)!important;
+}
+
+.hero.is-preview-open .interaction-guide{
+  opacity:0!important;
+  transform:translateY(10px)!important;
+}
+
+/* ---------------------------------------------------------
+   07. Medium desktop
+--------------------------------------------------------- */
+@media(max-width:1280px) and (min-width:901px){
+  .hero-copy{
+    left:6.4vw!important;
+    top:46.5%!important;
+    width:min(39vw,540px)!important;
+  }
+
+  .hero h1{
+    font-size:clamp(58px,5.7vw,94px)!important;
+  }
+
+  .hero-desc{
+    font-size:15px!important;
+  }
+
+  .hero-copy .interaction-guide{
+    width:min(560px,45vw)!important;
+    top:calc(100% + 48px)!important;
+  }
+
+  .guide-copy strong{
+    font-size:12px!important;
+  }
+
+  .guide-copy small{
+    font-size:10.5px!important;
+  }
+}
+
+/* ---------------------------------------------------------
+   08. Tablet / mobile
+   Desktop separation becomes stacked again for stability.
+--------------------------------------------------------- */
+@media(max-width:900px){
+  .hero-copy{
+    left:6vw!important;
+    top:24%!important;
+    width:84vw!important;
+    transform:none!important;
+  }
+
+  .hero h1{
+    font-size:clamp(54px,10.8vw,78px)!important;
+  }
+
+  .hero-desc{
+    margin-top:20px!important;
+    font-size:14px!important;
+  }
+
+  .hero-copy .interaction-guide{
+    position:relative!important;
+    left:auto!important;
+    top:auto!important;
+    width:min(560px,100%)!important;
+    margin-top:18px!important;
+    padding-top:14px!important;
+  }
+
+  .guide-description{
+    font-size:11px!important;
+  }
+
+  .guide-copy strong{
+    font-size:10.8px!important;
+  }
+
+  .guide-copy small{
+    font-size:9.5px!important;
+  }
+
+  .project-card p{
+    font-size:12px!important;
+  }
+
+  .hero.is-preview-open .hero-copy{
+    transform:none!important;
+  }
+
+  .hero.is-preview-open .interaction-guide{
+    transform:none!important;
+  }
+}
+
+@media(max-width:640px){
+  .hero-copy{
+    top:auto!important;
+    bottom:26px!important;
+    width:88vw!important;
+  }
+
+  .hero-kicker{
+    font-size:10px!important;
+  }
+
+  .hero h1{
+    font-size:13vw!important;
+  }
+
+  .hero-desc{
+    font-size:13px!important;
+  }
+
+  .guide-actions{
+    grid-template-columns:1fr!important;
+  }
+
+  .guide-action{
+    min-height:68px!important;
+    padding:12px!important;
+  }
+
+  .guide-icon{
+    width:38px!important;
+    height:38px!important;
+  }
+
+  .guide-copy strong{
+    font-size:10px!important;
+  }
+
+  .guide-copy small{
+    font-size:9px!important;
+  }
+
+  .mini-profile{
+    display:none!important;
+  }
+}
+
+
+/* =========================================================
+   V17.0 — WORK-FIRST HOME
+   LEFT: profile + category
+   CENTER: record controller
+   RIGHT: selected works visible immediately
+========================================================= */
+
+/* ---------------------------------------------------------
+   01. Clear out old heavy left-side guide/profile
+--------------------------------------------------------- */
+.interaction-guide,
+.mini-profile,
+.record-scroll-guide{
+  display:none!important;
+}
+
+/* ---------------------------------------------------------
+   02. Compact personal intro — separate from category
+--------------------------------------------------------- */
+.hero-profile-intro{
+  position:absolute;
+  z-index:21;
+  left:6.3vw;
+  top:17.5%;
+  width:min(330px,23vw);
+
+  color:#aaa59d;
+}
+
+.profile-intro-role{
+  display:block;
+  margin-bottom:12px;
+  color:#d3c6ac;
+  font-size:9px;
+  font-weight:600;
+  letter-spacing:.17em;
+}
+
+.hero-profile-intro p{
+  margin:0;
+  color:#9f9a92;
+  font-family:"Noto Sans KR",sans-serif;
+  font-size:13px;
+  line-height:1.75;
+  letter-spacing:-.015em;
+}
+
+.hero-profile-intro a{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-top:15px;
+  padding-bottom:5px;
+  border-bottom:1px solid rgba(215,179,105,.28);
+  color:#b29155;
+  font-size:8.5px;
+  letter-spacing:.12em;
+
+  transition:color .25s ease,border-color .25s ease;
+}
+
+.hero-profile-intro a:hover{
+  color:#dfbd78;
+  border-color:rgba(223,189,120,.62);
+}
+
+/* ---------------------------------------------------------
+   03. Current category block — less crowded
+--------------------------------------------------------- */
+.hero-copy{
+  left:6.3vw!important;
+  top:51.5%!important;
+  width:min(31vw,510px)!important;
+  transform:translateY(-50%)!important;
+}
+
+.hero-index-wrap{
+  margin-bottom:27px!important;
+  font-size:12px!important;
+}
+
+.hero-index-wrap i{
+  width:54px!important;
+}
+
+.hero-kicker{
+  margin-bottom:14px!important;
+  font-size:10px!important;
+  letter-spacing:.21em!important;
+}
+
+.hero h1{
+  font-size:clamp(58px,4.75vw,92px)!important;
+  line-height:.90!important;
+  letter-spacing:-.058em!important;
+}
+
+.hero-desc{
+  margin-top:24px!important;
+  font-size:14.5px!important;
+  line-height:1.65!important;
+  color:#c9c6bf!important;
+}
+
+/* ---------------------------------------------------------
+   04. Single lightweight how-to hint
+--------------------------------------------------------- */
+.home-explore-hint{
+  position:absolute;
+  z-index:22;
+  left:6.3vw;
+  bottom:9.5%;
+
+  display:flex;
+  align-items:center;
+  gap:11px;
+
+  color:#756f66;
+  font-size:8px;
+  letter-spacing:.11em;
+  white-space:nowrap;
+
+  opacity:.72;
+}
+
+.home-explore-hint b{
+  color:#b69a68;
+  font-weight:600;
+}
+
+.home-explore-hint i{
+  width:22px;
+  height:1px;
+  background:rgba(255,255,255,.12);
+}
+
+.home-explore-pulse{
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:#d7af68;
+  box-shadow:0 0 10px rgba(215,175,104,.40);
+  animation:homeHintPulse 1.9s ease-in-out infinite;
+}
+
+@keyframes homeHintPulse{
+  0%,100%{opacity:.32;transform:scale(.82)}
+  50%{opacity:1;transform:scale(1)}
+}
+
+/* ---------------------------------------------------------
+   05. Record: shift a little left to make room for works
+--------------------------------------------------------- */
+.record-wrap,
+.category-orbit{
+  left:56.5%!important;
+}
+
+.record-stage::before,
+.record-stage::after{
+  left:56.5%!important;
+}
+
+/*
+  Category orbit becomes compact.
+  Keep category awareness without occupying the right preview area.
+*/
+.category-btn{
+  min-width:112px!important;
+}
+
+.category-btn .category-main{
+  gap:7px!important;
+}
+
+.category-btn .category-name{
+  max-width:94px!important;
+  font-size:9px!important;
+}
+
+.category-btn .category-no{
+  font-size:7px!important;
+}
+
+.category-btn .category-state{
+  font-size:5.5px!important;
+}
+
+/* ---------------------------------------------------------
+   06. Always-visible selected works
+--------------------------------------------------------- */
+.home-selected-works{
+  position:absolute;
+  z-index:26;
+  right:2.7vw;
+  bottom:8%;
+  width:min(19vw,340px);
+
+  color:#f3efe7;
+}
+
+.home-selected-head{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:20px;
+  padding-bottom:13px;
+  margin-bottom:13px;
+  border-bottom:1px solid rgba(255,255,255,.095);
+}
+
+.home-selected-head > div{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+.home-selected-head span:first-child{
+  color:#756f66;
+  font-size:7px;
+  letter-spacing:.16em;
+}
+
+.home-selected-head strong{
+  color:#d9cfbd;
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:.08em;
+}
+
+.home-selected-count{
+  color:#a7864f!important;
+  font-size:18px!important;
+  font-weight:500;
+  letter-spacing:-.04em!important;
+}
+
+.home-selected-list{
+  display:grid;
+  gap:11px;
+}
+
+.home-work-card{
+  position:relative;
+  display:grid;
+  grid-template-columns:104px 1fr 14px;
+  gap:12px;
+  align-items:center;
+
+  min-height:76px;
+  padding:8px 0;
+
+  border-bottom:1px solid rgba(255,255,255,.06);
+
+  transition:
+    opacity .25s ease,
+    transform .35s cubic-bezier(.16,.84,.24,1);
+}
+
+.home-work-thumb{
+  position:relative;
+  width:104px;
+  aspect-ratio:1.45;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.075);
+  border-radius:7px;
+  background:#10100f;
+}
+
+.home-work-thumb::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to bottom,transparent 50%,rgba(0,0,0,.28));
+  pointer-events:none;
+}
+
+.home-work-thumb img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .55s cubic-bezier(.16,.84,.24,1),filter .35s ease;
+}
+
+.home-work-index{
+  position:absolute;
+  z-index:2;
+  left:7px;
+  bottom:6px;
+  color:#e7d6b4;
+  font-size:7px;
+  letter-spacing:.12em;
+}
+
+.home-work-copy{
+  display:flex;
+  flex-direction:column;
+  min-width:0;
+}
+
+.home-work-copy > span{
+  margin-bottom:4px;
+  color:#777168;
+  font-size:7px;
+  line-height:1.2;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.home-work-copy strong{
+  overflow:hidden;
+  margin-bottom:5px;
+  color:#e8e3da;
+  font-size:12px;
+  line-height:1.15;
+  font-weight:600;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+.home-work-copy small{
+  overflow:hidden;
+  color:#918b82;
+  font-size:8px;
+  line-height:1.3;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+.home-work-arrow{
+  color:#876d42;
+  font-size:12px;
+  transition:transform .25s ease,color .25s ease;
+}
+
+.home-work-card:hover .home-work-thumb img{
+  transform:scale(1.045);
+  filter:brightness(1.07);
+}
+
+.home-work-card:hover .home-work-arrow{
+  color:#dfb970;
+  transform:translate(2px,-2px);
+}
+
+.home-selected-all{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-top:13px;
+  padding-bottom:5px;
+  border-bottom:1px solid rgba(211,172,96,.20);
+  color:#9f814b;
+  font-size:8px;
+  letter-spacing:.10em;
+}
+
+.home-work-empty{
+  margin:0;
+  padding:18px 0;
+  color:#6f6a62;
+  font-size:9px;
+}
+
+/* ---------------------------------------------------------
+   07. First-entry choreography for the new elements
+--------------------------------------------------------- */
+.is-intro-loading .hero-profile-intro,
+.is-intro-loading .home-selected-works,
+.is-intro-loading .home-explore-hint{
+  opacity:0;
+  transform:translateY(12px);
+}
+
+.home-page.is-intro-ready .hero-profile-intro{
+  animation:v17IntroPiece .72s .78s cubic-bezier(.16,.86,.22,1) both;
+}
+
+.home-page.is-intro-ready .home-selected-works{
+  animation:v17IntroPiece .82s 1.02s cubic-bezier(.16,.86,.22,1) both;
+}
+
+.home-page.is-intro-ready .home-explore-hint{
+  animation:v17IntroPiece .72s 1.26s cubic-bezier(.16,.86,.22,1) both;
+}
+
+@keyframes v17IntroPiece{
+  from{opacity:0;transform:translateY(14px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* ---------------------------------------------------------
+   08. Record click opens full panel: background preview fades
+--------------------------------------------------------- */
+.hero.is-preview-open .home-selected-works,
+.hero.is-preview-open .hero-profile-intro,
+.hero.is-preview-open .home-explore-hint{
+  opacity:.08!important;
+  pointer-events:none;
+  transition:opacity .35s ease;
+}
+
+.hero.is-preview-open .record-wrap,
+.hero.is-preview-open .category-orbit{
+  left:30.5%!important;
+}
+
+.hero.is-preview-open .record-stage::before,
+.hero.is-preview-open .record-stage::after{
+  left:30.5%!important;
+}
+
+/* ---------------------------------------------------------
+   09. Preview panel subcopy legibility
+--------------------------------------------------------- */
+.preview-heading .section-label{
+  font-size:10.5px!important;
+}
+
+.preview-heading h2{
+  font-size:31px!important;
+}
+
+.project-card h3{
+  font-size:17px!important;
+}
+
+.project-card p{
+  color:#aaa399!important;
+  font-size:13px!important;
+  line-height:1.72!important;
+}
+
+.project-card-meta{
+  color:#8e877d!important;
+  font-size:10px!important;
+}
+
+.project-card-meta b{
+  font-size:10.5px!important;
+}
+
+/* ---------------------------------------------------------
+   10. Medium desktop
+--------------------------------------------------------- */
+@media(max-width:1350px) and (min-width:901px){
+  .hero-profile-intro,
+  .hero-copy,
+  .home-explore-hint{
+    left:4.8vw!important;
+  }
+
+  .hero-copy{
+    width:min(32vw,470px)!important;
+  }
+
+  .hero h1{
+    font-size:clamp(54px,4.9vw,84px)!important;
+  }
+
+  .record-wrap,
+  .category-orbit,
+  .record-stage::before,
+  .record-stage::after{
+    left:55.5%!important;
+  }
+
+  .home-selected-works{
+    right:2vw!important;
+    width:min(20vw,300px)!important;
+  }
+
+  .home-work-card{
+    grid-template-columns:88px 1fr 12px;
+    gap:10px;
+  }
+
+  .home-work-thumb{
+    width:88px;
+  }
+}
+
+/* ---------------------------------------------------------
+   11. Tablet: side preview becomes bottom strip
+--------------------------------------------------------- */
+@media(max-width:900px){
+  .hero-profile-intro{
+    display:none;
+  }
+
+  .hero-copy{
+    left:6vw!important;
+    top:27%!important;
+    width:82vw!important;
+    transform:none!important;
+  }
+
+  .hero h1{
+    font-size:clamp(50px,10vw,72px)!important;
+  }
+
+  .home-explore-hint{
+    left:6vw!important;
+    bottom:20px!important;
+  }
+
+  .home-selected-works{
+    right:18px!important;
+    bottom:90px!important;
+    width:min(48vw,390px)!important;
+  }
+
+  .home-selected-head{
+    margin-bottom:8px;
+  }
+
+  .home-work-card{
+    grid-template-columns:84px 1fr 12px;
+    min-height:64px;
+  }
+
+  .home-work-thumb{
+    width:84px;
+  }
+
+  .category-orbit{
+    display:none!important;
+  }
+
+  .record-wrap{
+    left:60%!important;
+  }
+
+  .record-stage::before,
+  .record-stage::after{
+    left:60%!important;
+  }
+
+  .hero.is-preview-open .home-selected-works{
+    opacity:0!important;
+  }
+}
+
+@media(max-width:640px){
+  .home-selected-works{
+    display:none!important;
+  }
+
+  .hero-copy{
+    top:auto!important;
+    bottom:88px!important;
+  }
+
+  .home-explore-hint{
+    font-size:7px;
+    gap:8px;
+  }
+
+  .home-explore-hint i{
+    width:12px;
+  }
+}
+
+
+/* =========================================================
+   V18.0 — CENTERED RECORD + 00 ABOUT ME CATEGORY
+========================================================= */
+
+/* ---------------------------------------------------------
+   01. Remove redundant bottom-right utility nav
+--------------------------------------------------------- */
+.social-rail,
+.hero-profile-intro{
+  display:none!important;
+}
+
+/* ---------------------------------------------------------
+   02. Left category block
+   독립 PROFILE 소개를 제거했으므로 카테고리 블록을 조금 위로.
+--------------------------------------------------------- */
+.hero-copy{
+  left:6.8vw!important;
+  top:47.2%!important;
+  width:min(31vw,510px)!important;
+  transform:translateY(-50%)!important;
+}
+
+/* ---------------------------------------------------------
+   03. Record: move visibly closer to viewport center
+--------------------------------------------------------- */
+.record-wrap,
+.category-orbit{
+  left:52.5%!important;
+}
+
+.record-stage::before,
+.record-stage::after{
+  left:52.5%!important;
+}
+
+/* 5개의 orbit 항목을 넣어도 우측 preview와 충돌하지 않도록 */
+.category-btn{
+  min-width:116px!important;
+}
+
+.category-btn .category-name{
+  max-width:98px!important;
+}
+
+/* ---------------------------------------------------------
+   04. Right selected works gets a little more breathing room
+--------------------------------------------------------- */
+.home-selected-works{
+  right:3.0vw!important;
+  bottom:9%!important;
+  width:min(20vw,350px)!important;
+}
+
+/* ---------------------------------------------------------
+   05. PROFILE MODE
+--------------------------------------------------------- */
+.home-selected-works.is-profile .home-selected-head{
+  margin-bottom:18px;
+}
+
+.home-selected-works.is-profile .home-selected-count{
+  color:#766b59!important;
+  font-size:14px!important;
+}
+
+.home-profile-card{
+  padding:3px 0 18px;
+  border-bottom:1px solid rgba(255,255,255,.065);
+}
+
+.home-profile-role{
+  display:block;
+  margin-bottom:13px;
+
+  color:#cfb985;
+  font-size:9px;
+  font-weight:600;
+  letter-spacing:.13em;
+}
+
+.home-profile-card p{
+  max-width:300px;
+  margin:0;
+
+  color:#aaa49a;
+  font-family:"Noto Sans KR",sans-serif;
+  font-size:12px;
+  line-height:1.75;
+  letter-spacing:-.015em;
+}
+
+.home-profile-skills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  margin-top:18px;
+}
+
+.home-profile-skills span{
+  display:inline-flex;
+  align-items:center;
+  min-height:25px;
+  padding:0 9px;
+
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:999px;
+
+  color:#7f786d;
+  font-size:7px;
+  letter-spacing:.07em;
+}
+
+/* ---------------------------------------------------------
+   06. Compact interaction hint remains on left bottom
+--------------------------------------------------------- */
+.home-explore-hint{
+  left:6.8vw!important;
+}
+
+/* ---------------------------------------------------------
+   07. Open-state record position
+--------------------------------------------------------- */
+.hero.is-preview-open .record-wrap,
+.hero.is-preview-open .category-orbit{
+  left:29.5%!important;
+}
+
+.hero.is-preview-open .record-stage::before,
+.hero.is-preview-open .record-stage::after{
+  left:29.5%!important;
+}
+
+/* ---------------------------------------------------------
+   08. Medium desktop
+--------------------------------------------------------- */
+@media(max-width:1350px) and (min-width:901px){
+  .hero-copy,
+  .home-explore-hint{
+    left:5vw!important;
+  }
+
+  .record-wrap,
+  .category-orbit,
+  .record-stage::before,
+  .record-stage::after{
+    left:51.5%!important;
+  }
+
+  .home-selected-works{
+    right:2vw!important;
+    width:min(21vw,315px)!important;
+  }
+
+  .category-btn{
+    min-width:108px!important;
+  }
+
+  .category-btn .category-name{
+    max-width:88px!important;
+  }
+}
+
+/* ---------------------------------------------------------
+   09. Tablet
+--------------------------------------------------------- */
+@media(max-width:900px){
+  .hero-copy{
+    left:6vw!important;
+  }
+
+  .record-wrap,
+  .record-stage::before,
+  .record-stage::after{
+    left:58%!important;
+  }
+
+  .home-selected-works{
+    right:18px!important;
+    width:min(49vw,400px)!important;
+  }
+}
+
+/* ---------------------------------------------------------
+   10. Mobile
+--------------------------------------------------------- */
+@media(max-width:640px){
+  .home-selected-works{
+    display:none!important;
+  }
+}
+
+
+/* =========================================================
+   V20.0 — PREVIEW PANEL SCROLL FIX
+========================================================= */
+
+/*
+  패널 안 프로젝트 리스트는 wheel / trackpad / touch 모두
+  자체 스크롤 영역으로 동작.
+*/
+.preview-grid{
+  overflow-y:auto!important;
+  overflow-x:hidden!important;
+
+  overscroll-behavior-y:contain;
+  touch-action:pan-y;
+  -webkit-overflow-scrolling:touch;
+
+  /* 브라우저가 실제 스크롤 컨테이너로 명확히 처리하도록 */
+  min-height:0!important;
+}
+
+/*
+  패널이 열리면 바깥 레코드 영역은 그대로 고정.
+  실제 스크롤은 preview-grid에만 일어남.
+*/
+.preview-panel.is-open{
+  overscroll-behavior:contain;
+}
+
+/* 스크롤바를 너무 희미하지 않게 조정 */
+.preview-grid{
+  scrollbar-width:thin;
+  scrollbar-color:rgba(229,190,113,.42) rgba(255,255,255,.025)!important;
+}
+
+.preview-grid::-webkit-scrollbar{
+  width:5px!important;
+}
+
+.preview-grid::-webkit-scrollbar-track{
+  background:rgba(255,255,255,.018);
+  border-radius:999px;
+}
+
+.preview-grid::-webkit-scrollbar-thumb{
+  background:rgba(229,190,113,.42)!important;
+  border-radius:999px;
+}
+
+.preview-grid::-webkit-scrollbar-thumb:hover{
+  background:rgba(229,190,113,.66)!important;
+}
+
+
+/* =========================================================
+   V21.0 — SELECTED WORKS TYPOGRAPHY + CREDIT SUMMARY
+========================================================= */
+
+/* 전체 우측 카드 영역을 아주 조금 넓혀 텍스트에 여유 */
+.home-selected-works{
+  width:min(21vw,370px)!important;
+}
+
+/* SELECTED WORKS */
+.home-selected-head span:first-child{
+  font-size:8px!important;
+  color:#827b70!important;
+}
+
+/* 현재 카테고리 */
+.home-selected-head strong{
+  font-size:11px!important;
+  color:#ded5c5!important;
+}
+
+/* 숫자 */
+.home-selected-count{
+  font-size:20px!important;
+}
+
+/* 프로젝트 번호 */
+.home-work-copy > span{
+  margin-bottom:5px!important;
+  color:#878077!important;
+  font-size:7.8px!important;
+  line-height:1.25!important;
+}
+
+/* 프로젝트명 */
+.home-work-copy strong{
+  margin-bottom:6px!important;
+  color:#eee8de!important;
+  font-size:13px!important;
+  line-height:1.18!important;
+}
+
+/* 기여도 / 역할 — 가장 작았던 부분 */
+.home-work-copy small{
+  color:#aaa197!important;
+  font-size:9px!important;
+  line-height:1.35!important;
+  letter-spacing:.01em!important;
+}
+
+/* 화살표 */
+.home-work-arrow{
+  font-size:13px!important;
+}
+
+/* VIEW ALL PROJECTS */
+.home-selected-all{
+  margin-top:15px!important;
+  color:#b18d4e!important;
+  font-size:9px!important;
+  letter-spacing:.11em!important;
+}
+
+/* 썸네일 안 순번 */
+.home-work-index{
+  font-size:7.5px!important;
+}
+
+@media(max-width:1350px) and (min-width:901px){
+  .home-selected-works{
+    width:min(22vw,325px)!important;
+  }
+
+  .home-work-copy strong{
+    font-size:12px!important;
+  }
+
+  .home-work-copy small{
+    font-size:8.5px!important;
+  }
+}
+
+
+/* =========================================================
+   V22.0 — MICROCOPY LEGIBILITY PASS
+   큰 타이틀/레코드 크기는 유지하고
+   실제로 읽어야 하는 작은 UI 텍스트만 전체적으로 확대.
+========================================================= */
+
+/* ---------------------------------------------------------
+   01. RECORD CATEGORY ORBIT
+   핵심 조작 메뉴인데 너무 작았던 부분을 확실히 키움.
+--------------------------------------------------------- */
+.category-btn{
+  grid-template-columns:26px auto!important;
+  column-gap:11px!important;
+  row-gap:4px!important;
+
+  min-width:152px!important;
+  padding:10px 0!important;
+
+  color:#8c8b86!important;
+}
+
+.category-btn::before{
+  width:12px!important;
+  height:12px!important;
+}
+
+.category-btn .category-main{
+  gap:9px!important;
+}
+
+.category-btn .category-no{
+  color:#77746d!important;
+  font-size:9px!important;
+  font-weight:500!important;
+  line-height:1!important;
+  letter-spacing:.10em!important;
+}
+
+.category-btn .category-name{
+  max-width:122px!important;
+  color:#9e9c96!important;
+  font-size:11.5px!important;
+  font-weight:500!important;
+  line-height:1.15!important;
+  letter-spacing:.015em!important;
+}
+
+.category-btn .category-state{
+  height:auto!important;
+  min-height:10px!important;
+  margin-top:1px!important;
+
+  color:#a88d58!important;
+  font-size:7.5px!important;
+  font-weight:600!important;
+  line-height:1!important;
+  letter-spacing:.18em!important;
+}
+
+.category-btn.is-active .category-no,
+.category-btn.is-active .category-name{
+  color:#f2deb5!important;
+}
+
+.category-btn.is-active .category-name{
+  font-weight:700!important;
+}
+
+.category-btn.is-active .category-state{
+  color:#cda85f!important;
+}
+
+.category-btn.is-active::before{
+  box-shadow:0 0 18px 5px rgba(241,223,182,.30)!important;
+}
+
+/* ---------------------------------------------------------
+   02. LEFT CATEGORY MICROCOPY
+--------------------------------------------------------- */
+.hero-index-wrap{
+  font-size:13px!important;
+}
+
+.hero-kicker{
+  color:#a4a6aa!important;
+  font-size:11px!important;
+}
+
+.hero-desc{
+  font-size:15px!important;
+  color:#d0cdc6!important;
+}
+
+/* ---------------------------------------------------------
+   03. SINGLE HOW-TO LINE
+--------------------------------------------------------- */
+.home-explore-hint{
+  color:#8f887d!important;
+  font-size:9px!important;
+  letter-spacing:.10em!important;
+}
+
+.home-explore-hint b{
+  color:#c1a163!important;
+  font-size:9px!important;
+}
+
+/* ---------------------------------------------------------
+   04. RIGHT SELECTED WORKS
+--------------------------------------------------------- */
+.home-selected-head span:first-child{
+  font-size:9px!important;
+  color:#928a7d!important;
+}
+
+.home-selected-head strong{
+  font-size:12px!important;
+  color:#e4dac8!important;
+}
+
+.home-selected-count{
+  font-size:21px!important;
+}
+
+.home-work-copy > span{
+  font-size:8.5px!important;
+  color:#938b81!important;
+}
+
+.home-work-copy strong{
+  font-size:13.5px!important;
+  line-height:1.2!important;
+}
+
+.home-work-copy small{
+  font-size:9.8px!important;
+  line-height:1.4!important;
+  color:#b2aaa0!important;
+}
+
+.home-work-index{
+  font-size:8px!important;
+}
+
+.home-work-arrow{
+  font-size:14px!important;
+}
+
+.home-selected-all{
+  font-size:9.5px!important;
+  color:#bd9651!important;
+}
+
+/* PROFILE mode microcopy */
+.home-profile-role{
+  font-size:10px!important;
+}
+
+.home-profile-card p{
+  font-size:13px!important;
+}
+
+.home-profile-skills span{
+  min-height:27px!important;
+  padding:0 10px!important;
+  font-size:8px!important;
+}
+
+/* ---------------------------------------------------------
+   05. CLICK-OPEN PREVIEW PANEL
+--------------------------------------------------------- */
+.preview-heading .section-label{
+  font-size:11px!important;
+}
+
+.preview-heading h2{
+  font-size:32px!important;
+}
+
+.preview-close{
+  font-size:10.5px!important;
+}
+
+.project-card-index{
+  font-size:10.5px!important;
+}
+
+.project-card h3{
+  font-size:17px!important;
+}
+
+.project-card p{
+  font-size:13px!important;
+  color:#aaa398!important;
+}
+
+.project-card-meta{
+  font-size:10.5px!important;
+}
+
+.project-card-meta b{
+  font-size:11px!important;
+}
+
+.preview-more-wrap .text-link{
+  font-size:11.5px!important;
+}
+
+/* ---------------------------------------------------------
+   06. Medium desktop
+--------------------------------------------------------- */
+@media(max-width:1350px) and (min-width:901px){
+  .category-btn{
+    min-width:138px!important;
+  }
+
+  .category-btn .category-name{
+    max-width:108px!important;
+    font-size:10.8px!important;
+  }
+
+  .category-btn .category-no{
+    font-size:8.5px!important;
+  }
+
+  .category-btn .category-state{
+    font-size:7px!important;
+  }
+
+  .home-work-copy strong{
+    font-size:12.5px!important;
+  }
+
+  .home-work-copy small{
+    font-size:9px!important;
+  }
+}
+
+/* ---------------------------------------------------------
+   07. Tablet
+--------------------------------------------------------- */
+@media(max-width:900px){
+  .hero-kicker{
+    font-size:10.5px!important;
+  }
+
+  .hero-desc{
+    font-size:14px!important;
+  }
+
+  .home-work-copy strong{
+    font-size:12px!important;
+  }
+
+  .home-work-copy small{
+    font-size:9px!important;
+  }
+}
