@@ -4,20 +4,20 @@
       id:'profile',
       no:'00',
       label:'ABOUT ME',
-      desc:'브랜드 디자인부터 웹 퍼블리싱, 카페24 및 워드프레스 운영까지 실제 서비스 기반으로 작업하고 있습니다.',
+      desc:'디자인과 퍼블리싱을 연결해 실제 운영 화면까지 구현합니다.',
       kind:'profile'
     },
     {
       id:'web',
       no:'01',
       label:'WEB DESIGN',
-      desc:'웹사이트 기획 · 디자인 · 퍼블리싱'
+      desc:'웹사이트 기획 · UI 디자인 · 반응형 퍼블리싱'
     },
     {
       id:'ecommerce',
       no:'02',
-      label:'E-COMMERCE',
-      desc:'브랜드 이커머스 · 카페24 · 쇼핑 경험'
+      label:'SHOP DESIGN',
+      desc:'카페24 기반 쇼핑 경험 · 운영형 웹디자인'
     },
     {
       id:'detail',
@@ -29,7 +29,15 @@
       id:'graphic',
       no:'04',
       label:'GRAPHIC DESIGN',
-      desc:'브랜딩 · 편집 · 비주얼 그래픽'
+      desc:'브랜딩 · 편집 · 프로모션 비주얼'
+    },
+    {
+      id:'kmong',
+      no:'05',
+      label:'KMONG',
+      desc:'웹디자인 · 퍼블리싱 외주 및 작업 의뢰',
+      kind:'external',
+      url:'https://kmong.com/gig/608596'
     }
   ];
 
@@ -38,6 +46,8 @@
     : [];
 
   const body = document.body;
+  const entryScreen = document.getElementById('entryScreen');
+  const entryStage = document.getElementById('entryStage');
   const hero = document.querySelector('.hero');
   const record = document.getElementById('record');
   const recordButton = document.getElementById('recordButton');
@@ -66,8 +76,23 @@
   const recordUiIndex = document.getElementById('recordUiIndex');
   const recordUiCategory = document.getElementById('recordUiCategory');
 
+  /*
+    Right sidebar input isolation:
+    - wheel/touch gesture stays inside the sidebar
+    - prevents bubbling into the global LP wheel controller
+  */
+  if(homeSelectedWorks){
+    homeSelectedWorks.addEventListener('wheel', e => {
+      e.stopPropagation();
+    }, { passive:true });
 
-  let activeIndex = 1;
+    homeSelectedWorks.addEventListener('touchmove', e => {
+      e.stopPropagation();
+    }, { passive:true });
+  }
+
+
+  let activeIndex = 0;
   let wheelLock = false;
   let accumulatedWheel = 0;
 
@@ -101,6 +126,37 @@
       .replace(/>/g,'&gt;')
       .replace(/"/g,'&quot;')
       .replace(/'/g,'&#039;');
+  }
+
+  let entryOpened = false;
+
+  function isEntryGateActive(){
+    return body.classList.contains('is-entry-gate');
+  }
+
+  function openEntryGate(){
+    if(entryOpened || !isEntryGateActive()) return;
+    entryOpened = true;
+
+    body.classList.add('is-entry-opening');
+
+    /*
+      1) 대문 타이포가 먼저 빠지고
+      2) 약간의 시간차 뒤 레코드 메인 intro가 시작된다.
+    */
+    window.setTimeout(() => {
+      body.classList.remove('is-entry-gate');
+      startIntro();
+    }, 460);
+
+    window.setTimeout(() => {
+      body.classList.add('is-entry-complete');
+      body.classList.remove('is-entry-opening');
+
+      if(entryScreen){
+        entryScreen.setAttribute('aria-hidden','true');
+      }
+    }, 1050);
   }
 
   /* =====================================================
@@ -170,8 +226,10 @@
   }
 
   function sideCardHTML(p,index){
+    const hierarchyClass = index === 0 ? 'is-featured' : 'is-secondary';
+
     return `
-      <a class="home-work-card" href="project.html?id=${encodeURIComponent(p.id)}">
+      <a class="home-work-card ${hierarchyClass}" href="project.html?id=${encodeURIComponent(p.id)}">
         <div class="home-work-thumb">
           <img src="${esc(p.thumbnail)}" alt="${esc(p.imageAlt || p.title)} 프로젝트 미리보기">
           <span class="home-work-index">${String(index+1).padStart(2,'0')}</span>
@@ -192,54 +250,180 @@
     if(!homeSelectedWorks || !homeSelectedList) return;
 
     const isProfile = cat.kind === 'profile';
-    const list = isProfile ? [] : projects.filter(p => p.category === cat.id).slice(0,2);
-    const total = isProfile ? 1 : projects.filter(p => p.category === cat.id).length;
+    const isExternal = cat.kind === 'external';
+
+    const categoryProjects = (isProfile || isExternal)
+      ? []
+      : projects.filter(p => p.category === cat.id);
+
+    const total = isProfile || isExternal ? 1 : categoryProjects.length;
 
     const apply = () => {
       homeSelectedWorks.classList.toggle('is-profile', isProfile);
-      homeSelectedCategory.textContent = isProfile ? 'YOON SEOK HEE' : cat.label;
-      homeSelectedCount.textContent = isProfile ? '00' : String(total).padStart(2,'0');
+      homeSelectedWorks.classList.toggle('is-external', isExternal);
 
       if(isProfile){
+        homeSelectedCategory.textContent = 'YOON SEOK HEE';
+        homeSelectedCount.textContent = '00';
+
         homeSelectedAll.href = 'about.html';
+        homeSelectedAll.removeAttribute('target');
+        homeSelectedAll.removeAttribute('rel');
         homeSelectedAll.innerHTML = 'VIEW FULL PROFILE <span>↗</span>';
+
         homeSelectedList.innerHTML = `
           <div class="home-profile-card">
-            <span class="home-profile-role">WEB DESIGNER / PUBLISHER</span>
-            <p>
-              브랜드 디자인부터 웹 퍼블리싱,
-              카페24 및 워드프레스 운영까지
-              실제 서비스 기반으로 작업하고 있습니다.
-            </p>
 
-            <div class="home-profile-skills">
-              <span>FIGMA</span>
-              <span>PHOTOSHOP</span>
-              <span>CAFE24</span>
-              <span>WORDPRESS</span>
-              <span>HTML / CSS / JS</span>
+            <div class="home-profile-intro home-profile-animate">
+              <div class="home-profile-photo-wrap">
+                <img
+                  class="home-profile-photo"
+                  src="./images/profile_seokhee.png"
+                  alt="윤석희 증명사진"
+                  width="300"
+                  height="400"
+                >
+              </div>
+
+              <div class="home-profile-identity">
+                <span class="home-profile-role">WEB DESIGNER / PUBLISHER</span>
+                <strong class="home-profile-name">YOON SEOK HEE</strong>
+                <small class="home-profile-summary">
+                  디자인과 퍼블리싱을 함께 다루며,
+                  화면을 실제 서비스로 완성합니다.
+                </small>
+              </div>
             </div>
+
+            <div class="home-profile-body home-profile-animate">
+              <p>
+                웹사이트와 랜딩페이지, 쇼핑몰, 상세페이지,
+                그래픽 작업까지 목적에 맞게 설계하고 구현합니다.
+                퍼블리싱은 HTML/CSS/JS 기반 반응형과 인터랙션 작업까지 대응합니다.
+              </p>
+            </div>
+
+            <div class="home-profile-career-grid home-profile-animate">
+              <article>
+                <span>CAREER</span>
+                <strong>2025.07 — PRESENT</strong>
+                <small>WEB DESIGNER / PUBLISHER</small>
+              </article>
+
+              <article>
+                <span>ROLE</span>
+                <strong>DESIGN + PUBLISHING</strong>
+                <small>기획 의도를 화면으로 설계하고 실제 동작까지 구현</small>
+              </article>
+            </div>
+
+            <section class="home-profile-services home-profile-animate">
+              <span class="home-profile-section-label">AVAILABLE WORK</span>
+
+              <div>
+                <b>WEBSITE</b>
+                <b>LANDING PAGE</b>
+                <b>SHOP / CAFE24</b>
+                <b>DETAIL PAGE</b>
+                <b>WORDPRESS</b>
+                <b>GRAPHIC DESIGN</b>
+              </div>
+            </section>
+
+            <div class="home-profile-meta home-profile-animate">
+              <div class="home-profile-meta-row">
+                <span>PUBLISHING</span>
+                <p>HTML / CSS / JS · RESPONSIVE · INTERACTION · MAINTENANCE</p>
+              </div>
+
+              <div class="home-profile-meta-row">
+                <span>TOOLS</span>
+                <p>FIGMA · PHOTOSHOP · ILLUSTRATOR · CAFE24 · WORDPRESS · VS CODE</p>
+              </div>
+            </div>
+
           </div>
         `;
 
         if(recordHoverText){
           recordHoverText.textContent = 'VIEW FULL PROFILE';
         }
-      }else{
-        homeSelectedAll.href = `projects.html?category=${encodeURIComponent(cat.id)}`;
-        homeSelectedAll.innerHTML = 'VIEW ALL PROJECTS <span>↗</span>';
-        homeSelectedList.innerHTML = list.length
-          ? list.map(sideCardHTML).join('')
-          : '<p class="home-work-empty">등록된 작업물이 없습니다.</p>';
+        return;
+      }
+
+      if(isExternal){
+        homeSelectedCategory.textContent = 'KMONG';
+        homeSelectedCount.textContent = '05';
+
+        homeSelectedAll.href = cat.url;
+        homeSelectedAll.target = '_blank';
+        homeSelectedAll.rel = 'noopener noreferrer';
+        homeSelectedAll.innerHTML = 'OPEN KMONG SERVICE <span>↗</span>';
+
+        homeSelectedList.innerHTML = `
+          <a
+            class="home-kmong-card home-profile-animate"
+            href="${cat.url}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="home-kmong-image">
+              <img
+                src="./images/kmong_service.png"
+                alt="윤석희 크몽 서비스 페이지"
+                loading="lazy"
+              >
+              <span>KMONG / SERVICE</span>
+            </div>
+
+            <div class="home-kmong-copy">
+              <span class="home-kmong-eyebrow">FREELANCE / REQUEST</span>
+              <strong>웹·상세·홈페이지<br>디자인 & 퍼블리싱</strong>
+
+              <p>
+                웹사이트, 랜딩페이지, 쇼핑몰, 상세페이지 제작과
+                반응형 퍼블리싱 및 운영 수정 작업을 의뢰할 수 있습니다.
+              </p>
+
+              <div class="home-kmong-services">
+                <span>WEB</span>
+                <span>LANDING</span>
+                <span>DETAIL</span>
+                <span>CAFE24</span>
+                <span>WORDPRESS</span>
+              </div>
+
+              <span class="home-kmong-open">VIEW KMONG SERVICE ↗</span>
+            </div>
+          </a>
+        `;
 
         if(recordHoverText){
-          recordHoverText.textContent = `VIEW ALL ${cat.label}`;
+          recordHoverText.textContent = 'OPEN KMONG';
         }
+        return;
+      }
+
+      homeSelectedCategory.textContent = cat.label;
+      homeSelectedCount.textContent = String(total).padStart(2,'0');
+
+      homeSelectedAll.href = `projects.html?category=${encodeURIComponent(cat.id)}`;
+      homeSelectedAll.removeAttribute('target');
+      homeSelectedAll.removeAttribute('rel');
+      homeSelectedAll.innerHTML = 'VIEW ALL PROJECTS <span>↗</span>';
+
+      homeSelectedList.innerHTML = categoryProjects.length
+        ? categoryProjects.map(sideCardHTML).join('')
+        : '<p class="home-work-empty">등록된 작업물이 없습니다.</p>';
+
+      if(recordHoverText){
+        recordHoverText.textContent = `VIEW ALL ${cat.label}`;
       }
     };
 
     if(!animate || window.matchMedia('(prefers-reduced-motion: reduce)').matches){
       apply();
+      homeSelectedWorks.scrollTop = 0;
       return;
     }
 
@@ -248,37 +432,43 @@
     homeSelectedWorks.animate(
       [
         { opacity:1, transform:'translateY(0)' },
-        { opacity:0, transform:'translateY(-12px)' }
+        { opacity:0, transform:'translateY(-8px)' }
       ],
       {
-        duration:180,
+        duration:140,
         easing:'cubic-bezier(.4,0,.6,1)',
         fill:'forwards'
       }
     ).finished.then(() => {
       apply();
+      homeSelectedWorks.scrollTop = 0;
 
       homeSelectedWorks.animate(
         [
-          { opacity:0, transform:'translateY(18px)' },
+          { opacity:0, transform:'translateY(12px)' },
           { opacity:1, transform:'translateY(0)' }
         ],
         {
-          duration:500,
+          duration:420,
           easing:'cubic-bezier(.16,.86,.22,1)',
           fill:'both'
         }
       );
 
-      [...homeSelectedList.querySelectorAll('.home-work-card')].forEach((card,i) => {
-        card.animate(
+      const revealItems = [
+        ...homeSelectedList.querySelectorAll('.home-work-card'),
+        ...homeSelectedList.querySelectorAll('.home-profile-animate')
+      ];
+
+      revealItems.forEach((item,i) => {
+        item.animate(
           [
-            { opacity:0, transform:'translateY(14px)' },
+            { opacity:0, transform:'translateY(10px)' },
             { opacity:1, transform:'translateY(0)' }
           ],
           {
-            duration:500,
-            delay:80 + i*80,
+            duration:420,
+            delay:55 + i*60,
             easing:'cubic-bezier(.16,.86,.22,1)',
             fill:'both'
           }
@@ -286,6 +476,7 @@
       });
     }).catch(() => {
       apply();
+      homeSelectedWorks.scrollTop = 0;
     });
   }
 
@@ -296,7 +487,7 @@
     orbit.innerHTML = '';
 
     const radius = 51.8;
-    const angles = [-42, -21, 0, 21, 42];
+    const angles = [-52, -31, -10, 11, 32, 53];
 
     categories.forEach((cat, i) => {
       const btn = document.createElement('button');
@@ -471,6 +662,10 @@
     activeIndex = (index + categories.length) % categories.length;
     const cat = categories[activeIndex];
 
+    if(cat && cat.id){
+      body.dataset.currentCategory = cat.id;
+    }
+
     if(direction !== null){
       setRotationDirection(direction, addImpulse);
     }else if(addImpulse){
@@ -494,9 +689,7 @@
   function renderPreview(){
     const cat = categories[activeIndex];
 
-    if(cat && cat.kind === 'profile'){
-      return;
-    }
+    if(cat && (cat.kind === 'profile' || cat.kind === 'external')){ return; }
 
     const categoryProjects = projects.filter(p => p.category === cat.id);
     const list = categoryProjects.slice(0,4);
@@ -521,6 +714,11 @@
       return;
     }
 
+    if(cat && cat.kind === 'external' && cat.url){
+      window.open(cat.url, '_blank', 'noopener,noreferrer');
+      return;
+    }
+
     renderPreview();
     hero.classList.add('is-preview-open');
     panel.classList.add('is-open');
@@ -541,18 +739,37 @@
 
   window.addEventListener('wheel', e => {
     /*
-      PREVIEW PANEL OPEN:
-      프로젝트 패널 내부의 기본 wheel / trackpad 스크롤을 그대로 허용한다.
-      이전 버전은 여기서 먼저 preventDefault()를 실행해
-      .preview-grid의 overflow-y:auto가 있어도 스크롤이 막혔다.
+      ENTRY GATE:
+      첫 진입 상태에서는 wheel을 레코드 회전에 사용하지 않고
+      입장 트리거로만 사용한다.
+    */
+    if(isEntryGateActive()){
+      e.preventDefault();
+      openEntryGate();
+      return;
+    }
+
+    /*
+      01. FULL PREVIEW PANEL
+      열린 프로젝트 패널은 브라우저 기본 스크롤 사용.
     */
     if(panel.classList.contains('is-open')){
       return;
     }
 
     /*
-      HOME CLOSED STATE:
-      이때만 브라우저 기본 스크롤을 막고 wheel을 레코드 회전에 사용한다.
+      02. RIGHT HOME SIDEBAR
+      SELECTED WORKS 영역 위에서 발생한 wheel / trackpad 입력은
+      레코드 카테고리 회전에 절대 사용하지 않는다.
+      브라우저 기본 스크롤을 그대로 허용한다.
+    */
+    if(homeSelectedWorks && e.target instanceof Element && e.target.closest('.home-selected-works')){
+      return;
+    }
+
+    /*
+      03. MAIN HERO AREA
+      사이드바와 패널 바깥에서만 wheel을 LP 회전에 사용.
     */
     e.preventDefault();
 
@@ -573,6 +790,14 @@
   }, { passive:false });
 
   window.addEventListener('keydown', e => {
+    if(isEntryGateActive()){
+      if(e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar'){
+        e.preventDefault();
+        openEntryGate();
+      }
+      return;
+    }
+
     if(e.key === 'ArrowDown' || e.key === 'ArrowRight'){
       markInteracted();
       selectCategory(activeIndex + 1, true, 1);
@@ -586,6 +811,15 @@
     if(e.key === 'Enter') openPreview();
     if(e.key === 'Escape') closePreview();
   });
+
+  if(entryStage){
+    entryStage.addEventListener('click', e => {
+      if(isEntryGateActive()){
+        e.preventDefault();
+        openEntryGate();
+      }
+    });
+  }
 
   recordButton.addEventListener('click', openPreview);
   previewClose.addEventListener('click', closePreview);
@@ -653,21 +887,11 @@
   let touching = false;
 
   function isMobile(){
-    return window.matchMedia('(max-width:640px)').matches;
+    return window.matchMedia('(max-width:900px)').matches;
   }
 
   function syncGuide(){
-    if(isMobile()){
-      guideActionOne.textContent = 'SWIPE RECORD';
-      
-      
-      
-    }else{
-      
-      
-      
-      
-    }
+    /* v37: desktop/mobile 안내문은 CSS로 전환 */
   }
 
   syncGuide();
@@ -715,6 +939,8 @@
     let dpr = 1;
     let particles = [];
     let last = performance.now();
+    let lastPaint = 0;
+    const depthFrameMs = 1000 / 30;
 
     const pointerTarget = { x:0, y:0 };
     const camera = { x:0, y:0 };
@@ -782,16 +1008,16 @@
 
     function rebuild(){
       particles = [];
-      for(let i=0;i<112;i++) particles.push(makeParticle('far'));
-      for(let i=0;i<26;i++) particles.push(makeParticle('mid'));
-      for(let i=0;i<8;i++) particles.push(makeParticle('near'));
+      for(let i=0;i<68;i++) particles.push(makeParticle('far'));
+      for(let i=0;i<15;i++) particles.push(makeParticle('mid'));
+      for(let i=0;i<4;i++) particles.push(makeParticle('near'));
     }
 
     function resize(){
       const rect = canvas.getBoundingClientRect();
       width = Math.max(1,rect.width);
       height = Math.max(1,rect.height);
-      dpr = Math.min(window.devicePixelRatio || 1,2);
+      dpr = Math.min(window.devicePixelRatio || 1,1.25);
 
       canvas.width = Math.round(width*dpr);
       canvas.height = Math.round(height*dpr);
@@ -942,6 +1168,15 @@
     }
 
     function frame(now){
+      requestAnimationFrame(frame);
+
+      if(document.hidden || body.classList.contains('is-entry-gate')){
+        last = now;
+        return;
+      }
+
+      if(now - lastPaint < depthFrameMs) return;
+      lastPaint = now;
       const dt = Math.min((now-last)/1000,.04);
       last = now;
 
@@ -971,7 +1206,7 @@
         if(p.kind === 'mist') drawMist(p,px,py,a);
       }
 
-      requestAnimationFrame(frame);
+      
     }
 
     window.addEventListener('pointermove', e => {
@@ -1000,6 +1235,12 @@
      RECORD CONTINUOUS ROTATION
   ====================================================== */
   function animateRecord(now){
+    if(document.hidden || body.classList.contains('is-entry-gate')){
+      lastFrame = now;
+      requestAnimationFrame(animateRecord);
+      return;
+    }
+
     const dt = Math.min((now-lastFrame)/1000,.05);
     lastFrame = now;
 
@@ -1030,7 +1271,10 @@
   }
 
   renderOrbit();
-  selectCategory(1,false,null);
+  selectCategory(0,false,null);
   requestAnimationFrame(animateRecord);
-  startIntro();
+
+  if(!isEntryGateActive()){
+    startIntro();
+  }
 })();

@@ -1,9 +1,0 @@
-PORTFOLIO v4 — MAIN DETAIL UPDATE
-
-- 중앙 라벨과 텍스트를 한 단계 더 크게 조정
-- 첫 진입을 일반 fade가 아닌 LP press / gold scan 방식으로 변경
-- 왼쪽 카피를 좌→우 track-print reveal로 변경
-- 카테고리 01→04 순차 점등
-- HOW TO EXPLORE를 크게 확대하고 한글 결과 설명 추가
-- 안내 카드가 진입 시 power-on 되듯 골드 라인이 한 번 지나감
-- FAR/MID/NEAR 중 MID/NEAR 움직임과 관성 반응을 조금 강화

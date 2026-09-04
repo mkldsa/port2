@@ -335,3 +335,147 @@
 .about-contact-list strong{
   font-size:13px!important;
 }
+
+
+/* =========================================================
+   V34.0 — DESIGNER PROFILE SUMMARY
+========================================================= */
+.about-profile-summary{
+  position:relative;
+  z-index:1;
+
+  display:grid;
+  grid-template-columns:180px minmax(0,1fr);
+  gap:34px;
+  align-items:end;
+
+  max-width:900px;
+  margin:54px 0 0 auto;
+}
+
+.about-profile-summary > img{
+  display:block;
+  width:180px;
+  aspect-ratio:3/4;
+  object-fit:cover;
+
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:16px;
+  background:#111;
+}
+
+.about-profile-summary__copy > span{
+  display:block;
+  margin-bottom:11px;
+  color:#9a8a6b;
+  font-size:9px;
+  letter-spacing:.15em;
+}
+
+.about-profile-summary__copy > strong{
+  display:block;
+  margin-bottom:24px;
+
+  color:#e7e0d5;
+  font-size:clamp(24px,2.5vw,42px);
+  line-height:1;
+  letter-spacing:-.035em;
+}
+
+.about-profile-facts{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:1px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.08);
+}
+
+.about-profile-facts > div{
+  min-height:86px;
+  padding:16px;
+  background:#080808;
+}
+
+.about-profile-facts small{
+  display:block;
+  margin-bottom:10px;
+  color:#716c64;
+  font-size:8px;
+  letter-spacing:.14em;
+}
+
+.about-profile-facts b{
+  color:#cfc7bb;
+  font-size:10px;
+  line-height:1.5;
+}
+
+@media(max-width:900px){
+  .about-profile-summary{
+    grid-template-columns:120px minmax(0,1fr);
+    gap:22px;
+  }
+
+  .about-profile-summary > img{
+    width:120px;
+  }
+
+  .about-profile-facts{
+    grid-template-columns:1fr;
+  }
+
+  .about-profile-facts > div{
+    min-height:0;
+  }
+}
+
+@media(max-width:640px){
+  .about-profile-summary{
+    grid-template-columns:90px minmax(0,1fr);
+    gap:16px;
+    margin-top:36px;
+  }
+
+  .about-profile-summary > img{
+    width:90px;
+    border-radius:10px;
+  }
+
+  .about-profile-summary__copy > strong{
+    font-size:20px;
+  }
+}
+
+
+/* V37 — profile positioning: capability rather than a single contribution */
+.about-profile-facts b{
+  line-height:1.55!important;
+}
+
+
+/* =========================================================
+   V38.0 — ABOUT LEFT ALIGNMENT
+   사진 + 소개/요약 블록을 우측 정렬에서 좌측 기준으로 변경
+========================================================= */
+
+.about-intro{
+  margin-left:0!important;
+  margin-right:0!important;
+  max-width:640px!important;
+  text-align:left!important;
+}
+
+.about-profile-summary{
+  margin:52px 0 0 0!important;
+  max-width:920px!important;
+  justify-self:start!important;
+  text-align:left!important;
+}
+
+.about-profile-summary__copy{
+  text-align:left!important;
+}
+
+.about-profile-facts{
+  text-align:left!important;
+}

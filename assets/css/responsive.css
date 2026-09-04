@@ -469,3 +469,3061 @@
     transform:translate(-50%,-50%) scale(.58);
   }
 }
+
+
+/* =========================================================
+   V37 MOBILE / TABLET
+   PC interaction flow retained:
+   ENTRY → RECORD BROWSE → CATEGORY CHANGE → WORK SHEET → TAP RECORD
+========================================================= */
+
+@media(max-width:900px){
+
+  html,
+  body{
+    width:100%;
+    min-width:0;
+    overflow-x:hidden;
+  }
+
+  body.home-page{
+    overflow:hidden!important;
+    background:#050505;
+  }
+
+  .home-shell,
+  .home-main,
+  .hero{
+    width:100%;
+    height:100dvh!important;
+    min-height:620px!important;
+  }
+
+  /* ---------- HEADER ---------- */
+  .home-header{
+    top:0;
+    left:0;
+    right:0;
+    padding:18px 18px!important;
+    align-items:flex-start;
+  }
+
+  .home-header .brand strong{
+    font-size:11px!important;
+  }
+
+  .home-header .brand span{
+    display:block!important;
+    margin-top:3px;
+    font-size:7px!important;
+  }
+
+  .home-header .site-nav{
+    gap:12px!important;
+  }
+
+  .home-header .site-nav a{
+    font-size:8px!important;
+    letter-spacing:.04em;
+  }
+
+  /* ---------- ENTRY ---------- */
+  .entry-screen{
+    min-height:100dvh;
+  }
+
+  .entry-stage{
+    width:88vw!important;
+    max-width:none!important;
+  }
+
+  .entry-topline{
+    margin-bottom:28px!important;
+    font-size:7.5px!important;
+  }
+
+  .entry-title{
+    width:100%;
+    font-size:clamp(54px,14vw,78px)!important;
+    line-height:.84!important;
+    white-space:nowrap;
+  }
+
+  .entry-title-line{
+    margin-top:22px!important;
+  }
+
+  .entry-name{
+    margin-top:22px!important;
+    font-size:clamp(24px,7.2vw,36px)!important;
+  }
+
+  .entry-subcopy{
+    max-width:310px;
+    font-size:7.8px!important;
+    line-height:1.7!important;
+  }
+
+  .entry-enter{
+    margin-top:38px!important;
+    font-size:8px!important;
+  }
+
+  .entry-footer{
+    left:6vw!important;
+    right:6vw!important;
+    bottom:max(20px,env(safe-area-inset-bottom))!important;
+    font-size:6.5px!important;
+  }
+
+  /* ---------- HERO COPY ---------- */
+  .hero-copy{
+    left:20px!important;
+    top:82px!important;
+    bottom:auto!important;
+
+    width:calc(100vw - 40px)!important;
+    max-width:310px!important;
+
+    transform:none!important;
+    z-index:24;
+  }
+
+  .hero-index-wrap{
+    margin-bottom:14px!important;
+    font-size:10px!important;
+  }
+
+  .hero-index-wrap i{
+    width:42px!important;
+  }
+
+  .hero-kicker{
+    margin-bottom:9px!important;
+    font-size:8px!important;
+  }
+
+  .hero h1{
+    max-width:280px!important;
+    font-size:clamp(42px,12vw,58px)!important;
+    line-height:.88!important;
+  }
+
+  .hero-desc{
+    width:270px!important;
+    margin-top:13px!important;
+    font-size:10.5px!important;
+    line-height:1.55!important;
+  }
+
+  /* ---------- RECORD ---------- */
+  .record-stage{
+    position:absolute!important;
+    inset:0!important;
+    width:100%!important;
+    height:100%!important;
+  }
+
+  .record-wrap{
+    left:50%!important;
+    top:35dvh!important;
+
+    width:min(66vw,300px)!important;
+
+    transform:translate(-50%,-50%)!important;
+    z-index:14;
+  }
+
+  .record-stage::before,
+  .record-stage::after{
+    left:50%!important;
+    top:35dvh!important;
+  }
+
+  .record-stage::before{
+    width:min(74vw,330px)!important;
+    height:min(74vw,330px)!important;
+  }
+
+  .record-stage::after{
+    width:min(70vw,315px)!important;
+    height:min(70vw,315px)!important;
+  }
+
+  .record-hover-cta{
+    bottom:10%!important;
+    font-size:7px!important;
+  }
+
+  /* ---------- GUIDE ---------- */
+  .home-explore-hint{
+    left:20px!important;
+    right:20px!important;
+    top:49dvh!important;
+    bottom:auto!important;
+
+    width:auto!important;
+    justify-content:center;
+
+    font-size:7.2px!important;
+    opacity:.9!important;
+  }
+
+  .guide-copy-desktop{
+    display:none!important;
+  }
+
+  .guide-copy-mobile{
+    display:inline!important;
+  }
+
+  .home-explore-hint i{
+    width:16px!important;
+  }
+
+  /* ---------- CATEGORY RAIL ----------
+     PC orbit becomes horizontal category rail on mobile.
+  */
+  .category-orbit{
+    display:flex!important;
+    position:absolute!important;
+
+    left:0!important;
+    top:53dvh!important;
+
+    width:100vw!important;
+    height:42px!important;
+
+    padding:0 18px!important;
+    gap:8px!important;
+
+    overflow-x:auto!important;
+    overflow-y:hidden!important;
+
+    transform:none!important;
+    opacity:1!important;
+
+    scroll-snap-type:x proximity;
+    scrollbar-width:none;
+
+    z-index:29!important;
+  }
+
+  .category-orbit::-webkit-scrollbar{
+    display:none;
+  }
+
+  .category-btn{
+    position:relative!important;
+    left:auto!important;
+    top:auto!important;
+
+    flex:0 0 auto!important;
+    display:grid!important;
+    grid-template-columns:auto!important;
+
+    min-width:auto!important;
+    height:34px!important;
+    padding:0 11px!important;
+
+    border:1px solid rgba(255,255,255,.08)!important;
+    border-radius:999px!important;
+    background:rgba(7,7,7,.68)!important;
+
+    transform:none!important;
+    scroll-snap-align:center;
+  }
+
+  .category-btn::before{
+    display:none!important;
+  }
+
+  .category-btn .category-main{
+    gap:6px!important;
+  }
+
+  .category-btn .category-no{
+    font-size:6.5px!important;
+  }
+
+  .category-btn .category-name{
+    max-width:none!important;
+    font-size:8px!important;
+    white-space:nowrap!important;
+  }
+
+  .category-btn .category-state{
+    display:none!important;
+  }
+
+  .category-btn.is-active{
+    border-color:rgba(220,183,110,.40)!important;
+    background:rgba(212,172,92,.08)!important;
+  }
+
+  .category-btn.is-active .category-no,
+  .category-btn.is-active .category-name{
+    color:#e8cf9b!important;
+  }
+
+  /* ---------- WORK SIDEBAR -> BOTTOM SHEET ---------- */
+  .home-selected-works{
+    display:block!important;
+    position:absolute!important;
+
+    left:0!important;
+    right:0!important;
+    top:auto!important;
+    bottom:0!important;
+
+    width:100vw!important;
+    height:40dvh!important;
+    min-height:260px!important;
+
+    padding:18px 18px calc(20px + env(safe-area-inset-bottom))!important;
+
+    border-top:1px solid rgba(255,255,255,.10)!important;
+    border-left:0!important;
+    border-radius:20px 20px 0 0!important;
+
+    background:
+      linear-gradient(180deg,rgba(13,13,12,.97),rgba(5,5,5,.995))!important;
+
+    backdrop-filter:blur(10px)!important;
+    -webkit-backdrop-filter:blur(10px)!important;
+
+    transform:none!important;
+    overflow-y:auto!important;
+    overscroll-behavior:contain!important;
+    touch-action:pan-y!important;
+
+    z-index:40!important;
+  }
+
+  .home-selected-works::before{
+    content:""!important;
+    display:block!important;
+    position:sticky!important;
+    top:-10px!important;
+    left:50%!important;
+
+    width:42px!important;
+    height:3px!important;
+    margin:0 auto 12px!important;
+
+    border-radius:999px;
+    background:rgba(255,255,255,.18)!important;
+  }
+
+  .home-selected-head{
+    padding-bottom:10px!important;
+    margin-bottom:12px!important;
+  }
+
+  .home-selected-head span:first-child{
+    font-size:7px!important;
+  }
+
+  .home-selected-head strong{
+    font-size:11px!important;
+  }
+
+  .home-selected-count{
+    font-size:16px!important;
+  }
+
+  /* FEATURED */
+  .home-work-card.is-featured{
+    gap:10px!important;
+    padding-bottom:13px!important;
+  }
+
+  .home-work-card.is-featured .home-work-thumb{
+    aspect-ratio:1.8!important;
+    border-radius:9px!important;
+  }
+
+  .home-work-card.is-featured .home-work-copy strong{
+    font-size:13px!important;
+  }
+
+  .home-work-card.is-featured .home-work-copy small{
+    font-size:8px!important;
+  }
+
+  /* SECONDARY */
+  .home-work-card.is-secondary{
+    display:grid!important;
+    grid-template-columns:88px minmax(0,1fr) 12px!important;
+    gap:10px!important;
+    min-height:68px!important;
+    padding:9px 0 11px!important;
+  }
+
+  .home-work-card.is-secondary .home-work-thumb{
+    width:88px!important;
+  }
+
+  .home-work-card.is-secondary .home-work-copy strong{
+    font-size:10.5px!important;
+  }
+
+  .home-work-card.is-secondary .home-work-copy small{
+    font-size:7.5px!important;
+  }
+
+  .home-selected-all{
+    margin-top:12px!important;
+    font-size:8px!important;
+  }
+
+  /* ---------- ABOUT SHEET ---------- */
+  .home-selected-works.is-profile .home-profile-intro{
+    grid-template-columns:78px minmax(0,1fr)!important;
+    gap:12px!important;
+  }
+
+  .home-selected-works.is-profile .home-profile-photo-wrap{
+    width:78px!important;
+    border-radius:10px!important;
+  }
+
+  .home-selected-works.is-profile .home-profile-role{
+    margin-bottom:5px!important;
+    font-size:7px!important;
+  }
+
+  .home-selected-works.is-profile .home-profile-name{
+    margin-bottom:6px!important;
+    font-size:18px!important;
+  }
+
+  .home-selected-works.is-profile .home-profile-summary{
+    font-size:9px!important;
+    line-height:1.5!important;
+  }
+
+  .home-selected-works.is-profile .home-profile-body{
+    margin-top:12px!important;
+  }
+
+  .home-selected-works.is-profile .home-profile-body p{
+    font-size:10.5px!important;
+    line-height:1.65!important;
+  }
+
+  .home-profile-career-grid{
+    grid-template-columns:1fr 1fr!important;
+    gap:6px!important;
+    margin-top:12px!important;
+  }
+
+  .home-profile-career-grid article{
+    min-height:72px!important;
+    padding:10px!important;
+  }
+
+  .home-profile-career-grid article > span{
+    margin-bottom:5px!important;
+    font-size:6.5px!important;
+  }
+
+  .home-profile-career-grid strong{
+    font-size:9px!important;
+  }
+
+  .home-profile-career-grid small{
+    margin-top:4px!important;
+    font-size:7px!important;
+  }
+
+  .home-profile-services{
+    margin-top:13px!important;
+  }
+
+  .home-profile-services b{
+    min-height:25px!important;
+    padding:0 8px!important;
+    font-size:6.5px!important;
+  }
+
+  .home-profile-meta{
+    margin-top:13px!important;
+    padding:12px 0!important;
+  }
+
+  .home-profile-meta-row > span{
+    font-size:6.5px!important;
+  }
+
+  .home-profile-meta-row > p{
+    font-size:8px!important;
+    line-height:1.5!important;
+  }
+
+  /* ---------- KMONG MOBILE ---------- */
+  .home-kmong-image{
+    aspect-ratio:1.55!important;
+    margin-bottom:13px!important;
+  }
+
+  .home-kmong-copy > strong{
+    font-size:19px!important;
+  }
+
+  .home-kmong-copy > p{
+    font-size:10px!important;
+    line-height:1.65!important;
+  }
+
+  .home-kmong-services{
+    margin-top:12px!important;
+  }
+
+  .home-kmong-open{
+    margin-top:15px!important;
+    font-size:8px!important;
+  }
+
+  /* ---------- FULL PREVIEW PANEL ---------- */
+  .preview-panel{
+    left:0!important;
+    right:0!important;
+    bottom:0!important;
+    top:auto!important;
+
+    width:100vw!important;
+    height:82dvh!important;
+
+    padding:20px 18px calc(18px + env(safe-area-inset-bottom))!important;
+
+    border-radius:20px 20px 0 0!important;
+    clip-path:none!important;
+
+    transform:translateY(100%)!important;
+  }
+
+  .preview-panel.is-open{
+    transform:translateY(0)!important;
+  }
+
+  .preview-heading{
+    padding-bottom:13px!important;
+  }
+
+  .preview-heading h2{
+    font-size:24px!important;
+  }
+
+  .preview-grid{
+    grid-template-columns:1fr!important;
+    gap:24px!important;
+    height:calc(100% - 122px)!important;
+  }
+
+  .project-card h3{
+    font-size:15px!important;
+  }
+
+  .project-card p{
+    font-size:10px!important;
+  }
+
+  /* preview open: record stays visually behind */
+  .hero.is-preview-open .record-wrap{
+    left:50%!important;
+    top:22dvh!important;
+    transform:translate(-50%,-50%) scale(.55)!important;
+    opacity:.22!important;
+  }
+
+  .hero.is-preview-open .category-orbit{
+    opacity:0!important;
+    pointer-events:none!important;
+  }
+
+  .hero.is-preview-open .home-selected-works{
+    opacity:0!important;
+    pointer-events:none!important;
+  }
+
+  /* ---------- ABOUT / PROJECT ARCHIVE / DETAIL ---------- */
+  .projects-page,
+  .project-detail,
+  .about-page{
+    padding-left:18px!important;
+    padding-right:18px!important;
+  }
+
+  .project-list-grid{
+    grid-template-columns:1fr!important;
+    gap:42px!important;
+  }
+
+  .about-profile-summary{
+    grid-template-columns:82px minmax(0,1fr)!important;
+    gap:14px!important;
+  }
+
+  .about-profile-summary > img{
+    width:82px!important;
+  }
+
+  .about-profile-facts{
+    grid-template-columns:1fr!important;
+  }
+
+  .about-skill-groups{
+    grid-template-columns:1fr!important;
+  }
+}
+
+/* Extra compact mobile */
+@media(max-width:480px){
+
+  .hero-copy{
+    top:76px!important;
+  }
+
+  .hero h1{
+    font-size:11.5vw!important;
+  }
+
+  .hero-desc{
+    width:245px!important;
+    font-size:9.5px!important;
+  }
+
+  .record-wrap{
+    top:34dvh!important;
+    width:63vw!important;
+  }
+
+  .record-stage::before,
+  .record-stage::after{
+    top:34dvh!important;
+  }
+
+  .home-explore-hint{
+    top:48dvh!important;
+  }
+
+  .category-orbit{
+    top:52dvh!important;
+  }
+
+  .home-selected-works{
+    height:41dvh!important;
+  }
+
+  .entry-title{
+    font-size:13.2vw!important;
+  }
+
+  .entry-name{
+    font-size:6.5vw!important;
+  }
+}
+
+
+/* =========================================================
+   V38.0 — RESPONSIVE REFINEMENT
+   PC는 유지하고 Tablet/Mobile의 기준점과 sheet 폭 충돌을 재정리
+========================================================= */
+
+/* ---------------------------------------------------------
+   TABLET 901–1180
+--------------------------------------------------------- */
+@media (min-width:901px) and (max-width:1180px){
+
+  .home-page .hero-copy{
+    left:4.5vw!important;
+    width:250px!important;
+  }
+
+  .home-page .hero h1{
+    max-width:250px!important;
+    font-size:clamp(46px,5vw,62px)!important;
+  }
+
+  .home-page .record-wrap,
+  .home-page .category-orbit{
+    left:47%!important;
+  }
+
+  .home-page .home-selected-works,
+  .home-page .home-selected-works.is-profile,
+  .home-page .home-selected-works.is-external{
+    right:0!important;
+    left:auto!important;
+    width:310px!important;
+    max-width:310px!important;
+  }
+}
+
+/* ---------------------------------------------------------
+   MOBILE / TABLET PORTRAIT
+--------------------------------------------------------- */
+@media (max-width:900px){
+
+  html,
+  body{
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+    overflow-x:hidden!important;
+  }
+
+  body.home-page{
+    height:100dvh!important;
+    min-height:100dvh!important;
+    overflow:hidden!important;
+  }
+
+  .home-page .site-shell,
+  .home-page .home-main,
+  .home-page .hero{
+    width:100vw!important;
+    height:100dvh!important;
+    min-height:620px!important;
+    max-width:none!important;
+    overflow:hidden!important;
+  }
+
+  /* ----- header ----- */
+  .home-page .home-header{
+    position:absolute!important;
+    top:0!important;
+    left:0!important;
+    right:0!important;
+    z-index:70!important;
+    padding:15px 16px!important;
+  }
+
+  .home-page .home-header .brand strong{
+    font-size:10.5px!important;
+  }
+
+  .home-page .home-header .brand span{
+    display:none!important;
+  }
+
+  .home-page .home-header .site-nav{
+    gap:10px!important;
+  }
+
+  .home-page .home-header .site-nav a{
+    font-size:7.5px!important;
+  }
+
+  /* ----- hero copy ----- */
+  .home-page .hero-copy{
+    position:absolute!important;
+    left:18px!important;
+    top:72px!important;
+    right:auto!important;
+    bottom:auto!important;
+
+    width:calc(100vw - 36px)!important;
+    max-width:300px!important;
+
+    transform:none!important;
+    z-index:25!important;
+  }
+
+  .home-page .hero-index-wrap{
+    margin-bottom:10px!important;
+    font-size:9px!important;
+  }
+
+  .home-page .hero-index-wrap i{
+    width:36px!important;
+  }
+
+  .home-page .hero-kicker{
+    margin-bottom:7px!important;
+    font-size:7.5px!important;
+    letter-spacing:.18em!important;
+  }
+
+  .home-page .hero h1{
+    width:auto!important;
+    max-width:270px!important;
+
+    font-size:clamp(38px,11vw,52px)!important;
+    line-height:.88!important;
+    letter-spacing:-.055em!important;
+  }
+
+  .home-page .hero-desc{
+    width:min(270px,calc(100vw - 36px))!important;
+    margin-top:10px!important;
+
+    font-size:9.5px!important;
+    line-height:1.55!important;
+  }
+
+  /* ----- record ----- */
+  .home-page .record-stage{
+    position:absolute!important;
+    inset:0!important;
+    width:100vw!important;
+    height:100dvh!important;
+  }
+
+  .home-page .record-wrap{
+    left:50%!important;
+    top:36dvh!important;
+
+    width:min(64vw,270px)!important;
+    max-width:270px!important;
+
+    transform:translate(-50%,-50%)!important;
+    z-index:15!important;
+  }
+
+  .home-page .record-stage::before,
+  .home-page .record-stage::after{
+    left:50%!important;
+    top:36dvh!important;
+  }
+
+  .home-page .record-stage::before{
+    width:min(72vw,305px)!important;
+    height:min(72vw,305px)!important;
+  }
+
+  .home-page .record-stage::after{
+    width:min(68vw,290px)!important;
+    height:min(68vw,290px)!important;
+  }
+
+  .home-page .record-hover-cta{
+    bottom:8%!important;
+    font-size:6.5px!important;
+  }
+
+  /* ----- mobile guide ----- */
+  .home-page .home-explore-hint{
+    position:absolute!important;
+
+    left:16px!important;
+    right:16px!important;
+    top:50dvh!important;
+    bottom:auto!important;
+
+    width:auto!important;
+    min-width:0!important;
+
+    display:flex!important;
+    justify-content:center!important;
+    gap:8px!important;
+
+    font-size:6.8px!important;
+    white-space:nowrap!important;
+
+    z-index:27!important;
+  }
+
+  .home-page .guide-copy-desktop{
+    display:none!important;
+  }
+
+  .home-page .guide-copy-mobile{
+    display:inline!important;
+  }
+
+  .home-page .home-explore-hint i{
+    width:14px!important;
+  }
+
+  /* ----- category rail ----- */
+  .home-page .category-orbit{
+    position:absolute!important;
+
+    left:0!important;
+    right:auto!important;
+    top:54dvh!important;
+
+    display:flex!important;
+    align-items:center!important;
+
+    width:100vw!important;
+    max-width:100vw!important;
+    height:38px!important;
+
+    padding:0 16px!important;
+    gap:7px!important;
+
+    overflow-x:auto!important;
+    overflow-y:hidden!important;
+
+    transform:none!important;
+    opacity:1!important;
+
+    scroll-snap-type:x proximity!important;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none!important;
+
+    z-index:30!important;
+  }
+
+  .home-page .category-orbit::-webkit-scrollbar{
+    display:none!important;
+  }
+
+  .home-page .category-btn{
+    position:relative!important;
+
+    left:auto!important;
+    top:auto!important;
+
+    flex:0 0 auto!important;
+    display:flex!important;
+    align-items:center!important;
+
+    min-width:auto!important;
+    width:auto!important;
+    height:32px!important;
+
+    padding:0 10px!important;
+
+    border:1px solid rgba(255,255,255,.09)!important;
+    border-radius:999px!important;
+
+    background:rgba(7,7,7,.78)!important;
+
+    transform:none!important;
+
+    scroll-snap-align:center!important;
+  }
+
+  .home-page .category-btn::before{
+    display:none!important;
+  }
+
+  .home-page .category-btn .category-main{
+    display:flex!important;
+    align-items:center!important;
+    gap:6px!important;
+  }
+
+  .home-page .category-btn .category-no{
+    font-size:6px!important;
+  }
+
+  .home-page .category-btn .category-name{
+    max-width:none!important;
+    overflow:visible!important;
+
+    font-size:7.5px!important;
+    line-height:1!important;
+
+    white-space:nowrap!important;
+  }
+
+  .home-page .category-btn .category-state{
+    display:none!important;
+  }
+
+  .home-page .category-btn.is-active{
+    border-color:rgba(216,179,105,.42)!important;
+    background:rgba(216,179,105,.08)!important;
+  }
+
+  /* ----- sidebar => full-width bottom sheet -----
+     .is-profile/.is-external의 PC width specificity까지 덮어씀
+  */
+  .home-page .home-selected-works,
+  .home-page .home-selected-works.is-profile,
+  .home-page .home-selected-works.is-external{
+    position:absolute!important;
+
+    left:0!important;
+    right:0!important;
+    top:auto!important;
+    bottom:0!important;
+
+    width:100vw!important;
+    min-width:100vw!important;
+    max-width:100vw!important;
+
+    height:36dvh!important;
+    min-height:245px!important;
+    max-height:360px!important;
+
+    margin:0!important;
+    padding:
+      13px 16px
+      calc(17px + env(safe-area-inset-bottom))
+      16px!important;
+
+    border-left:0!important;
+    border-top:1px solid rgba(255,255,255,.09)!important;
+    border-radius:18px 18px 0 0!important;
+
+    background:
+      linear-gradient(
+        180deg,
+        rgba(13,13,12,.985),
+        rgba(5,5,5,.998)
+      )!important;
+
+    backdrop-filter:blur(8px)!important;
+    -webkit-backdrop-filter:blur(8px)!important;
+
+    box-sizing:border-box!important;
+
+    transform:none!important;
+    opacity:1!important;
+
+    overflow-x:hidden!important;
+    overflow-y:auto!important;
+
+    overscroll-behavior:contain!important;
+    touch-action:pan-y!important;
+
+    z-index:45!important;
+  }
+
+  .home-page .home-selected-works::before,
+  .home-page .home-selected-works.is-profile::before,
+  .home-page .home-selected-works.is-external::before{
+    content:""!important;
+
+    position:sticky!important;
+    display:block!important;
+
+    top:0!important;
+    left:auto!important;
+    inset:auto!important;
+
+    width:38px!important;
+    height:3px!important;
+
+    margin:0 auto 10px!important;
+
+    border-radius:999px!important;
+    background:rgba(255,255,255,.18)!important;
+  }
+
+  .home-page .home-selected-head{
+    padding-bottom:9px!important;
+    margin-bottom:10px!important;
+  }
+
+  .home-page .home-selected-head span:first-child{
+    font-size:6.5px!important;
+  }
+
+  .home-page .home-selected-head strong{
+    font-size:10.5px!important;
+  }
+
+  .home-page .home-selected-count{
+    font-size:14px!important;
+  }
+
+  /* ----- all work cards ----- */
+  .home-page .home-selected-list{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:0!important;
+
+    width:100%!important;
+    min-width:0!important;
+
+    overflow:visible!important;
+  }
+
+  .home-page .home-work-card.is-featured{
+    display:grid!important;
+    grid-template-columns:1fr auto!important;
+    grid-template-areas:
+      "thumb thumb"
+      "copy arrow"!important;
+
+    gap:9px 12px!important;
+
+    width:100%!important;
+    min-width:0!important;
+
+    padding:0 0 12px!important;
+  }
+
+  .home-page .home-work-card.is-featured .home-work-thumb{
+    grid-area:thumb!important;
+
+    width:100%!important;
+    aspect-ratio:2.05!important;
+
+    border-radius:8px!important;
+  }
+
+  .home-page .home-work-card.is-featured .home-work-copy strong{
+    font-size:12px!important;
+  }
+
+  .home-page .home-work-card.is-featured .home-work-copy small{
+    font-size:7.6px!important;
+  }
+
+  .home-page .home-work-card.is-secondary{
+    display:grid!important;
+    grid-template-columns:82px minmax(0,1fr) 12px!important;
+    gap:9px!important;
+
+    width:100%!important;
+    min-width:0!important;
+    min-height:64px!important;
+
+    padding:8px 0 10px!important;
+  }
+
+  .home-page .home-work-card.is-secondary .home-work-thumb{
+    width:82px!important;
+  }
+
+  .home-page .home-work-card.is-secondary .home-work-copy{
+    min-width:0!important;
+  }
+
+  .home-page .home-work-card.is-secondary .home-work-copy strong{
+    font-size:10px!important;
+  }
+
+  .home-page .home-work-card.is-secondary .home-work-copy small{
+    font-size:7px!important;
+  }
+
+  .home-page .home-selected-all{
+    margin-top:10px!important;
+    font-size:7.5px!important;
+  }
+
+  /* ----- profile sheet ----- */
+  .home-page .home-selected-works.is-profile .home-profile-card{
+    width:100%!important;
+    min-width:0!important;
+  }
+
+  .home-page .home-selected-works.is-profile .home-profile-intro{
+    display:grid!important;
+    grid-template-columns:72px minmax(0,1fr)!important;
+    gap:12px!important;
+
+    width:100%!important;
+  }
+
+  .home-page .home-selected-works.is-profile .home-profile-photo-wrap{
+    width:72px!important;
+    min-width:72px!important;
+
+    border-radius:9px!important;
+  }
+
+  .home-page .home-selected-works.is-profile .home-profile-role{
+    margin-bottom:4px!important;
+    font-size:6.5px!important;
+  }
+
+  .home-page .home-selected-works.is-profile .home-profile-name{
+    margin-bottom:5px!important;
+    font-size:17px!important;
+    line-height:1!important;
+  }
+
+  .home-page .home-selected-works.is-profile .home-profile-summary{
+    font-size:8.5px!important;
+    line-height:1.45!important;
+  }
+
+  .home-page .home-selected-works.is-profile .home-profile-body{
+    margin-top:11px!important;
+  }
+
+  .home-page .home-selected-works.is-profile .home-profile-body p{
+    font-size:9.5px!important;
+    line-height:1.6!important;
+  }
+
+  .home-page .home-profile-career-grid{
+    display:grid!important;
+    grid-template-columns:1fr 1fr!important;
+    gap:6px!important;
+
+    margin-top:11px!important;
+  }
+
+  .home-page .home-profile-career-grid article{
+    min-height:68px!important;
+    padding:9px!important;
+  }
+
+  .home-page .home-profile-career-grid article > span{
+    margin-bottom:4px!important;
+    font-size:6px!important;
+  }
+
+  .home-page .home-profile-career-grid strong{
+    font-size:8.5px!important;
+  }
+
+  .home-page .home-profile-career-grid small{
+    margin-top:3px!important;
+    font-size:6.6px!important;
+  }
+
+  .home-page .home-profile-services{
+    margin-top:11px!important;
+  }
+
+  .home-page .home-profile-services b{
+    min-height:23px!important;
+    padding:0 7px!important;
+    font-size:6px!important;
+  }
+
+  .home-page .home-profile-meta{
+    margin-top:11px!important;
+    padding:10px 0!important;
+  }
+
+  .home-page .home-profile-meta-row > span{
+    font-size:6px!important;
+  }
+
+  .home-page .home-profile-meta-row > p{
+    font-size:7.4px!important;
+    line-height:1.45!important;
+  }
+
+  /* ----- KMONG sheet ----- */
+  .home-page .home-selected-works.is-external .home-kmong-image{
+    width:100%!important;
+    aspect-ratio:1.9!important;
+    margin-bottom:11px!important;
+  }
+
+  .home-page .home-selected-works.is-external .home-kmong-copy > strong{
+    font-size:18px!important;
+  }
+
+  .home-page .home-selected-works.is-external .home-kmong-copy > p{
+    font-size:9.5px!important;
+    line-height:1.6!important;
+  }
+
+  /* ----- full preview sheet ----- */
+  .home-page .preview-panel{
+    position:absolute!important;
+
+    left:0!important;
+    right:0!important;
+    top:auto!important;
+    bottom:0!important;
+
+    width:100vw!important;
+    max-width:100vw!important;
+    height:82dvh!important;
+
+    padding:
+      18px 16px
+      calc(18px + env(safe-area-inset-bottom))
+      16px!important;
+
+    border-radius:18px 18px 0 0!important;
+    clip-path:none!important;
+
+    transform:translateY(100%)!important;
+    z-index:80!important;
+  }
+
+  .home-page .preview-panel.is-open{
+    transform:translateY(0)!important;
+  }
+
+  .home-page .preview-heading h2{
+    font-size:22px!important;
+  }
+
+  .home-page .preview-grid{
+    grid-template-columns:1fr!important;
+    gap:22px!important;
+
+    height:calc(100% - 112px)!important;
+  }
+
+  /* ----- preview open ----- */
+  .home-page .hero.is-preview-open .record-wrap{
+    left:50%!important;
+    top:20dvh!important;
+
+    transform:translate(-50%,-50%) scale(.52)!important;
+    opacity:.18!important;
+  }
+
+  .home-page .hero.is-preview-open .category-orbit,
+  .home-page .hero.is-preview-open .home-selected-works{
+    opacity:0!important;
+    pointer-events:none!important;
+  }
+
+  /* ----- shared pages ----- */
+  .projects-page,
+  .project-detail,
+  .about-page{
+    width:100%!important;
+    max-width:100%!important;
+
+    padding-left:18px!important;
+    padding-right:18px!important;
+  }
+
+  .project-list-grid{
+    grid-template-columns:1fr!important;
+    gap:38px!important;
+  }
+
+  /* ABOUT: photo + copy left aligned */
+  .about-page .about-hero{
+    min-height:auto!important;
+    padding-top:48px!important;
+    padding-bottom:56px!important;
+  }
+
+  .about-page .about-hero h1{
+    font-size:13vw!important;
+    line-height:.86!important;
+  }
+
+  .about-page .about-intro{
+    max-width:100%!important;
+    margin:28px 0 0!important;
+
+    font-size:12px!important;
+    line-height:1.75!important;
+
+    text-align:left!important;
+  }
+
+  .about-page .about-profile-summary{
+    display:grid!important;
+    grid-template-columns:82px minmax(0,1fr)!important;
+    gap:14px!important;
+    align-items:start!important;
+
+    width:100%!important;
+    max-width:100%!important;
+
+    margin:32px 0 0!important;
+
+    text-align:left!important;
+  }
+
+  .about-page .about-profile-summary > img{
+    width:82px!important;
+    border-radius:10px!important;
+  }
+
+  .about-page .about-profile-summary__copy{
+    text-align:left!important;
+  }
+
+  .about-page .about-profile-summary__copy > strong{
+    margin-bottom:14px!important;
+    font-size:19px!important;
+  }
+
+  .about-page .about-profile-facts{
+    grid-template-columns:1fr!important;
+  }
+
+  .about-page .about-profile-facts > div{
+    min-height:0!important;
+    padding:11px!important;
+  }
+
+  .about-page .about-story-grid{
+    grid-template-columns:1fr!important;
+  }
+
+  .about-page .about-story,
+  .about-page .about-story:nth-child(even){
+    min-height:0!important;
+    padding:32px 0!important;
+
+    border-right:0!important;
+    border-bottom:1px solid var(--line)!important;
+  }
+
+  .about-page .about-story:last-child{
+    border-bottom:0!important;
+  }
+
+  .about-page .about-story > span{
+    margin-bottom:26px!important;
+  }
+
+  .about-page .about-story h2{
+    font-size:11vw!important;
+  }
+
+  .about-page .about-story p{
+    font-size:12px!important;
+    line-height:1.75!important;
+  }
+
+  .about-page .about-skill-section{
+    padding:72px 0!important;
+  }
+
+  .about-page .about-skill-head{
+    grid-template-columns:1fr!important;
+    gap:18px!important;
+    margin-bottom:34px!important;
+  }
+
+  .about-page .about-skill-head h2{
+    font-size:13vw!important;
+  }
+
+  .about-page .about-skill-groups{
+    grid-template-columns:1fr!important;
+  }
+
+  .about-page .about-contact{
+    padding-top:80px!important;
+  }
+
+  .about-page .about-contact-row{
+    grid-template-columns:1fr!important;
+    gap:38px!important;
+  }
+
+  .about-page .about-contact h2{
+    font-size:13vw!important;
+  }
+
+  /* project detail */
+  .project-detail .detail-hero{
+    padding-top:30px!important;
+  }
+
+  .project-detail .detail-hero h1{
+    font-size:12vw!important;
+    line-height:.92!important;
+  }
+
+  .project-detail .detail-meta{
+    grid-template-columns:1fr 1fr!important;
+    gap:1px!important;
+  }
+
+  .project-detail .detail-copy{
+    grid-template-columns:1fr!important;
+    gap:20px!important;
+    padding:56px 0!important;
+  }
+
+  .project-detail .detail-insights{
+    padding:60px 0!important;
+  }
+
+  .project-detail .detail-thinking-grid{
+    grid-template-columns:1fr!important;
+  }
+}
+
+/* ---------------------------------------------------------
+   SMALL MOBILE
+--------------------------------------------------------- */
+@media (max-width:480px){
+
+  .home-page .hero-copy{
+    top:68px!important;
+  }
+
+  .home-page .hero h1{
+    max-width:250px!important;
+    font-size:11vw!important;
+  }
+
+  .home-page .hero-desc{
+    max-width:245px!important;
+    font-size:9px!important;
+  }
+
+  .home-page .record-wrap,
+  .home-page .record-stage::before,
+  .home-page .record-stage::after{
+    top:34dvh!important;
+  }
+
+  .home-page .record-wrap{
+    width:min(61vw,235px)!important;
+  }
+
+  .home-page .home-explore-hint{
+    top:47.5dvh!important;
+  }
+
+  .home-page .category-orbit{
+    top:51.5dvh!important;
+  }
+
+  .home-page .home-selected-works,
+  .home-page .home-selected-works.is-profile,
+  .home-page .home-selected-works.is-external{
+    height:39dvh!important;
+    min-height:250px!important;
+  }
+
+  .home-page .home-profile-career-grid{
+    grid-template-columns:1fr!important;
+  }
+
+  .entry-title{
+    font-size:12.8vw!important;
+  }
+
+  .entry-name{
+    font-size:6.2vw!important;
+  }
+}
+
+
+/* =========================================================
+   V39.0 — RESPONSIVE / LAPTOP DETAIL PASS
+   데스크톱 디자인은 유지하되,
+   노트북·소형 노트북·태블릿·모바일을 서로 다른 레이아웃으로 처리.
+========================================================= */
+
+
+/* =========================================================
+   A. LARGE LAPTOP / SMALL DESKTOP
+   1440~1599
+========================================================= */
+@media (min-width:1440px) and (max-width:1599px){
+
+  .home-page .hero-copy{
+    left:4.3vw!important;
+    width:300px!important;
+  }
+
+  .home-page .hero h1{
+    max-width:300px!important;
+    font-size:clamp(54px,4.2vw,72px)!important;
+  }
+
+  .home-page .hero-desc{
+    max-width:290px!important;
+    font-size:13px!important;
+  }
+
+  .home-page .record-wrap,
+  .home-page .category-orbit{
+    left:46.2%!important;
+  }
+
+  .home-page .record-wrap{
+    width:min(66vh,35vw,600px)!important;
+  }
+
+  .home-page .record-stage::before{
+    left:46.2%!important;
+    width:min(72vh,39vw,660px)!important;
+    height:min(72vh,39vw,660px)!important;
+  }
+
+  .home-page .record-stage::after{
+    left:46.2%!important;
+    width:min(69vh,37vw,630px)!important;
+    height:min(69vh,37vw,630px)!important;
+  }
+
+  .home-page .home-selected-works,
+  .home-page .home-selected-works.is-profile,
+  .home-page .home-selected-works.is-external{
+    width:340px!important;
+    max-width:340px!important;
+    padding-left:26px!important;
+    padding-right:26px!important;
+  }
+
+  .home-page .category-btn{
+    min-width:105px!important;
+  }
+
+  .home-page .category-btn .category-name{
+    max-width:82px!important;
+    font-size:9.8px!important;
+  }
+}
+
+
+/* =========================================================
+   B. STANDARD LAPTOP
+   common 1366 / 1280 class: 1280~1439
+========================================================= */
+@media (min-width:1280px) and (max-width:1439px){
+
+  .home-page .home-header{
+    padding-left:26px!important;
+    padding-right:26px!important;
+  }
+
+  .home-page .hero-copy{
+    left:4vw!important;
+    width:260px!important;
+  }
+
+  .home-page .hero h1{
+    max-width:260px!important;
+    font-size:clamp(49px,4.2vw,62px)!important;
+  }
+
+  .home-page .hero-desc{
+    max-width:252px!important;
+    font-size:12px!important;
+    line-height:1.62!important;
+  }
+
+  .home-page .record-wrap,
+  .home-page .category-orbit{
+    left:45.2%!important;
+  }
+
+  .home-page .record-wrap{
+    width:min(62vh,34vw,520px)!important;
+  }
+
+  .home-page .record-stage::before{
+    left:45.2%!important;
+    width:min(68vh,38vw,580px)!important;
+    height:min(68vh,38vw,580px)!important;
+  }
+
+  .home-page .record-stage::after{
+    left:45.2%!important;
+    width:min(65vh,36vw,550px)!important;
+    height:min(65vh,36vw,550px)!important;
+  }
+
+  .home-page .category-btn{
+    min-width:96px!important;
+  }
+
+  .home-page .category-btn .category-name{
+    max-width:73px!important;
+    font-size:9px!important;
+  }
+
+  .home-page .category-btn .category-no{
+    font-size:7px!important;
+  }
+
+  .home-page .home-selected-works,
+  .home-page .home-selected-works.is-profile,
+  .home-page .home-selected-works.is-external{
+    width:300px!important;
+    max-width:300px!important;
+    padding-left:22px!important;
+    padding-right:22px!important;
+  }
+
+  .home-page .home-selected-head{
+    margin-bottom:13px!important;
+  }
+
+  .home-page .home-work-card.is-featured .home-work-copy strong{
+    font-size:13px!important;
+  }
+
+  .home-page .home-work-card.is-secondary{
+    grid-template-columns:86px minmax(0,1fr) 12px!important;
+  }
+
+  .home-page .home-work-card.is-secondary .home-work-thumb{
+    width:86px!important;
+  }
+
+  .home-page .home-profile-intro{
+    grid-template-columns:90px minmax(0,1fr)!important;
+  }
+
+  .home-page .home-profile-photo-wrap{
+    width:90px!important;
+  }
+
+  .home-page .home-profile-name{
+    font-size:21px!important;
+  }
+}
+
+
+/* low-height laptop: 1366×768 / 1440×800 style */
+@media (min-width:1181px) and (max-height:820px){
+
+  .home-page .home-header{
+    padding-top:16px!important;
+  }
+
+  .home-page .hero-copy{
+    top:48%!important;
+  }
+
+  .home-page .record-wrap{
+    width:min(64vh,34vw,530px)!important;
+  }
+
+  .home-page .record-stage::before{
+    width:min(70vh,38vw,590px)!important;
+    height:min(70vh,38vw,590px)!important;
+  }
+
+  .home-page .record-stage::after{
+    width:min(67vh,36vw,560px)!important;
+    height:min(67vh,36vw,560px)!important;
+  }
+
+  .home-page .home-selected-works,
+  .home-page .home-selected-works.is-profile,
+  .home-page .home-selected-works.is-external{
+    padding-top:104px!important;
+    padding-bottom:24px!important;
+  }
+
+  .home-page .home-work-card.is-featured .home-work-thumb{
+    aspect-ratio:1.9!important;
+  }
+
+  .home-page .home-work-card.is-secondary{
+    min-height:68px!important;
+    padding-top:8px!important;
+    padding-bottom:9px!important;
+  }
+
+  .home-page .home-profile-body p{
+    font-size:11.5px!important;
+    line-height:1.65!important;
+  }
+
+  .home-page .home-profile-career-grid article{
+    min-height:78px!important;
+  }
+
+  .home-page .home-profile-meta{
+    padding-top:11px!important;
+    padding-bottom:11px!important;
+  }
+}
+
+
+/* =========================================================
+   C. COMPACT LAPTOP
+   1100~1279
+========================================================= */
+@media (min-width:1100px) and (max-width:1279px){
+
+  .home-page .home-header{
+    padding:18px 20px!important;
+  }
+
+  .home-page .hero-copy{
+    left:3.2vw!important;
+    width:225px!important;
+  }
+
+  .home-page .hero h1{
+    max-width:225px!important;
+    font-size:clamp(43px,4.1vw,54px)!important;
+  }
+
+  .home-page .hero-desc{
+    max-width:218px!important;
+    font-size:11px!important;
+  }
+
+  .home-page .home-explore-hint{
+    left:3.2vw!important;
+    font-size:7px!important;
+  }
+
+  .home-page .record-wrap,
+  .home-page .category-orbit{
+    left:44.5%!important;
+  }
+
+  .home-page .record-wrap{
+    width:min(56vh,32vw,430px)!important;
+  }
+
+  .home-page .record-stage::before{
+    left:44.5%!important;
+    width:min(62vh,36vw,480px)!important;
+    height:min(62vh,36vw,480px)!important;
+  }
+
+  .home-page .record-stage::after{
+    left:44.5%!important;
+    width:min(59vh,34vw,455px)!important;
+    height:min(59vh,34vw,455px)!important;
+  }
+
+  .home-page .category-btn{
+    min-width:84px!important;
+  }
+
+  .home-page .category-btn .category-name{
+    max-width:64px!important;
+    font-size:8.3px!important;
+  }
+
+  .home-page .category-btn .category-no{
+    font-size:6.5px!important;
+  }
+
+  .home-page .category-btn .category-state{
+    font-size:5.5px!important;
+  }
+
+  .home-page .home-selected-works,
+  .home-page .home-selected-works.is-profile,
+  .home-page .home-selected-works.is-external{
+    width:270px!important;
+    max-width:270px!important;
+    padding:98px 18px 22px!important;
+  }
+
+  .home-page .home-work-card.is-secondary{
+    grid-template-columns:76px minmax(0,1fr) 11px!important;
+    gap:9px!important;
+  }
+
+  .home-page .home-work-card.is-secondary .home-work-thumb{
+    width:76px!important;
+  }
+
+  .home-page .home-profile-intro{
+    grid-template-columns:78px minmax(0,1fr)!important;
+  }
+
+  .home-page .home-profile-photo-wrap{
+    width:78px!important;
+  }
+
+  .home-page .home-profile-name{
+    font-size:18px!important;
+  }
+
+  .home-page .home-profile-summary{
+    font-size:9.5px!important;
+  }
+
+  .home-page .home-profile-career-grid{
+    grid-template-columns:1fr!important;
+  }
+}
+
+
+/* =========================================================
+   D. SMALL LAPTOP / TABLET LANDSCAPE
+   901~1099
+   여기부터는 억지 3열이 아니라 모바일에 가까운 bottom drawer.
+========================================================= */
+@media (min-width:901px) and (max-width:1099px){
+
+  .home-page .hero-copy{
+    left:28px!important;
+    top:86px!important;
+    width:250px!important;
+    transform:none!important;
+  }
+
+  .home-page .hero h1{
+    max-width:250px!important;
+    font-size:52px!important;
+  }
+
+  .home-page .hero-desc{
+    max-width:250px!important;
+    font-size:11px!important;
+  }
+
+  .home-page .record-wrap{
+    left:58%!important;
+    top:34%!important;
+    width:min(48vw,420px)!important;
+  }
+
+  .home-page .record-stage::before,
+  .home-page .record-stage::after{
+    left:58%!important;
+    top:34%!important;
+  }
+
+  .home-page .category-orbit{
+    left:0!important;
+    top:58%!important;
+
+    display:flex!important;
+    width:100vw!important;
+    height:40px!important;
+    padding:0 28px!important;
+    gap:8px!important;
+
+    overflow-x:auto!important;
+    overflow-y:hidden!important;
+
+    transform:none!important;
+    scrollbar-width:none!important;
+  }
+
+  .home-page .category-orbit::-webkit-scrollbar{
+    display:none!important;
+  }
+
+  .home-page .category-btn{
+    position:relative!important;
+    left:auto!important;
+    top:auto!important;
+
+    flex:0 0 auto!important;
+    height:32px!important;
+    min-width:auto!important;
+    padding:0 10px!important;
+
+    border:1px solid rgba(255,255,255,.08)!important;
+    border-radius:999px!important;
+    background:rgba(7,7,7,.72)!important;
+
+    transform:none!important;
+  }
+
+  .home-page .category-btn::before,
+  .home-page .category-btn .category-state{
+    display:none!important;
+  }
+
+  .home-page .category-btn .category-name{
+    max-width:none!important;
+    font-size:8px!important;
+  }
+
+  .home-page .home-selected-works,
+  .home-page .home-selected-works.is-profile,
+  .home-page .home-selected-works.is-external{
+    left:0!important;
+    right:0!important;
+    top:auto!important;
+    bottom:0!important;
+
+    width:100vw!important;
+    max-width:100vw!important;
+    height:34vh!important;
+
+    padding:14px 28px 22px!important;
+
+    border-left:0!important;
+    border-top:1px solid rgba(255,255,255,.09)!important;
+    border-radius:20px 20px 0 0!important;
+
+    background:rgba(7,7,7,.97)!important;
+
+    transform:none!important;
+  }
+
+  .home-page .home-selected-list{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:12px!important;
+  }
+
+  .home-page .home-work-card.is-featured,
+  .home-page .home-work-card.is-secondary{
+    display:grid!important;
+    grid-template-columns:88px minmax(0,1fr) 12px!important;
+    grid-template-areas:none!important;
+    gap:10px!important;
+    min-height:72px!important;
+    padding:8px 0 10px!important;
+  }
+
+  .home-page .home-work-card.is-featured .home-work-thumb,
+  .home-page .home-work-card.is-secondary .home-work-thumb{
+    width:88px!important;
+    aspect-ratio:1.45!important;
+  }
+
+  .home-page .home-profile-career-grid{
+    grid-template-columns:1fr 1fr!important;
+  }
+}
+
+
+/* =========================================================
+   E. MOBILE NATIVE LAYOUT
+   <=900
+========================================================= */
+@media (max-width:900px){
+
+  body.home-page{
+    min-height:100dvh!important;
+    height:100dvh!important;
+  }
+
+  .home-page .home-main,
+  .home-page .hero{
+    min-height:100dvh!important;
+    height:100dvh!important;
+  }
+
+  /* header is intentionally lighter than desktop */
+  .home-page .home-header{
+    padding:14px 16px!important;
+  }
+
+  .home-page .home-header .brand strong{
+    font-size:10px!important;
+    letter-spacing:.01em!important;
+  }
+
+  .home-page .home-header .brand span{
+    display:none!important;
+  }
+
+  .home-page .home-header .site-nav{
+    gap:12px!important;
+  }
+
+  .home-page .home-header .site-nav a{
+    font-size:7px!important;
+    letter-spacing:.06em!important;
+  }
+
+  /* mobile copy gets its own editorial scale */
+  .home-page .hero-copy{
+    left:18px!important;
+    top:66px!important;
+
+    width:calc(100vw - 36px)!important;
+    max-width:285px!important;
+  }
+
+  .home-page .hero-index-wrap{
+    margin-bottom:9px!important;
+  }
+
+  .home-page .hero-kicker{
+    margin-bottom:7px!important;
+  }
+
+  .home-page .hero h1{
+    max-width:265px!important;
+    font-size:clamp(37px,10.8vw,49px)!important;
+    line-height:.9!important;
+  }
+
+  .home-page .hero-desc{
+    max-width:255px!important;
+    margin-top:9px!important;
+    font-size:9.2px!important;
+    line-height:1.55!important;
+  }
+
+  /* record occupies the interaction zone, not the entire desktop composition */
+  .home-page .record-wrap{
+    left:50%!important;
+    top:34.5dvh!important;
+
+    width:min(58vw,248px)!important;
+  }
+
+  .home-page .record-stage::before,
+  .home-page .record-stage::after{
+    left:50%!important;
+    top:34.5dvh!important;
+  }
+
+  .home-page .record-stage::before{
+    width:min(65vw,276px)!important;
+    height:min(65vw,276px)!important;
+  }
+
+  .home-page .record-stage::after{
+    width:min(62vw,263px)!important;
+    height:min(62vw,263px)!important;
+  }
+
+  /* no desktop hover CTA on touch devices */
+  .home-page .record-hover-cta{
+    display:none!important;
+  }
+
+  /* guide + category controls are positioned as touch UI */
+  .home-page .home-explore-hint{
+    top:48.2dvh!important;
+    font-size:6.6px!important;
+  }
+
+  .home-page .category-orbit{
+    top:52dvh!important;
+    height:38px!important;
+    padding:0 16px!important;
+  }
+
+  .home-page .category-btn{
+    height:31px!important;
+    padding:0 10px!important;
+  }
+
+  .home-page .category-btn .category-name{
+    font-size:7.4px!important;
+  }
+
+  /* bottom work sheet is the main mobile content surface */
+  .home-page .home-selected-works,
+  .home-page .home-selected-works.is-profile,
+  .home-page .home-selected-works.is-external{
+    height:39dvh!important;
+    min-height:260px!important;
+    max-height:none!important;
+
+    padding:
+      12px 16px
+      calc(16px + env(safe-area-inset-bottom))
+      16px!important;
+
+    border-radius:20px 20px 0 0!important;
+
+    box-shadow:0 -20px 48px rgba(0,0,0,.34)!important;
+  }
+
+  /* mobile-native work list: featured is no longer a desktop hero card */
+  .home-page .home-work-card.is-featured,
+  .home-page .home-work-card.is-secondary{
+    display:grid!important;
+    grid-template-columns:96px minmax(0,1fr) 13px!important;
+    grid-template-areas:none!important;
+
+    gap:11px!important;
+    align-items:center!important;
+
+    min-height:76px!important;
+    width:100%!important;
+
+    padding:9px 0 11px!important;
+  }
+
+  .home-page .home-work-card.is-featured .home-work-thumb,
+  .home-page .home-work-card.is-secondary .home-work-thumb{
+    grid-area:auto!important;
+
+    width:96px!important;
+    aspect-ratio:1.45!important;
+
+    border-radius:8px!important;
+  }
+
+  .home-page .home-work-card.is-featured .home-work-copy{
+    grid-area:auto!important;
+  }
+
+  .home-page .home-work-card.is-featured .home-work-arrow{
+    grid-area:auto!important;
+  }
+
+  .home-page .home-work-card.is-featured .home-work-copy strong,
+  .home-page .home-work-card.is-secondary .home-work-copy strong{
+    font-size:10.5px!important;
+    line-height:1.18!important;
+  }
+
+  .home-page .home-work-card.is-featured .home-work-copy small,
+  .home-page .home-work-card.is-secondary .home-work-copy small{
+    font-size:7.2px!important;
+    line-height:1.4!important;
+  }
+
+  .home-page .home-work-index{
+    left:6px!important;
+    bottom:5px!important;
+    font-size:6px!important;
+  }
+
+  /* profile sheet becomes compact profile, not desktop sidebar scaled down */
+  .home-page .home-selected-works.is-profile .home-profile-intro{
+    grid-template-columns:68px minmax(0,1fr)!important;
+    gap:11px!important;
+  }
+
+  .home-page .home-selected-works.is-profile .home-profile-photo-wrap{
+    width:68px!important;
+  }
+
+  .home-page .home-selected-works.is-profile .home-profile-name{
+    font-size:16px!important;
+  }
+
+  .home-page .home-selected-works.is-profile .home-profile-summary{
+    font-size:8.2px!important;
+  }
+
+  .home-page .home-selected-works.is-profile .home-profile-body p{
+    font-size:9.2px!important;
+    line-height:1.55!important;
+  }
+
+  .home-page .home-profile-career-grid{
+    grid-template-columns:1fr 1fr!important;
+  }
+
+  .home-page .home-profile-services b{
+    min-height:22px!important;
+    font-size:5.8px!important;
+  }
+
+  /* KMONG image is a compact mobile banner */
+  .home-page .home-selected-works.is-external .home-kmong-image{
+    aspect-ratio:2.2!important;
+  }
+
+  .home-page .home-selected-works.is-external .home-kmong-copy > strong{
+    font-size:17px!important;
+  }
+
+  /* Full project list becomes a dedicated mobile sheet */
+  .home-page .preview-panel{
+    height:86dvh!important;
+    border-radius:20px 20px 0 0!important;
+  }
+
+  .home-page .preview-grid{
+    grid-template-columns:1fr!important;
+  }
+
+  /* main About page */
+  .about-page .about-profile-summary{
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:flex-start!important;
+
+    gap:18px!important;
+    margin-top:30px!important;
+  }
+
+  .about-page .about-profile-summary > img{
+    width:96px!important;
+  }
+
+  .about-page .about-profile-summary__copy{
+    width:100%!important;
+  }
+
+  .about-page .about-profile-summary__copy > strong{
+    font-size:22px!important;
+  }
+
+  .about-page .about-profile-facts{
+    grid-template-columns:1fr!important;
+    width:100%!important;
+  }
+}
+
+
+/* =========================================================
+   F. SMALL MOBILE <=480
+========================================================= */
+@media (max-width:480px){
+
+  .home-page .home-header .site-nav a:nth-child(3){
+    display:none!important;
+  }
+
+  .home-page .hero-copy{
+    top:62px!important;
+  }
+
+  .home-page .hero h1{
+    max-width:235px!important;
+    font-size:10.5vw!important;
+  }
+
+  .home-page .hero-desc{
+    max-width:230px!important;
+    font-size:8.7px!important;
+  }
+
+  .home-page .record-wrap,
+  .home-page .record-stage::before,
+  .home-page .record-stage::after{
+    top:33dvh!important;
+  }
+
+  .home-page .record-wrap{
+    width:min(56vw,218px)!important;
+  }
+
+  .home-page .home-explore-hint{
+    top:45.7dvh!important;
+  }
+
+  .home-page .category-orbit{
+    top:49.5dvh!important;
+  }
+
+  .home-page .home-selected-works,
+  .home-page .home-selected-works.is-profile,
+  .home-page .home-selected-works.is-external{
+    height:42dvh!important;
+    min-height:270px!important;
+  }
+
+  .home-page .home-work-card.is-featured,
+  .home-page .home-work-card.is-secondary{
+    grid-template-columns:84px minmax(0,1fr) 12px!important;
+  }
+
+  .home-page .home-work-card.is-featured .home-work-thumb,
+  .home-page .home-work-card.is-secondary .home-work-thumb{
+    width:84px!important;
+  }
+
+  .home-page .home-profile-career-grid{
+    grid-template-columns:1fr!important;
+  }
+
+  .entry-title{
+    font-size:13vw!important;
+  }
+}
+
+
+/* =========================================================
+   G. SHORT MOBILE HEIGHT
+========================================================= */
+@media (max-width:900px) and (max-height:720px){
+
+  .home-page .hero-copy{
+    top:58px!important;
+  }
+
+  .home-page .hero h1{
+    font-size:36px!important;
+  }
+
+  .home-page .hero-desc{
+    display:none!important;
+  }
+
+  .home-page .record-wrap,
+  .home-page .record-stage::before,
+  .home-page .record-stage::after{
+    top:29dvh!important;
+  }
+
+  .home-page .home-explore-hint{
+    top:41.5dvh!important;
+  }
+
+  .home-page .category-orbit{
+    top:45.5dvh!important;
+  }
+
+  .home-page .home-selected-works,
+  .home-page .home-selected-works.is-profile,
+  .home-page .home-selected-works.is-external{
+    height:48dvh!important;
+  }
+}
+
+
+/* =========================================================
+   V40.0 — 901~1099 TABLET / SMALL-LAPTOP REBUILD
+   1024px 전후 구간을 PC 축소가 아닌 독립적인 태블릿 레이아웃으로 재구성.
+========================================================= */
+
+@media (min-width:901px) and (max-width:1099px){
+
+  html,
+  body{
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+    overflow:hidden!important;
+  }
+
+  body.home-page{
+    width:100vw!important;
+    height:100dvh!important;
+    min-height:100dvh!important;
+    overflow:hidden!important;
+  }
+
+  .home-page .site-shell,
+  .home-page .home-main,
+  .home-page .hero{
+    width:100vw!important;
+    height:100dvh!important;
+    min-height:680px!important;
+    overflow:hidden!important;
+  }
+
+  /* -------------------------------------------------------
+     HEADER
+  ------------------------------------------------------- */
+  .home-page .home-header{
+    position:absolute!important;
+    top:0!important;
+    left:0!important;
+    right:0!important;
+
+    padding:20px 24px!important;
+    z-index:70!important;
+  }
+
+  .home-page .home-header .brand strong{
+    font-size:12px!important;
+  }
+
+  .home-page .home-header .brand span{
+    font-size:8px!important;
+  }
+
+  .home-page .home-header .site-nav{
+    gap:20px!important;
+  }
+
+  .home-page .home-header .site-nav a{
+    font-size:8.5px!important;
+  }
+
+  /* -------------------------------------------------------
+     HERO COPY
+  ------------------------------------------------------- */
+  .home-page .hero-copy{
+    position:absolute!important;
+
+    left:30px!important;
+    top:84px!important;
+    right:auto!important;
+    bottom:auto!important;
+
+    width:285px!important;
+    max-width:285px!important;
+
+    transform:none!important;
+    z-index:24!important;
+  }
+
+  .home-page .hero-index-wrap{
+    margin-bottom:13px!important;
+    font-size:10px!important;
+  }
+
+  .home-page .hero-index-wrap i{
+    width:46px!important;
+  }
+
+  .home-page .hero-kicker{
+    margin-bottom:8px!important;
+    font-size:8px!important;
+  }
+
+  .home-page .hero h1{
+    width:auto!important;
+    max-width:285px!important;
+
+    font-size:clamp(48px,5.8vw,62px)!important;
+    line-height:.88!important;
+    letter-spacing:-.058em!important;
+  }
+
+  .home-page .hero-desc{
+    width:265px!important;
+    margin-top:13px!important;
+
+    font-size:10.5px!important;
+    line-height:1.58!important;
+  }
+
+  /* -------------------------------------------------------
+     RECORD INTERACTION ZONE
+  ------------------------------------------------------- */
+  .home-page .record-stage{
+    position:absolute!important;
+    inset:0!important;
+
+    width:100vw!important;
+    height:100dvh!important;
+  }
+
+  .home-page .record-wrap{
+    left:59%!important;
+    top:34%!important;
+
+    width:min(45vw,400px)!important;
+    max-width:400px!important;
+
+    transform:translate(-50%,-50%)!important;
+    z-index:15!important;
+  }
+
+  .home-page .record-stage::before,
+  .home-page .record-stage::after{
+    left:59%!important;
+    top:34%!important;
+  }
+
+  .home-page .record-stage::before{
+    width:min(50vw,440px)!important;
+    height:min(50vw,440px)!important;
+  }
+
+  .home-page .record-stage::after{
+    width:min(47vw,420px)!important;
+    height:min(47vw,420px)!important;
+  }
+
+  .home-page .record-hover-cta{
+    bottom:7%!important;
+    font-size:7px!important;
+  }
+
+  /* -------------------------------------------------------
+     GUIDE
+  ------------------------------------------------------- */
+  .home-page .home-explore-hint{
+    position:absolute!important;
+
+    left:50%!important;
+    top:52.7%!important;
+    right:auto!important;
+    bottom:auto!important;
+
+    width:auto!important;
+
+    transform:translateX(-50%)!important;
+
+    justify-content:center!important;
+    gap:10px!important;
+
+    font-size:7px!important;
+    white-space:nowrap!important;
+
+    z-index:27!important;
+  }
+
+  .home-page .guide-copy-desktop{
+    display:none!important;
+  }
+
+  .home-page .guide-copy-mobile{
+    display:inline!important;
+  }
+
+  .home-page .home-explore-hint i{
+    width:18px!important;
+  }
+
+  /* -------------------------------------------------------
+     CATEGORY RAIL
+  ------------------------------------------------------- */
+  .home-page .category-orbit{
+    position:absolute!important;
+
+    left:0!important;
+    right:0!important;
+    top:56.5%!important;
+
+    display:flex!important;
+    align-items:center!important;
+
+    width:100vw!important;
+    max-width:100vw!important;
+    height:40px!important;
+
+    padding:0 28px!important;
+    gap:8px!important;
+
+    overflow-x:auto!important;
+    overflow-y:hidden!important;
+
+    transform:none!important;
+    opacity:1!important;
+
+    scroll-snap-type:x proximity!important;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none!important;
+
+    z-index:30!important;
+  }
+
+  .home-page .category-orbit::-webkit-scrollbar{
+    display:none!important;
+  }
+
+  .home-page .category-btn{
+    position:relative!important;
+
+    left:auto!important;
+    top:auto!important;
+
+    flex:0 0 auto!important;
+    display:flex!important;
+    align-items:center!important;
+
+    width:auto!important;
+    min-width:auto!important;
+    height:32px!important;
+
+    padding:0 11px!important;
+
+    border:1px solid rgba(255,255,255,.09)!important;
+    border-radius:999px!important;
+
+    background:rgba(7,7,7,.78)!important;
+
+    transform:none!important;
+    scroll-snap-align:center!important;
+  }
+
+  .home-page .category-btn::before{
+    display:none!important;
+  }
+
+  .home-page .category-btn .category-main{
+    display:flex!important;
+    align-items:center!important;
+    gap:6px!important;
+  }
+
+  .home-page .category-btn .category-no{
+    font-size:6.5px!important;
+  }
+
+  .home-page .category-btn .category-name{
+    max-width:none!important;
+    overflow:visible!important;
+
+    font-size:8px!important;
+    line-height:1!important;
+
+    white-space:nowrap!important;
+  }
+
+  .home-page .category-btn .category-state{
+    display:none!important;
+  }
+
+  .home-page .category-btn.is-active{
+    border-color:rgba(218,181,108,.42)!important;
+    background:rgba(218,181,108,.08)!important;
+  }
+
+  .home-page .category-btn.is-active .category-no,
+  .home-page .category-btn.is-active .category-name{
+    color:#ead5a7!important;
+  }
+
+  /* -------------------------------------------------------
+     SELECTED WORKS = BOTTOM DRAWER
+  ------------------------------------------------------- */
+  .home-page .home-selected-works,
+  .home-page .home-selected-works.is-profile,
+  .home-page .home-selected-works.is-external{
+    position:absolute!important;
+
+    left:0!important;
+    right:0!important;
+    top:auto!important;
+    bottom:0!important;
+
+    width:100vw!important;
+    min-width:100vw!important;
+    max-width:100vw!important;
+
+    height:34dvh!important;
+    min-height:300px!important;
+    max-height:350px!important;
+
+    margin:0!important;
+    padding:14px 28px 20px!important;
+
+    border-left:0!important;
+    border-top:1px solid rgba(255,255,255,.09)!important;
+    border-radius:22px 22px 0 0!important;
+
+    background:
+      linear-gradient(
+        180deg,
+        rgba(12,12,11,.985),
+        rgba(5,5,5,.998)
+      )!important;
+
+    backdrop-filter:blur(8px)!important;
+    -webkit-backdrop-filter:blur(8px)!important;
+
+    box-sizing:border-box!important;
+
+    transform:none!important;
+    opacity:1!important;
+
+    overflow-x:hidden!important;
+    overflow-y:hidden!important;
+
+    z-index:45!important;
+  }
+
+  .home-page .home-selected-works::before{
+    content:""!important;
+
+    display:block!important;
+    position:relative!important;
+
+    width:40px!important;
+    height:3px!important;
+
+    margin:0 auto 11px!important;
+
+    border-radius:999px!important;
+    background:rgba(255,255,255,.16)!important;
+  }
+
+  .home-page .home-selected-head{
+    padding-bottom:9px!important;
+    margin-bottom:10px!important;
+  }
+
+  .home-page .home-selected-head span:first-child{
+    font-size:6.5px!important;
+  }
+
+  .home-page .home-selected-head strong{
+    font-size:10.5px!important;
+  }
+
+  .home-page .home-selected-count{
+    font-size:15px!important;
+  }
+
+  /* -------------------------------------------------------
+     PROJECTS = HORIZONTAL CARD STRIP
+     2열 grid 대신 태블릿용 스와이프 스트립
+  ------------------------------------------------------- */
+  .home-page .home-selected-list{
+    display:flex!important;
+    flex-direction:row!important;
+    align-items:stretch!important;
+
+    width:100%!important;
+    min-width:0!important;
+
+    gap:12px!important;
+
+    padding:0 0 8px!important;
+
+    overflow-x:auto!important;
+    overflow-y:hidden!important;
+
+    scroll-snap-type:x mandatory!important;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:thin!important;
+    scrollbar-color:rgba(210,173,98,.32) rgba(255,255,255,.025)!important;
+  }
+
+  .home-page .home-selected-list::-webkit-scrollbar{
+    height:4px!important;
+  }
+
+  .home-page .home-selected-list::-webkit-scrollbar-track{
+    background:rgba(255,255,255,.02)!important;
+  }
+
+  .home-page .home-selected-list::-webkit-scrollbar-thumb{
+    background:rgba(210,173,98,.32)!important;
+    border-radius:999px!important;
+  }
+
+  .home-page .home-work-card.is-featured,
+  .home-page .home-work-card.is-secondary{
+    flex:0 0 225px!important;
+
+    display:grid!important;
+    grid-template-columns:1fr 14px!important;
+    grid-template-areas:
+      "thumb thumb"
+      "copy arrow"!important;
+
+    gap:8px 10px!important;
+
+    width:225px!important;
+    min-width:225px!important;
+    min-height:0!important;
+
+    padding:0 0 10px!important;
+
+    border-bottom:0!important;
+
+    scroll-snap-align:start!important;
+  }
+
+  .home-page .home-work-card.is-featured .home-work-thumb,
+  .home-page .home-work-card.is-secondary .home-work-thumb{
+    grid-area:thumb!important;
+
+    width:100%!important;
+    aspect-ratio:1.72!important;
+
+    border-radius:8px!important;
+  }
+
+  .home-page .home-work-card.is-featured .home-work-copy,
+  .home-page .home-work-card.is-secondary .home-work-copy{
+    grid-area:copy!important;
+    min-width:0!important;
+  }
+
+  .home-page .home-work-card.is-featured .home-work-arrow,
+  .home-page .home-work-card.is-secondary .home-work-arrow{
+    grid-area:arrow!important;
+    align-self:center!important;
+
+    font-size:12px!important;
+  }
+
+  .home-page .home-work-card.is-featured .home-work-copy > span,
+  .home-page .home-work-card.is-secondary .home-work-copy > span{
+    margin-bottom:4px!important;
+    font-size:6.5px!important;
+  }
+
+  .home-page .home-work-card.is-featured .home-work-copy strong,
+  .home-page .home-work-card.is-secondary .home-work-copy strong{
+    margin-bottom:4px!important;
+
+    font-size:10px!important;
+    line-height:1.18!important;
+
+    white-space:nowrap!important;
+    overflow:hidden!important;
+    text-overflow:ellipsis!important;
+  }
+
+  .home-page .home-work-card.is-featured .home-work-copy small,
+  .home-page .home-work-card.is-secondary .home-work-copy small{
+    display:block!important;
+
+    font-size:6.8px!important;
+    line-height:1.35!important;
+
+    white-space:nowrap!important;
+    overflow:hidden!important;
+    text-overflow:ellipsis!important;
+  }
+
+  .home-page .home-work-index{
+    left:7px!important;
+    bottom:6px!important;
+    font-size:6px!important;
+  }
+
+  .home-page .home-selected-all{
+    margin-top:9px!important;
+    font-size:7.5px!important;
+  }
+
+  /* -------------------------------------------------------
+     ABOUT: drawer는 horizontal card strip이 아니라 정보형
+  ------------------------------------------------------- */
+  .home-page .home-selected-works.is-profile{
+    overflow-y:auto!important;
+    overscroll-behavior:contain!important;
+  }
+
+  .home-page .home-selected-works.is-profile .home-selected-list{
+    display:block!important;
+    overflow:visible!important;
+    padding-bottom:0!important;
+  }
+
+  .home-page .home-selected-works.is-profile .home-profile-card{
+    width:100%!important;
+  }
+
+  .home-page .home-selected-works.is-profile .home-profile-intro{
+    grid-template-columns:88px minmax(0,1fr)!important;
+    gap:14px!important;
+  }
+
+  .home-page .home-selected-works.is-profile .home-profile-photo-wrap{
+    width:88px!important;
+  }
+
+  .home-page .home-selected-works.is-profile .home-profile-name{
+    font-size:20px!important;
+  }
+
+  .home-page .home-selected-works.is-profile .home-profile-summary{
+    font-size:9.5px!important;
+    line-height:1.55!important;
+  }
+
+  .home-page .home-selected-works.is-profile .home-profile-body p{
+    font-size:10px!important;
+    line-height:1.6!important;
+  }
+
+  .home-page .home-selected-works.is-profile .home-profile-career-grid{
+    grid-template-columns:1fr 1fr!important;
+    gap:8px!important;
+  }
+
+  .home-page .home-selected-works.is-profile .home-profile-career-grid article{
+    min-height:70px!important;
+    padding:10px!important;
+  }
+
+  .home-page .home-selected-works.is-profile .home-profile-services b{
+    min-height:24px!important;
+    font-size:6.3px!important;
+  }
+
+  /* -------------------------------------------------------
+     KMONG: image + copy two-column drawer
+  ------------------------------------------------------- */
+  .home-page .home-selected-works.is-external{
+    overflow-y:auto!important;
+    overscroll-behavior:contain!important;
+  }
+
+  .home-page .home-selected-works.is-external .home-selected-list{
+    display:block!important;
+    overflow:visible!important;
+  }
+
+  .home-page .home-selected-works.is-external .home-kmong-card{
+    display:grid!important;
+    grid-template-columns:230px minmax(0,1fr)!important;
+    gap:18px!important;
+
+    padding-bottom:10px!important;
+  }
+
+  .home-page .home-selected-works.is-external .home-kmong-image{
+    width:230px!important;
+    aspect-ratio:1.55!important;
+    margin:0!important;
+  }
+
+  .home-page .home-selected-works.is-external .home-kmong-copy > strong{
+    font-size:18px!important;
+  }
+
+  .home-page .home-selected-works.is-external .home-kmong-copy > p{
+    font-size:9.5px!important;
+    line-height:1.55!important;
+  }
+
+  /* -------------------------------------------------------
+     DOCUMENT SCROLL 방지
+  ------------------------------------------------------- */
+  .home-page .depth-bg,
+  .home-page .record-stage,
+  .home-page .hero-copy,
+  .home-page .category-orbit,
+  .home-page .home-selected-works{
+    max-height:100dvh!important;
+  }
+
+  /* -------------------------------------------------------
+     PREVIEW PANEL
+  ------------------------------------------------------- */
+  .home-page .preview-panel{
+    left:0!important;
+    right:0!important;
+    top:auto!important;
+    bottom:0!important;
+
+    width:100vw!important;
+    max-width:100vw!important;
+    height:82dvh!important;
+
+    padding:20px 28px 24px!important;
+
+    border-radius:22px 22px 0 0!important;
+    clip-path:none!important;
+
+    transform:translateY(100%)!important;
+    z-index:80!important;
+  }
+
+  .home-page .preview-panel.is-open{
+    transform:translateY(0)!important;
+  }
+
+  .home-page .preview-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:22px!important;
+
+    height:calc(100% - 116px)!important;
+  }
+
+  .home-page .preview-heading h2{
+    font-size:24px!important;
+  }
+
+  .home-page .hero.is-preview-open .record-wrap{
+    left:50%!important;
+    top:18%!important;
+
+    transform:translate(-50%,-50%) scale(.48)!important;
+    opacity:.17!important;
+  }
+
+  .home-page .hero.is-preview-open .category-orbit,
+  .home-page .hero.is-preview-open .home-selected-works{
+    opacity:0!important;
+    pointer-events:none!important;
+  }
+}
+
+/* ---------------------------------------------------------
+   901~1099 / shorter tablet or compact laptop
+--------------------------------------------------------- */
+@media (min-width:901px) and (max-width:1099px) and (max-height:760px){
+
+  .home-page .hero-copy{
+    top:70px!important;
+  }
+
+  .home-page .hero h1{
+    font-size:46px!important;
+  }
+
+  .home-page .hero-desc{
+    display:none!important;
+  }
+
+  .home-page .record-wrap,
+  .home-page .record-stage::before,
+  .home-page .record-stage::after{
+    top:30%!important;
+  }
+
+  .home-page .home-explore-hint{
+    top:46%!important;
+  }
+
+  .home-page .category-orbit{
+    top:50%!important;
+  }
+
+  .home-page .home-selected-works,
+  .home-page .home-selected-works.is-profile,
+  .home-page .home-selected-works.is-external{
+    height:42dvh!important;
+    min-height:285px!important;
+  }
+}

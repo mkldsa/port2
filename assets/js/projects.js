@@ -12,7 +12,7 @@
   const labels = {
     all:'ALL',
     web:'WEB DESIGN',
-    ecommerce:'E-COMMERCE',
+    ecommerce:'SHOP DESIGN',
     detail:'DETAIL PAGE',
     graphic:'GRAPHIC DESIGN'
   };
@@ -65,7 +65,7 @@
   }).join('');
 
   if(summaryEl){
-    summaryEl.textContent = 'WEB / E-COMMERCE / DETAIL / GRAPHIC · ORIGINAL PORT2 ARCHIVE';
+    summaryEl.textContent = 'WEB / SHOP DESIGN / DETAIL / GRAPHIC · ORIGINAL PORT2 ARCHIVE';
   }
 
   function render(category){

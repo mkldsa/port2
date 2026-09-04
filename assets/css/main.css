@@ -6259,3 +6259,3255 @@ body{
     font-size:9px!important;
   }
 }
+
+
+/* =========================================================
+   V23.0 — NARROWER LEFT TITLE / LARGER WORK PREVIEW
+========================================================= */
+
+/* ---------------------------------------------------------
+   01. LEFT TITLE BLOCK
+   가로 폭을 줄여 카테고리 타이틀이 2줄 중심으로 보이게.
+--------------------------------------------------------- */
+.hero-copy{
+  left:5.8vw!important;
+  top:47.2%!important;
+  width:min(25vw,410px)!important;
+  transform:translateY(-50%)!important;
+}
+
+.hero-index-wrap{
+  margin-bottom:25px!important;
+}
+
+.hero-kicker{
+  margin-bottom:13px!important;
+}
+
+/* 
+   ABOUT ME      -> ABOUT / ME
+   WEB DESIGN    -> WEB / DESIGN
+   E-COMMERCE    -> E- / COMMERCE
+   DETAIL PAGE   -> DETAIL / PAGE
+   GRAPHIC DESIGN-> GRAPHIC / DESIGN
+*/
+.hero h1{
+  width:100%!important;
+  max-width:410px!important;
+
+  font-size:clamp(56px,4.45vw,86px)!important;
+  line-height:.88!important;
+  letter-spacing:-.058em!important;
+
+  white-space:normal!important;
+  overflow-wrap:normal!important;
+  word-break:normal!important;
+}
+
+/* ABOUT ME / WEB DESIGN / DETAIL PAGE 등 공백 기준 줄바꿈 */
+.hero h1{
+  text-wrap:balance;
+}
+
+/* 설명문 폭도 제목에 맞춰 축소 */
+.hero-desc{
+  width:min(100%,390px)!important;
+  margin-top:23px!important;
+  font-size:14.5px!important;
+  line-height:1.65!important;
+}
+
+/* ---------------------------------------------------------
+   02. RECORD
+   우측 미리보기를 키울 공간 확보를 위해 원판을 아주 조금 왼쪽으로.
+--------------------------------------------------------- */
+.record-wrap,
+.category-orbit{
+  left:49.8%!important;
+}
+
+.record-stage::before,
+.record-stage::after{
+  left:49.8%!important;
+}
+
+/* 카테고리 궤도도 원판에 조금 더 붙여서 우측 공간 확보 */
+.category-btn{
+  min-width:145px!important;
+}
+
+/* ---------------------------------------------------------
+   03. RIGHT SELECTED WORKS — BIGGER
+--------------------------------------------------------- */
+.home-selected-works{
+  right:2.3vw!important;
+  bottom:7.5%!important;
+
+  width:min(27vw,500px)!important;
+}
+
+/* 상단 selected works 헤더 */
+.home-selected-head{
+  padding-bottom:15px!important;
+  margin-bottom:14px!important;
+}
+
+.home-selected-head span:first-child{
+  font-size:9px!important;
+}
+
+.home-selected-head strong{
+  font-size:12.5px!important;
+}
+
+.home-selected-count{
+  font-size:22px!important;
+}
+
+/* 카드 자체를 크게 */
+.home-selected-list{
+  gap:12px!important;
+}
+
+.home-work-card{
+  grid-template-columns:138px minmax(0,1fr) 18px!important;
+  gap:16px!important;
+
+  min-height:100px!important;
+  padding:10px 0!important;
+}
+
+/* 썸네일 확대 */
+.home-work-thumb{
+  width:138px!important;
+  aspect-ratio:1.48!important;
+  border-radius:8px!important;
+}
+
+/* 썸네일 안 번호 */
+.home-work-index{
+  left:8px!important;
+  bottom:7px!important;
+  font-size:8px!important;
+}
+
+/* 프로젝트 메타 */
+.home-work-copy > span{
+  margin-bottom:6px!important;
+  font-size:8.5px!important;
+}
+
+/* 프로젝트명 */
+.home-work-copy strong{
+  margin-bottom:7px!important;
+  font-size:14.5px!important;
+  line-height:1.18!important;
+}
+
+/* 기여도 / 역할 */
+.home-work-copy small{
+  max-width:100%!important;
+  font-size:10px!important;
+  line-height:1.45!important;
+
+  white-space:normal!important;
+  overflow:visible!important;
+  text-overflow:clip!important;
+}
+
+/* 화살표 */
+.home-work-arrow{
+  font-size:15px!important;
+}
+
+/* View All */
+.home-selected-all{
+  margin-top:16px!important;
+  font-size:10px!important;
+}
+
+/* ---------------------------------------------------------
+   04. PROFILE MODE RIGHT PANEL
+--------------------------------------------------------- */
+.home-selected-works.is-profile{
+  width:min(26vw,470px)!important;
+}
+
+.home-profile-role{
+  font-size:10.5px!important;
+}
+
+.home-profile-card p{
+  max-width:420px!important;
+  font-size:13.5px!important;
+  line-height:1.8!important;
+}
+
+.home-profile-skills{
+  gap:7px!important;
+}
+
+.home-profile-skills span{
+  min-height:29px!important;
+  padding:0 11px!important;
+  font-size:8.3px!important;
+}
+
+/* ---------------------------------------------------------
+   05. HOW-TO hint follows left block
+--------------------------------------------------------- */
+.home-explore-hint{
+  left:5.8vw!important;
+}
+
+/* ---------------------------------------------------------
+   06. OPEN STATE
+--------------------------------------------------------- */
+.hero.is-preview-open .record-wrap,
+.hero.is-preview-open .category-orbit{
+  left:29.5%!important;
+}
+
+.hero.is-preview-open .record-stage::before,
+.hero.is-preview-open .record-stage::after{
+  left:29.5%!important;
+}
+
+/* ---------------------------------------------------------
+   07. 1350px 이하
+--------------------------------------------------------- */
+@media(max-width:1350px) and (min-width:901px){
+  .hero-copy{
+    left:4.8vw!important;
+    width:min(26vw,370px)!important;
+  }
+
+  .hero h1{
+    max-width:370px!important;
+    font-size:clamp(52px,4.5vw,76px)!important;
+  }
+
+  .hero-desc{
+    font-size:13.8px!important;
+  }
+
+  .record-wrap,
+  .category-orbit,
+  .record-stage::before,
+  .record-stage::after{
+    left:49%!important;
+  }
+
+  .home-selected-works{
+    right:1.8vw!important;
+    width:min(28vw,420px)!important;
+  }
+
+  .home-work-card{
+    grid-template-columns:118px minmax(0,1fr) 16px!important;
+    gap:13px!important;
+    min-height:88px!important;
+  }
+
+  .home-work-thumb{
+    width:118px!important;
+  }
+
+  .home-work-copy strong{
+    font-size:13.2px!important;
+  }
+
+  .home-work-copy small{
+    font-size:9.2px!important;
+  }
+}
+
+/* ---------------------------------------------------------
+   08. TABLET
+--------------------------------------------------------- */
+@media(max-width:900px){
+  .hero-copy{
+    left:6vw!important;
+    width:45vw!important;
+  }
+
+  .hero h1{
+    max-width:45vw!important;
+    font-size:clamp(48px,9.5vw,68px)!important;
+  }
+
+  .record-wrap,
+  .record-stage::before,
+  .record-stage::after{
+    left:58%!important;
+  }
+
+  .home-selected-works{
+    right:18px!important;
+    width:min(50vw,420px)!important;
+  }
+
+  .home-work-card{
+    grid-template-columns:100px minmax(0,1fr) 14px!important;
+  }
+
+  .home-work-thumb{
+    width:100px!important;
+  }
+}
+
+/* ---------------------------------------------------------
+   09. MOBILE
+--------------------------------------------------------- */
+@media(max-width:640px){
+  .hero-copy{
+    width:88vw!important;
+  }
+
+  .hero h1{
+    max-width:82vw!important;
+  }
+
+  .home-selected-works{
+    display:none!important;
+  }
+}
+
+
+/* =========================================================
+   V24.0 — CONSISTENT TWO-LINE CATEGORY TITLES /
+           RECORD MOVED INTO FREED SPACE
+========================================================= */
+
+/* ---------------------------------------------------------
+   01. LEFT TITLE AREA
+   모든 카테고리명이 "두 단어 / 두 줄"로 보이도록 통일.
+--------------------------------------------------------- */
+.hero-copy{
+  left:5.4vw!important;
+  top:47.4%!important;
+  width:min(23vw,365px)!important;
+  transform:translateY(-50%)!important;
+}
+
+.hero h1{
+  width:100%!important;
+  max-width:365px!important;
+
+  font-size:clamp(58px,4.55vw,88px)!important;
+  line-height:.87!important;
+  letter-spacing:-.06em!important;
+
+  white-space:normal!important;
+  word-break:keep-all!important;
+  overflow-wrap:normal!important;
+  text-wrap:balance!important;
+}
+
+/* 설명은 제목 폭 안쪽에서만 */
+.hero-desc{
+  width:min(100%,350px)!important;
+  margin-top:24px!important;
+}
+
+/* ---------------------------------------------------------
+   02. RECORD — move left into the space gained above
+--------------------------------------------------------- */
+.record-wrap,
+.category-orbit{
+  left:46.2%!important;
+}
+
+.record-stage::before,
+.record-stage::after{
+  left:46.2%!important;
+}
+
+/* 레코드가 왼쪽으로 이동했으니 orbit도 살짝 압축 */
+.category-btn{
+  min-width:140px!important;
+}
+
+.category-btn .category-name{
+  max-width:114px!important;
+}
+
+/* ---------------------------------------------------------
+   03. RIGHT SELECTED WORKS
+   v23의 확대값 유지 + 오른쪽 여백만 정리
+--------------------------------------------------------- */
+.home-selected-works{
+  right:2.4vw!important;
+  width:min(27vw,500px)!important;
+}
+
+/* ---------------------------------------------------------
+   04. HOW TO follows the new left alignment
+--------------------------------------------------------- */
+.home-explore-hint{
+  left:5.4vw!important;
+}
+
+/* ---------------------------------------------------------
+   05. OPEN STATE
+--------------------------------------------------------- */
+.hero.is-preview-open .record-wrap,
+.hero.is-preview-open .category-orbit{
+  left:28.5%!important;
+}
+
+.hero.is-preview-open .record-stage::before,
+.hero.is-preview-open .record-stage::after{
+  left:28.5%!important;
+}
+
+/* ---------------------------------------------------------
+   06. 1350px 이하
+--------------------------------------------------------- */
+@media(max-width:1350px) and (min-width:901px){
+  .hero-copy{
+    left:4.3vw!important;
+    width:min(24vw,340px)!important;
+  }
+
+  .hero h1{
+    max-width:340px!important;
+    font-size:clamp(52px,4.55vw,78px)!important;
+  }
+
+  .record-wrap,
+  .category-orbit,
+  .record-stage::before,
+  .record-stage::after{
+    left:45.2%!important;
+  }
+
+  .home-selected-works{
+    right:1.8vw!important;
+    width:min(29vw,430px)!important;
+  }
+}
+
+/* ---------------------------------------------------------
+   07. Tablet
+--------------------------------------------------------- */
+@media(max-width:900px){
+  .hero-copy{
+    left:6vw!important;
+    width:42vw!important;
+  }
+
+  .hero h1{
+    max-width:42vw!important;
+  }
+
+  .record-wrap,
+  .record-stage::before,
+  .record-stage::after{
+    left:56%!important;
+  }
+}
+
+
+/* =========================================================
+   V25.0 — FEATURED SELECTED WORK
+   우측 공간을 "큰 대표작 + 보조작" 구조로 재편.
+========================================================= */
+
+/* ---------------------------------------------------------
+   01. RIGHT PANEL POSITION / WIDTH
+--------------------------------------------------------- */
+.home-selected-works{
+  right:2.2vw!important;
+  top:48.5%!important;
+  bottom:auto!important;
+  transform:translateY(-12%)!important;
+
+  width:min(29vw,540px)!important;
+}
+
+/* header도 조금 더 editorial하게 */
+.home-selected-head{
+  align-items:flex-end!important;
+  padding-bottom:14px!important;
+  margin-bottom:16px!important;
+}
+
+.home-selected-head > div{
+  gap:7px!important;
+}
+
+.home-selected-head span:first-child{
+  font-size:9px!important;
+}
+
+.home-selected-head strong{
+  font-size:13px!important;
+}
+
+.home-selected-count{
+  font-size:23px!important;
+}
+
+/* ---------------------------------------------------------
+   02. LIST
+--------------------------------------------------------- */
+.home-selected-list{
+  display:grid!important;
+  grid-template-columns:1fr!important;
+  gap:14px!important;
+}
+
+/* 공통 */
+.home-work-card{
+  position:relative!important;
+  border-bottom:1px solid rgba(255,255,255,.075)!important;
+}
+
+/* ---------------------------------------------------------
+   03. FIRST PROJECT = FEATURED
+--------------------------------------------------------- */
+.home-work-card.is-featured{
+  display:grid!important;
+  grid-template-columns:1fr auto!important;
+  grid-template-areas:
+    "thumb thumb"
+    "copy arrow"!important;
+
+  gap:13px 18px!important;
+  align-items:end!important;
+
+  min-height:0!important;
+  padding:0 0 17px!important;
+}
+
+/* 대표 이미지가 우측 공간을 제대로 사용 */
+.home-work-card.is-featured .home-work-thumb{
+  grid-area:thumb!important;
+
+  width:100%!important;
+  aspect-ratio:1.72!important;
+
+  border-radius:10px!important;
+  border-color:rgba(255,255,255,.10)!important;
+
+  box-shadow:
+    0 14px 38px rgba(0,0,0,.24),
+    inset 0 0 0 1px rgba(255,255,255,.018)!important;
+}
+
+.home-work-card.is-featured .home-work-thumb img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+}
+
+/* featured 순번 */
+.home-work-card.is-featured .home-work-index{
+  left:10px!important;
+  bottom:9px!important;
+  padding:4px 6px!important;
+
+  border-radius:4px;
+  background:rgba(0,0,0,.42);
+
+  color:#f0ddb8!important;
+  font-size:8px!important;
+}
+
+/* copy */
+.home-work-card.is-featured .home-work-copy{
+  grid-area:copy!important;
+}
+
+.home-work-card.is-featured .home-work-copy > span{
+  margin-bottom:6px!important;
+  font-size:8.5px!important;
+  color:#8c857a!important;
+}
+
+.home-work-card.is-featured .home-work-copy strong{
+  margin-bottom:7px!important;
+  font-size:17px!important;
+  line-height:1.12!important;
+}
+
+.home-work-card.is-featured .home-work-copy small{
+  max-width:430px!important;
+  font-size:10.5px!important;
+  line-height:1.45!important;
+  color:#b3aaa0!important;
+}
+
+.home-work-card.is-featured .home-work-arrow{
+  grid-area:arrow!important;
+  align-self:center!important;
+
+  font-size:16px!important;
+}
+
+/* hover */
+.home-work-card.is-featured:hover .home-work-thumb img{
+  transform:scale(1.035)!important;
+}
+
+/* ---------------------------------------------------------
+   04. SECOND PROJECT = SECONDARY ROW
+--------------------------------------------------------- */
+.home-work-card.is-secondary{
+  display:grid!important;
+  grid-template-columns:124px minmax(0,1fr) 18px!important;
+  gap:14px!important;
+  align-items:center!important;
+
+  min-height:88px!important;
+  padding:9px 0 14px!important;
+}
+
+.home-work-card.is-secondary .home-work-thumb{
+  width:124px!important;
+  aspect-ratio:1.48!important;
+  border-radius:7px!important;
+}
+
+.home-work-card.is-secondary .home-work-copy > span{
+  margin-bottom:5px!important;
+  font-size:8px!important;
+}
+
+.home-work-card.is-secondary .home-work-copy strong{
+  margin-bottom:5px!important;
+  font-size:13.5px!important;
+}
+
+.home-work-card.is-secondary .home-work-copy small{
+  font-size:9px!important;
+  line-height:1.4!important;
+}
+
+.home-work-card.is-secondary .home-work-arrow{
+  font-size:14px!important;
+}
+
+/* ---------------------------------------------------------
+   05. VIEW ALL
+--------------------------------------------------------- */
+.home-selected-all{
+  margin-top:16px!important;
+  padding-bottom:7px!important;
+
+  font-size:10px!important;
+}
+
+/* ---------------------------------------------------------
+   06. PROFILE MODE
+   ABOUT ME 선택 시는 프로젝트 featured 구조를 쓰지 않고 프로필 카드 유지.
+--------------------------------------------------------- */
+.home-selected-works.is-profile{
+  top:52%!important;
+  transform:translateY(-15%)!important;
+  width:min(27vw,500px)!important;
+}
+
+.home-selected-works.is-profile .home-selected-list{
+  display:block!important;
+}
+
+/* ---------------------------------------------------------
+   07. CATEGORY ORBIT / PREVIEW CLEARANCE
+   우측 카드가 커졌으므로 orbit text는 레코드 쪽에 조금 더 붙임.
+--------------------------------------------------------- */
+.category-btn{
+  min-width:132px!important;
+}
+
+.category-btn .category-name{
+  max-width:106px!important;
+}
+
+/* ---------------------------------------------------------
+   08. MEDIUM DESKTOP
+--------------------------------------------------------- */
+@media(max-width:1500px) and (min-width:1101px){
+  .home-selected-works{
+    right:1.8vw!important;
+    width:min(30vw,470px)!important;
+  }
+
+  .home-work-card.is-featured .home-work-copy strong{
+    font-size:15.5px!important;
+  }
+
+  .home-work-card.is-featured .home-work-copy small{
+    font-size:9.8px!important;
+  }
+
+  .home-work-card.is-secondary{
+    grid-template-columns:108px minmax(0,1fr) 16px!important;
+  }
+
+  .home-work-card.is-secondary .home-work-thumb{
+    width:108px!important;
+  }
+}
+
+/* ---------------------------------------------------------
+   09. 1100 and below
+--------------------------------------------------------- */
+@media(max-width:1100px) and (min-width:901px){
+  .home-selected-works{
+    right:1.5vw!important;
+    width:min(31vw,390px)!important;
+  }
+
+  .home-work-card.is-featured .home-work-thumb{
+    aspect-ratio:1.62!important;
+  }
+
+  .home-work-card.is-featured .home-work-copy strong{
+    font-size:14px!important;
+  }
+
+  .home-work-card.is-secondary{
+    grid-template-columns:94px minmax(0,1fr) 14px!important;
+    gap:10px!important;
+  }
+
+  .home-work-card.is-secondary .home-work-thumb{
+    width:94px!important;
+  }
+}
+
+/* ---------------------------------------------------------
+   10. TABLET
+--------------------------------------------------------- */
+@media(max-width:900px){
+  .home-selected-works{
+    top:auto!important;
+    right:18px!important;
+    bottom:86px!important;
+    transform:none!important;
+
+    width:min(50vw,420px)!important;
+  }
+
+  .home-work-card.is-featured .home-work-copy strong{
+    font-size:13px!important;
+  }
+
+  .home-work-card.is-secondary{
+    grid-template-columns:90px minmax(0,1fr) 12px!important;
+  }
+
+  .home-work-card.is-secondary .home-work-thumb{
+    width:90px!important;
+  }
+}
+
+@media(max-width:640px){
+  .home-selected-works{
+    display:none!important;
+  }
+}
+
+
+/* =========================================================
+   V26.0 — SAFE-ZONE DESKTOP LAYOUT
+   왼쪽 카피 / 레코드 / 궤도 / 우측 프리뷰가
+   서로 침범하지 않도록 화면 폭별 안전영역을 고정.
+========================================================= */
+
+/* =========================================================
+   A. WIDE DESKTOP — 1700px+
+   기준: 1893px 캡처에서 각 영역 사이 50px+ 확보
+========================================================= */
+@media(min-width:1700px){
+
+  /* LEFT */
+  .hero-copy{
+    left:5.2vw!important;
+    width:350px!important;
+  }
+
+  .hero h1{
+    max-width:350px!important;
+  }
+
+  .home-explore-hint{
+    left:5.2vw!important;
+  }
+
+  /* RECORD + ORBIT
+     기존 46.2%보다 살짝 왼쪽.
+     크기도 viewport 폭을 같이 고려해 지나치게 커지지 않게 함. */
+  .record-wrap,
+  .category-orbit{
+    left:45%!important;
+    width:min(70vh,36vw,720px)!important;
+  }
+
+  .record-stage::before{
+    left:45%!important;
+    width:min(77vh,40vw,790px)!important;
+    height:min(77vh,40vw,790px)!important;
+  }
+
+  .record-stage::after{
+    left:45%!important;
+    width:min(74vh,39vw,760px)!important;
+    height:min(74vh,39vw,760px)!important;
+  }
+
+  .category-btn{
+    min-width:128px!important;
+  }
+
+  .category-btn .category-name{
+    max-width:102px!important;
+  }
+
+  /* RIGHT
+     29vw → 25vw.
+     실제 이미지 크기는 충분히 크지만 orbit과 겹치지 않음. */
+  .home-selected-works{
+    right:2.2vw!important;
+    top:52%!important;
+    bottom:auto!important;
+
+    width:min(25vw,500px)!important;
+
+    transform:translateY(-50%)!important;
+  }
+
+  .home-work-card.is-featured .home-work-thumb{
+    aspect-ratio:1.80!important;
+  }
+}
+
+/* =========================================================
+   B. LARGE DESKTOP — 1500px ~ 1699px
+========================================================= */
+@media(min-width:1500px) and (max-width:1699px){
+
+  .hero-copy{
+    left:5vw!important;
+    width:330px!important;
+  }
+
+  .hero h1{
+    max-width:330px!important;
+    font-size:clamp(56px,4.5vw,82px)!important;
+  }
+
+  .home-explore-hint{
+    left:5vw!important;
+  }
+
+  .record-wrap,
+  .category-orbit{
+    left:46%!important;
+    width:min(66vh,38vw,620px)!important;
+  }
+
+  .record-stage::before{
+    left:46%!important;
+    width:min(73vh,42vw,690px)!important;
+    height:min(73vh,42vw,690px)!important;
+  }
+
+  .record-stage::after{
+    left:46%!important;
+    width:min(70vh,40vw,660px)!important;
+    height:min(70vh,40vw,660px)!important;
+  }
+
+  .category-btn{
+    min-width:112px!important;
+  }
+
+  .category-btn .category-name{
+    max-width:88px!important;
+    font-size:10.8px!important;
+  }
+
+  .home-selected-works{
+    right:1.9vw!important;
+    top:52%!important;
+    bottom:auto!important;
+
+    width:min(22.5vw,380px)!important;
+
+    transform:translateY(-50%)!important;
+  }
+
+  .home-work-card.is-featured .home-work-thumb{
+    aspect-ratio:1.72!important;
+  }
+
+  .home-work-card.is-featured .home-work-copy strong{
+    font-size:15px!important;
+  }
+
+  .home-work-card.is-secondary{
+    grid-template-columns:104px minmax(0,1fr) 15px!important;
+  }
+
+  .home-work-card.is-secondary .home-work-thumb{
+    width:104px!important;
+  }
+}
+
+/* =========================================================
+   C. STANDARD DESKTOP — 1350px ~ 1499px
+   이 구간부터는 우측에서 대표작을 우선하고 두번째 카드는 숨김.
+========================================================= */
+@media(min-width:1350px) and (max-width:1499px){
+
+  .hero-copy{
+    left:4.5vw!important;
+    width:285px!important;
+  }
+
+  .hero h1{
+    max-width:285px!important;
+    font-size:clamp(51px,4.6vw,72px)!important;
+  }
+
+  .hero-desc{
+    width:275px!important;
+    font-size:13.5px!important;
+  }
+
+  .home-explore-hint{
+    left:4.5vw!important;
+  }
+
+  .record-wrap,
+  .category-orbit{
+    left:47.5%!important;
+    width:min(64vh,42vw,580px)!important;
+  }
+
+  .record-stage::before{
+    left:47.5%!important;
+    width:min(70vh,46vw,630px)!important;
+    height:min(70vh,46vw,630px)!important;
+  }
+
+  .record-stage::after{
+    left:47.5%!important;
+    width:min(68vh,44vw,610px)!important;
+    height:min(68vh,44vw,610px)!important;
+  }
+
+  .category-btn{
+    min-width:100px!important;
+  }
+
+  .category-btn .category-name{
+    max-width:78px!important;
+    font-size:10.2px!important;
+  }
+
+  .category-btn .category-no{
+    font-size:8px!important;
+  }
+
+  .category-btn .category-state{
+    font-size:6.5px!important;
+  }
+
+  .home-selected-works{
+    right:1.6vw!important;
+    top:51%!important;
+    bottom:auto!important;
+
+    width:280px!important;
+
+    transform:translateY(-50%)!important;
+  }
+
+  /* 이 폭에서는 대표 프로젝트 하나를 크게 보여주는 편이 더 안정적 */
+  .home-work-card.is-secondary{
+    display:none!important;
+  }
+
+  .home-work-card.is-featured .home-work-thumb{
+    aspect-ratio:1.58!important;
+  }
+
+  .home-work-card.is-featured .home-work-copy strong{
+    font-size:14.5px!important;
+  }
+
+  .home-work-card.is-featured .home-work-copy small{
+    font-size:9px!important;
+  }
+}
+
+/* =========================================================
+   D. COMPACT DESKTOP — 1100px ~ 1349px
+========================================================= */
+@media(min-width:1100px) and (max-width:1349px){
+
+  .hero-copy{
+    left:4.3vw!important;
+    width:250px!important;
+  }
+
+  .hero h1{
+    max-width:250px!important;
+    font-size:clamp(46px,4.8vw,64px)!important;
+  }
+
+  .hero-desc{
+    width:245px!important;
+    font-size:12.8px!important;
+  }
+
+  .home-explore-hint{
+    left:4.3vw!important;
+    font-size:7.8px!important;
+  }
+
+  .record-wrap,
+  .category-orbit{
+    left:49%!important;
+    width:min(56vh,38vw,500px)!important;
+  }
+
+  .record-stage::before{
+    left:49%!important;
+    width:min(62vh,42vw,550px)!important;
+    height:min(62vh,42vw,550px)!important;
+  }
+
+  .record-stage::after{
+    left:49%!important;
+    width:min(60vh,40vw,530px)!important;
+    height:min(60vh,40vw,530px)!important;
+  }
+
+  .category-btn{
+    min-width:94px!important;
+  }
+
+  .category-btn .category-name{
+    max-width:72px!important;
+    font-size:9.7px!important;
+  }
+
+  .category-btn .category-no{
+    font-size:7.7px!important;
+  }
+
+  .category-btn .category-state{
+    font-size:6px!important;
+  }
+
+  .home-selected-works{
+    right:1.4vw!important;
+    top:51%!important;
+    bottom:auto!important;
+
+    width:250px!important;
+
+    transform:translateY(-50%)!important;
+  }
+
+  .home-work-card.is-secondary{
+    display:none!important;
+  }
+
+  .home-work-card.is-featured .home-work-thumb{
+    aspect-ratio:1.52!important;
+  }
+
+  .home-work-card.is-featured .home-work-copy strong{
+    font-size:13px!important;
+  }
+
+  .home-work-card.is-featured .home-work-copy small{
+    font-size:8.5px!important;
+  }
+
+  .home-selected-all{
+    font-size:8.8px!important;
+  }
+}
+
+/* =========================================================
+   E. PREVIEW PANEL OPEN
+   전체 작업물 패널이 열릴 때는 기존 중앙 이동 유지.
+========================================================= */
+.hero.is-preview-open .record-wrap,
+.hero.is-preview-open .category-orbit{
+  left:29.5%!important;
+}
+
+.hero.is-preview-open .record-stage::before,
+.hero.is-preview-open .record-stage::after{
+  left:29.5%!important;
+}
+
+/* =========================================================
+   F. PROFILE MODE
+   ABOUT ME도 동일한 안전 칼럼 안에서 중앙 배치
+========================================================= */
+@media(min-width:1100px){
+  .home-selected-works.is-profile{
+    top:52%!important;
+    transform:translateY(-50%)!important;
+  }
+}
+
+/* =========================================================
+   G. TABLET 이하
+   기존 모바일 구조 유지
+========================================================= */
+@media(max-width:1099px) and (min-width:901px){
+
+  .hero-copy{
+    left:5vw!important;
+    width:250px!important;
+  }
+
+  .hero h1{
+    max-width:250px!important;
+  }
+
+  .record-wrap,
+  .category-orbit{
+    left:51%!important;
+    width:min(52vh,38vw,440px)!important;
+  }
+
+  .record-stage::before,
+  .record-stage::after{
+    left:51%!important;
+  }
+
+  .category-btn{
+    min-width:88px!important;
+  }
+
+  .category-btn .category-name{
+    max-width:66px!important;
+    font-size:9px!important;
+  }
+
+  .home-selected-works{
+    right:12px!important;
+    top:51%!important;
+    bottom:auto!important;
+    width:225px!important;
+    transform:translateY(-50%)!important;
+  }
+
+  .home-work-card.is-secondary{
+    display:none!important;
+  }
+
+  .home-work-card.is-featured .home-work-thumb{
+    aspect-ratio:1.48!important;
+  }
+}
+
+
+/* =========================================================
+   V27.0 — RIGHT SLIDEBAR / GRAPHIC TITLE FIX
+   - 우측 SELECTED WORKS를 독립 슬라이드바 형태로 정리
+   - orbit와 preview 겹침 방지
+   - GRAPHIC DESIGN 타이틀 잘림 보정
+========================================================= */
+
+/* ---------------------------------------------------------
+   공통 레이어
+--------------------------------------------------------- */
+.hero{
+  --home-sidebar-w: clamp(320px, 21.5vw, 395px);
+  --home-copy-w: clamp(250px, 18vw, 330px);
+}
+
+/* ---------------------------------------------------------
+   01. RIGHT SELECTED WORKS = DOCKED SLIDEBAR
+--------------------------------------------------------- */
+@media (min-width: 1100px){
+  .home-selected-works{
+    position:absolute!important;
+    right:0!important;
+    top:0!important;
+    bottom:0!important;
+    transform:none!important;
+
+    width:var(--home-sidebar-w)!important;
+    height:100%!important;
+    padding:170px 30px 44px!important;
+
+    display:flex!important;
+    flex-direction:column!important;
+    justify-content:flex-start!important;
+
+    border-left:1px solid rgba(255,255,255,.08)!important;
+    background:
+      linear-gradient(270deg,
+        rgba(7,7,7,.92) 0%,
+        rgba(7,7,7,.88) 62%,
+        rgba(7,7,7,.58) 88%,
+        rgba(7,7,7,0) 100%)!important;
+    backdrop-filter: blur(12px)!important;
+    -webkit-backdrop-filter: blur(12px)!important;
+    box-sizing:border-box!important;
+    z-index:5!important;
+  }
+
+  .home-selected-works::before{
+    content:"";
+    position:absolute;
+    inset:0 auto 0 0;
+    width:1px;
+    background:linear-gradient(180deg,
+      rgba(255,255,255,0),
+      rgba(215,178,97,.28) 18%,
+      rgba(255,255,255,.08) 45%,
+      rgba(255,255,255,.03) 100%);
+    pointer-events:none;
+  }
+
+  .home-selected-head{
+    flex:0 0 auto!important;
+    margin-bottom:18px!important;
+  }
+
+  .home-selected-list{
+    flex:1 1 auto!important;
+    min-height:0!important;
+    overflow:auto!important;
+    padding-right:6px!important;
+    scrollbar-width:thin;
+    scrollbar-color:rgba(208,171,96,.45) rgba(255,255,255,.04);
+  }
+
+  .home-selected-list::-webkit-scrollbar{
+    width:8px;
+  }
+
+  .home-selected-list::-webkit-scrollbar-track{
+    background:rgba(255,255,255,.035);
+    border-radius:999px;
+  }
+
+  .home-selected-list::-webkit-scrollbar-thumb{
+    background:rgba(208,171,96,.45);
+    border-radius:999px;
+  }
+
+  .home-selected-all{
+    flex:0 0 auto!important;
+    margin-top:18px!important;
+    padding-bottom:0!important;
+  }
+}
+
+/* ---------------------------------------------------------
+   02. DESKTOP BALANCE
+   좌측 카피 / 레코드 / orbit / 슬라이드바 각 안전영역 재정리
+--------------------------------------------------------- */
+@media (min-width: 1700px){
+  .hero{
+    --home-sidebar-w: 405px;
+    --home-copy-w: 330px;
+  }
+
+  .hero-copy{
+    left:4.6vw!important;
+    width:var(--home-copy-w)!important;
+  }
+
+  .hero h1{
+    max-width:var(--home-copy-w)!important;
+    font-size:clamp(60px,4.4vw,86px)!important;
+  }
+
+  .hero-desc{
+    width:min(100%,320px)!important;
+  }
+
+  .home-explore-hint{
+    left:4.6vw!important;
+  }
+
+  .record-wrap,
+  .category-orbit{
+    left:42.8%!important;
+    width:min(68vh,35vw,690px)!important;
+  }
+
+  .record-stage::before{
+    left:42.8%!important;
+    width:min(74vh,39vw,760px)!important;
+    height:min(74vh,39vw,760px)!important;
+  }
+
+  .record-stage::after{
+    left:42.8%!important;
+    width:min(71vh,37vw,730px)!important;
+    height:min(71vh,37vw,730px)!important;
+  }
+
+  .category-btn{
+    min-width:122px!important;
+  }
+
+  .category-btn .category-name{
+    max-width:96px!important;
+    font-size:10.8px!important;
+  }
+
+  .category-btn .category-no{
+    font-size:8.2px!important;
+  }
+
+  .category-btn .category-state{
+    font-size:6.8px!important;
+  }
+}
+
+@media (min-width: 1500px) and (max-width: 1699px){
+  .hero{
+    --home-sidebar-w: 380px;
+    --home-copy-w: 305px;
+  }
+
+  .hero-copy{
+    left:4.2vw!important;
+    width:var(--home-copy-w)!important;
+  }
+
+  .hero h1{
+    max-width:var(--home-copy-w)!important;
+    font-size:clamp(56px,4.25vw,78px)!important;
+  }
+
+  .hero-desc{
+    width:min(100%,298px)!important;
+  }
+
+  .home-explore-hint{
+    left:4.2vw!important;
+  }
+
+  .record-wrap,
+  .category-orbit{
+    left:43.8%!important;
+    width:min(64vh,34vw,615px)!important;
+  }
+
+  .record-stage::before{
+    left:43.8%!important;
+    width:min(70vh,38vw,680px)!important;
+    height:min(70vh,38vw,680px)!important;
+  }
+
+  .record-stage::after{
+    left:43.8%!important;
+    width:min(67vh,36vw,650px)!important;
+    height:min(67vh,36vw,650px)!important;
+  }
+
+  .category-btn{
+    min-width:116px!important;
+  }
+
+  .category-btn .category-name{
+    max-width:90px!important;
+    font-size:10.4px!important;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1499px){
+  .hero{
+    --home-sidebar-w: 350px;
+    --home-copy-w: 282px;
+  }
+
+  .hero-copy{
+    left:4.1vw!important;
+    width:var(--home-copy-w)!important;
+  }
+
+  .hero h1{
+    max-width:var(--home-copy-w)!important;
+    font-size:clamp(52px,4.1vw,70px)!important;
+  }
+
+  .hero-desc{
+    width:min(100%,272px)!important;
+    font-size:13.4px!important;
+  }
+
+  .home-explore-hint{
+    left:4.1vw!important;
+  }
+
+  .record-wrap,
+  .category-orbit{
+    left:45.2%!important;
+    width:min(60vh,33vw,560px)!important;
+  }
+
+  .record-stage::before{
+    left:45.2%!important;
+    width:min(66vh,37vw,615px)!important;
+    height:min(66vh,37vw,615px)!important;
+  }
+
+  .record-stage::after{
+    left:45.2%!important;
+    width:min(63vh,35vw,585px)!important;
+    height:min(63vh,35vw,585px)!important;
+  }
+
+  .category-btn{
+    min-width:108px!important;
+  }
+
+  .category-btn .category-name{
+    max-width:84px!important;
+    font-size:10px!important;
+  }
+
+  .home-work-card.is-secondary{
+    display:none!important;
+  }
+}
+
+@media (min-width: 1100px) and (max-width: 1279px){
+  .hero{
+    --home-sidebar-w: 320px;
+    --home-copy-w: 250px;
+  }
+
+  .hero-copy{
+    left:3.9vw!important;
+    width:var(--home-copy-w)!important;
+  }
+
+  .hero h1{
+    max-width:var(--home-copy-w)!important;
+    font-size:clamp(46px,4.1vw,62px)!important;
+  }
+
+  .hero-desc{
+    width:min(100%,244px)!important;
+    font-size:12.8px!important;
+  }
+
+  .home-explore-hint{
+    left:3.9vw!important;
+    font-size:7.8px!important;
+  }
+
+  .record-wrap,
+  .category-orbit{
+    left:46.7%!important;
+    width:min(54vh,31vw,480px)!important;
+  }
+
+  .record-stage::before{
+    left:46.7%!important;
+    width:min(59vh,35vw,525px)!important;
+    height:min(59vh,35vw,525px)!important;
+  }
+
+  .record-stage::after{
+    left:46.7%!important;
+    width:min(56vh,33vw,500px)!important;
+    height:min(56vh,33vw,500px)!important;
+  }
+
+  .category-btn{
+    min-width:100px!important;
+  }
+
+  .category-btn .category-name{
+    max-width:76px!important;
+    font-size:9.6px!important;
+  }
+
+  .category-btn .category-no{
+    font-size:7.6px!important;
+  }
+
+  .category-btn .category-state{
+    font-size:6px!important;
+  }
+
+  .home-work-card.is-secondary{
+    display:none!important;
+  }
+}
+
+/* ---------------------------------------------------------
+   03. FEATURED CARD inside sidebar
+--------------------------------------------------------- */
+@media (min-width: 1100px){
+  .home-selected-head span:first-child{
+    font-size:9px!important;
+  }
+
+  .home-selected-head strong{
+    font-size:12.5px!important;
+  }
+
+  .home-selected-count{
+    font-size:20px!important;
+  }
+
+  .home-work-card{
+    border-bottom:1px solid rgba(255,255,255,.07)!important;
+  }
+
+  .home-work-card.is-featured{
+    gap:11px 14px!important;
+    padding:0 0 15px!important;
+  }
+
+  .home-work-card.is-featured .home-work-thumb{
+    width:100%!important;
+    aspect-ratio:1.58!important;
+  }
+
+  .home-work-card.is-featured .home-work-copy strong{
+    font-size:14px!important;
+    line-height:1.16!important;
+  }
+
+  .home-work-card.is-featured .home-work-copy small{
+    font-size:9px!important;
+    line-height:1.44!important;
+  }
+
+  .home-work-card.is-secondary{
+    grid-template-columns:96px minmax(0,1fr) 14px!important;
+    gap:11px!important;
+    min-height:76px!important;
+    padding:10px 0 13px!important;
+  }
+
+  .home-work-card.is-secondary .home-work-thumb{
+    width:96px!important;
+    aspect-ratio:1.44!important;
+  }
+
+  .home-work-card.is-secondary .home-work-copy strong{
+    font-size:12.2px!important;
+  }
+
+  .home-work-card.is-secondary .home-work-copy small{
+    font-size:8.5px!important;
+    line-height:1.4!important;
+  }
+
+  .home-selected-all{
+    font-size:9px!important;
+    letter-spacing:.12em!important;
+  }
+}
+
+/* ---------------------------------------------------------
+   04. GRAPHIC DESIGN TITLE FIX
+--------------------------------------------------------- */
+body[data-current-category="graphic"] .hero h1{
+  max-width:345px!important;
+  font-size:clamp(52px,4.05vw,78px)!important;
+  letter-spacing:-.065em!important;
+  line-height:.90!important;
+}
+
+@media (min-width: 1280px) and (max-width: 1499px){
+  body[data-current-category="graphic"] .hero h1{
+    max-width:300px!important;
+    font-size:clamp(49px,3.9vw,66px)!important;
+  }
+}
+
+@media (min-width: 1100px) and (max-width: 1279px){
+  body[data-current-category="graphic"] .hero h1{
+    max-width:258px!important;
+    font-size:clamp(44px,3.85vw,58px)!important;
+  }
+}
+
+/* ---------------------------------------------------------
+   05. PROFILE MODE in sidebar
+--------------------------------------------------------- */
+@media (min-width: 1100px){
+  .home-selected-works.is-profile{
+    width:var(--home-sidebar-w)!important;
+    top:0!important;
+    bottom:0!important;
+    padding-top:170px!important;
+    transform:none!important;
+  }
+
+  .home-selected-works.is-profile .home-profile-card p{
+    max-width:100%!important;
+    font-size:13px!important;
+    line-height:1.82!important;
+  }
+}
+
+/* ---------------------------------------------------------
+   06. INTRO / STATE
+--------------------------------------------------------- */
+@media (min-width: 1100px){
+  .is-intro-loading .home-selected-works{
+    opacity:0!important;
+    transform:translateX(22px)!important;
+  }
+
+  .home-page.is-intro-ready .home-selected-works{
+    opacity:1!important;
+    transform:none!important;
+    transition:opacity .65s ease, transform .8s cubic-bezier(.16,.86,.22,1)!important;
+  }
+
+  .hero.is-preview-open .home-selected-works,
+  .preview-panel.is-open ~ .home-selected-works{
+    opacity:0!important;
+    transform:translateX(18px)!important;
+    pointer-events:none!important;
+  }
+}
+
+
+/* =========================================================
+   V28.0 — RECORD RECENTER
+   우측 작업물이 독립 sidebar가 되었으므로
+   LP를 다시 시각적 중심에 가깝게 이동.
+========================================================= */
+
+/* ---------------------------------------------------------
+   WIDE DESKTOP
+   정확한 50%가 아니라 orbit + sidebar 간 안전거리 때문에 48.5%.
+--------------------------------------------------------- */
+@media(min-width:1700px){
+  .record-wrap,
+  .category-orbit{
+    left:48.5%!important;
+  }
+
+  .record-stage::before,
+  .record-stage::after{
+    left:48.5%!important;
+  }
+}
+
+/* ---------------------------------------------------------
+   LARGE DESKTOP
+--------------------------------------------------------- */
+@media(min-width:1500px) and (max-width:1699px){
+  .record-wrap,
+  .category-orbit{
+    left:47%!important;
+  }
+
+  .record-stage::before,
+  .record-stage::after{
+    left:47%!important;
+  }
+}
+
+/* ---------------------------------------------------------
+   STANDARD DESKTOP
+--------------------------------------------------------- */
+@media(min-width:1280px) and (max-width:1499px){
+  .record-wrap,
+  .category-orbit{
+    left:47.5%!important;
+  }
+
+  .record-stage::before,
+  .record-stage::after{
+    left:47.5%!important;
+  }
+}
+
+/* ---------------------------------------------------------
+   COMPACT DESKTOP
+   이 구간은 sidebar와 orbit 안전거리 때문에 조금만 이동.
+--------------------------------------------------------- */
+@media(min-width:1100px) and (max-width:1279px){
+  .record-wrap,
+  .category-orbit{
+    left:47.2%!important;
+  }
+
+  .record-stage::before,
+  .record-stage::after{
+    left:47.2%!important;
+  }
+}
+
+/* preview panel open state는 기존 별도 위치 유지 */
+.hero.is-preview-open .record-wrap,
+.hero.is-preview-open .category-orbit{
+  left:29.5%!important;
+}
+
+.hero.is-preview-open .record-stage::before,
+.hero.is-preview-open .record-stage::after{
+  left:29.5%!important;
+}
+
+
+/* =========================================================
+   V29.0 — SIDEBAR SCROLL ISOLATION
+   우측 sidebar와 메인 LP wheel 인터랙션 완전 분리
+========================================================= */
+
+@media(min-width:1100px){
+
+  /*
+    Sidebar 전체를 독립 scroll context로 만든다.
+    header / cards / view all을 포함한 패널 전체가 자연스럽게 스크롤됨.
+  */
+  .home-selected-works{
+    overflow-y:auto!important;
+    overflow-x:hidden!important;
+
+    overscroll-behavior-y:contain!important;
+    overscroll-behavior-x:none!important;
+
+    touch-action:pan-y!important;
+    -webkit-overflow-scrolling:touch;
+
+    scrollbar-width:thin;
+    scrollbar-color:rgba(208,171,96,.42) rgba(255,255,255,.025);
+  }
+
+  /*
+    이전에는 내부 list만 스크롤 영역이었는데,
+    이제 sidebar 자체가 스크롤하므로 list는 일반 flow로 전환.
+  */
+  .home-selected-list{
+    flex:0 0 auto!important;
+    min-height:0!important;
+
+    overflow:visible!important;
+    padding-right:4px!important;
+  }
+
+  .home-selected-works::-webkit-scrollbar{
+    width:6px;
+  }
+
+  .home-selected-works::-webkit-scrollbar-track{
+    background:rgba(255,255,255,.018);
+  }
+
+  .home-selected-works::-webkit-scrollbar-thumb{
+    background:rgba(208,171,96,.38);
+    border-radius:999px;
+  }
+
+  .home-selected-works::-webkit-scrollbar-thumb:hover{
+    background:rgba(208,171,96,.62);
+  }
+
+  /*
+    sidebar가 끝에 도달해도 body / hero로 scroll chaining 되지 않음.
+  */
+  .home-selected-works,
+  .home-selected-works *{
+    overscroll-behavior:contain;
+  }
+}
+
+/* tablet에서도 sidebar가 노출되는 구간은 동일하게 분리 */
+@media(max-width:1099px) and (min-width:901px){
+  .home-selected-works{
+    overflow-y:auto!important;
+    overflow-x:hidden!important;
+    overscroll-behavior-y:contain!important;
+    touch-action:pan-y!important;
+    -webkit-overflow-scrolling:touch;
+  }
+}
+
+
+/* =========================================================
+   V30.0 — SHOW ALL CATEGORY PROJECTS IN SIDEBAR
+========================================================= */
+
+/*
+  이전 버전은 일부 desktop breakpoint에서
+  .is-secondary 카드를 숨겨 대표작 하나만 노출했지만,
+  v30부터는 sidebar 자체가 독립 스크롤 영역이므로
+  모든 프로젝트를 다시 표시한다.
+*/
+@media(min-width:901px){
+  .home-work-card.is-secondary{
+    display:grid!important;
+  }
+}
+
+/* ---------------------------------------------------------
+   Sidebar list spacing for multiple projects
+--------------------------------------------------------- */
+@media(min-width:1100px){
+  .home-selected-list{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:0!important;
+  }
+
+  /* 첫 번째 대표작과 나머지 목록 사이에 조금 더 구분 */
+  .home-work-card.is-featured{
+    margin-bottom:4px!important;
+  }
+
+  .home-work-card.is-secondary{
+    grid-template-columns:96px minmax(0,1fr) 14px!important;
+    gap:12px!important;
+    min-height:78px!important;
+    padding:11px 0 13px!important;
+  }
+
+  .home-work-card.is-secondary .home-work-thumb{
+    width:96px!important;
+    aspect-ratio:1.45!important;
+  }
+
+  .home-work-card.is-secondary .home-work-copy > span{
+    font-size:8px!important;
+  }
+
+  .home-work-card.is-secondary .home-work-copy strong{
+    font-size:12.3px!important;
+    white-space:normal!important;
+    overflow:visible!important;
+    text-overflow:clip!important;
+  }
+
+  .home-work-card.is-secondary .home-work-copy small{
+    font-size:8.6px!important;
+    line-height:1.4!important;
+    white-space:normal!important;
+    overflow:visible!important;
+    text-overflow:clip!important;
+  }
+
+  /*
+    scrollbar 하단까지 내려갔을 때 마지막 카드와
+    VIEW ALL이 붙지 않도록 여유 확보.
+  */
+  .home-selected-list{
+    padding-bottom:8px!important;
+  }
+}
+
+/* ---------------------------------------------------------
+   901–1099: 역시 전부 노출, 카드만 조금 compact
+--------------------------------------------------------- */
+@media(max-width:1099px) and (min-width:901px){
+  .home-work-card.is-secondary{
+    display:grid!important;
+    grid-template-columns:82px minmax(0,1fr) 12px!important;
+    gap:9px!important;
+    min-height:68px!important;
+    padding:8px 0 11px!important;
+  }
+
+  .home-work-card.is-secondary .home-work-thumb{
+    width:82px!important;
+  }
+
+  .home-work-card.is-secondary .home-work-copy strong{
+    font-size:11px!important;
+  }
+
+  .home-work-card.is-secondary .home-work-copy small{
+    font-size:8px!important;
+  }
+}
+
+
+/* =========================================================
+   V31.0 — ENTRY GATE
+   첫 화면은 좌측 상단 이름/포트폴리오만 보이는 입장 인터렉션,
+   진입 후 레코드와 카테고리/사이드바가 나타나는 구조.
+========================================================= */
+
+/* 홈에서만 사용하는 브랜드 보조 텍스트 */
+.home-header .brand-kicker,
+.home-header .brand-enter{
+  display:none;
+}
+
+.entry-brand-trigger{
+  position:relative;
+}
+
+.home-page.is-entry-gate .home-header{
+  opacity:1!important;
+  transform:none!important;
+}
+
+.home-page.is-entry-gate .site-nav{
+  opacity:0!important;
+  transform:translateY(-10px)!important;
+  pointer-events:none!important;
+}
+
+.home-page.is-entry-gate .brand-kicker,
+.home-page.is-entry-gate .brand-enter{
+  display:block;
+}
+
+.home-page.is-entry-gate .entry-brand-trigger{
+  align-items:flex-start;
+  gap:6px;
+  cursor:pointer;
+  user-select:none;
+  pointer-events:auto;
+}
+
+.home-page.is-entry-gate .entry-brand-trigger::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-18px;
+  width:110px;
+  height:1px;
+  background:linear-gradient(90deg, rgba(212,175,97,.9), rgba(212,175,97,0));
+  opacity:.72;
+}
+
+.home-page.is-entry-gate .brand-kicker{
+  font-style:normal;
+  font-size:9px;
+  letter-spacing:.30em;
+  color:rgba(212,175,97,.92);
+  margin-bottom:2px;
+}
+
+.home-page.is-entry-gate .entry-brand-trigger strong{
+  font-size:clamp(20px,1.8vw,30px);
+  letter-spacing:.04em;
+  line-height:1;
+  text-shadow:0 0 18px rgba(255,255,255,.06);
+}
+
+.home-page.is-entry-gate .entry-brand-trigger > span{
+  font-size:11px;
+  letter-spacing:.12em;
+  color:rgba(255,255,255,.68);
+}
+
+.home-page.is-entry-gate .brand-enter{
+  margin-top:12px;
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:.18em;
+  color:rgba(212,175,97,.96);
+  animation:entryBrandPulse 1.9s ease-in-out infinite;
+}
+
+@keyframes entryBrandPulse{
+  0%,100%{
+    opacity:.55;
+    transform:translateY(0);
+    filter:drop-shadow(0 0 0 rgba(212,175,97,0));
+  }
+  50%{
+    opacity:1;
+    transform:translateY(-1px);
+    filter:drop-shadow(0 0 10px rgba(212,175,97,.28));
+  }
+}
+
+/* gate 상태에서는 메인 콘텐츠를 숨기고, 분위기만 아주 옅게 유지 */
+.home-page.is-entry-gate .depth-bg{
+  opacity:.16!important;
+  transform:scale(1)!important;
+  filter:saturate(.72) blur(.4px);
+}
+
+.home-page.is-entry-gate .hero-copy,
+.home-page.is-entry-gate .home-explore-hint,
+.home-page.is-entry-gate .record-stage,
+.home-page.is-entry-gate .home-selected-works,
+.home-page.is-entry-gate .hero-profile-intro,
+.home-page.is-entry-gate .social-rail,
+.home-page.is-entry-gate .preview-panel{
+  opacity:0!important;
+  transform:translateY(20px)!important;
+  pointer-events:none!important;
+}
+
+/* 입장 직후 이름 보조카피가 사라지고 기존 intro가 이어지도록 처리 */
+.home-page.is-entry-opening .brand-enter,
+.home-page.is-entry-opening .brand-kicker{
+  opacity:0!important;
+  transform:translateY(-8px)!important;
+  transition:opacity .32s ease, transform .45s cubic-bezier(.2,.8,.2,1)!important;
+}
+
+.home-page:not(.is-entry-gate) .brand-kicker,
+.home-page:not(.is-entry-gate) .brand-enter{
+  display:none!important;
+}
+
+/* entry gate에서 너무 답답하지 않게 배경 가장자리만 살짝 보이도록 */
+.home-page.is-entry-gate .intro-vignette{
+  opacity:.72;
+}
+
+/* 모바일/태블릿에서도 터치 타겟 확보 */
+@media(max-width:900px){
+  .home-page.is-entry-gate .entry-brand-trigger strong{
+    font-size:22px;
+  }
+
+  .home-page.is-entry-gate .entry-brand-trigger > span{
+    font-size:10px;
+  }
+
+  .home-page.is-entry-gate .brand-enter{
+    font-size:10px;
+  }
+}
+
+
+/* =========================================================
+   V32.0 — FULLSCREEN PORTFOLIO ENTRY
+   첫 화면 자체가 "PORTFOLIO / YOON SEOK HEE" 대문이 되도록 재구성.
+========================================================= */
+
+/* ---------------------------------------------------------
+   00. RESET V31 HEADER GATE
+--------------------------------------------------------- */
+.home-page.is-entry-gate .home-header{
+  opacity:0!important;
+  transform:translateY(-12px)!important;
+  pointer-events:none!important;
+}
+
+.home-page.is-entry-gate .brand-kicker,
+.home-page.is-entry-gate .brand-enter{
+  display:none!important;
+}
+
+.home-page.is-entry-gate .entry-brand-trigger::after{
+  display:none!important;
+}
+
+/* ---------------------------------------------------------
+   01. FULLSCREEN ENTRY SCREEN
+--------------------------------------------------------- */
+.entry-screen{
+  position:fixed;
+  inset:0;
+  z-index:1000;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 74% 24%,rgba(205,163,88,.055),transparent 28%),
+    radial-gradient(circle at 24% 74%,rgba(255,255,255,.018),transparent 24%),
+    #050505;
+
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+}
+
+.entry-screen-bg{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+}
+
+.entry-glow{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:min(62vw,1040px);
+  aspect-ratio:1;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+
+  background:
+    radial-gradient(circle,
+      rgba(202,164,93,.055) 0%,
+      rgba(202,164,93,.018) 42%,
+      transparent 68%);
+  filter:blur(3px);
+}
+
+.entry-orbit{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:min(42vw,720px);
+  aspect-ratio:1;
+  transform:translate(-50%,-50%);
+  border:1px solid rgba(209,173,104,.055);
+  border-radius:50%;
+}
+
+.entry-line{
+  position:absolute;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(208,170,94,.14),transparent);
+}
+
+.entry-line-a{
+  left:7vw;
+  right:7vw;
+  top:31%;
+}
+
+.entry-line-b{
+  left:19vw;
+  right:19vw;
+  bottom:28%;
+  opacity:.45;
+}
+
+.entry-stage{
+  position:relative;
+  z-index:3;
+
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+
+  width:min(86vw,1420px);
+  padding:0;
+
+  border:0;
+  background:none;
+  color:#f3f1eb;
+  text-align:left;
+  cursor:pointer;
+
+  appearance:none;
+  -webkit-appearance:none;
+}
+
+.entry-topline{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  width:100%;
+  margin-bottom:clamp(28px,4.5vh,54px);
+
+  color:#827d73;
+  font-size:10px;
+  letter-spacing:.20em;
+}
+
+.entry-title-wrap{
+  display:block;
+  width:100%;
+}
+
+.entry-title{
+  display:block;
+
+  color:#f3f1ec;
+  font-size:clamp(92px,12vw,220px);
+  font-weight:600;
+  line-height:.76;
+  letter-spacing:-.075em;
+
+  transform-origin:left center;
+  text-shadow:
+    0 0 50px rgba(255,255,255,.025),
+    0 10px 70px rgba(0,0,0,.35);
+}
+
+.entry-title-line{
+  display:block;
+  width:100%;
+  height:1px;
+  margin-top:clamp(25px,3.8vh,44px);
+
+  background:linear-gradient(
+    90deg,
+    rgba(208,171,97,.75) 0%,
+    rgba(255,255,255,.12) 34%,
+    rgba(255,255,255,.04) 72%,
+    transparent 100%);
+}
+
+.entry-name{
+  display:block;
+  margin-top:clamp(22px,3.3vh,42px);
+
+  color:#d6c9af;
+  font-size:clamp(28px,3.1vw,56px);
+  font-weight:600;
+  line-height:1;
+  letter-spacing:.025em;
+}
+
+.entry-subcopy{
+  display:block;
+  margin-top:14px;
+
+  color:#77736b;
+  font-size:10px;
+  letter-spacing:.15em;
+}
+
+.entry-enter{
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+
+  margin-top:clamp(42px,6vh,72px);
+
+  color:#c9a35d;
+  font-size:10px;
+  letter-spacing:.17em;
+}
+
+.entry-enter i{
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:#d8b46c;
+  box-shadow:0 0 16px rgba(216,180,108,.42);
+  animation:v32EntryPulse 1.8s ease-in-out infinite;
+}
+
+.entry-enter b{
+  font-weight:600;
+}
+
+.entry-enter > span{
+  font-size:12px;
+  transition:transform .25s ease;
+}
+
+.entry-stage:hover .entry-enter > span{
+  transform:translate(3px,-2px);
+}
+
+.entry-footer{
+  position:absolute;
+  left:7vw;
+  right:7vw;
+  bottom:34px;
+
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+
+  color:#4f4c46;
+  font-size:8px;
+  letter-spacing:.14em;
+
+  pointer-events:none;
+}
+
+@keyframes v32EntryPulse{
+  0%,100%{opacity:.35;transform:scale(.78)}
+  50%{opacity:1;transform:scale(1)}
+}
+
+/* ---------------------------------------------------------
+   02. BEFORE ENTER: ONLY ENTRY SCREEN
+--------------------------------------------------------- */
+.home-page.is-entry-gate .site-shell{
+  opacity:0!important;
+  pointer-events:none!important;
+}
+
+.home-page.is-entry-gate .depth-bg{
+  opacity:0!important;
+}
+
+/* ---------------------------------------------------------
+   03. EXIT CHOREOGRAPHY
+   PORTFOLIO가 위로 빠지고 이름이 좌측 위 방향으로 이동하는 느낌.
+--------------------------------------------------------- */
+.home-page.is-entry-opening .entry-screen{
+  pointer-events:none;
+}
+
+.home-page.is-entry-opening .entry-title{
+  opacity:0;
+  transform:translateY(-56px) scale(.965);
+  filter:blur(4px);
+
+  transition:
+    opacity .46s ease,
+    transform .72s cubic-bezier(.16,.86,.22,1),
+    filter .52s ease;
+}
+
+.home-page.is-entry-opening .entry-title-line{
+  width:0;
+  opacity:0;
+  transition:width .52s cubic-bezier(.16,.86,.22,1),opacity .34s ease;
+}
+
+.home-page.is-entry-opening .entry-topline,
+.home-page.is-entry-opening .entry-subcopy,
+.home-page.is-entry-opening .entry-enter,
+.home-page.is-entry-opening .entry-footer{
+  opacity:0;
+  transform:translateY(-12px);
+  transition:opacity .28s ease,transform .45s ease;
+}
+
+.home-page.is-entry-opening .entry-name{
+  opacity:0;
+  transform:translate(-5vw,-28vh) scale(.52);
+  transform-origin:left center;
+
+  transition:
+    opacity .45s .18s ease,
+    transform .82s cubic-bezier(.16,.86,.22,1);
+}
+
+.home-page.is-entry-opening .entry-orbit{
+  opacity:0;
+  transform:translate(-50%,-50%) scale(1.16);
+  transition:opacity .5s ease,transform .9s ease;
+}
+
+.home-page.is-entry-opening .entry-screen{
+  background:rgba(5,5,5,0);
+  transition:background .85s .28s ease;
+}
+
+.home-page.is-entry-complete .entry-screen{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+
+/* ---------------------------------------------------------
+   04. MAIN SITE ENTERS AFTER GATE
+--------------------------------------------------------- */
+.home-page:not(.is-entry-gate) .site-shell{
+  opacity:1;
+  pointer-events:auto;
+}
+
+.home-page.is-entry-opening:not(.is-entry-gate) .site-shell{
+  animation:v32MainReveal .95s cubic-bezier(.16,.86,.22,1) both;
+}
+
+@keyframes v32MainReveal{
+  from{
+    opacity:0;
+    transform:scale(.985);
+    filter:blur(4px);
+  }
+  to{
+    opacity:1;
+    transform:scale(1);
+    filter:blur(0);
+  }
+}
+
+/* ---------------------------------------------------------
+   05. MOBILE / TABLET
+--------------------------------------------------------- */
+@media(max-width:900px){
+  .entry-stage{
+    width:88vw;
+  }
+
+  .entry-title{
+    font-size:clamp(64px,17vw,120px);
+    line-height:.82;
+  }
+
+  .entry-name{
+    font-size:clamp(25px,7vw,38px);
+  }
+
+  .entry-topline{
+    margin-bottom:32px;
+    font-size:8px;
+  }
+
+  .entry-subcopy{
+    font-size:8px;
+    line-height:1.6;
+    letter-spacing:.11em;
+  }
+
+  .entry-footer{
+    left:6vw;
+    right:6vw;
+  }
+}
+
+@media(max-width:640px){
+  .entry-topline span:last-child{
+    display:none;
+  }
+
+  .entry-footer span:last-child{
+    display:none;
+  }
+
+  .entry-title{
+    font-size:17.5vw;
+  }
+
+  .entry-name{
+    font-size:7vw;
+  }
+}
+
+/* reduced motion */
+@media(prefers-reduced-motion:reduce){
+  .entry-enter i{
+    animation:none!important;
+  }
+
+  .home-page.is-entry-opening .entry-title,
+  .home-page.is-entry-opening .entry-name,
+  .home-page.is-entry-opening .entry-title-line,
+  .home-page.is-entry-opening .entry-screen,
+  .home-page.is-entry-opening:not(.is-entry-gate) .site-shell{
+    transition:none!important;
+    animation:none!important;
+  }
+}
+
+
+/* =========================================================
+   V33.0 — PROFILE SIDEBAR ENHANCEMENT
+   증명사진, 더 강한 정보 위계, 더 풍부한 소개, profile 전용 등장 인터랙션 대응
+========================================================= */
+
+@media(min-width:1100px){
+  .home-selected-works.is-profile{
+    width:min(24vw,420px)!important;
+  }
+}
+
+.home-selected-works.is-profile .home-selected-head{
+  margin-bottom:20px;
+}
+
+.home-selected-works.is-profile .home-selected-category,
+.home-selected-works.is-profile #homeSelectedCategory{
+  font-size:23px!important;
+  letter-spacing:.01em!important;
+}
+
+.home-selected-works.is-profile .home-selected-count{
+  font-size:20px!important;
+  font-weight:600!important;
+  color:#8f825f!important;
+}
+
+.home-profile-card{
+  padding:2px 0 20px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.home-profile-intro{
+  display:grid;
+  grid-template-columns:110px minmax(0,1fr);
+  gap:16px;
+  align-items:start;
+}
+
+.home-profile-photo-wrap{
+  position:relative;
+  overflow:hidden;
+  border-radius:18px;
+  aspect-ratio:3 / 4;
+
+  border:1px solid rgba(255,255,255,.11);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.01)),
+    rgba(255,255,255,.03);
+  box-shadow:
+    0 20px 40px rgba(0,0,0,.24),
+    inset 0 1px 0 rgba(255,255,255,.06);
+}
+
+.home-profile-photo-wrap::after{
+  content:"";
+  position:absolute;
+  inset:auto 0 0 0;
+  height:42%;
+  background:linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,.32));
+  pointer-events:none;
+}
+
+.home-profile-photo{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.home-profile-identity{
+  min-width:0;
+}
+
+.home-profile-role{
+  display:block;
+  margin-bottom:9px;
+
+  color:#d1b477;
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:.18em;
+}
+
+.home-profile-name{
+  display:block;
+  margin:0 0 10px;
+
+  color:#f6f1e7;
+  font-size:27px;
+  font-weight:700;
+  line-height:.96;
+  letter-spacing:.015em;
+}
+
+.home-profile-summary{
+  display:block;
+
+  color:#9f988e;
+  font-size:12px;
+  font-weight:500;
+  line-height:1.7;
+  letter-spacing:-.01em;
+}
+
+.home-profile-body{
+  margin-top:18px;
+}
+
+.home-profile-card p,
+.home-profile-body p{
+  max-width:none;
+  margin:0;
+
+  color:#d2cbc1;
+  font-family:"Noto Sans KR",sans-serif;
+  font-size:14px;
+  line-height:1.9;
+  letter-spacing:-.018em;
+}
+
+.home-profile-meta{
+  display:grid;
+  gap:10px;
+  margin-top:18px;
+  padding:16px 0;
+
+  border-top:1px solid rgba(255,255,255,.06);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.home-profile-meta-row{
+  display:grid;
+  gap:4px;
+}
+
+.home-profile-meta-row > span{
+  color:#7e7567;
+  font-size:9px;
+  font-weight:600;
+  letter-spacing:.18em;
+}
+
+.home-profile-meta-row > p{
+  color:#b0a99d;
+  font-size:11px;
+  line-height:1.75;
+}
+
+.home-profile-skills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:18px;
+}
+
+.home-profile-skills span{
+  display:inline-flex;
+  align-items:center;
+  min-height:30px;
+  padding:0 11px;
+
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:999px;
+
+  background:rgba(255,255,255,.015);
+  color:#b9b2a5;
+  font-size:8px;
+  font-weight:600;
+  letter-spacing:.11em;
+}
+
+.home-selected-works.is-profile .home-selected-all{
+  margin-top:16px!important;
+  font-size:12px!important;
+}
+
+/* about-me selected 느낌 강화 */
+.home-selected-works.is-profile::before{
+  background:
+    linear-gradient(180deg, rgba(207,185,133,.09), rgba(207,185,133,0)),
+    rgba(255,255,255,.01)!important;
+}
+
+/* mobile / narrow desktop */
+@media(max-width:1280px){
+  .home-profile-intro{
+    grid-template-columns:92px minmax(0,1fr);
+    gap:14px;
+  }
+
+  .home-profile-name{
+    font-size:23px;
+  }
+
+  .home-profile-summary{
+    font-size:11px;
+  }
+
+  .home-profile-body p{
+    font-size:13px;
+  }
+}
+
+@media(max-width:900px){
+  .home-profile-intro{
+    grid-template-columns:84px minmax(0,1fr);
+    gap:12px;
+  }
+
+  .home-profile-name{
+    font-size:21px;
+  }
+
+  .home-profile-body p{
+    font-size:12.5px;
+    line-height:1.8;
+  }
+
+  .home-profile-skills span{
+    min-height:28px;
+    font-size:7px;
+  }
+}
+
+
+/* =========================================================
+   V34.0 — ABOUT FIRST / DESIGNER PROFILE / KMONG / ENTRY REVEAL
+========================================================= */
+
+/* ---------------------------------------------------------
+   01. ENTRY: BLACK → PORTFOLIO TITLE REVEAL
+--------------------------------------------------------- */
+.home-page.is-entry-gate .entry-screen{
+  background:#030303!important;
+}
+
+.home-page.is-entry-gate .entry-screen-bg{
+  opacity:0;
+  animation:v34AtmosphereIn 1.25s .45s ease forwards;
+}
+
+.home-page.is-entry-gate .entry-topline,
+.home-page.is-entry-gate .entry-title,
+.home-page.is-entry-gate .entry-title-line,
+.home-page.is-entry-gate .entry-name,
+.home-page.is-entry-gate .entry-subcopy,
+.home-page.is-entry-gate .entry-enter,
+.home-page.is-entry-gate .entry-footer{
+  opacity:0;
+}
+
+.home-page.is-entry-gate .entry-title{
+  clip-path:inset(100% 0 0 0);
+  transform:translateY(38px);
+  animation:v34TitleReveal 1.05s .28s cubic-bezier(.16,.86,.22,1) forwards;
+}
+
+.home-page.is-entry-gate .entry-title-line{
+  transform:scaleX(0);
+  transform-origin:left center;
+  animation:v34LineReveal .85s .82s cubic-bezier(.16,.86,.22,1) forwards;
+}
+
+.home-page.is-entry-gate .entry-topline{
+  transform:translateY(-8px);
+  animation:v34MicroReveal .65s .92s ease forwards;
+}
+
+.home-page.is-entry-gate .entry-name{
+  transform:translateY(20px);
+  animation:v34NameReveal .82s 1.05s cubic-bezier(.16,.86,.22,1) forwards;
+}
+
+.home-page.is-entry-gate .entry-subcopy{
+  transform:translateY(12px);
+  animation:v34MicroReveal .65s 1.32s ease forwards;
+}
+
+.home-page.is-entry-gate .entry-enter{
+  transform:translateY(10px);
+  animation:v34MicroReveal .65s 1.55s ease forwards;
+}
+
+.home-page.is-entry-gate .entry-footer{
+  animation:v34FooterReveal .7s 1.7s ease forwards;
+}
+
+@keyframes v34TitleReveal{
+  0%{opacity:0;clip-path:inset(100% 0 0 0);transform:translateY(38px)}
+  100%{opacity:1;clip-path:inset(0 0 0 0);transform:translateY(0)}
+}
+
+@keyframes v34LineReveal{
+  from{opacity:0;transform:scaleX(0)}
+  to{opacity:1;transform:scaleX(1)}
+}
+
+@keyframes v34NameReveal{
+  from{opacity:0;transform:translateY(20px);letter-spacing:.08em}
+  to{opacity:1;transform:translateY(0);letter-spacing:.025em}
+}
+
+@keyframes v34MicroReveal{
+  from{opacity:0;transform:translateY(12px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+@keyframes v34FooterReveal{
+  from{opacity:0}
+  to{opacity:1}
+}
+
+@keyframes v34AtmosphereIn{
+  from{opacity:0}
+  to{opacity:1}
+}
+
+/* ---------------------------------------------------------
+   02. ABOUT PROFILE — DESIGNER PORTFOLIO INFO HIERARCHY
+--------------------------------------------------------- */
+.home-profile-career-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  margin-top:18px;
+}
+
+.home-profile-career-grid article{
+  min-height:92px;
+  padding:14px;
+
+  border:1px solid rgba(255,255,255,.085);
+  border-radius:10px;
+  background:rgba(255,255,255,.018);
+}
+
+.home-profile-career-grid span,
+.home-profile-section-label{
+  display:block;
+  margin-bottom:8px;
+  color:#867b68;
+  font-size:8px;
+  font-weight:650;
+  letter-spacing:.17em;
+}
+
+.home-profile-career-grid strong{
+  display:block;
+  color:#e7dcc8;
+  font-size:12px;
+  line-height:1.35;
+}
+
+.home-profile-career-grid small{
+  display:block;
+  margin-top:7px;
+  color:#8f887e;
+  font-size:9px;
+  line-height:1.45;
+}
+
+.home-profile-services{
+  margin-top:17px;
+}
+
+.home-profile-services > div{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+}
+
+.home-profile-services b{
+  display:inline-flex;
+  align-items:center;
+  min-height:28px;
+  padding:0 9px;
+
+  border:1px solid rgba(205,171,103,.13);
+  border-radius:5px;
+  background:rgba(205,171,103,.025);
+
+  color:#b8aa90;
+  font-size:7.5px;
+  font-weight:600;
+  letter-spacing:.08em;
+}
+
+/* ---------------------------------------------------------
+   03. KMONG CATEGORY SIDEBAR
+--------------------------------------------------------- */
+.home-selected-works.is-external .home-selected-count{
+  color:#c6a45f!important;
+}
+
+.home-kmong-card{
+  display:block;
+  padding:22px 0 24px;
+  border-top:1px solid rgba(255,255,255,.06);
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+
+.home-kmong-eyebrow{
+  display:block;
+  margin-bottom:18px;
+
+  color:#8a7b61;
+  font-size:8px;
+  font-weight:600;
+  letter-spacing:.18em;
+}
+
+.home-kmong-card > strong{
+  display:block;
+  margin-bottom:17px;
+
+  color:#f1eadc;
+  font-size:clamp(36px,3vw,54px);
+  font-weight:700;
+  line-height:.9;
+  letter-spacing:-.04em;
+}
+
+.home-kmong-card > p{
+  max-width:330px;
+  margin:0;
+
+  color:#aba397;
+  font-family:"Noto Sans KR",sans-serif;
+  font-size:13px;
+  line-height:1.85;
+}
+
+.home-kmong-services{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  margin-top:20px;
+}
+
+.home-kmong-services span{
+  display:inline-flex;
+  align-items:center;
+  height:27px;
+  padding:0 9px;
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:999px;
+  color:#878076;
+  font-size:7px;
+  letter-spacing:.09em;
+}
+
+.home-kmong-open{
+  display:inline-block;
+  margin-top:26px;
+  padding-bottom:6px;
+  border-bottom:1px solid rgba(207,170,94,.28);
+  color:#c9a45c;
+  font-size:9px;
+  letter-spacing:.12em;
+}
+
+/* 6 categories — orbit text slightly tighter only */
+.category-btn .category-name{
+  white-space:nowrap;
+}
+
+@media(max-width:1280px){
+  .home-profile-career-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+
+/* =========================================================
+   V35.0 — ABOUT FIRST + PERFORMANCE PASS
+========================================================= */
+
+/* 6개 카테고리가 우측 sidebar와 겹치지 않도록 궤도 라벨을 살짝 compact */
+@media(min-width:1100px){
+  .category-btn{
+    min-width:112px!important;
+  }
+
+  .category-btn .category-name{
+    max-width:88px!important;
+    font-size:10.2px!important;
+  }
+
+  .category-btn .category-no{
+    font-size:8px!important;
+  }
+
+  .category-btn .category-state{
+    font-size:6.4px!important;
+  }
+
+  /* blur panel 성능 비용을 낮추고 비주얼은 유사하게 유지 */
+  .home-selected-works{
+    backdrop-filter:blur(7px)!important;
+    -webkit-backdrop-filter:blur(7px)!important;
+    contain:layout paint;
+  }
+}
+
+/* 캔버스 자체의 CSS filter 비용도 축소 */
+.depth-canvas{
+  filter:saturate(.98) contrast(1.02) brightness(1.02)!important;
+}
+
+/* 대형 glow는 blur값을 낮춰 GPU 합성 비용 절감 */
+.depth-glow-a{
+  filter:blur(68px)!important;
+}
+.depth-glow-b{
+  filter:blur(78px)!important;
+}
+
+/* profile은 첫 카테고리인 만큼 조금 더 명확하게 */
+.home-selected-works.is-profile .home-selected-head strong{
+  color:#eadfc9!important;
+}
+
+.home-selected-works.is-profile .home-profile-body p{
+  font-size:13.5px!important;
+}
+
+/* KMONG external state */
+.home-selected-works.is-external .home-selected-head strong{
+  color:#e0c68d!important;
+}
+
+/* motion-sensitive or low-powered environment */
+@media(prefers-reduced-motion:reduce){
+  .depth-bg::before,
+  .depth-bg::after{
+    animation:none!important;
+  }
+}
+
+
+/* =========================================================
+   V36 VERIFIED ABOUT FIX
+========================================================= */
+.home-selected-works.is-profile .home-profile-intro{
+  display:grid!important;
+  grid-template-columns:112px minmax(0,1fr)!important;
+  gap:18px!important;
+  align-items:start!important;
+}
+
+.home-selected-works.is-profile .home-profile-photo-wrap{
+  display:block!important;
+  width:112px!important;
+  aspect-ratio:3/4!important;
+  overflow:hidden!important;
+  border-radius:16px!important;
+  border:1px solid rgba(255,255,255,.12)!important;
+  background:#111!important;
+}
+
+.home-selected-works.is-profile .home-profile-photo{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  opacity:1!important;
+}
+
+.home-selected-works.is-profile .home-profile-name{
+  font-size:25px!important;
+  color:#f3ede2!important;
+}
+
+.home-selected-works.is-profile .home-profile-summary{
+  font-size:11.5px!important;
+  line-height:1.65!important;
+}
+
+.home-profile-career-grid{
+  display:grid!important;
+  grid-template-columns:1fr 1fr!important;
+  gap:8px!important;
+  margin-top:18px!important;
+}
+
+.home-profile-career-grid article{
+  min-height:92px!important;
+  padding:13px!important;
+  border:1px solid rgba(255,255,255,.09)!important;
+  border-radius:10px!important;
+  background:rgba(255,255,255,.018)!important;
+}
+
+.home-profile-career-grid article > span,
+.home-profile-section-label{
+  display:block!important;
+  margin-bottom:8px!important;
+  color:#918064!important;
+  font-size:8px!important;
+  font-weight:650!important;
+  letter-spacing:.16em!important;
+}
+
+.home-profile-career-grid strong{
+  display:block!important;
+  color:#e8ddc8!important;
+  font-size:11.5px!important;
+  line-height:1.4!important;
+}
+
+.home-profile-career-grid small{
+  display:block!important;
+  margin-top:6px!important;
+  color:#8e877c!important;
+  font-size:8.5px!important;
+  line-height:1.45!important;
+}
+
+.home-profile-services{
+  display:block!important;
+  margin-top:18px!important;
+}
+
+.home-profile-services > div{
+  display:flex!important;
+  flex-wrap:wrap!important;
+  gap:6px!important;
+}
+
+.home-profile-services b{
+  display:inline-flex!important;
+  align-items:center!important;
+  min-height:27px!important;
+  padding:0 9px!important;
+  border:1px solid rgba(207,171,99,.15)!important;
+  border-radius:5px!important;
+  color:#b9aa8d!important;
+  font-size:7.5px!important;
+  letter-spacing:.07em!important;
+}
+
+.home-selected-works.is-profile .home-profile-meta{
+  margin-top:17px!important;
+}
+
+.home-selected-works.is-profile .home-profile-body p{
+  color:#c8c0b5!important;
+  font-size:13px!important;
+  line-height:1.8!important;
+}
+
+/* performance */
+@media(min-width:1100px){
+  .home-selected-works{
+    backdrop-filter:blur(7px)!important;
+    -webkit-backdrop-filter:blur(7px)!important;
+  }
+}
+
+@media(max-width:1280px){
+  .home-profile-career-grid{
+    grid-template-columns:1fr!important;
+  }
+}
+
+
+/* =========================================================
+   V37.0 — PROFILE CAPABILITY / KMONG VISUAL
+========================================================= */
+
+.guide-copy-mobile{
+  display:none;
+}
+
+/* Profile: '기여도 100%' 대신 가능한 작업 범위 중심 */
+.home-profile-career-grid article{
+  min-height:94px!important;
+}
+
+.home-profile-career-grid strong{
+  font-size:12px!important;
+}
+
+.home-profile-services b{
+  font-size:7.7px!important;
+}
+
+/* KMONG */
+.home-selected-works.is-external .home-selected-head strong{
+  color:#f0d9a8!important;
+}
+
+.home-kmong-card{
+  display:block;
+  padding:0 0 24px;
+  color:inherit;
+}
+
+.home-kmong-image{
+  position:relative;
+  overflow:hidden;
+  width:100%;
+  aspect-ratio:1.45;
+  margin-bottom:20px;
+
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:12px;
+  background:#111;
+}
+
+.home-kmong-image img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:top center;
+
+  transition:
+    transform .6s cubic-bezier(.16,.86,.22,1),
+    filter .35s ease;
+}
+
+.home-kmong-image::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    180deg,
+    transparent 55%,
+    rgba(0,0,0,.48) 100%
+  );
+}
+
+.home-kmong-image > span{
+  position:absolute;
+  z-index:2;
+  left:12px;
+  bottom:10px;
+
+  color:#f1dfb8;
+  font-size:8px;
+  letter-spacing:.13em;
+}
+
+.home-kmong-card:hover .home-kmong-image img{
+  transform:scale(1.025);
+  filter:brightness(1.04);
+}
+
+.home-kmong-copy{
+  display:block;
+}
+
+.home-kmong-eyebrow{
+  margin-bottom:11px!important;
+}
+
+.home-kmong-copy > strong{
+  display:block;
+  margin-bottom:14px;
+
+  color:#f0eadf;
+  font-size:24px;
+  line-height:1.05;
+  letter-spacing:-.035em;
+}
+
+.home-kmong-copy > p{
+  max-width:350px;
+  color:#aaa297;
+  font-family:"Noto Sans KR",sans-serif;
+  font-size:12.5px;
+  line-height:1.8;
+}
+
+.home-kmong-open{
+  margin-top:22px!important;
+}
+
+
+/* =========================================================
+   V39.0 — ENTRY GHOST-LINE FIX
+   메인 진입 시 intro 장식선/원형이 잔상처럼 겹치는 문제 제거.
+========================================================= */
+
+.home-page.is-entry-opening .entry-screen-bg,
+.home-page.is-entry-opening .entry-line,
+.home-page.is-entry-opening .entry-orbit,
+.home-page.is-entry-opening .entry-glow{
+  opacity:0!important;
+  animation:none!important;
+  transition:opacity .16s ease!important;
+}
+
+.home-page.is-entry-opening .entry-title-line{
+  width:0!important;
+  opacity:0!important;
+  transform:scaleX(0)!important;
+
+  animation:none!important;
+  transition:
+    width .22s ease,
+    opacity .14s ease,
+    transform .22s ease!important;
+}
+
+/* intro screen 자체는 내용만 사라지고 투명 레이어가 오래 남지 않게 */
+.home-page.is-entry-opening .entry-screen{
+  box-shadow:none!important;
+}
+
+.home-page.is-entry-complete .entry-screen,
+.home-page.is-entry-complete .entry-screen-bg,
+.home-page.is-entry-complete .entry-line,
+.home-page.is-entry-complete .entry-orbit,
+.home-page.is-entry-complete .entry-glow,
+.home-page.is-entry-complete .entry-title-line{
+  display:none!important;
+}
