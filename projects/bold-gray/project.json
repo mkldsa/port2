@@ -1,10 +1,10 @@
 {
   "id": "bold-gray",
   "number": "PROJECT 05",
-  "browserTitle": "PROJECT 05 | BOLD GRAY",
+  "browserTitle": "PROJECT 05 | BOLD GREY",
 
-  "projectName": "BOLD GRAY",
-  "title": "BOLD GRAY<br>WEBSITE",
+  "projectName": "BOLD GREY",
+  "title": "BOLD GREY<br>WEBSITE",
 
   "type": "CAFE24 · WEB DESIGN · PUBLISHING",
 
@@ -18,17 +18,17 @@
   "template": "web-image",
   "featured": false,
 
-  "link": "http://mkldsa70.cafe24.com",
+  "link": "https://boldgrey.co.kr",
 
   "tools": "FIGMA · PHOTOSHOP · HTML · CSS · JAVASCRIPT",
 
   "thumbnail": "thumbnail.png",
   "mainImage": "main.png",
-  "imageAlt": "Bold Gray 메인페이지",
+  "imageAlt": "Bold Grey 메인페이지",
 
   "overviewTitle": "OVERVIEW",
 
-  "overviewText": "Bold Gray 브랜드의 분위기와 공간 경험을 효과적으로 전달하기 위해 제작한 카페24 기반 웹사이트입니다. 감성적인 비주얼과 직관적인 정보 구성을 중심으로 디자인 및 퍼블리싱을 진행했습니다.",
+  "overviewText": "Bold Grey 브랜드의 분위기와 공간 경험을 효과적으로 전달하기 위해 제작한 카페24 기반 웹사이트입니다. 감성적인 비주얼과 직관적인 정보 구성을 중심으로 디자인 및 퍼블리싱을 진행했습니다.",
 
   "workPointTitle": "WORK POINT",
 
