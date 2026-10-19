@@ -114,3 +114,7 @@ GitHub 파일 크기 안내:
 https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github
 브라우저 업로드는 파일당 25MiB, 일반 Git 저장소는 100MiB 초과 파일이 제한됩니다.
 이 패키지의 개별 파일은 25MiB 미만입니다. ZIP 전체를 한 파일로 업로드하지 마세요.
+
+V35 추가 안내
+루네 캡처는 1920 × 4472px 원본이며 표시 크기는 기존과 동일합니다.
+가든 사이트: https://mkldsa.github.io/gardenwww/

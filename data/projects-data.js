@@ -64,7 +64,7 @@ window.PORTFOLIO_PROJECTS = [
     "type": "WEB DESIGN · PUBLISHING",
     "role": "WEB DESIGN · PUBLISHING",
     "tools": "FIGMA · PHOTOSHOP · VS CODE",
-    "externalLink": "",
+    "externalLink": "https://mkldsa.github.io/gardenwww/",
     "thumbnail": "projects/garden/thumbnail.png",
     "cover": "projects/garden/thumbnail.png",
     "description": "복합문화공간 Garden 5 LIFE의 브랜드 이미지와 공간 정보를 직관적으로 전달하기 위해 제작한 프로젝트입니다. 카테고리별 콘텐츠를 체계적으로 구성하여 사용자 경험과 정보 접근성을 향상시켰습니다.",
