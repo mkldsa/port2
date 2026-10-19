@@ -1,0 +1,85 @@
+{
+  "overviewTitle": "OVERVIEW",
+  "workPointTitle": "WORK POINT",
+  "contribution": [
+    {
+      "label": "디자인",
+      "value": ""
+    }
+  ],
+  "id": "kordetail",
+  "projectName": "코링클 제품 상세",
+  "title": "코링클 제품 상세",
+  "type": "IMAGE DETAIL DESIGN",
+  "category": [
+    "detail"
+  ],
+  "role": "상세페이지 디자인",
+  "tools": "PHOTOSHOP",
+  "thumbnail": "thumbnail.png",
+  "mainImage": "main.jpg",
+  "featured": true,
+  "featuredOrder": 4,
+  "featureTheme": "kordetail",
+  "featureKicker": "IMAGE DETAIL DESIGN",
+  "featureDescription": "버터향김치 · 스윗불고기 · 청양고추&갈릭의 이미지형 상세페이지.",
+  "overviewText": "버터향김치, 스윗불고기, 청양고추&갈릭과 3종 세트를 위해 디자인한 이미지형 상세페이지입니다. 메인에는 단품 3종의 상단 히어로를 보여주고, 아래에서 단품과 트리오의 전체 상세 이미지를 선택해 볼 수 있습니다.",
+  "workPointText": "맛별 컬러와 제품·원재료 비주얼로 메인 히어로를 구성하고, 핵심 특징과 사용 방법, 제품 정보를 이어지는 이미지형 상세페이지로 정리했습니다.",
+  "images": [],
+  "variants": [
+    {
+      "id": "butter",
+      "label": "버터향김치",
+      "image": "main.jpg",
+      "width": 860,
+      "height": 24644
+    },
+    {
+      "id": "bulgogi",
+      "label": "스윗불고기",
+      "image": "sweet-bulgogi.jpg",
+      "width": 860,
+      "height": 25097
+    },
+    {
+      "id": "chili",
+      "label": "청양고추&갈릭",
+      "image": "chili-garlic.jpg",
+      "width": 860,
+      "height": 25122
+    },
+    {
+      "id": "trio",
+      "label": "3종 트리오",
+      "image": "trio.jpg",
+      "width": 103,
+      "height": 2048
+    }
+  ],
+  "layout": "narrow",
+  "imageAlt": "버터향김치 · 스윗불고기 · 청양고추&갈릭 이미지형 상세페이지의 메인 히어로",
+  "qualityNote": "3종 트리오 이미지는 기존 축소본으로, 전체 구성 확인용입니다.",
+  "heroImages": [
+    {
+      "label": "버터향김치",
+      "image": "hero-butter.jpg",
+      "width": 1144,
+      "height": 2048,
+      "background": "#fdd35b"
+    },
+    {
+      "label": "스윗불고기",
+      "image": "hero-bulgogi.jpg",
+      "width": 962,
+      "height": 2048,
+      "background": "#fe6f06"
+    },
+    {
+      "label": "청양고추&갈릭",
+      "image": "hero-chili.jpg",
+      "width": 926,
+      "height": 2047,
+      "background": "#61b661"
+    }
+  ]
+}

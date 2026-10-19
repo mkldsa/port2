@@ -7,9 +7,9 @@ B안을 최종 메인으로 쓰려면 concept-b.html을 index.html로 이름 변
 
 A. 이번 전체 교체본 업로드
 1) 기존 저장소를 먼저 내려받아 백업합니다.
-2) ZIP 안 portfolio_design_v32 폴더의 '내용물'을 기존 저장소 루트에 넣습니다.
+2) ZIP 안 portfolio_design_v34 폴더의 '내용물'을 기존 저장소 루트에 넣습니다.
    index.html이 저장소 첫 화면에 보여야 합니다.
-   portfolio_design_v32 폴더째 한 단계 안쪽에 넣지 않습니다.
+   portfolio_design_v34 폴더째 한 단계 안쪽에 넣지 않습니다.
 3) 기존 저장소의 도메인 연결 파일(CNAME)이 있다면 그대로 유지합니다.
 4) 기존 Pages가 main / root를 사용 중이면 그대로 커밋하여 배포합니다.
 5) 새 저장소인 경우 Settings → Pages → Deploy from a branch → main → /(root) → Save.
@@ -38,10 +38,15 @@ featuredOrder가 작은 작업부터 나옵니다.
 기존 4개는 작업 특성에 맞춰 실제 사이트·이미지형 상세 히어로·프로모션을 구성했습니다.
 새로 등록하는 작업은 thumbnail에 지정한 이미지를 정면 프레임으로 표시합니다.
 썸네일의 내용이 화면에 잘 맞도록 가로 이미지(예: 1600×960px)를 권장합니다.
-자동 전환은 5초입니다. 마우스를 올리거나 클릭해도 계속 움직입니다.
+자동 전환은 4초입니다. 마우스를 올리거나 클릭해도 계속 움직입니다.
 일시정지 버튼·키보드 읽기·화면 밖 이동·다른 탭·모션 줄이기 설정일 때는 멈춥니다.
 프로젝트를 대표 배너에서 빼려면 featured를 false로 바꿉니다.
 전체 작업 목록에는 계속 남습니다.
+
+웹사이트·쇼핑몰 작업의 사이트 보기 버튼은 link 주소를 사용합니다.
+실제 사이트 캡처를 별도로 지정하려면 "websiteImage": "site-preview.png"를 추가합니다.
+없으면 기존 thumbnail 이미지를 사용합니다. link가 없으면 저장된 화면을 여는 화면 보기 버튼입니다.
+루네는 이번에 제공한 site-preview.png를 사용합니다.
 
 D. project.json 예시
 {
@@ -98,7 +103,9 @@ project.json의 heroImages 배열에는 label / image / width / height / backgro
   projects/kordetail/chili-garlic.jpg
   projects/kordetail/trio.jpg
 긴 상세는 본문 폭에 맞춰 표시됩니다(PC 최대 1040px, 모바일은 본문 너비).
-현재 업로드된 축소본 대신 실제 작업 원본을 사용해야 긴 상세의 글자를 선명하게 읽을 수 있습니다.
+단품 3종은 V33에서 가로 860px 원본으로 교체했습니다.
+3종 트리오는 기존 등록 이미지가 유지됩니다.
+이미지를 교체한 뒤에는 브라우저에서 Ctrl + F5로 새 파일을 불러오세요.
 
 G. 확인한 공식 안내
 GitHub Pages 브랜치·폴더 설정:

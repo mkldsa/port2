@@ -24,6 +24,7 @@
    categoryLabel:raw.categoryLabel||base.categoryLabel||({web:'WEB DESIGN',detail:'DETAIL DESIGN',graphic:'PROMOTION DESIGN',ecommerce:'SHOP DESIGN'}[category]),
    description:raw.overviewText??raw.description??base.description??'',workPoint:raw.workPointText??raw.workPoint??base.workPoint??'',
    originalImages:(raw.originalImages||[]).map(v=>asset(v,folder)),thumbnail:asset(raw.thumbnail||base.thumbnail,folder),cover:asset(raw.cover||raw.thumbnail||base.cover||raw.mainImage,folder),
+   websiteImage:asset(raw.websiteImage||raw.thumbnail||raw.mainImage||base.thumbnail,folder),
    heroImages:(raw.heroImages||[]).map(v=>({...v,image:asset(v.image,folder)})),
    externalLink:asset(raw.link??raw.externalLink??base.externalLink,folder),images:[...new Set(images)],variants,
    relatedLinks:(raw.relatedLinks||[]).map(v=>({...v,url:asset(v.url,folder)})),
@@ -35,10 +36,20 @@
  }
  const projects=snapshot.length?snapshot.map(v=>normalize(v.data,v.folder)):[...legacy];
  const heroes=(p,extra='')=>`<div class="hero-trio detail-image-trio ${extra}" role="img" aria-label="${esc(p.title)} · ${esc(p.heroImages.map(v=>v.label).join(' · '))}">${p.heroImages.map(v=>`<figure class="hero-card"><div class="image-hero" style="--detail-art-bg:${/^#[0-9a-f]{6}$/i.test(v.background||'')?v.background:'#f4f6fc'}"><img src="${esc(url(v.image))}" width="${Number(v.width)||70}" height="${Number(v.height)||150}" alt="${esc(v.label)} 이미지형 상세페이지 메인 히어로" loading="lazy" decoding="async"></div><figcaption>${esc(v.label).replace('버터향김치','버터향<wbr>김치').replace('스윗불고기','스윗<wbr>불고기').replace('&amp;','<wbr>&amp;')}</figcaption></figure>`).join('')}</div>`;
- const visual=p=>p.heroImages?.length?`<div class="ysh-project-visual archive-image archive-hero-previews">${heroes(p,'archive-hero-trio')}</div>`:`<div class="ysh-project-visual archive-image"><img src="${esc(url(p.thumbnail||p.cover))}" alt="${esc(p.imageAlt||p.title)}" loading="lazy" decoding="async"></div>`;
- const card=p=>`<article class="work-card" data-project-id="${esc(p.id)}"><a class="work-card-link" href="project.html?id=${encodeURIComponent(p.id)}">${visual(p)}<div class="card-meta"><span>${esc(p.categoryLabel||p.category)}</span><span aria-hidden="true">↗</span></div><h3>${esc(p.title)}</h3><p class="card-role">${esc(p.creditSummary||p.role||p.type)}</p></a></article>`;
+ /* Website cards link directly to the live site; unregistered sites open their saved screen. */
+ const isWebsite=p=>['web','ecommerce'].includes(p.category);
+ const siteAction=p=>{
+  if(!isWebsite(p))return null;
+  const href=url(p.externalLink);if(href)return {href,label:'사이트 보기'};
+  const image=url(p.websiteImage||p.cover||p.thumbnail);return image?{href:image,label:'화면 보기'}:null;
+ };
+ const visual=p=>p.heroImages?.length?`<div class="ysh-project-visual archive-image archive-hero-previews">${heroes(p,'archive-hero-trio')}</div>`:`<div class="ysh-project-visual archive-image${isWebsite(p)?' archive-website':''}"><img src="${esc(url(isWebsite(p)?p.websiteImage||p.thumbnail||p.cover:p.thumbnail||p.cover))}" alt="${esc(isWebsite(p)?p.title+' 웹사이트 화면':p.imageAlt||p.title)}" loading="lazy" decoding="async"></div>`;
+ const card=p=>{
+  const action=siteAction(p);
+  return `<article class="work-card${action?' web-work-card':''}" data-project-id="${esc(p.id)}"><a class="work-card-link" href="project.html?id=${encodeURIComponent(p.id)}">${visual(p)}<div class="card-meta"><span>${esc(p.categoryLabel||p.category)}</span><span aria-hidden="true">↗</span></div><h3>${esc(p.title)}</h3><p class="card-role">${esc(p.creditSummary||p.role||p.type)}</p></a>${action?`<a class="site-visit card-site-link" href="${esc(action.href)}" target="_blank" rel="noopener noreferrer" aria-label="${esc(p.title+' '+action.label+' (새 창)')}">${esc(action.label)} <span aria-hidden="true">↗</span></a>`:''}</article>`;
+ };
  const matches=(p,c,q)=>{const term=q.trim().toLocaleLowerCase();return(c==='all'||p.category===c)&&(!term||[p.title,p.originalTitle,p.categoryLabel,p.role,p.tools].join(' ').toLocaleLowerCase().includes(term));};
- const api=window.Portfolio={projects,esc,url,visual,heroes,card,matches,normalize,loadErrors:[]};
+ const api=window.Portfolio={projects,esc,url,visual,heroes,card,isWebsite,siteAction,matches,normalize,loadErrors:[]};
  api.ready=(async()=>{
   if(!/^https?:$/.test(location.protocol))return projects;
   const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),6000);

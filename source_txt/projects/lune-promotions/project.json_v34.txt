@@ -1,0 +1,49 @@
+{
+  "overviewTitle": "OVERVIEW",
+  "workPointTitle": "WORK POINT",
+  "contribution": [
+    {
+      "label": "프로모션 디자인",
+      "value": ""
+    }
+  ],
+  "id": "lune-promotions",
+  "projectName": "LUNE 프로모션 디자인",
+  "title": "LUNE 프로모션 디자인",
+  "type": "PROMOTION · DETAIL DESIGN",
+  "category": [
+    "graphic"
+  ],
+  "role": "프로모션 · 상세페이지 디자인",
+  "tools": "PHOTOSHOP · ILLUSTRATOR",
+  "thumbnail": "thumbnail.jpg",
+  "mainImage": "main.jpg",
+  "featured": true,
+  "featuredOrder": 3,
+  "featureTheme": "promotion",
+  "featureKicker": "PROMOTION DESIGN",
+  "featureDescription": "가을 리프팅 · 봄 · 웨딩, 세 가지 이벤트를 하나의 브랜드 톤으로.",
+  "overviewText": "LUNE의 가을 리프팅, 봄 이벤트와 웨딩 뷰티 프로모션 디자인입니다. 각 이벤트의 핵심 메시지와 모델·제품 비주얼을 동일한 브랜드 톤 안에서 구성했습니다.",
+  "workPointText": "썸네일에서 핵심 혜택을 짧게 전달하고, 상세에서는 프로그램과 추가 혜택이 순서대로 읽히도록 구성했습니다.",
+  "images": [
+    "lifting-preview.jpg",
+    "spring-preview.jpg",
+    "bridal-preview.jpg"
+  ],
+  "imageLabels": [
+    "가을 리프팅",
+    "봄 이벤트",
+    "웨딩 뷰티"
+  ],
+  "layout": "narrow",
+  "link": "../lune/site/events.html",
+  "demoLabel": "이벤트 페이지 실행",
+  "projectKind": "가상 브랜드 · 개인 프로젝트",
+  "imageAlt": "LUNE 가을 리프팅 프로모션 디자인",
+  "status": "",
+  "originalImages": [
+    "main.jpg",
+    "spring.jpg",
+    "bridal.jpg"
+  ]
+}

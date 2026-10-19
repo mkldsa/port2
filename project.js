@@ -2,7 +2,7 @@
    01. PROJECT VIEW — original JSON fields, galleries and working-site links
    ========================================================= */
 (() => {
- if(!window.Portfolio)return;const {projects,esc,url,visual}=window.Portfolio,root=document.getElementById('project-detail');if(!root)return;
+ if(!window.Portfolio)return;const {projects,esc,url,visual,isWebsite,siteAction}=window.Portfolio,root=document.getElementById('project-detail');if(!root)return;
  const id=new URLSearchParams(location.search).get('id');let signature='';
  function render(){
   const index=projects.findIndex(p=>String(p.id)===String(id)),p=projects[index];
@@ -11,10 +11,11 @@
   document.title=p.title+' — 윤석희';root.classList.toggle('is-narrow-project',p.layout==='narrow');
   const prev=projects[(index-1+projects.length)%projects.length],next=projects[(index+1)%projects.length],contributions=p.contribution||[],tools=p.keyWorks||[],images=p.images||[],variants=p.variants||[];
   const safeLink=v=>{const s=url(v);return s&&!/^(?:javascript|data|vbscript):/i.test(s)?s:'';};
-  const links=[...(p.externalLink?[{label:p.demoLabel||'사이트 보기',url:p.externalLink}]:[]),...(p.relatedLinks||[])].filter(v=>safeLink(v.url));
-  const cover=p.heroImages?.length?`<div class="project-hero-previews">${visual(p)}</div>`:`<img class="detail-cover" src="${esc(url(p.cover||p.thumbnail))}" alt="${esc(p.imageAlt||p.title)} 대표 이미지" decoding="async">`;
+  const action=siteAction(p);
+  const links=[...(action?[{label:action.label,url:action.href,primary:true}]:p.externalLink?[{label:p.demoLabel||'사이트 보기',url:p.externalLink,primary:true}]:[]),...(p.relatedLinks||[])].filter(v=>safeLink(v.url));
+  const cover=isWebsite(p)?`<figure class="website-detail-cover"><div class="website-detail-screen"><img src="${esc(url(p.websiteImage||p.cover||p.thumbnail))}" alt="${esc(p.title)} 웹사이트 화면" decoding="async"></div><figcaption><span>사이트 화면</span><a href="${esc(url(p.websiteImage||p.cover||p.thumbnail))}" target="_blank" rel="noopener noreferrer">이미지 크게 보기 <span aria-hidden="true">↗</span></a></figcaption></figure>`:p.heroImages?.length?`<div class="project-hero-previews">${visual(p)}</div>`:`<img class="detail-cover" src="${esc(url(p.cover||p.thumbnail))}" alt="${esc(p.imageAlt||p.title)} 대표 이미지" decoding="async">`;
   root.innerHTML=`<a class="detail-back" href="index.html#ysh-works">← 전체 작업</a><section class="detail-hero"><p class="eyebrow">${esc(p.categoryLabel)} / ${String(index+1).padStart(2,'0')}</p><h1>${esc(p.title)}</h1>${p.projectKind?`<p class="detail-kind">${esc(p.projectKind)}</p>`:''}<div class="detail-meta">${[['TYPE',p.type],['ROLE',p.role],['TOOLS',p.tools]].filter(([,v])=>v).map(([k,v])=>`<div><span>${k}</span><p>${esc(v)}</p></div>`).join('')}</div></section>
-  ${links.length?`<div class="detail-action-row">${links.map(l=>`<a href="${esc(safeLink(l.url))}" target="_blank" rel="noopener noreferrer">${esc(l.label)} <span aria-hidden="true">↗</span></a>`).join('')}</div>`:''}${cover}
+  ${links.length?`<div class="detail-action-row">${links.map(l=>`<a class="${l.primary?'site-visit':'detail-secondary-link'}" href="${esc(safeLink(l.url))}" target="_blank" rel="noopener noreferrer">${esc(l.label)} <span aria-hidden="true">↗</span></a>`).join('')}</div>`:''}${cover}
   ${p.status?`<p class="detail-status">${esc(p.status)}</p>`:''}
   <section class="detail-overview"><h2>${esc(p.overviewTitle||'OVERVIEW')}</h2><p>${esc(p.description)}</p></section>
   ${contributions.length?`<section class="detail-contribution"><div><h2>담당 범위</h2>${p.contributionNote?`<p>${esc(p.contributionNote)}</p>`:''}</div><div class="detail-role-list">${contributions.map((c,i)=>`<div><span>${String(i+1).padStart(2,'0')}</span><strong>${esc(c.label)}</strong>${c.value?`<b>${esc(c.value)}</b>`:''}</div>`).join('')}</div></section>`:''}

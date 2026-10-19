@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="나를 위한 변화, 루네에서. 코·눈 성형과 리프팅 안내, 가을·봄·웨딩 이벤트를 만나보세요.">
+  <meta name="theme-color" content="#f7f9fc">
+  <title>LUNE | 루네성형외과</title>
+  <link rel="preload" href="assets/images/campaign-v15-hero.png" as="image">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/home_responsive.css">
+  <link rel="stylesheet" href="css/editorial.css">
+  <link rel="stylesheet" href="css/editorial_responsive.css">
+  <link rel="icon" type="image/svg+xml" href="assets/brand/favicon.svg">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+</head>
+<body class="lune-editorial">
+<a class="skip-link" href="#main">본문으로 이동</a>
+<!-- 01. 고정 헤더: 모든 주요 섹션으로 바로 이동 -->
+<header class="site-header" id="siteHeader">
+  <a class="brand" href="index.html" aria-label="루네성형외과 홈"><strong>LUNE</strong><span>루네성형외과</span></a>
+  <nav class="desktop-nav" aria-label="주요 메뉴"><a href="#event">이벤트</a><a href="#signature">성형 안내</a><a href="#doctor">상담 안내</a></nav>
+  <div class="header-actions"><button class="consult-btn" data-open-consult>상담 예약</button><button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobilePanel" aria-label="메뉴 열기"><i></i><i></i></button></div>
+  <div class="reading-track" aria-hidden="true"><span id="readingProgress"></span></div>
+</header>
+<aside class="mobile-panel" id="mobilePanel" aria-hidden="true" inert>
+  <span>루네성형외과</span><nav aria-label="전체 메뉴"><a href="#event">이벤트</a><a href="#signature">성형 안내</a><a href="#doctor">상담 안내</a></nav>
+  <button data-open-consult>상담 예약 <span aria-hidden="true">→</span></button>
+</aside>
+<main id="main">
+<!-- 02. 단일 메인 연출컷: 일반 문서 흐름, 스크롤 고정·장면 전환 없음 -->
+<section class="campaign-hero" id="visual" aria-labelledby="heroTitle">
+  <div class="editorial-container hero-layout">
+    <div class="campaign-copy">
+      <p class="section-kicker">LUNE PLASTIC SURGERY</p>
+      <h1 id="heroTitle">나를 위한 변화,<br>루네에서.</h1>
+      <p class="campaign-description">성형부터 피부·리프팅까지.<br>지금의 고민에 맞는 선택을 만나보세요.</p>
+      <div class="campaign-actions"><a class="filled-btn" href="#event">루네 이벤트 <span aria-hidden="true">↗</span></a><a class="quiet-link" href="#signature">성형 안내 <span aria-hidden="true">→</span></a></div>
+    </div>
+    <figure class="campaign-photo"><img src="assets/images/campaign-v15-hero.png" width="1254" height="1254" alt="밝은 화이트 공간에서 자연스럽게 포즈를 취한 루네 캠페인 모델" fetchpriority="high"></figure>
+    <div class="hero-caption"><p>BEAUTY, IN YOUR OWN WAY.</p><a href="#event">루네를 만나보세요 <span aria-hidden="true">↓</span></a></div>
+  </div>
+</section>
+<!-- 03. 사용자 제공 썸네일 3종: 원본 전체를 노출하고 상세 원본으로 연결 -->
+<section class="editorial-section event-selection" id="event" aria-labelledby="eventTitle">
+  <div class="editorial-container">
+    <div class="editorial-heading" data-reveal><div><p class="section-kicker">LUNE EVENT</p><h2 id="eventTitle">루네의 뷰티 제안</h2></div><a class="line-link" href="events.html">전체 이벤트 <span aria-hidden="true">→</span></a></div>
+<div class="event-grid"><a class="event-card uploaded-promotion" data-reveal href="event-lifting.html" data-category="리프팅"><div class="event-art event-art-uploaded"><div class="promotion-thumb-stage"><img src="assets/images/promotion-lifting-thumbnail.jpg" alt="가을 리프팅 이벤트 썸네일" width="2048" height="1770" loading="lazy"></div></div><div class="event-card-meta"><div><h3>가을 리프팅 이벤트</h3><p>루네 실리프팅</p></div><span aria-hidden="true">→</span></div></a><a class="event-card uploaded-promotion" data-reveal href="event-spring.html" data-category="시즌 이벤트"><div class="event-art event-art-uploaded"><div class="promotion-thumb-stage"><img src="assets/images/promotion-spring-thumbnail.jpg" alt="이번 봄, 하나만 고른다면? 썸네일" width="2048" height="1770" loading="lazy"></div></div><div class="event-card-meta"><div><h3>이번 봄, 하나만 고른다면?</h3><p>봄맞이 뷰티 이벤트</p></div><span aria-hidden="true">→</span></div></a><a class="event-card uploaded-promotion" data-reveal href="event-bridal.html" data-category="웨딩"><div class="event-art event-art-uploaded"><div class="promotion-thumb-stage"><img src="assets/images/promotion-bridal-thumbnail.jpg" alt="BRIDAL BEAUTY D-DAY 썸네일" width="546" height="472" loading="lazy"></div></div><div class="event-card-meta"><div><h3>BRIDAL BEAUTY D-DAY</h3><p>웨딩 뷰티 플랜</p></div><span aria-hidden="true">→</span></div></a></div>
+  </div>
+</section>
+<!-- 04. 새 코·눈·리프팅 연출컷: 숨겨진 탭 없이 세 분야를 한눈에 -->
+<section class="editorial-section beauty-selection" id="signature" aria-labelledby="selectionTitle">
+  <div class="editorial-container">
+    <div class="editorial-heading" data-reveal><div><p class="section-kicker">LUNE SELECTION</p><h2 id="selectionTitle">관심 있는 곳부터,<br>나에게 맞는 방향으로.</h2></div><p class="section-note">코·눈·리프팅의 포인트를 살펴보세요.</p></div>
+    <div class="beauty-stories">
+      <a class="beauty-story" href="detail-rhinoplasty.html" data-reveal>
+        <figure><img src="assets/images/campaign-v15-nose.png" width="1024" height="1536" alt="창가의 자연광 속에서 측면을 보여주는 코성형 안내 모델" loading="lazy"></figure>
+        <div class="beauty-story-copy"><p class="story-category">01 · NOSE</p><h3>코성형 <span aria-hidden="true">↗</span></h3><p class="story-description">정면과 측면, 얼굴 전체의<br>균형을 함께 살핍니다.</p><span class="story-link">코성형 안내 <span aria-hidden="true">→</span></span></div>
+      </a>
+      <a class="beauty-story" href="event-spring.html" data-reveal>
+        <figure><img src="assets/images/campaign-v15-eyes.png" width="1024" height="1536" alt="화이트 커튼 앞에서 편안하게 정면을 바라보는 눈성형 안내 모델" loading="lazy"></figure>
+        <div class="beauty-story-copy"><p class="story-category">02 · EYE</p><h3>눈성형 <span aria-hidden="true">↗</span></h3><p class="story-description">현재 눈의 형태와 원하는<br>눈매의 방향을 확인합니다.</p><span class="story-link">관련 이벤트 <span aria-hidden="true">→</span></span></div>
+      </a>
+      <a class="beauty-story" href="event-lifting.html" data-reveal>
+        <figure><img src="assets/images/campaign-v15-lifting.png" width="1024" height="1536" alt="밝은 스튜디오에서 턱 아래에 손을 가볍게 댄 리프팅 안내 모델" loading="lazy"></figure>
+        <div class="beauty-story-copy"><p class="story-category">03 · LIFTING</p><h3>리프팅 <span aria-hidden="true">↗</span></h3><p class="story-description">피부 상태와 고민 부위에 맞춰<br>케어 방향을 살펴봅니다.</p><span class="story-link">리프팅 이벤트 <span aria-hidden="true">→</span></span></div>
+      </a>
+    </div>
+  </div>
+</section>
+<!-- 05. 상담 안내: 병원 소개 대신 다음 행동에 필요한 정보 -->
+<section class="editorial-section consultation-story" id="doctor" aria-labelledby="consultStoryTitle">
+  <div class="editorial-container consultation-layout">
+    <figure class="consultation-photo" data-reveal><img src="assets/images/campaign-v15-consult.png" width="1536" height="1024" alt="화이트 스튜디오에서 편안하게 앉아 있는 두 명의 루네 캠페인 모델" loading="lazy"></figure>
+    <div class="consultation-copy" data-reveal><p class="section-kicker">LUNE CONSULTATION</p><h2 id="consultStoryTitle">원하는 변화부터,<br>차분하게.</h2><p class="consultation-intro">고민하는 부위와 원하는 방향을 들려주세요.<br>진행 범위와 회복 일정을 함께 확인합니다.</p>
+      <dl><div><dt>고민과 방향</dt><dd>현재 고민과 원하는 변화를 이야기합니다.</dd></div><div><dt>진행 범위와 비용</dt><dd>적용 항목과 예상 비용을 확인합니다.</dd></div><div><dt>회복과 관리</dt><dd>주의 사항과 경과 확인 일정을 안내합니다.</dd></div></dl>
+      <button class="line-link" data-open-consult>상담 예약 <span aria-hidden="true">→</span></button>
+    </div>
+  </div>
+</section>
+<!-- 06. 상담 과정: 짧은 네 단계 안내 -->
+<section class="editorial-section process-section-new" id="process" aria-labelledby="processTitle"><div class="editorial-container">
+  <div class="editorial-heading" data-reveal><div><p class="section-kicker">CONSULTATION FLOW</p><h2 id="processTitle">상담의 흐름을 한눈에.</h2></div></div>
+  <ol class="consultation-flow"><li data-reveal><span>01</span><h3>상담 예약</h3><p>관심 항목과 고민하는 부위를 남겨주세요.</p></li><li data-reveal><span>02</span><h3>진료 상담</h3><p>진행 범위와 예상 비용을 함께 확인합니다.</p></li><li data-reveal><span>03</span><h3>수술·시술</h3><p>상담한 내용을 바탕으로 진행합니다.</p></li><li data-reveal><span>04</span><h3>경과 확인</h3><p>회복 상태와 관리 방법을 안내합니다.</p></li></ol>
+</div></section>
+<!-- 07. 마지막 상담 진입 -->
+<section class="final-consult" id="consult" aria-labelledby="finalConsultTitle"><div class="editorial-container final-consult-layout" data-reveal><div><p class="section-kicker">LUNE</p><h2 id="finalConsultTitle">나에게 맞는 선택이<br class="mo-only"> 궁금하다면.</h2></div><button class="filled-btn" data-open-consult>상담 예약 <span aria-hidden="true">↗</span></button></div></section>
+</main>
+<footer class="site-footer"><a class="brand" href="index.html" aria-label="루네성형외과 홈"><strong>LUNE</strong><span>루네성형외과</span></a><div class="footer-links"><a href="index.html#signature">성형 안내</a><a href="events.html">이벤트</a><button data-open-consult>상담 예약</button></div><p>© LUNE.</p></footer><dialog class="consult-modal" id="consultModal" aria-labelledby="consultTitle" aria-describedby="consultDescription"><button class="modal-close" id="modalClose" aria-label="상담창 닫기">×</button><h2 id="consultTitle">상담 예약</h2><p class="modal-desc" id="consultDescription">관심 있는 항목을 선택해 주세요.</p><form id="consultForm"><label><span>이름</span><input name="name" autocomplete="name" required placeholder="이름"></label><label><span>연락처</span><input name="phone" type="tel" autocomplete="tel" required placeholder="010-0000-0000"></label><label><span>관심 항목</span><select name="treatment"><option>코성형</option><option>눈성형</option><option>윤곽성형</option><option>리프팅</option><option>봄 이벤트</option><option>웨딩 케어</option></select></label><button class="filled-btn" type="submit">상담 신청 <span>→</span></button></form><div class="form-success" id="formSuccess"><strong>입력 내용을 확인했습니다.</strong></div></dialog>
+<button class="back-to-top" id="backToTop" aria-label="페이지 맨 위로" hidden>↑</button>
+<script src="js/editorial.js" defer></script>
+</body>
+</html>

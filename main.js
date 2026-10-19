@@ -6,7 +6,7 @@
  const arrival=document.getElementById('arrival'),intro=document.querySelector('.intro'),shell=document.getElementById('site-shell');
  if(!arrival||!intro||!shell)return;
  const enter=document.querySelector('.intro-enter'),skip=document.querySelector('.intro-skip'),replay=document.querySelector('.intro-replay'),arrivalSkip=document.getElementById('arrival-skip');
- const reduced=matchMedia('(prefers-reduced-motion: reduce)'),storageKey='seokhee-portfolio-entered-v32';let state='arrival',timer=0;
+ const reduced=matchMedia('(prefers-reduced-motion: reduce)'),storageKey='seokhee-portfolio-entered-v34';let state='arrival',timer=0;
  const cancel=()=>{clearTimeout(timer);timer=0;};
  function showIntro(){cancel();state='intro';arrival.hidden=true;intro.hidden=false;intro.inert=false;enter.disabled=false;intro.classList.remove('is-revealing');document.body.classList.remove('arrival-active');document.getElementById('intro-title').focus({preventScroll:true});}
  function arrive(){cancel();state='arrival';intro.hidden=false;intro.inert=true;enter.disabled=true;intro.classList.remove('is-leaving');shell.inert=true;shell.classList.remove('main-preview');document.body.classList.add('intro-active');document.dispatchEvent(new Event('portfolio:intro'));scrollTo({top:0,behavior:'instant'});if(reduced.matches){showIntro();return;}arrival.hidden=false;document.body.classList.add('arrival-active');intro.classList.add('is-revealing');arrival.focus({preventScroll:true});timer=setTimeout(showIntro,1600);}

@@ -24,10 +24,10 @@ window.PORTFOLIO_SNAPSHOT = [
       ],
       "role": "웹디자인 · 퍼블리싱",
       "tools": "FIGMA · PHOTOSHOP · HTML · CSS · JAVASCRIPT",
-      "thumbnail": "thumbnail.png",
-      "mainImage": "site/assets/images/campaign-v15-hero.png",
+      "thumbnail": "site-preview.png",
+      "mainImage": "site-preview.png",
       "link": "site/index.html",
-      "demoLabel": "사이트 실행",
+      "demoLabel": "사이트 보기",
       "projectKind": "가상 브랜드 · 개인 프로젝트",
       "featured": true,
       "featuredOrder": 1,
@@ -37,6 +37,7 @@ window.PORTFOLIO_SNAPSHOT = [
       "overviewText": "가상 성형외과 브랜드 LUNE의 홈페이지와 이벤트 페이지를 제작한 개인 프로젝트입니다. 화이트와 라일락 톤, 모델 연출 이미지, 읽기 쉬운 정보 구조를 하나의 흐름으로 구성했습니다.",
       "workPointText": "메인 비주얼과 시즌 이벤트, 코·눈·리프팅 안내를 일반 스크롤로 연결했습니다. 메뉴·상담 모달·스크롤 연출과 모바일 화면을 구현했습니다.",
       "images": [
+        "site-preview.png",
         "site/assets/images/campaign-v15-hero.png",
         "site/assets/images/campaign-v15-nose.png",
         "site/assets/images/campaign-v15-eyes.png"
@@ -51,8 +52,16 @@ window.PORTFOLIO_SNAPSHOT = [
           "url": "site/detail-rhinoplasty.html"
         }
       ],
-      "imageAlt": "LUNE 성형외과 캠페인 비주얼",
-      "status": "가상 브랜드를 위한 개인 포트폴리오 작업입니다."
+      "imageAlt": "LUNE 성형외과 홈페이지 실제 화면",
+      "status": "",
+      "websiteImage": "site-preview.png",
+      "cover": "site-preview.png",
+      "imageLabels": [
+        "홈페이지 전체 화면",
+        "메인 캠페인 이미지",
+        "코성형 캠페인 이미지",
+        "눈성형 캠페인 이미지"
+      ]
     }
   },
   {
@@ -139,7 +148,7 @@ window.PORTFOLIO_SNAPSHOT = [
       "demoLabel": "이벤트 페이지 실행",
       "projectKind": "가상 브랜드 · 개인 프로젝트",
       "imageAlt": "LUNE 가을 리프팅 프로모션 디자인",
-      "status": "가상 브랜드를 위한 개인 포트폴리오 작업입니다.",
+      "status": "",
       "originalImages": [
         "main.jpg",
         "spring.jpg",
@@ -182,22 +191,22 @@ window.PORTFOLIO_SNAPSHOT = [
           "id": "butter",
           "label": "버터향김치",
           "image": "main.jpg",
-          "width": 71,
-          "height": 2048
+          "width": 860,
+          "height": 24644
         },
         {
           "id": "bulgogi",
           "label": "스윗불고기",
           "image": "sweet-bulgogi.jpg",
-          "width": 70,
-          "height": 2048
+          "width": 860,
+          "height": 25097
         },
         {
           "id": "chili",
           "label": "청양고추&갈릭",
           "image": "chili-garlic.jpg",
-          "width": 70,
-          "height": 2047
+          "width": 860,
+          "height": 25122
         },
         {
           "id": "trio",
@@ -209,7 +218,7 @@ window.PORTFOLIO_SNAPSHOT = [
       ],
       "layout": "narrow",
       "imageAlt": "버터향김치 · 스윗불고기 · 청양고추&갈릭 이미지형 상세페이지의 메인 히어로",
-      "qualityNote": "현재 등록된 상세 이미지는 축소본으로, 전체 구성 확인용입니다.",
+      "qualityNote": "3종 트리오 이미지는 기존 축소본으로, 전체 구성 확인용입니다.",
       "heroImages": [
         {
           "label": "버터향김치",

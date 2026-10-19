@@ -1,0 +1,101 @@
+/* V15 PC — a continuous photo-led page, without a pinned opening scene. */
+.lune-editorial{--ink:#263949;--muted:#627589;--line:#dce5ec;--pad:clamp(32px,5vw,96px);background:#fff}
+.lune-editorial main{padding-top:88px}
+.lune-editorial .site-header{position:fixed;height:88px;background:#fff;border-bottom:1px solid #e6ecf1;padding-inline:var(--pad);transform:none}
+.lune-editorial .site-header.menu-is-open{border-bottom-color:transparent}
+.lune-editorial .desktop-nav{gap:40px;font-size:16px}
+.lune-editorial .desktop-nav a{position:relative}
+.lune-editorial .desktop-nav a:after{content:'';position:absolute;left:0;right:0;bottom:7px;height:1px;background:#6b8298;transform:scaleX(0);transform-origin:left;transition:transform .2s}
+.lune-editorial .desktop-nav a:hover:after,.lune-editorial .desktop-nav a[aria-current=location]:after{transform:scaleX(1)}
+.lune-editorial .header-actions{gap:16px}
+.reading-track{position:absolute;left:0;right:0;bottom:-1px;height:2px;pointer-events:none;overflow:hidden}
+.reading-track span{display:block;width:100%;height:100%;background:#92a9bc;transform:scaleX(0);transform-origin:left}
+.editorial-container{width:calc(100% - var(--pad)*2);max-width:1280px;margin-inline:auto}
+.editorial-section{padding-block:104px}
+.editorial-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:32px;margin-bottom:45px}
+.section-kicker{font-size:16px;line-height:1.55;font-weight:500;color:#687f94;letter-spacing:.045em;margin-bottom:18px}
+.lune-editorial h2{font-size:clamp(32px,3.05vw,44px);font-weight:500;line-height:1.32;letter-spacing:-.045em}
+.section-note{font-size:16px;line-height:1.8;color:var(--muted);padding-bottom:4px}
+.lune-editorial .filled-btn{border-radius:3px;min-height:54px;padding:15px 23px;gap:30px;font-size:16px}
+.lune-editorial .line-link{gap:26px;border-color:#a5b7c5;font-size:16px;min-height:38px}
+.quiet-link{display:inline-flex;align-items:center;gap:15px;min-height:44px;font-size:16px;border-bottom:1px solid transparent}
+.quiet-link:hover{border-color:#a5b7c5}
+.mo-only{display:none}
+
+/* 01. One still photograph. Its height follows its actual content. */
+.campaign-hero{background:linear-gradient(110deg,#fdfefe 12%,#f3f7fc 100%);padding:30px 0 0}
+.hero-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,626px);column-gap:64px;align-items:center}
+.campaign-copy{max-width:520px;padding-block:35px}
+.campaign-copy .section-kicker{margin-bottom:25px}
+.campaign-copy h1{font-size:clamp(44px,4.4vw,68px);font-weight:500;line-height:1.2;letter-spacing:-.055em}
+.campaign-description{font-size:18px;line-height:1.8;color:#5f7487;margin-top:27px}
+.campaign-actions{display:flex;align-items:center;gap:26px;flex-wrap:wrap;margin-top:32px}
+.campaign-photo{width:100%;max-width:626px;margin:0;justify-self:end}
+.campaign-photo img{width:100%;height:auto;aspect-ratio:1;object-fit:contain}
+.hero-caption{grid-column:1/-1;display:flex;justify-content:space-between;gap:24px;align-items:center;padding:26px 0 28px;color:#71869a;font-size:16px;line-height:1.5}
+.hero-caption p{letter-spacing:.045em}
+.hero-caption a{display:inline-flex;gap:26px;align-items:center;min-height:40px;color:#526c82}
+
+/* 02. The supplied promotion artwork is shown whole and without a zoom. */
+.lune-editorial .event-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;align-items:start}
+.lune-editorial .event-card{display:block;min-width:0}
+.lune-editorial .event-card.uploaded-promotion .event-art-uploaded{aspect-ratio:23/20;height:auto;background:#fff;overflow:hidden;border-radius:2px}
+.lune-editorial .promotion-thumb-stage{width:100%;height:100%}
+.lune-editorial .promotion-thumb-stage>img{width:100%;height:100%;object-fit:contain;transform:none;transition:none}
+.lune-editorial .event-card-meta{padding:21px 0 16px;border-bottom:1px solid var(--line);align-items:flex-start}
+.lune-editorial .event-card-meta h3{font-size:20px;font-weight:500;line-height:1.5}
+.lune-editorial .event-card-meta p{font-size:16px;margin-top:4px}
+.lune-editorial .event-card-meta>span{transition:transform .2s}
+.lune-editorial .event-card:hover .event-card-meta>span{transform:translateX(4px)}
+
+/* 03. Three editorial images stay visible in ordinary document flow. */
+.beauty-selection{background:#f7f9fc}
+.beauty-stories{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:38px;align-items:start}
+.beauty-story{display:block;min-width:0}
+.beauty-story:nth-child(2){margin-top:62px}
+.beauty-story figure{width:100%;margin:0;overflow:hidden;background:#edf3f8}
+.beauty-story figure img{display:block;width:100%;height:auto;aspect-ratio:2/3;object-fit:contain;transform:none}
+.beauty-story-copy{padding-top:24px}
+.story-category{font-size:16px;line-height:1.5;color:#748ba0;letter-spacing:.035em;margin-bottom:12px}
+.beauty-story h3{display:flex;align-items:center;justify-content:space-between;gap:20px;font-size:30px;font-weight:500;line-height:1.3;letter-spacing:-.04em}
+.beauty-story h3>span{font-size:23px;font-weight:400;color:#6c8499;transition:transform .2s}
+.beauty-story:hover h3>span{transform:translate(2px,-2px)}
+.story-description{font-size:16px;line-height:1.8;color:var(--muted);margin-top:17px}
+.story-link{display:inline-flex;align-items:center;gap:25px;min-height:44px;font-size:16px;margin-top:17px;border-bottom:1px solid #bdcad5;padding-bottom:3px}
+.story-link>span{transition:transform .2s}
+.beauty-story:hover .story-link>span{transform:translateX(4px)}
+
+/* 04. A full-frame campaign photograph replaces the old corporate portrait. */
+.consultation-layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:64px;align-items:center}
+.consultation-photo{width:100%;max-width:720px;margin:0}
+.consultation-photo img{width:100%;height:auto;aspect-ratio:3/2;object-fit:contain}
+.consultation-copy{max-width:490px}
+.consultation-copy .section-kicker{margin-bottom:16px}
+.consultation-copy h2{font-size:clamp(32px,2.8vw,40px)}
+.consultation-intro{font-size:16px;line-height:1.85;color:var(--muted);margin-top:22px}
+.consultation-copy dl{margin:25px 0 26px}
+.consultation-copy dl>div{display:grid;grid-template-columns:125px minmax(0,1fr);gap:18px;padding:14px 0;border-top:1px solid var(--line);font-size:16px;line-height:1.65}
+.consultation-copy dt{font-weight:500}
+.consultation-copy dd{color:var(--muted);margin:0}
+.consultation-copy .line-link{padding-bottom:7px}
+.process-section-new{padding-top:0}
+.consultation-flow{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px;margin:0;padding:0}
+.consultation-flow li{border-top:1px solid #afc0ce;padding-top:23px}
+.consultation-flow li>span{font-size:16px;color:#7990a5;font-variant-numeric:tabular-nums}
+.consultation-flow h3{font-size:22px;line-height:1.45;font-weight:500;margin:18px 0 11px}
+.consultation-flow p{font-size:16px;line-height:1.8;color:var(--muted)}
+.final-consult{padding-block:62px;background:linear-gradient(105deg,#edf4fa,#f5f3f9)}
+.final-consult-layout{display:flex;align-items:center;justify-content:space-between;gap:40px}
+.final-consult .section-kicker{margin-bottom:12px}
+.final-consult h2{font-size:clamp(28px,2.6vw,38px);font-weight:500}
+.final-consult .filled-btn{flex-shrink:0;min-width:174px}
+.lune-editorial .site-footer{padding-inline:var(--pad)}
+.back-to-top{position:fixed;right:24px;bottom:24px;z-index:55;width:44px;height:44px;border-radius:50%;border:1px solid #c6d3df;background:#fff;color:var(--ink);font-size:22px;box-shadow:0 4px 16px #26394909}
+.back-to-top[hidden]{display:none}
+.editorial-motion [data-reveal]{opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s ease}
+.editorial-motion [data-reveal].is-visible,.editorial-motion [data-reveal]:focus-within{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ .lune-editorial *, .lune-editorial *:before,.lune-editorial *:after{transition:none!important;animation:none!important}
+ .editorial-motion [data-reveal]{opacity:1;transform:none}
+}

@@ -1,0 +1,34 @@
+{
+  "id": "cosoom",
+  "number": "PROJECT 06",
+  "browserTitle": "PROJECT 06 | COSOOM TAPE",
+
+  "projectName": "COSOOM TAPE",
+  "title": "COSOOM TAPE<br>WEBSITE",
+
+  "type": "CAFE24 · WEB DESIGN · PUBLISHING",
+
+  "category": [
+    "web",
+    "cafe24",
+    "design",
+    "publishing"
+  ],
+
+  "template": "web-image",
+  "featured": false,
+
+  "link": "https://cosoom.co.kr/",
+
+  "tools": "FIGMA · PHOTOSHOP · HTML · CSS · JAVASCRIPT",
+
+  "thumbnail": "thumbnail.png",
+  "mainImage": "main.png",
+  "imageAlt": "COSOOM TAPE 웹사이트",
+
+  "overviewTitle": "OVERVIEW",
+  "overviewText": "COSOOM TAPE 브랜드의 아이덴티티를 효과적으로 전달하기 위해 제작한 카페24 기반 웹사이트입니다. 제품 컬러와 브랜드 이미지를 중심으로 직관적인 레이아웃과 시각적인 완성도를 고려하여 디자인 및 퍼블리싱을 진행했습니다.",
+
+  "workPointTitle": "WORK POINT",
+  "workPointText": "메인 비주얼과 제품 정보를 균형 있게 배치하여 브랜드의 개성을 강조했으며, 다양한 디바이스에서도 일관된 사용자 경험을 제공할 수 있도록 반응형으로 구현했습니다."
+}

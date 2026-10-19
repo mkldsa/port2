@@ -1,0 +1,9 @@
+/* 01. Local webfonts — offline-ready */
+@font-face{font-family:Pretendard;src:url('../assets/fonts/PretendardVariable.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap}
+@font-face{font-family:Manrope;src:url('../assets/fonts/Manrope-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:Manrope;src:url('../assets/fonts/Manrope-Medium.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:Manrope;src:url('../assets/fonts/Manrope-SemiBold.woff2') format('woff2');font-weight:600;font-display:swap}
+
+/* V5 editorial display fonts */
+@font-face{font-family:'MaruBuri';src:url('../assets/fonts/MaruBuri-Regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Cormorant Garamond';src:url('../assets/fonts/CormorantGaramond-Regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}

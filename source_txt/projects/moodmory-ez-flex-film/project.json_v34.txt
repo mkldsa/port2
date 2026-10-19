@@ -1,0 +1,19 @@
+{
+  "id": "moodmory-ez-flex-film",
+  "number": "PROJECT 05",
+  "browserTitle": "PROJECT 05 | MOODMORY EZ FLEX FILM",
+  "title": "DETAIL PAGE<br>DESIGN",
+  "type": "DETAIL PAGE · GRAPHIC DESIGN",
+  "category": [
+    "DETAIL"
+  ],
+  "link": "",
+  "tools": "FIGMA · PHOTOSHOP · ILLUSTRATOR",
+  "thumbnail": "thumbnail.png",
+  "mainImage": "main.png",
+  "imageAlt": "MOODMORY 이지 플렉스 프로텍션 필름 상세페이지 디자인",
+  "overviewTitle": "OVERVIEW",
+  "overviewText": "MOODMORY 이지 플렉스 프로텍션 필름의 제품 특징과 부착 방법을 효과적으로 전달하기 위해 제작한 상세페이지입니다. 스크래치 방지, 복원력, 부착 편의성 등 핵심 기능을 직관적인 레이아웃으로 구성하여 소비자가 제품의 장점을 쉽게 이해할 수 있도록 디자인했습니다.",
+  "workPointTitle": "WORK POINT",
+  "workPointText": "블랙과 화이트를 중심으로 프리미엄 이미지를 강조했으며, 제품 렌더 이미지와 인포그래픽을 활용해 핵심 기능을 시각적으로 표현했습니다. 부착 가이드를 단계별 이미지로 구성하고 제품 구성품과 성능을 명확하게 구분하여 긴 상세페이지에서도 높은 가독성과 정보 전달력을 확보했습니다."
+}
