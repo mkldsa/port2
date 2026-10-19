@@ -1,21 +1,28 @@
-윤석희 포트폴리오 V35 — 원본 캡처·가든 사이트 링크 반영
+포트폴리오 V36 — 코링클 상세 원본 3종 연결 수정본
 
-V34를 사용 중이라면 portfolio_update_v35.zip의 내용물을 기존 port2 폴더에 덮어씁니다.
-전체 교체본은 portfolio_design_v35.zip입니다. 압축을 완전히 풀고 index.html을 엽니다.
+현재 배포 페이지가 가로 71px짜리 버터김치 축소본을 불러오는 것을 확인했습니다.
+이 수정본은 제공한 ZIP의 가로 860px 원본 JPG 3장을 그대로 포함하고,
+새로운 경로로 연결하여 예전 축소본을 다시 불러오지 않도록 구성했습니다.
+사진을 줄이거나 재압축하지 않았습니다. 페이지의 표시 크기는 기존과 같습니다.
 
-1. 루네 홈페이지 캡처를 전달받은 1920 × 4472px PNG 원본 그대로 반영했습니다.
-   메인 자동 롤링, 작업 목록, 상세 표지와 갤러리가 같은 원본을 사용합니다.
-   별도 축소나 재압축을 하지 않았고 화면에 표시되는 폭과 높이는 V34와 같습니다.
-2. GARDEN 5 LIFE의 사이트 보기 버튼을 아래 주소에 연결했습니다.
-   https://mkldsa.github.io/gardenwww/
-   작업 목록과 상세 상단에서 사이트를 새 창으로 열 수 있습니다.
-3. 이전 캡처가 브라우저에 남지 않도록 새 이미지 파일명과 데이터 버전을 적용했습니다.
-4. 4초 자동 롤링, 인트로, 23개 작업과 projects/작업명/project.json 등록 방식을 유지했습니다.
-   코링클 단품 상세 3종의 860px 원본과 표시 크기도 유지했습니다.
+적용 순서
+1. portfolio_update_v36.zip을 별도 폴더에 완전히 압축 해제합니다.
+2. 압축 안의 index.html, project.html, data, projects 등의 내용물을
+   기존 port2 폴더의 index.html이 있는 위치에 한 번에 복사하고 덮어씁니다.
+   projects와 data 폴더도 반드시 함께 복사합니다.
+3. GitHub Desktop에서 원본 이미지 3장과 JSON 변경이 표시되는지 확인합니다.
+4. Commit 후 Push origin을 누릅니다.
+5. GitHub Pages 반영 후 Ctrl + F5로 새로고침합니다.
 
-덮어쓴 후 GitHub Desktop에서 변경 파일을 Commit하고 Push origin을 누릅니다.
-GitHub Pages 반영 후 Ctrl + F5로 새로고침합니다.
-가든 링크만 별도로 수정할 때는 projects/garden/project.json의 link 값을 변경하면 됩니다.
+세 원본의 새 경로
+projects/kordetail/originals-v36/butter-kimchi.jpg — 860 × 24644px
+projects/kordetail/originals-v36/sweet-bulgogi.jpg — 860 × 25097px
+projects/kordetail/originals-v36/chili-garlic.jpg — 860 × 25122px
 
-디자인 CSS는 기존 v34.css, 반응형 CSS는 v34-responsive.css를 그대로 사용합니다.
-전체 코드 TXT 사본은 source_txt의 _v35.txt 파일입니다.
+배포 후 주소창에서 아래 주소를 직접 열면 선명한 원본이 보여야 합니다.
+https://mkldsa.github.io/port2/projects/kordetail/originals-v36/butter-kimchi.jpg
+
+세 JPG가 각각 약 10~12MB인지 GitHub Desktop에서 확인할 수 있습니다.
+71px 축소본 파일이 남아 있어도 새 상세 본문에서는 사용하지 않습니다.
+이전의 루네 1920px 캡처, 가든 사이트 링크와 4초 롤링도 포함합니다.
+코링클 트리오는 이번에 제공받은 원본 3종에 포함되지 않아 기존 파일을 유지했습니다.

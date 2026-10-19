@@ -177,7 +177,7 @@ window.PORTFOLIO_SNAPSHOT = [
       "role": "상세페이지 디자인",
       "tools": "PHOTOSHOP",
       "thumbnail": "thumbnail.png",
-      "mainImage": "main.jpg",
+      "mainImage": "originals-v36/butter-kimchi.jpg",
       "featured": true,
       "featuredOrder": 4,
       "featureTheme": "kordetail",
@@ -190,21 +190,21 @@ window.PORTFOLIO_SNAPSHOT = [
         {
           "id": "butter",
           "label": "버터향김치",
-          "image": "main.jpg",
+          "image": "originals-v36/butter-kimchi.jpg",
           "width": 860,
           "height": 24644
         },
         {
           "id": "bulgogi",
           "label": "스윗불고기",
-          "image": "sweet-bulgogi.jpg",
+          "image": "originals-v36/sweet-bulgogi.jpg",
           "width": 860,
           "height": 25097
         },
         {
           "id": "chili",
           "label": "청양고추&갈릭",
-          "image": "chili-garlic.jpg",
+          "image": "originals-v36/chili-garlic.jpg",
           "width": 860,
           "height": 25122
         },
