@@ -1,0 +1,18 @@
+{
+  "id": "asknow",
+  "number": "PROJECT 04",
+  "browserTitle": "PROJECT 04 | ASK NOW",
+  "title": "ASK NOW<br>WEB PLATFORM",
+  "type": "WORDPRESS · WEB DESIGN · PUBLISHING",
+  "link": "https://asknow.co.kr/",
+  "tools": "FIGMA · HTML · CSS · JAVASCRIPT",
+  "thumbnail": "thumbnail.png",
+  "mainImage": "main.png",
+  "imageAlt": "ASK NOW 설문조사 플랫폼 웹사이트",
+
+  "overviewTitle": "OVERVIEW",
+  "overviewText": "ASK NOW는 기업과 조직의 의사결정을 지원하는 설문조사 플랫폼 웹사이트입니다. 다양한 설문 서비스와 진행 프로세스를 직관적으로 전달할 수 있도록 정보 구조를 설계했으며, 데이터 중심의 UI와 반응형 레이아웃을 적용하여 사용자 경험을 향상시켰습니다.",
+
+  "workPointTitle": "WORK POINT",
+  "workPointText": "서비스 소개부터 설문 유형, 진행 과정, 문의까지 자연스럽게 이어지는 사용자 흐름을 구축했습니다. 블루와 퍼플 컬러를 중심으로 전문성과 신뢰감을 표현했으며, 다양한 디바이스 환경에서도 일관된 경험을 제공할 수 있도록 반응형으로 구현했습니다."
+}

@@ -1,0 +1,95 @@
+/* =========================================================
+   01. LAPTOP / TABLET — keep the three disciplines together
+   ========================================================= */
+@media(max-width:1200px){.selected-grid{gap:23px}.selected-title h3{font-size:21px}.selected-purpose,.selected-role{font-size:16px}.archive-grid{gap:30px 23px}.work-card h3{font-size:20px}}
+@media(max-width:1024px){.selected-title h3{font-size:20px}.selected-label{gap:10px;font-size:16px}.selected-head h2{font-size:24px}.archive-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.archive-head{margin-top:22px}.work-card h3{font-size:22px}.work-card .ysh-kor-detail img{height:240px}}
+/* =========================================================
+   02. MOBILE — clear project sequence, one card per row
+   ========================================================= */
+@media(max-width:700px){
+ .portal-top{top:20px;left:24px;right:24px}.portal-top .intro-logo{font-size:16px}.portal-top .intro-skip{font-size:16px}.portal-center{width:calc(100% - 40px)}.portal-art{width:171px;height:124px;margin-bottom:10px}#portfolio-v32 .intro .portal-title{font-size:38px;letter-spacing:-1.2px;margin:14px 0 18px}.portal-person{font-size:18px}.portal-sub{max-width:270px;margin-top:12px;font-size:16px}#portfolio-v32 .intro-enter{margin-top:19px;font-size:16px}.portal-foot{bottom:22px;font-size:16px}.portal-glow{width:460px;height:420px}.mo-br{display:block}.selected-work{padding-top:6px;padding-bottom:21px}.selected-head{margin-bottom:19px;gap:20px}.selected-head h2{font-size:24px}.selected-head>a{font-size:16px;white-space:nowrap}.selected-grid{grid-template-columns:1fr;gap:31px}.selected-label{font-size:16px;margin-bottom:10px}.selected-image{aspect-ratio:1.6}.selected-title{margin-top:15px}.selected-title h3{font-size:24px}.selected-purpose{font-size:16px;margin-top:8px}.selected-role{font-size:16px;margin-top:6px}.archive-head{margin-top:23px;padding-top:23px}.archive-head h2{font-size:28px}.archive-grid{grid-template-columns:1fr;gap:30px}.work-card h3{font-size:22px}.work.wrap{padding-bottom:45px}.work-card .archive-image{aspect-ratio:1.6}.work-card .archive-image img{height:100%}.archive-more{margin-top:30px}.work-card .ysh-kor-detail img{height:235px}
+}
+@media(max-width:380px){.portal-top .intro-logo span{display:none}#portfolio-v32 .intro .portal-title{font-size:34px}.portal-art{width:150px;height:110px}.selected-head h2{font-size:22px}.selected-head>a{font-size:16px}.selected-title h3{font-size:23px}}
+@media(max-height:650px){.portal-art{width:148px;height:108px;margin-bottom:7px}#portfolio-v32 .intro .portal-title{font-size:38px;margin:12px 0 15px}.portal-sub{margin-top:10px}#portfolio-v32 .intro-enter{margin-top:15px}.portal-foot{display:none}}
+@media(max-height:460px){.portal-art{width:103px;height:75px}.portal-center{padding-top:15px}#portfolio-v32 .intro .portal-title{font-size:31px;margin:9px 0 12px}.portal-kicker{font-size:16px}.portal-sub{margin-top:7px}#portfolio-v32 .intro-enter{margin-top:11px;padding:7px 0}.portal-top .intro-logo{display:none}}
+
+/* =========================================================
+   04. INTRO — focal SH at every viewport size
+   ========================================================= */
+@media(max-width:1024px){.portal-art{width:300px;height:223px}}
+@media(max-width:700px){.portal-art{width:260px;height:193px;margin-bottom:17px}#portfolio-v32 .intro .portal-title{font-size:28px;letter-spacing:-.8px;margin:12px 0 17px}.portal-center{width:calc(100% - 40px)}.portal-kicker{font-size:16px}.portal-glow{width:480px;height:450px}.identity-panel{padding-right:0}}
+@media(max-width:380px){.portal-art{width:230px;height:171px}#portfolio-v32 .intro .portal-title{font-size:26px}}
+@media(max-height:700px){.portal-art{width:245px;height:182px;margin-bottom:13px}#portfolio-v32 .intro .portal-title{font-size:30px;margin:11px 0 16px}.portal-foot{display:none}}
+@media(max-height:560px){.portal-art{width:180px;height:134px;margin-bottom:8px}#portfolio-v32 .intro .portal-title{font-size:27px;margin:9px 0 12px}.portal-sub{margin-top:8px}#portfolio-v32 .intro-enter{margin-top:15px}}
+@media(max-height:460px){.portal-art{width:125px;height:93px;margin-bottom:5px}#portfolio-v32 .intro .portal-title{font-size:25px;margin:7px 0 10px}.portal-center{padding-top:15px}.portal-sub{margin-top:7px}#portfolio-v32 .intro-enter{margin-top:10px;padding:7px 0}.portal-top .intro-logo{display:none}}
+
+/* =========================================================
+   06. CONTACT — consistent gaps and wrapping for narrow viewports
+   ========================================================= */
+@media(max-width:1200px){.profile-page.wrap,.footer.wrap{padding-left:40px;padding-right:40px}.about-subpage .profile-contact{grid-template-columns:150px minmax(0,1fr);gap:32px}.contact-links{column-gap:28px}}
+@media(max-width:1024px){.about-subpage .profile-contact{grid-template-columns:1fr;gap:24px}.about-subpage .profile-contact h2{margin-top:10px}}
+@media(max-width:700px){.profile-page.wrap,.footer.wrap{padding-left:24px;padding-right:24px}.about-subpage .profile-page{padding-bottom:24px}.about-subpage .footer{padding-top:0}.about-subpage .profile-contact{margin-top:40px;padding-top:28px;gap:24px}.about-subpage .profile-contact h2{font-size:26px}.contact-links{gap:0 24px}.contact-value{font-size:16px;gap:9px}.contact-value>span{font-size:16px}.about-subpage .profile-contact .contact-item{padding-bottom:18px}.about-subpage .profile-contact .contact-item:nth-child(n+3){padding-top:18px}.footer-contact{gap:12px 24px}}
+@media(max-width:520px){.contact-links{grid-template-columns:1fr}.about-subpage .profile-contact .contact-item{padding:16px 0}.about-subpage .profile-contact .contact-item:first-child{padding-top:0}.about-subpage .profile-contact .contact-item:nth-child(n+3){padding-top:16px}}
+@media(max-width:380px){.profile-page.wrap,.footer.wrap{padding-left:20px;padding-right:20px}}
+
+/* =========================================================
+   07. SHARED FRAME — consistent edges and 16px reading text
+   ========================================================= */
+@media(max-width:1200px){
+ .header.wrap,.studio-heading.wrap,.work-showcase.wrap,.studio-scope.wrap,.work.wrap,.footer.wrap{padding-left:40px;padding-right:40px}
+ .studio-person h1{font-size:35px}.studio-person{gap:20px}.studio-note{gap:24px}.studio-note>a{gap:16px}
+ .showcase-bottom{gap:22px}.showcase-switches{gap:16px}.showcase-selector>img{width:48px;height:36px}.showcase-selector{gap:9px}.showcase-controls{gap:9px}
+ .caption-project{column-gap:20px}.caption-project h3{font-size:28px}.studio-scope{flex-wrap:wrap;gap:5px 24px}
+}
+@media(max-width:1024px){
+ .studio-note>p{display:none}.studio-heading{padding-top:12px;padding-bottom:24px}
+ .showcase-bottom{flex-wrap:wrap;gap:16px}.showcase-switches{flex-basis:100%}.showcase-controls{margin-left:auto}
+ .layout-gallery .showcase-bottom{flex-direction:row}.layout-gallery .showcase-switches{max-width:none}
+ .caption-project{display:block}.caption-role{display:block;margin-top:4px}.showcase-caption{padding:17px 0 19px}.caption-open{gap:24px}
+ .showcase-stage{--stage-height:clamp(360px,47vh,490px)}.layout-gallery .showcase-stage{--stage-height:clamp(390px,49vh,520px)}
+ .promotion-wall{gap:18px;width:91%}.promotion-wall figure{padding:8px 8px 0}.promotion-wall figcaption{padding:10px 0;font-size:16px}
+ .detail-wall{gap:24px}.detail-references{gap:9px}.detail-references img{width:calc((100% - 27px)/4);border-width:3px}
+ .studio-scope{padding-top:21px;padding-bottom:18px}.studio-scope p>span{margin-right:12px}
+ .detail-action-row{gap:10px 24px}.detail-page .detail-cover{max-height:500px}
+}
+/* =========================================================
+   08. MOBILE — frontal visuals and compact, legible selectors
+   ========================================================= */
+@media(max-width:700px){
+ .header.wrap,.studio-heading.wrap,.work-showcase.wrap,.studio-scope.wrap,.work.wrap,.footer.wrap{padding-left:24px;padding-right:24px}
+ .header{height:70px}.header .logo{font-size:18px}.nav{gap:18px;font-size:16px}.nav button{font-size:16px}
+ .studio-heading{align-items:flex-start;gap:16px;padding-top:14px;padding-bottom:24px}.studio-person{gap:16px;align-items:center}.studio-person>img{width:48px;height:67px}.studio-person>div>p{font-size:16px;letter-spacing:.2px;line-height:1.4}.studio-person h1{font-size:29px;letter-spacing:-1px;line-height:1.3;margin-top:6px}.studio-note{display:none}
+ .showcase-heading{margin-bottom:10px;gap:12px}.showcase-heading h2{font-size:17px;gap:10px}.showcase-heading h2>span{font-size:16px}.showcase-heading>a{font-size:16px;gap:8px}
+ .showcase-stage{--stage-height:clamp(240px,66vw,350px)}.preview-wall,.visual-generic{display:block;width:94%;max-width:none;padding:14px 0}.poster-stack,.preview-products{display:none}.preview-chrome{height:23px;padding:0 9px;gap:4px}.preview-chrome>i{width:4px;height:4px}.preview-chrome>span{font-size:9px;letter-spacing:.8px}.website-preview{border-radius:6px;box-shadow:0 14px 28px #667ba51a}
+ .promotion-wall{width:96%;gap:9px}.promotion-wall figure{padding:4px 4px 0;border-radius:3px}.promotion-wall img{aspect-ratio:.86}.promotion-wall figcaption{font-size:16px;letter-spacing:0;padding:9px 0}.promotion-wall figure:nth-child(2){transform:translateY(-7px)}
+ .detail-wall{display:block;width:93%;height:90%}.detail-references{display:none}.detail-products img{height:95%}.detail-products{height:100%}
+ .showcase-caption{align-items:flex-end;gap:14px;padding:15px 0 18px;min-height:0}.caption-project>p{font-size:16px;gap:12px;margin-bottom:4px;flex-wrap:wrap}.caption-project h3{font-size:26px;letter-spacing:-.6px;line-height:1.4}.caption-role{font-size:16px;line-height:1.7;margin-top:5px}.caption-open{gap:12px;padding:7px 0;font-size:16px}.caption-open>span{font-size:19px}
+ .showcase-bottom{padding-top:16px;gap:16px}.showcase-switches{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 20px}.showcase-selector{gap:10px;padding-bottom:10px}.showcase-selector>img{width:46px;height:38px}.showcase-selector strong{font-size:16px}.showcase-selector small{font-size:16px}.showcase-selector>span{gap:1px}.showcase-controls{gap:13px}.showcase-controls>button{width:36px;height:36px}.showcase-controls>.showcase-play{width:auto;margin-left:8px}
+ .studio-scope{display:block;padding-top:25px;padding-bottom:16px}.studio-scope p{font-size:16px;line-height:1.85}.studio-scope p+p{margin-top:7px}.studio-scope p>span{display:block;margin:0;line-height:1.7;font-size:16px}.archive-head{margin-top:18px;padding-top:24px}.archive-head h2{font-size:28px}.archive-head>p{font-size:16px}.work.wrap{padding-bottom:45px}.archive-head .eyebrow{font-size:16px}.work-card h3{font-size:22px}.archive-result{font-size:16px}
+ .layout-gallery .studio-heading{padding-bottom:24px}.layout-gallery .showcase-stage{--stage-height:clamp(270px,74vw,390px)}.layout-gallery .showcase-slide{width:79%;height:80%}.layout-gallery .showcase-slide[data-slot=previous]{left:-6%}.layout-gallery .showcase-slide[data-slot=next]{left:106%}.layout-gallery .showcase-art{border-width:5px;border-radius:6px}.layout-gallery .preview-wall{width:96%;padding:0}.layout-gallery .promotion-wall{width:96%;gap:5px}.layout-gallery .promotion-wall figure{padding:3px 3px 0}.layout-gallery .promotion-wall img{aspect-ratio:.87}.layout-gallery .promotion-wall figcaption{font-size:16px;padding:7px 0;letter-spacing:-.7px}.layout-gallery .detail-wall{height:96%}.layout-gallery .showcase-switches{grid-template-columns:repeat(2,minmax(0,1fr))}.layout-gallery .showcase-selector>span{gap:10px}.layout-gallery .showcase-selector{padding-top:2px;padding-bottom:11px}
+ .variant-reader{margin-top:30px;padding-top:24px}.variant-reader h2{font-size:23px}.variant-tabs{gap:8px}.variant-tabs button{font-size:16px;padding:8px 12px}.variant-panel{padding:18px 14px}.variant-caption{font-size:16px;gap:10px}.detail-action-row{gap:8px 20px}.detail-action-row>a{gap:20px}.detail-gallery figure{margin-top:23px}.detail-page .detail-cover{max-height:400px}.detail-gallery figcaption{font-size:16px}
+ .arrival-skip{right:24px;top:20px}.portal-center{padding-top:0}
+}
+@media(max-width:460px){
+ .showcase-caption{display:block}.caption-open{margin-top:10px;gap:32px}.caption-project h3{font-size:25px}.studio-person h1{font-size:27px}.studio-person{gap:13px}.studio-person>div>p{max-width:240px;letter-spacing:0}
+ .layout-gallery .promotion-wall figcaption{font-size:16px;letter-spacing:-1px}.layout-gallery .promotion-wall figure:first-child{display:none}.layout-gallery .promotion-wall{grid-template-columns:repeat(2,minmax(0,1fr));width:88%;gap:9px}.layout-gallery .promotion-wall img{aspect-ratio:1}.layout-gallery .promotion-wall figure:nth-child(2){transform:none}
+}
+@media(max-width:380px){
+ .header.wrap,.studio-heading.wrap,.work-showcase.wrap,.studio-scope.wrap,.work.wrap,.footer.wrap{padding-left:20px;padding-right:20px}.header .logo{font-size:17px}.header .logo>span{display:none}.nav{gap:18px}.studio-person h1{font-size:26px}.studio-person>img{width:43px;height:60px}.studio-person{gap:12px}.showcase-heading h2>span{display:none}.showcase-selector>img{width:37px;height:35px}.showcase-switches{column-gap:15px}.showcase-selector{gap:8px}.caption-project h3{font-size:24px}.promotion-wall{gap:6px}.promotion-wall figure{padding:3px 3px 0}.promotion-wall figcaption{letter-spacing:-.8px}
+}
+/* Short landscape screens retain the centered intro, with no clipped controls. */
+@media(max-height:460px){.portal-center{padding-top:12px}.portal-top{top:13px}.portal-art{margin-bottom:5px}.portal-kicker{font-size:16px}.portal-person{font-size:16px}.portal-person span{font-size:16px}.portal-sub{margin-top:5px}.portal-foot{display:none}.arrival-skip{top:13px}}
+
+/* =========================================================
+   09. V29 — connected introduction, simple text tabs, original hero trio
+   ========================================================= */
+@media(max-width:1200px){.showcase-introduction{gap:25px;padding-top:18px}.studio-identity h1{font-size:35px}.studio-description{max-width:650px;gap:4px 17px}.showcase-switches,.layout-gallery .showcase-switches{gap:18px}.showcase-bottom{gap:22px}.showcase-controls .showcase-timeline{width:42px}.featured-hero-trio{gap:17px}}
+@media(max-width:1024px){.showcase-introduction{align-items:flex-end;gap:25px}.studio-description{max-width:530px}.showcase-introduction .studio-person{gap:19px}.showcase-introduction .studio-person>img{width:58px;height:81px}.studio-identity h1{font-size:33px}.showcase-stage{--stage-height:clamp(360px,47vh,490px)}.layout-gallery .showcase-stage{--stage-height:clamp(390px,49vh,520px)}.showcase-bottom,.layout-gallery .showcase-bottom{flex-wrap:wrap;gap:8px}.showcase-switches,.layout-gallery .showcase-switches{flex-basis:100%;gap:20px}.showcase-selector[aria-pressed=true]:after{bottom:0}.showcase-controls{margin-left:auto}.archive-hero-trio figcaption{padding:8px 2px}.project-hero-previews{padding:24px 6%}}
+@media(max-width:700px){.showcase-introduction{display:block;padding-top:15px;padding-bottom:14px}.showcase-introduction .studio-person{align-items:flex-start;gap:15px}.showcase-introduction .studio-person>img{width:49px;height:69px;margin-top:4px}.studio-kicker{font-size:16px;letter-spacing:0}.studio-identity h1{font-size:28px;letter-spacing:-.9px;margin-top:5px}.studio-description{margin-top:11px;gap:6px;display:block}.studio-description>p{font-size:16px;line-height:1.8}.studio-description>a{font-size:16px;line-height:1.6;margin-top:6px;gap:15px}.showcase-introduction .showcase-heading{display:flex;align-items:center;justify-content:space-between;text-align:left;gap:15px;margin-top:23px}.showcase-heading h2{font-size:16px;line-height:1.5}.showcase-heading>a{margin:0;font-size:16px}.showcase-stage{--stage-height:clamp(250px,70vw,355px)}.layout-gallery .showcase-stage{--stage-height:clamp(275px,76vw,390px)}.visual-korweb{width:94%;padding:14px 0}.featured-hero-trio{width:min(95%,calc((var(--stage-height) - 45px)*var(--hero-wall-ratio,1.6)));gap:9px}.hero-card{border-radius:3px}.hero-card figcaption{font-size:16px;padding:7px 3px;letter-spacing:-.6px}.layout-gallery .featured-hero-trio{width:min(94%,calc((var(--stage-height)*.8 - 45px)*var(--hero-wall-ratio,1.6)));gap:6px}.layout-gallery .hero-card figcaption{letter-spacing:-.8px;padding:6px 2px}.showcase-caption{padding:16px 0 12px;align-items:flex-end}.caption-project h3{font-size:26px;line-height:1.4}.caption-project>p{font-size:16px;margin-bottom:4px}.caption-role{margin-top:5px;font-size:16px;line-height:1.7}.caption-open{gap:19px}.showcase-bottom,.layout-gallery .showcase-bottom{padding:0 0 16px;gap:9px}.showcase-switches,.layout-gallery .showcase-switches{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 20px}.showcase-selector,.layout-gallery .showcase-selector{padding:10px 0;font-size:16px;line-height:1.5}.showcase-selector[aria-pressed=true]:after{bottom:2px;right:auto;width:30px;height:2px}.showcase-controls{gap:12px;margin-top:5px}.showcase-controls .showcase-timeline{width:48px}.archive-head{margin-top:29px;padding-top:10px}.work-card .archive-hero-previews{padding:10px}.archive-hero-trio{gap:7px}.archive-hero-trio figcaption{font-size:16px;line-height:1.4;padding:6px 2px}.project-hero-previews{padding:18px 12px}.project-hero-previews .hero-trio{gap:9px}.project-hero-previews .hero-card figcaption{font-size:16px;padding:8px 2px}}
+@media(max-width:460px){.showcase-caption{display:block}.caption-open{margin-top:10px}.showcase-introduction .studio-person>img{width:46px;height:65px}.studio-identity h1{font-size:27px}.featured-hero-trio{gap:7px}.hero-card figcaption{font-size:16px;line-height:1.35;letter-spacing:-.9px}.layout-gallery .hero-card figcaption{font-size:16px}.archive-hero-trio{gap:5px}.work-card .archive-hero-previews{padding:8px}}
+@media(max-width:380px){.studio-identity h1{font-size:25px}.showcase-introduction .studio-person{gap:12px}.showcase-introduction .studio-person>img{width:42px;height:59px}.showcase-controls{gap:10px}.showcase-controls .showcase-timeline{width:37px}.showcase-switches,.layout-gallery .showcase-switches{column-gap:16px}}
+
+/* =========================================================
+   10. V32 — image-form detail posters keep their complete hero compositions
+   ========================================================= */
+@media(max-width:700px){.featured-hero-trio{width:min(95%,calc((var(--stage-height) - 58px)*1.5))}.layout-gallery .featured-hero-trio{width:min(94%,calc((var(--stage-height)*.8 - 64px)*1.5))}}

@@ -1,0 +1,3 @@
+MaruBuri by NAVER.
+Official source and usage information: https://hangeul.naver.com/font
+Downloaded font source: https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Regular.woff2

@@ -1,0 +1,52 @@
+{
+  "overviewTitle": "OVERVIEW",
+  "workPointTitle": "WORK POINT",
+  "contribution": [
+    {
+      "label": "디자인",
+      "value": ""
+    },
+    {
+      "label": "퍼블리싱",
+      "value": ""
+    }
+  ],
+  "id": "lune",
+  "projectName": "LUNE 성형외과",
+  "title": "LUNE 성형외과",
+  "type": "WEB DESIGN · PUBLISHING",
+  "category": [
+    "web"
+  ],
+  "role": "웹디자인 · 퍼블리싱",
+  "tools": "FIGMA · PHOTOSHOP · HTML · CSS · JAVASCRIPT",
+  "thumbnail": "thumbnail.png",
+  "mainImage": "site/assets/images/campaign-v15-hero.png",
+  "link": "site/index.html",
+  "demoLabel": "사이트 실행",
+  "projectKind": "가상 브랜드 · 개인 프로젝트",
+  "featured": true,
+  "featuredOrder": 1,
+  "featureTheme": "lune",
+  "featureKicker": "CLINIC WEBSITE",
+  "featureDescription": "화사한 브랜드 비주얼과 이벤트 탐색을 연결한 성형외과 웹사이트.",
+  "overviewText": "가상 성형외과 브랜드 LUNE의 홈페이지와 이벤트 페이지를 제작한 개인 프로젝트입니다. 화이트와 라일락 톤, 모델 연출 이미지, 읽기 쉬운 정보 구조를 하나의 흐름으로 구성했습니다.",
+  "workPointText": "메인 비주얼과 시즌 이벤트, 코·눈·리프팅 안내를 일반 스크롤로 연결했습니다. 메뉴·상담 모달·스크롤 연출과 모바일 화면을 구현했습니다.",
+  "images": [
+    "site/assets/images/campaign-v15-hero.png",
+    "site/assets/images/campaign-v15-nose.png",
+    "site/assets/images/campaign-v15-eyes.png"
+  ],
+  "relatedLinks": [
+    {
+      "label": "전체 이벤트",
+      "url": "site/events.html"
+    },
+    {
+      "label": "코성형 상세",
+      "url": "site/detail-rhinoplasty.html"
+    }
+  ],
+  "imageAlt": "LUNE 성형외과 캠페인 비주얼",
+  "status": "가상 브랜드를 위한 개인 포트폴리오 작업입니다."
+}

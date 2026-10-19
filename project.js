@@ -1,0 +1,29 @@
+/* =========================================================
+   01. PROJECT VIEW — original JSON fields, galleries and working-site links
+   ========================================================= */
+(() => {
+ if(!window.Portfolio)return;const {projects,esc,url,visual}=window.Portfolio,root=document.getElementById('project-detail');if(!root)return;
+ const id=new URLSearchParams(location.search).get('id');let signature='';
+ function render(){
+  const index=projects.findIndex(p=>String(p.id)===String(id)),p=projects[index];
+  if(!p){root.innerHTML='<section class="detail-not-found"><p class="eyebrow">PROJECT</p><h1>작업을 찾을 수 없습니다.</h1><a href="index.html#ysh-works">전체 작업 보기 ↗</a></section>';return;}
+  const nextSignature=JSON.stringify(p);if(nextSignature===signature)return;signature=nextSignature;
+  document.title=p.title+' — 윤석희';root.classList.toggle('is-narrow-project',p.layout==='narrow');
+  const prev=projects[(index-1+projects.length)%projects.length],next=projects[(index+1)%projects.length],contributions=p.contribution||[],tools=p.keyWorks||[],images=p.images||[],variants=p.variants||[];
+  const safeLink=v=>{const s=url(v);return s&&!/^(?:javascript|data|vbscript):/i.test(s)?s:'';};
+  const links=[...(p.externalLink?[{label:p.demoLabel||'사이트 보기',url:p.externalLink}]:[]),...(p.relatedLinks||[])].filter(v=>safeLink(v.url));
+  const cover=p.heroImages?.length?`<div class="project-hero-previews">${visual(p)}</div>`:`<img class="detail-cover" src="${esc(url(p.cover||p.thumbnail))}" alt="${esc(p.imageAlt||p.title)} 대표 이미지" decoding="async">`;
+  root.innerHTML=`<a class="detail-back" href="index.html#ysh-works">← 전체 작업</a><section class="detail-hero"><p class="eyebrow">${esc(p.categoryLabel)} / ${String(index+1).padStart(2,'0')}</p><h1>${esc(p.title)}</h1>${p.projectKind?`<p class="detail-kind">${esc(p.projectKind)}</p>`:''}<div class="detail-meta">${[['TYPE',p.type],['ROLE',p.role],['TOOLS',p.tools]].filter(([,v])=>v).map(([k,v])=>`<div><span>${k}</span><p>${esc(v)}</p></div>`).join('')}</div></section>
+  ${links.length?`<div class="detail-action-row">${links.map(l=>`<a href="${esc(safeLink(l.url))}" target="_blank" rel="noopener noreferrer">${esc(l.label)} <span aria-hidden="true">↗</span></a>`).join('')}</div>`:''}${cover}
+  ${p.status?`<p class="detail-status">${esc(p.status)}</p>`:''}
+  <section class="detail-overview"><h2>${esc(p.overviewTitle||'OVERVIEW')}</h2><p>${esc(p.description)}</p></section>
+  ${contributions.length?`<section class="detail-contribution"><div><h2>담당 범위</h2>${p.contributionNote?`<p>${esc(p.contributionNote)}</p>`:''}</div><div class="detail-role-list">${contributions.map((c,i)=>`<div><span>${String(i+1).padStart(2,'0')}</span><strong>${esc(c.label)}</strong>${c.value?`<b>${esc(c.value)}</b>`:''}</div>`).join('')}</div></section>`:''}
+  ${p.workPoint||tools.length?`<section class="detail-insights">${p.workPoint?`<article><p class="eyebrow">WORK POINT</p><h2>${esc(p.workPointTitle||'WORK POINT')}</h2><p>${esc(p.workPoint)}</p></article>`:''}${tools.length?`<article><p class="eyebrow">TOOLS & WORKFLOW</p><h2>사용 도구</h2><div class="detail-tools">${tools.map(t=>`<span>${esc(t)}</span>`).join('')}</div></article>`:''}</section>`:''}
+  ${variants.length?`<section class="variant-reader" aria-labelledby="variant-heading"><h2 id="variant-heading">제품 상세 4종</h2><div class="variant-tabs" role="group" aria-label="제품 선택">${variants.map((v,i)=>`<button type="button" data-variant="${i}" aria-pressed="${i===0}" aria-controls="variant-panel-${i}">${esc(v.label)}</button>`).join('')}</div>${variants.map((v,i)=>`<div class="variant-panel" id="variant-panel-${i}" ${i?'hidden':''}><div class="variant-caption"><span>${esc(v.label)}</span><a href="${esc(url(v.image))}" target="_blank" rel="noopener noreferrer">등록 이미지 보기 ↗</a></div><figure><img src="${esc(url(v.image))}" alt="${esc(v.label)} 제품 상세페이지" decoding="async"></figure></div>`).join('')}${p.qualityNote?`<p class="variant-note">${esc(p.qualityNote)}</p>`:''}</section>`:''}
+  ${images.length?`<section class="detail-gallery" aria-label="프로젝트 상세 이미지">${images.map((src,i)=>`<figure><img src="${esc(url(src))}" alt="${esc((p.imageLabels||[])[i]||p.imageAlt||p.title)} ${i+1}" loading="lazy" decoding="async"><figcaption><span>${esc((p.imageLabels||[])[i]||'PROJECT VIEW')}</span><span>${String(i+1).padStart(2,'0')} / ${String(images.length).padStart(2,'0')}</span><a href="${esc(url((p.originalImages||[])[i]||src))}" target="_blank" rel="noopener noreferrer">원본 보기 ↗</a></figcaption></figure>`).join('')}</section>`:''}
+  <nav class="detail-project-nav" aria-label="다른 작업 보기"><a href="project.html?id=${encodeURIComponent(prev.id)}"><span>← 이전 작업</span><strong>${esc(prev.title)}</strong></a><a class="detail-all" href="index.html#ysh-works">전체 작업</a><a href="project.html?id=${encodeURIComponent(next.id)}"><span>다음 작업 →</span><strong>${esc(next.title)}</strong></a></nav>`;
+  root.querySelectorAll('[data-variant]').forEach(button=>button.addEventListener('click',()=>{const selected=Number(button.dataset.variant);root.querySelectorAll('[data-variant]').forEach((b,i)=>b.setAttribute('aria-pressed',String(i===selected)));root.querySelectorAll('.variant-panel').forEach((panel,i)=>{panel.hidden=i!==selected;});}));
+  if(variants.length){const first=root.querySelector('.variant-panel img'),note=root.querySelector('.variant-note');const check=()=>{if(note&&first.naturalWidth>=400)note.hidden=true;};first.addEventListener('load',check);if(first.complete)check();}
+ }
+ render();Portfolio.ready.then(render);
+})();

@@ -1,0 +1,21 @@
+{
+  "id": "oh-my-body-bar",
+  "number": "PROJECT 02",
+  "browserTitle": "PROJECT 02 | OH MY BODY BAR",
+  "title": "DETAIL PAGE<br>DESIGN",
+  "type": "DETAIL PAGE · GRAPHIC DESIGN",
+   "category": [
+    "DETAIL"
+  ],
+  "link": "",
+  "tools": "FIGMA · PHOTOSHOP · ILLUSTRATOR",
+  "thumbnail": "thumbnail.png",
+  "mainImage": "main.png",
+  "imageAlt": "위시포뮬라 오마이바디바 제품 상세페이지 디자인",
+  "overviewTitle": "OVERVIEW",
+  "overviewText": "위시포뮬라 오마이바디바의 제품 특징과 섭취 장점을 효과적으로 전달하기 위해 제작한 바디워시 상세페이지입니다. 제품의 주요 효능과 성능, 사용 방법을 소비자가 쉽게 이해할 수 있도록 시각적으로 구성했습니다.",
+  "workPointTitle": "WORK POINT",
+  "workPointText": "화이트와 블루 컬러를 중심으로 깨끗하고 건강한 브랜드 이미지를 표현했으며, 제품별 컬러를 활용해 특징을 직관적으로 구분했습니다. 제품 연출 이미지와 핵심 정보를 섹션별로 배치하여 긴 상세페이지에서도 자연스럽게 내용을 확인할 수 있도록 디자인했습니다."
+}
+
+

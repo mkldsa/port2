@@ -1,0 +1,19 @@
+{
+  "id": "holiday-sale",
+  "category": ["promotion"],
+  "number": "PROMOTION 03",
+  "browserTitle": "PROMOTION 03 | HOLIDAY SALE",
+  "title": "HAPPY<br>HOLIDAY SALE",
+  "type": "PROMOTION · MOBILE EVENT DESIGN",
+  "link": "",
+  "tools": "PHOTOSHOP · ILLUSTRATOR",
+  "thumbnail": "thumbnail.png",
+  "mainImage": "main.png",
+  "imageAlt": "홀리데이 세일 프로모션",
+
+  "overviewTitle": "OVERVIEW",
+  "overviewText": "DoubleHeart 연말 시즌 프로모션을 위해 제작한 모바일 이벤트 페이지입니다. 크리스마스와 연말 분위기를 반영한 비주얼을 중심으로 쿠폰팩, 특별 사은품, 세트상품 할인, 시즌 특가를 하나의 페이지에서 자연스럽게 확인할 수 있도록 구성했습니다.",
+
+  "workPointTitle": "WORK POINT",
+  "workPointText": "레드와 그린 컬러를 활용한 시즌 콘셉트와 직관적인 정보 구성을 통해 이벤트 참여를 유도했습니다. 쿠폰, 사은품, 특별 세트, 할인 상품을 단계별로 배치하여 사용자가 혜택을 빠르게 이해하고 구매까지 이어질 수 있도록 모바일 환경에 최적화하여 디자인했습니다."
+}

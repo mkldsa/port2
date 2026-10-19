@@ -1,0 +1,120 @@
+/* V15 MO — normal vertical scrolling at every screen size. */
+@media(max-width:1200px){
+ .hero-layout{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);column-gap:46px}
+ .campaign-copy h1{font-size:clamp(40px,4.3vw,54px)}
+ .campaign-description{font-size:17px}
+ .campaign-actions{gap:21px}
+ .beauty-stories{gap:28px}
+ .beauty-story:nth-child(2){margin-top:45px}
+ .consultation-layout{gap:46px}
+ .consultation-copy dl>div{grid-template-columns:108px minmax(0,1fr);gap:12px}
+}
+@media(max-width:1100px){
+ .lune-editorial{--pad:32px}
+ .lune-editorial main{padding-top:80px}
+ .lune-editorial .site-header{height:80px}
+ .lune-editorial .desktop-nav{gap:28px}
+ .editorial-section{padding-block:80px}
+ .hero-layout{column-gap:32px}
+ .campaign-hero{padding-top:24px}
+ .campaign-copy h1{font-size:44px}
+ .campaign-copy .section-kicker{margin-bottom:20px;letter-spacing:.01em}
+ .campaign-description{font-size:16px;margin-top:22px}
+ .campaign-actions{gap:17px;margin-top:26px}
+ .campaign-actions .filled-btn{padding:13px 18px;gap:20px}
+ .hero-caption{padding-block:22px}
+ .editorial-heading{margin-bottom:34px}
+ .lune-editorial .event-grid{gap:22px}
+ .lune-editorial .event-card-meta h3{font-size:18px}
+ .beauty-story h3{font-size:27px}
+ .beauty-story-copy{padding-top:21px}
+ .beauty-stories{gap:25px}
+ .consultation-layout{gap:34px;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+ .consultation-copy h2{font-size:34px}
+ .consultation-intro br{display:none}
+ .consultation-copy dl>div{grid-template-columns:1fr;gap:3px;padding-block:12px}
+ .consultation-flow{gap:25px}
+ .process-section-new{padding-top:0}
+}
+@media(max-width:900px){
+ .lune-editorial .site-header{grid-template-columns:1fr auto}
+ .campaign-copy h1{font-size:40px}
+ .campaign-actions{gap:12px}
+ .campaign-actions .filled-btn{padding-inline:16px;gap:15px}
+ .quiet-link{gap:10px}
+ .hero-caption p{letter-spacing:0}
+ .lune-editorial h2{font-size:34px}
+ .section-note{max-width:210px}
+ .lune-editorial .event-grid{gap:18px}
+ .lune-editorial .event-card-meta h3{font-size:17px}
+ .beauty-stories{gap:22px}
+ .beauty-story:nth-child(2){margin-top:32px}
+ .beauty-story h3{font-size:25px}
+ .beauty-story h3>span{font-size:21px}
+ .story-description br{display:none}
+ .consultation-layout{grid-template-columns:1fr;gap:35px;max-width:720px}
+ .consultation-copy{max-width:none}
+ .consultation-copy dl>div{grid-template-columns:132px minmax(0,1fr);gap:20px;padding-block:15px}
+ .consultation-flow{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px}
+ .final-consult h2{font-size:30px}
+}
+@media(max-width:720px){
+ .lune-editorial{--pad:24px}
+ .lune-editorial main{padding-top:78px}
+ .lune-editorial .site-header{height:78px}
+ .lune-editorial .header-actions{gap:0}
+ .campaign-hero{padding-top:18px;padding-bottom:45px}
+ .hero-layout{display:flex;flex-direction:column;align-items:stretch;gap:27px;max-width:626px}
+ .campaign-photo{order:-1;justify-self:auto;max-width:626px}
+ .campaign-copy{padding:0;max-width:100%}
+ .campaign-copy .section-kicker{margin-bottom:12px;font-size:16px;letter-spacing:.025em}
+ .campaign-copy h1{font-size:clamp(36px,8vw,44px);line-height:1.2}
+ .campaign-description{font-size:16px;margin-top:17px;line-height:1.7}
+ .campaign-actions{gap:24px;margin-top:23px}
+ .campaign-actions .filled-btn{padding:13px 20px;min-height:50px;gap:28px}
+ .hero-caption{display:none}
+ .editorial-section{padding-block:62px}
+ .editorial-heading{align-items:flex-start;flex-wrap:wrap;gap:24px;margin-bottom:30px}
+ .section-kicker{margin-bottom:13px}
+ .lune-editorial h2{font-size:32px}
+ .section-note{padding:0;max-width:none}
+ .editorial-heading>.line-link{margin-top:0;gap:20px}
+ .lune-editorial .event-grid{grid-template-columns:1fr;max-width:480px;gap:32px;margin-inline:auto}
+ .lune-editorial .event-card-meta{padding-block:18px 15px}
+ .lune-editorial .event-card-meta h3{font-size:20px}
+ .beauty-stories{grid-template-columns:1fr;gap:42px;max-width:420px;margin-inline:auto}
+ .beauty-story:nth-child(2){margin-top:0}
+ .beauty-story figure img{aspect-ratio:2/3;object-fit:contain}
+ .beauty-story-copy{padding-top:20px}
+ .story-category{margin-bottom:10px}
+ .beauty-story h3{font-size:29px}
+ .story-description{margin-top:13px}
+ .story-description br{display:none}
+ .story-link{margin-top:12px;gap:25px}
+ .consultation-layout{gap:28px}
+ .consultation-copy h2{font-size:32px}
+ .consultation-intro{margin-top:20px;font-size:16px}
+ .consultation-copy dl{margin-block:22px}
+ .consultation-copy dl>div{grid-template-columns:1fr;gap:4px;padding-block:15px}
+ .consultation-flow{gap:30px 24px}
+ .consultation-flow li{padding-top:19px}
+ .consultation-flow h3{font-size:20px;margin:14px 0 9px}
+ .consultation-flow p{line-height:1.7}
+ .process-section-new{padding-top:0}
+ .final-consult{padding-block:48px}
+ .final-consult-layout{align-items:flex-start;flex-direction:column;gap:25px}
+ .final-consult h2{font-size:30px;line-height:1.4}
+ .mo-only{display:block}
+ .lune-editorial .site-footer{padding-block:36px}
+ .lune-editorial .mobile-panel{padding-top:114px}
+ .back-to-top{right:16px;bottom:max(16px,env(safe-area-inset-bottom))}
+}
+@media(max-width:370px){
+ .lune-editorial{--pad:20px}
+ .campaign-copy h1{font-size:35px}
+ .campaign-actions{gap:18px}
+ .campaign-actions .filled-btn{padding-inline:16px;gap:20px}
+ .lune-editorial h2{font-size:30px}
+ .consultation-flow{grid-template-columns:1fr;gap:28px}
+ .final-consult h2{font-size:28px}
+}

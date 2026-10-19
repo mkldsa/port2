@@ -1,0 +1,35 @@
+{
+  "id": "dahyang-event",
+  "number": "PROJECT 07",
+  "browserTitle": "PROJECT 07 | DAHYANG EVENT",
+
+  "projectName": "DAHYANG EVENT",
+  "title": "DAHYANG<br>ACADEMIC EVENT",
+
+  "type": "CAFE24 · EVENT PAGE · PUBLISHING",
+
+  "category": [
+    "web",
+    "cafe24",
+    "landing",
+    "design",
+    "publishing"
+  ],
+
+  "template": "web-image",
+  "featured": false,
+
+  "link": "https://dahyangmall02.cafe24.com",
+
+  "tools": "FIGMA · PHOTOSHOP · HTML · CSS · JAVASCRIPT",
+
+  "thumbnail": "thumbnail.png",
+  "mainImage": "main.png",
+  "imageAlt": "다향 영양사 학술대회 이벤트 페이지",
+
+  "overviewTitle": "OVERVIEW",
+  "overviewText": "2026 전국 영양사 학술대회를 위한 다향 특별 이벤트 랜딩페이지입니다. 행사 전용 상품 구성과 쿠폰 사용 안내를 한 페이지에서 직관적으로 확인할 수 있도록 설계했으며, 제품 정보와 구매 동선을 고려한 디자인 및 퍼블리싱을 진행했습니다.",
+
+  "workPointTitle": "WORK POINT",
+  "workPointText": "행사 전용 프로모션의 목적에 맞춰 핵심 정보와 상품 구성을 순차적으로 배치하고, 사용자가 쿠폰 사용 방법부터 상품 구매까지 자연스럽게 이어질 수 있도록 UI와 레이아웃을 구성했습니다."
+}

@@ -1,0 +1,37 @@
+{
+  "overviewTitle": "OVERVIEW",
+  "workPointTitle": "WORK POINT",
+  "contribution": [
+    {
+      "label": "디자인",
+      "value": ""
+    },
+    {
+      "label": "퍼블리싱",
+      "value": ""
+    }
+  ],
+  "id": "korweb",
+  "projectName": "코링클 홈페이지",
+  "title": "코링클 홈페이지",
+  "type": "WEB DESIGN · PUBLISHING",
+  "category": [
+    "web"
+  ],
+  "role": "웹디자인 · 퍼블리싱",
+  "tools": "PHOTOSHOP · HTML · CSS · JAVASCRIPT · CAFE24",
+  "thumbnail": "thumbnail.jpg",
+  "mainImage": "main.jpg",
+  "link": "https://koraclefood.cafe24.com/skin-skin18/",
+  "featured": true,
+  "featuredOrder": 2,
+  "featureTheme": "korweb",
+  "featureKicker": "BRAND WEBSITE",
+  "featureDescription": "제품의 개성과 구매 흐름을 함께 설계한 KORiNKLE 홈페이지.",
+  "overviewText": "KORiNKLE의 제품과 브랜드 경험을 전달하는 Cafe24 홈페이지입니다. 제품 비주얼, 브랜드 콘텐츠와 구매 동선을 반응형 화면에 연결했습니다.",
+  "workPointText": "제품과 원재료의 움직임, 브랜드 콘텐츠, PC·모바일 화면과 운영 요소를 구현했습니다. 전달받은 메인 캡처를 대표 화면으로 등록했습니다.",
+  "images": [
+    "main.jpg"
+  ],
+  "imageAlt": "KORiNKLE 홈페이지 메인 화면"
+}

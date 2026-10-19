@@ -1,0 +1,19 @@
+{
+  "id": "COX-CH48",
+  "number": "PROJECT 04",
+  "browserTitle": "PROJECT 04 | CQX CH48",
+  "title": "DETAIL PAGE<br>DESIGN",
+  "type": "DETAIL PAGE · GRAPHIC DESIGN",
+  "category": [
+    "DETAIL"
+  ],
+  "link": "",
+  "tools": "FIGMA · PHOTOSHOP · ILLUSTRATOR",
+  "thumbnail": "thumbnail.png",
+  "mainImage": "main.png",
+  "imageAlt": "COX CH48 게이밍 헤드셋 상세페이지 디자인",
+  "overviewTitle": "OVERVIEW",
+  "overviewText": "COX CH48 게이밍 헤드셋의 주요 기능과 제품 경쟁력을 효과적으로 전달하기 위해 제작한 상세페이지입니다. 제품의 디자인, 성능, 핵심 기능을 시각적으로 표현하여 사용자가 제품의 특징을 한눈에 이해할 수 있도록 구성했습니다.",
+  "workPointTitle": "WORK POINT",
+  "workPointText": "블랙과 레드 컬러를 중심으로 게이밍 브랜드의 강렬한 이미지를 표현했으며, 제품 렌더 이미지와 그래픽 요소를 활용해 몰입감을 높였습니다. 주요 기능을 섹션별로 구분하고 아이콘과 인포그래픽을 함께 배치하여 긴 상세페이지에서도 가독성과 정보 전달력을 높였습니다."
+}

@@ -1,0 +1,21 @@
+V5 image generation prompts — built-in image generation
+
+hero
+Use case: photorealistic-natural. Asset for a premium fictional Korean plastic surgery clinic portfolio. Photographic realism, exquisite skin and hair detail, bright cool-white contemporary beauty editorial, no beige cast. No writing, no logos, no UI, no frames, no watermark. Sharp native original, requested large high resolution. Landscape 3:2 horizontal campaign photograph. One fictional adult Korean woman age 27, long softly flowing black hair, attractive natural features and understated makeup, light ivory tank top. Beauty editorial close upper body, turned three-quarter toward LEFT, eyes toward camera, face entirely contained in RIGHT HALF. Whole top of hair visible with headroom. Left 45 percent is pure bright white studio negative space with just a few soft airy strands near middle, absolutely no objects on left. Gentle cool window light, spontaneous flowing hair, modern premium editorial, not corporate headshot. Model face around right 70% across and 43% down. The image will be a full width website hero with live HTML text on left.
+
+profile
+Create one sharp realistic editorial head-and-shoulders studio photograph of an adult Korean woman age 32, fully dressed in a white high-neck blouse. Full side profile facing left, dark hair in a loose low bun, graceful natural features, entire head and top of hair visible with plenty of headroom. Neutral bright white seamless backdrop, cool soft daylight, understated natural makeup and detailed natural skin and hair. Vertical 2:3 image for a fictional clinic website. No writing, logos, frames, UI or watermark.
+
+eyes
+Create a realistic portrait photograph of an adult Korean woman age 29, fully dressed in a clean white collared shirt. Long straight dark hair with wispy bangs, relaxed three-quarter face looking a little upward, expressive dark eyes and natural restrained makeup, entire head and hair top visible. Bright neutral white seamless studio, cool soft natural light, clear photographic skin and hair detail. Contemporary sophisticated beauty editorial, vertical 2:3 composition. No writing, logos, symbols, UI or watermarks.
+
+lifting
+Use case: photorealistic-natural. Asset for a premium fictional Korean plastic surgery clinic portfolio. Photographic realism, exquisite skin and hair detail, bright cool-white contemporary beauty editorial, no beige cast. No writing, no logos, no UI, no frames, no watermark. Sharp native original, requested large high resolution. Vertical 2:3 editorial beauty portrait of a DIFFERENT fictional mature Korean woman age48, sophisticated shoulder-length black bob tucked behind ear, realistic graceful mature skin with fine natural expression lines, warm confident small smile, white sculptural blouse. Three-quarter pose facing slightly right, head and shoulders fully contained with plenty of headroom. Bright white studio backdrop, subtle cool directional light. Premium realistic fashion beauty photo of an elegant mature woman. No before and after, no overly young face. This photo represents lifting consultation.
+
+silk
+Use case: photorealistic-natural. Asset type: wide 3:2 landscape background photograph for a premium white beauty clinic. Pure flowing white silk fabric with large soft sculptural folds, a single elegant crest at lower RIGHT, fabric sweeps diagonally across lower third. LEFT HALF and upper half should be bright white airy uncluttered negative space for HTML text. Restrained fine fiber detail and translucent luminous silky sheen, subtle cool gray shadows, soft bright studio light. Real textile photograph, no people, no text, no logo, no letters, no interface, no objects, no floral shapes, no watermark. Large sharp high resolution original.
+
+consult
+Create a realistic premium beauty editorial photograph in horizontal 3:2 format. Adult Korean woman age 34, fully dressed in an elegant white blouse, seated upright at right side of a bright white studio, gently turning toward the camera, long dark hair falling along shoulder. Full head and upper body visible. Left half is clean white empty negative space for website text. Refined calm expression, crisp hair and skin texture, cool soft natural daylight. Fresh high resolution photography for fictional clinic consultation banner. No writing, lettering, logos, UI, borders or watermarks.
+
+
